@@ -8,26 +8,36 @@
   "retrieved_at": "2026-11-11",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures": [
     {
-      "number": 3,
-      "pdf_page": 6,
-      "title_zh": "RNIC 管理流程",
-      "interpretation_zh": "图3展示架构与工作流。把内存管理 QP 和数据访问 QP 分开理解，CPU 慢路径仍存在。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf#page=6",
-      "public_copy_included": false
-    },
-    {
-      "number": 6,
-      "pdf_page": 10,
-      "title_zh": "分配性能与代价",
-      "interpretation_zh": "图6比较不同分配粒度下的吞吐、P99 和内存节点 CPU。10.6× 是相对 RPC 管理的特定结果，不表示优于所有静态预分配方案。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf#page=10",
-      "public_copy_included": false
+      "paper": "OneSidedMW",
+      "figure_number": 5,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        51,
+        74,
+        562,
+        167
+      ],
+      "dimensions_px": [
+        2044,
+        372
+      ],
+      "filename": "onesidedmw-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+      "paper_title": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+      "author_credit": "Zixuan Wang et al.",
+      "source_credit": "Zixuan Wang et al. · NSDI 2026 · Figure 5 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/onesidedmw-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "从左到右追踪红色可修改字段：前一条WR的读结果成为后一条WR的操作数，使RNIC完成“取空闲项→绑定→返回”。同一chunk的多个MW分别服务Free和Access QP，图中不是多份物理内存。"
     }
   ],
   "authors": [
@@ -35,5 +45,6 @@
     "Jinyu Gu",
     "Xingda Wei",
     "Yubin Xia"
-  ]
+  ],
+  "review_revision": "technical-depth-v2"
 }

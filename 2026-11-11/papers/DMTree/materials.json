@@ -19,59 +19,30 @@
   "code_note_zh": "仓库根目录与 README 未找到明确再分发许可，未收入源码或上游 README 的复制件。",
   "figures": [
     {
-      "role": "architecture",
-      "number": 6,
-      "pdf_page": 6,
-      "printed_page": "153",
-      "section": "3.1–3.3",
-      "title_zh": "计算侧协作的整体结构",
-      "interpretation_zh": "计算节点维护私有内部树缓存，并协同存放叶节点指纹表与锁状态；内存节点保存树和键值数据。读写通过协作定位与锁管理减少直达内存节点的额外 RDMA。",
-      "structure_points_zh": [
-        "计算节点：内部树缓存、共享指纹表、协作锁。",
-        "计算节点之间的协作路径承担定位与锁操作。",
-        "内存节点：FP-B+-tree 内部节点与有序叶节点。"
+      "paper": "DMTree",
+      "figure_number": 9,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        317,
+        72,
+        558,
+        184
       ],
-      "caveat_zh": "不能画成全部数据迁到计算端；主要迁移的是辅助元数据和相应操作。",
-      "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf#page=6",
-      "attribution": "Guoli Wei, Yongkun Li, Haoze Song, Tao Li, Lulu Yao, Yinlong Xu, Heming Cui; USENIX FAST 2026",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
-    },
-    {
-      "role": "evaluation",
-      "number": 14,
-      "pdf_page": 12,
-      "printed_page": "159",
-      "section": "5.2.3",
-      "title_zh": "YCSB 混合负载吞吐量",
-      "interpretation_zh": "图中分别比较均匀与 Zipfian 分布下 A–F 工作负载。相对不同基线的优势随点查询、写入和扫描占比而变化，不能合并成无条件的最大加速比。",
-      "metrics": [
-        {
-          "value": "3.8–9.7×",
-          "metric": "吞吐量",
-          "scope_zh": "相对 Sherman、ROLEX 的查写密集型 YCSB 工作负载（不含 E）",
-          "source": "§5.2.3, PDF p.12"
-        },
-        {
-          "value": "3.2×",
-          "metric": "吞吐量",
-          "scope_zh": "相对 SMART 的扫描密集型 YCSB E",
-          "source": "§5.2.3, PDF p.12"
-        },
-        {
-          "value": "1.1–1.7×",
-          "metric": "吞吐量",
-          "scope_zh": "相对 CHIME 的查写密集型工作负载",
-          "source": "§5.2.3, PDF p.12"
-        }
+      "dimensions_px": [
+        964,
+        448
       ],
-      "experiment_zh": "6 个计算节点、1 个内存节点，100Gbps ConnectX-6；预载 10 亿条、每轮 1 亿次操作，默认 32B 键值项；配置见 §5.1 / PDF p.10。",
-      "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf#page=12",
-      "attribution": "Guoli Wei, Yongkun Li, Haoze Song, Tao Li, Lulu Yao, Yinlong Xu, Heming Cui; USENIX FAST 2026",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
+      "filename": "dmtree-fig9.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/wei",
+      "paper_title": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
+      "author_credit": "Guoli Wei et al.",
+      "source_credit": "Guoli Wei et al. · FAST 2026 · Figure 9 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/dmtree-fig9.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "数清5个操作的落点而非只数箭头：锁、指纹读取、解锁转移至CN；KV读写仍去MN。右图解释性能提升为何可以在总RDMA数不变时发生。"
     }
   ],
   "extra_references": [
@@ -97,16 +68,12 @@
   "paper_sha256": "04655e4a8444c7f5ccfd899fb1b2881b5e4ce0148157cecaa7bdad6c40478265",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已核对论文全文，未见向公众再分发全文或图片的明确许可。USENIX 的开放获取说明不等于再分发授权；作者保留著作权，示例出版许可授予 USENIX 且不可转授权。公开包仅保留原站链接、事实性元数据和原创解读。",
-    "evidence_urls": [
-      "https://www.usenix.org/conferences/author-resources/submissions-policy",
-      "https://www.usenix.org/sites/default/files/consent_author_proceedings.pdf"
-    ],
-    "checked_at": "2026-11-11"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures_public_copy_included": false,
   "figure_rights_zh": "原论文图未获明确公开再分发许可，不附裁图；以下为原图定位和原创事实解读，方便回到原文核验。",
-  "public_original_diagram_note_zh": "若配图，应独立绘制概念示意，并明确标注“原创机制示意，非论文原图”；不能把复刻原图视为新授权。"
+  "public_original_diagram_note_zh": "若配图，应独立绘制概念示意，并明确标注“原创机制示意，非论文原图”；不能把复刻原图视为新授权。",
+  "review_revision": "technical-depth-v2"
 }

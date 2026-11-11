@@ -5,5 +5,13 @@
   "url": "https://www.usenix.org/conference/fast26/presentation/wei",
   "pdf": "https://www.usenix.org/system/files/fast26-wei.pdf",
   "repo": "https://github.com/muouim/DMTree",
-  "ref": "图6（PDF第6页）；图14（PDF第12页）"
+  "ref": "图6（PDF第6页）；图14（PDF第12页）",
+  "review_figures": [
+    {
+      "number": 9,
+      "pdf_page": 8,
+      "path": "images/dmtree-fig9.png",
+      "source": "https://www.usenix.org/system/files/fast26-wei.pdf#page=8"
+    }
+  ]
 }

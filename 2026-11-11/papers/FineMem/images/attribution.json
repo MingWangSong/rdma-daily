@@ -1,10 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "FineMem: Breaking the Allocation Overhead vs. Memory Waste Dilemma in Fine-Grained Disaggregated Memory Management",
-  "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
-  "source_location": "图6（PDF第7页）；图10（PDF第11页）",
-  "caption": "后台 CPU 仍参与 rkey 再生成与恢复；它不是内存节点复制或完整缓存一致性方案。",
-  "interpretation": "分配快路径之外，后台回收能否跟上释放速率，决定长期运行是否稳定。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+  "paper": "FineMem",
+  "excerpts": [
+    {
+      "paper": "FineMem",
+      "figure_number": 8,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        319,
+        70,
+        555,
+        159
+      ],
+      "dimensions_px": [
+        944,
+        356
+      ],
+      "filename": "finemem-fig8.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/wang-xiaoyang",
+      "paper_title": "FineMem: Breaking the Allocation Overhead vs. Memory Waste Dilemma in Fine-Grained Disaggregated Memory Management",
+      "author_credit": "Xiaoyang Wang et al.",
+      "source_credit": "Xiaoyang Wang et al. · OSDI 2025 · Figure 8 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/finemem-fig8.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "关键看位图、临时日志与时间戳处于同一个CAS提交点。完整日志与上层位图随后更新，但任何线程可帮助补齐恢复记录，因此故障不能让成功分配变成不可追踪的泄漏。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

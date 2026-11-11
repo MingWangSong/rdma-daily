@@ -5,5 +5,13 @@
   "url": "https://www.usenix.org/conference/osdi26/presentation/hu-yuehao",
   "pdf": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
   "repo": "https://github.com/pdclab/farlock",
-  "ref": "图4（PDF第6页）；图7（PDF第11页）"
+  "ref": "图4（PDF第6页）；图7（PDF第11页）",
+  "review_figures": [
+    {
+      "number": 4,
+      "pdf_page": 6,
+      "path": "images/farlock-fig4.png",
+      "source": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf#page=6"
+    }
+  ]
 }

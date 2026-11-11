@@ -5,5 +5,13 @@
   "url": "https://www.usenix.org/conference/osdi25/presentation/wang-xiaoyang",
   "pdf": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
   "repo": "https://github.com/ADSLMemoryDisaggregation/FineMem",
-  "ref": "图6（PDF第7页）；图10（PDF第11页）"
+  "ref": "图6（PDF第7页）；图10（PDF第11页）",
+  "review_figures": [
+    {
+      "number": 8,
+      "pdf_page": 8,
+      "path": "images/finemem-fig8.png",
+      "source": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf#page=8"
+    }
+  ]
 }

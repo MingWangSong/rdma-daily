@@ -1,10 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
-  "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf",
-  "source_location": "图6（PDF第6页）；图14（PDF第12页）",
-  "caption": "这是职责划分示意，不是完整协议；优化关注瓶颈节点承受的 RDMA 操作数。",
-  "interpretation": "全系统操作总数不是唯一目标；热点转移后还要计算节点间流量与副本维护成本。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+  "paper": "DMTree",
+  "excerpts": [
+    {
+      "paper": "DMTree",
+      "figure_number": 9,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        317,
+        72,
+        558,
+        184
+      ],
+      "dimensions_px": [
+        964,
+        448
+      ],
+      "filename": "dmtree-fig9.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/wei",
+      "paper_title": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
+      "author_credit": "Guoli Wei et al.",
+      "source_credit": "Guoli Wei et al. · FAST 2026 · Figure 9 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/dmtree-fig9.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "数清5个操作的落点而非只数箭头：锁、指纹读取、解锁转移至CN；KV读写仍去MN。右图解释性能提升为何可以在总RDMA数不变时发生。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

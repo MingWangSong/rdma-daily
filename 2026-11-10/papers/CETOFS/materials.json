@@ -8,31 +8,42 @@
   "retrieved_at": "2026-11-11",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures": [
     {
-      "number": 5,
-      "pdf_page": 6,
-      "title_zh": "架构分工",
-      "interpretation_zh": "图5展示用户态数据路径、内核元数据路径和存储端组件。重点观察权限、排序与日志各由哪一侧承担。",
-      "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf#page=6",
-      "public_copy_included": false
-    },
-    {
-      "number": 13,
-      "pdf_page": 12,
-      "title_zh": "Filebench 结果",
-      "interpretation_zh": "图13比较不同文件系统在具体 Filebench 工作负载下的表现；Fileserver 的 75%／72%／64% 提升与摘要 19× 微基准不是同一结果。",
-      "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf#page=12",
-      "public_copy_included": false
+      "paper": "CETOFS",
+      "figure_number": 5,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        52,
+        72,
+        295,
+        169
+      ],
+      "dimensions_px": [
+        972,
+        388
+      ],
+      "filename": "cetofs-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/jia",
+      "paper_title": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
+      "author_credit": "Wenqing Jia et al.",
+      "source_credit": "Wenqing Jia et al. · FAST 2026 · Figure 5 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/cetofs-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "沿 U-Lib、K-FS、T-Handler 三条职责读图：真正被旁路的是数据访问的主机内核路径，不是元数据和权限管理。"
     }
   ],
   "authors": [
     "Wenqing Jia",
     "Dejun Jiang",
     "Jin Xiong"
-  ]
+  ],
+  "review_revision": "technical-depth-v2"
 }

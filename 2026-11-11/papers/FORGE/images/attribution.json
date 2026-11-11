@@ -1,10 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems",
-  "source_url": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
-  "source_location": "图4（PDF第6页）；图13（PDF第12页）",
-  "caption": "访问粒度与管理粒度分离；这不是把每次 Get 或 Set 改成批量接口。",
-  "interpretation": "降低元数据成本可能改变淘汰精度，必须用热度漂移和真实后端代价检验。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+  "paper": "FORGE",
+  "excerpts": [
+    {
+      "paper": "FORGE",
+      "figure_number": 4,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        50,
+        68,
+        297,
+        220
+      ],
+      "dimensions_px": [
+        988,
+        608
+      ],
+      "filename": "forge-fig4.png",
+      "source_url": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi26/presentation/yang-zhijun",
+      "paper_title": "FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems",
+      "author_credit": "Zhijun Yang et al.",
+      "source_credit": "Zhijun Yang et al. · OSDI 2026 · Figure 4 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/forge-fig4.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "从左往右读三类动作：Get只读对象并本地记热度；Evict才汇总并筛出热对象重组；Set写对象并加入新组。箭头展示的是三个并发流程，不是每次请求都走完整一圈。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

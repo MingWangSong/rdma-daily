@@ -6,5 +6,13 @@
   "pdf": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
   "repo": "https://github.com/cszjyang/forge",
   "slides": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-slides.pdf",
-  "ref": "图4（PDF第6页）；图13（PDF第12页）"
+  "ref": "图4（PDF第6页）；图13（PDF第12页）",
+  "review_figures": [
+    {
+      "number": 4,
+      "pdf_page": 6,
+      "path": "images/forge-fig4.png",
+      "source": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf#page=6"
+    }
+  ]
 }

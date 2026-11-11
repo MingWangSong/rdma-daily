@@ -1,10 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "FARLock: Asymmetric RDMA Locking Made Fair",
-  "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
-  "source_location": "图4（PDF第6页）；图7（PDF第11页）",
-  "caption": "公平性针对所讨论的锁路径；乐观读扩展不自动具有读写公平，也未完成节点故障恢复。",
-  "interpretation": "应按真实的本地与远端请求比例评估，而不是只看总吞吐是否变化。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+  "paper": "FARLock",
+  "excerpts": [
+    {
+      "paper": "FARLock",
+      "figure_number": 4,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        59,
+        68,
+        288,
+        196
+      ],
+      "dimensions_px": [
+        916,
+        512
+      ],
+      "filename": "farlock-fig4.png",
+      "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi26/presentation/hu-yuehao",
+      "paper_title": "FARLock: Asymmetric RDMA Locking Made Fair",
+      "author_credit": "Yuehao Hu et al.",
+      "source_credit": "Yuehao Hu et al. · OSDI 2026 · Figure 4 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/farlock-fig4.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "图中的两条队列不是两个互不相干的锁。A/B/C/D/E最终由共享票号串成一个顺序；与“轮流放行任意数量本地/远端请求”不同。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

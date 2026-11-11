@@ -1,10 +1,58 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
-  "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
-  "source_location": "图1（PDF第5页）；图7（PDF第11页）",
-  "caption": "硬件 ACK、执行完成、持久化成功是不同事件；图中的顺序不构成通用正确性保证。",
-  "interpretation": "先明确客户端何时可返回，再审查错误、重试与非幂等请求，而不是仅优化往返次数。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+  "paper": "Juneberry",
+  "excerpts": [
+    {
+      "paper": "Juneberry",
+      "figure_number": 1,
+      "pdf_page_1based": 5,
+      "crop_bbox_pdf_points": [
+        315,
+        70,
+        560,
+        317
+      ],
+      "dimensions_px": [
+        980,
+        988
+      ],
+      "filename": "juneberry-fig1.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 1 · PDF p. 5",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig1.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "注意set已ACK时引擎内的值可能尚未改变，但随后get被接收队列排在后面，执行时必然先看到set效果。图成立依赖NIC与CPU两条顺序规则，不是无条件“先应答后执行”。"
+    },
+    {
+      "paper": "Juneberry",
+      "figure_number": 7,
+      "pdf_page_1based": 11,
+      "crop_bbox_pdf_points": [
+        53,
+        72,
+        295,
+        258
+      ],
+      "dimensions_px": [
+        968,
+        744
+      ],
+      "filename": "juneberry-fig7.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 7 · PDF p. 11",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig7.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "这是中位延迟而非P99；四个负载set比例分别为80%、25%、15%、94%。写比例越高，能提前ACK的请求越多，但峰值吞吐并未提高。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

@@ -23,5 +23,13 @@
     "Xingyu Zhang",
     "Xingyu Guo",
     "Guo Chen"
+  ],
+  "review_figures": [
+    {
+      "number": 5,
+      "pdf_page": 6,
+      "path": "images/burst-fig5.png",
+      "source": "https://www.usenix.org/system/files/nsdi26-shen.pdf#page=6"
+    }
   ]
 }

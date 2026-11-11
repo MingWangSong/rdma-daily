@@ -1,0 +1,357 @@
+{
+  "count": 13,
+  "scope": "Limited excerpts for direct technical commentary, not open-licensed figure collection.",
+  "figures": [
+    {
+      "paper": "CETOFS",
+      "figure_number": 5,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        52,
+        72,
+        295,
+        169
+      ],
+      "dimensions_px": [
+        972,
+        388
+      ],
+      "filename": "cetofs-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/jia",
+      "paper_title": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
+      "author_credit": "Wenqing Jia et al.",
+      "source_credit": "Wenqing Jia et al. · FAST 2026 · Figure 5 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/cetofs-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "沿 U-Lib、K-FS、T-Handler 三条职责读图：真正被旁路的是数据访问的主机内核路径，不是元数据和权限管理。",
+      "archive_path": "2026-11-10/papers/CETOFS/images/cetofs-fig5.png"
+    },
+    {
+      "paper": "PD3",
+      "figure_number": 3,
+      "pdf_page_1based": 5,
+      "crop_bbox_pdf_points": [
+        74,
+        74,
+        537,
+        315
+      ],
+      "dimensions_px": [
+        1852,
+        964
+      ],
+      "filename": "pd3-fig3.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/sankhe",
+      "paper_title": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+      "author_credit": "Sidharth Sankhe et al.",
+      "source_credit": "Sidharth Sankhe et al. · NSDI 2026 · Figure 3 · PDF p. 5",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/pd3-fig3.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "两条并行路径是读图重点：正常请求仍去主机，镜像触发预取；不要画成用户请求必须串行经过DPU软件处理。",
+      "archive_path": "2026-11-10/papers/PD3/images/pd3-fig3.png"
+    },
+    {
+      "paper": "PD3",
+      "figure_number": 18,
+      "pdf_page_1based": 12,
+      "crop_bbox_pdf_points": [
+        53,
+        80,
+        173,
+        179
+      ],
+      "dimensions_px": [
+        480,
+        396
+      ],
+      "filename": "pd3-fig18.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/sankhe",
+      "paper_title": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+      "author_credit": "Sidharth Sankhe et al.",
+      "source_credit": "Sidharth Sankhe et al. · NSDI 2026 · Figure 18 · PDF p. 12",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/pd3-fig18.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "看同一系统的预取开关消融，而不是跨系统最高倍数。纵轴为对数尺度，不能按柱子高度直接读线性比例。它把“提前取数据”的作用与“把传输搬到DPU”的作用分开。",
+      "archive_path": "2026-11-10/papers/PD3/images/pd3-fig18.png"
+    },
+    {
+      "paper": "BURST",
+      "figure_number": 5,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        57,
+        74,
+        558,
+        184
+      ],
+      "dimensions_px": [
+        2004,
+        440
+      ],
+      "filename": "burst-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
+      "paper_title": "BURST: Seeking High-performance, Interoperability and Scalability in Soft-RDMA",
+      "author_credit": "Huijun Shen et al.",
+      "source_credit": "Huijun Shen et al. · NSDI 2026 · Figure 5 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/burst-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "区分三块：内核/用户共享资源管理、DPDK数据路径、用户态CM。应用和BURST是不同进程，共享Doorbell不代表直接访问NIC硬件寄存器。",
+      "archive_path": "2026-11-10/papers/BURST/images/burst-fig5.png"
+    },
+    {
+      "paper": "OneSidedMW",
+      "figure_number": 5,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        51,
+        74,
+        562,
+        167
+      ],
+      "dimensions_px": [
+        2044,
+        372
+      ],
+      "filename": "onesidedmw-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+      "paper_title": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+      "author_credit": "Zixuan Wang et al.",
+      "source_credit": "Zixuan Wang et al. · NSDI 2026 · Figure 5 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/onesidedmw-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "从左到右追踪红色可修改字段：前一条WR的读结果成为后一条WR的操作数，使RNIC完成“取空闲项→绑定→返回”。同一chunk的多个MW分别服务Free和Access QP，图中不是多份物理内存。",
+      "archive_path": "2026-11-10/papers/OneSidedMW/images/onesidedmw-fig5.png"
+    },
+    {
+      "paper": "Scalio",
+      "figure_number": 9,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        317,
+        268,
+        559,
+        415
+      ],
+      "dimensions_px": [
+        968,
+        588
+      ],
+      "filename": "scalio-fig9.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+      "paper_title": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+      "author_credit": "Xun Sun et al.",
+      "source_credit": "Xun Sun et al. · OSDI 2025 · Figure 9 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/scalio-fig9.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "四个状态中最重要的是D：它保留“有旧填充者仍在写”的事实。若把D当作普通空槽，旧RDMA写可能污染新占用者；若把旧填充结束当作有效发布，又会复活旧值。",
+      "archive_path": "2026-11-10/papers/Scalio/images/scalio-fig9.png"
+    },
+    {
+      "paper": "Scalio",
+      "figure_number": 11,
+      "pdf_page_1based": 11,
+      "crop_bbox_pdf_points": [
+        51,
+        70,
+        560,
+        205
+      ],
+      "dimensions_px": [
+        2036,
+        540
+      ],
+      "filename": "scalio-fig11.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+      "paper_title": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+      "author_credit": "Xun Sun et al.",
+      "source_credit": "Xun Sun et al. · OSDI 2025 · Figure 11 · PDF p. 11",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/scalio-fig11.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "读多负载与写多负载应分开看。SSD数量增加时基线CPU先饱和，而卸载读延长了可扩展区间；硬件是Xeon模拟DPU。",
+      "archive_path": "2026-11-10/papers/Scalio/images/scalio-fig11.png"
+    },
+    {
+      "paper": "DMTree",
+      "figure_number": 9,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        317,
+        72,
+        558,
+        184
+      ],
+      "dimensions_px": [
+        964,
+        448
+      ],
+      "filename": "dmtree-fig9.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/wei",
+      "paper_title": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
+      "author_credit": "Guoli Wei et al.",
+      "source_credit": "Guoli Wei et al. · FAST 2026 · Figure 9 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/dmtree-fig9.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "数清5个操作的落点而非只数箭头：锁、指纹读取、解锁转移至CN；KV读写仍去MN。右图解释性能提升为何可以在总RDMA数不变时发生。",
+      "archive_path": "2026-11-11/papers/DMTree/images/dmtree-fig9.png"
+    },
+    {
+      "paper": "FARLock",
+      "figure_number": 4,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        59,
+        68,
+        288,
+        196
+      ],
+      "dimensions_px": [
+        916,
+        512
+      ],
+      "filename": "farlock-fig4.png",
+      "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi26/presentation/hu-yuehao",
+      "paper_title": "FARLock: Asymmetric RDMA Locking Made Fair",
+      "author_credit": "Yuehao Hu et al.",
+      "source_credit": "Yuehao Hu et al. · OSDI 2026 · Figure 4 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/farlock-fig4.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "图中的两条队列不是两个互不相干的锁。A/B/C/D/E最终由共享票号串成一个顺序；与“轮流放行任意数量本地/远端请求”不同。",
+      "archive_path": "2026-11-11/papers/FARLock/images/farlock-fig4.png"
+    },
+    {
+      "paper": "FORGE",
+      "figure_number": 4,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        50,
+        68,
+        297,
+        220
+      ],
+      "dimensions_px": [
+        988,
+        608
+      ],
+      "filename": "forge-fig4.png",
+      "source_url": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi26/presentation/yang-zhijun",
+      "paper_title": "FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems",
+      "author_credit": "Zhijun Yang et al.",
+      "source_credit": "Zhijun Yang et al. · OSDI 2026 · Figure 4 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/forge-fig4.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "从左往右读三类动作：Get只读对象并本地记热度；Evict才汇总并筛出热对象重组；Set写对象并加入新组。箭头展示的是三个并发流程，不是每次请求都走完整一圈。",
+      "archive_path": "2026-11-11/papers/FORGE/images/forge-fig4.png"
+    },
+    {
+      "paper": "Juneberry",
+      "figure_number": 1,
+      "pdf_page_1based": 5,
+      "crop_bbox_pdf_points": [
+        315,
+        70,
+        560,
+        317
+      ],
+      "dimensions_px": [
+        980,
+        988
+      ],
+      "filename": "juneberry-fig1.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 1 · PDF p. 5",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig1.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "注意set已ACK时引擎内的值可能尚未改变，但随后get被接收队列排在后面，执行时必然先看到set效果。图成立依赖NIC与CPU两条顺序规则，不是无条件“先应答后执行”。",
+      "archive_path": "2026-11-11/papers/Juneberry/images/juneberry-fig1.png"
+    },
+    {
+      "paper": "Juneberry",
+      "figure_number": 7,
+      "pdf_page_1based": 11,
+      "crop_bbox_pdf_points": [
+        53,
+        72,
+        295,
+        258
+      ],
+      "dimensions_px": [
+        968,
+        744
+      ],
+      "filename": "juneberry-fig7.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 7 · PDF p. 11",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig7.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "这是中位延迟而非P99；四个负载set比例分别为80%、25%、15%、94%。写比例越高，能提前ACK的请求越多，但峰值吞吐并未提高。",
+      "archive_path": "2026-11-11/papers/Juneberry/images/juneberry-fig7.png"
+    },
+    {
+      "paper": "FineMem",
+      "figure_number": 8,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        319,
+        70,
+        555,
+        159
+      ],
+      "dimensions_px": [
+        944,
+        356
+      ],
+      "filename": "finemem-fig8.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/wang-xiaoyang",
+      "paper_title": "FineMem: Breaking the Allocation Overhead vs. Memory Waste Dilemma in Fine-Grained Disaggregated Memory Management",
+      "author_credit": "Xiaoyang Wang et al.",
+      "source_credit": "Xiaoyang Wang et al. · OSDI 2025 · Figure 8 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/finemem-fig8.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "关键看位图、临时日志与时间戳处于同一个CAS提交点。完整日志与上层位图随后更新，但任何线程可帮助补齐恢复记录，因此故障不能让成功分配变成不可追踪的泄漏。",
+      "archive_path": "2026-11-11/papers/FineMem/images/finemem-fig8.png"
+    }
+  ]
+}

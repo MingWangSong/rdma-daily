@@ -1,21 +1,15 @@
 # CETOFS
 
-会议：FAST 2026
+CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage
 
-作者单位：中国科学院计算技术研究所处理器全国重点实验室、中国科学院大学
+FAST 2026 · 中国科学院计算技术研究所处理器全国重点实验室、中国科学院大学
 
-[论文页面](https://www.usenix.org/conference/fast26/presentation/jia) · [论文原文](https://www.usenix.org/system/files/fast26-jia.pdf)
+[中文研读](../../index.html#CETOFS) · [论文原文](https://www.usenix.org/system/files/fast26-jia.pdf)
 
-## 归档范围
+## 本目录
 
-本目录包含原创中文解读、来源索引和原创机制示意图。示意图只表达设计概念，不是论文原图或完整协议。论文 PDF、原文裁图、全文提取及幻灯片未核实第三方公开再分发许可，故不纳入此公开发布候选包。原文可在官方或作者来源阅读。
+机制、关键实验与边界分析见本期 HTML。images/ 仅保留与正文评论直接对应的原图局部节选，点击可放大；图号、作者、PDF 页码与裁剪记录见 images/attribution.json。已移除旧版低信息量自绘框图。
 
-## 图解出处
+原图版权归原作者，未声明开放图像许可；全文与报告保留原站链接。说明见仓库根目录 PUBLICATION_READINESS.md。
 
-论文 §3–5，图5（PDF第6页）；Filebench 结果见图13（PDF第12页）
-
-沿着数据流找权限、顺序与持久化的责任边界，再决定哪些步骤适合下沉。
-
-## 代码
-
-代码许可及快照状态见 code/ 下的说明；仓库公开不等于所有文件均可公开再分发。
+代码许可及快照状态见 code/ 下的说明。

@@ -12,5 +12,13 @@
     "Jinyu Gu",
     "Xingda Wei",
     "Yubin Xia"
+  ],
+  "review_figures": [
+    {
+      "number": 5,
+      "pdf_page": 8,
+      "path": "images/onesidedmw-fig5.png",
+      "source": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf#page=8"
+    }
   ]
 }

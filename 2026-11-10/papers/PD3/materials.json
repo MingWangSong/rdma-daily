@@ -8,26 +8,62 @@
   "retrieved_at": "2026-11-11",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures": [
     {
-      "number": 3,
-      "pdf_page": 5,
-      "title_zh": "DPU 预取架构",
-      "interpretation_zh": "图3展示请求解析、Host View、传输引擎和主机 Loading Zone 的协作，理解预取为何需要先看到请求。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf#page=5",
-      "public_copy_included": false
+      "paper": "PD3",
+      "figure_number": 3,
+      "pdf_page_1based": 5,
+      "crop_bbox_pdf_points": [
+        74,
+        74,
+        537,
+        315
+      ],
+      "dimensions_px": [
+        1852,
+        964
+      ],
+      "filename": "pd3-fig3.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/sankhe",
+      "paper_title": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+      "author_credit": "Sidharth Sankhe et al.",
+      "source_credit": "Sidharth Sankhe et al. · NSDI 2026 · Figure 3 · PDF p. 5",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/pd3-fig3.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "两条并行路径是读图重点：正常请求仍去主机，镜像触发预取；不要画成用户请求必须串行经过DPU软件处理。"
     },
     {
-      "number": 10,
-      "pdf_page": 11,
-      "title_zh": "Hashmap 吞吐",
-      "interpretation_zh": "图10的 hashmap 与同页图12的 page-server 工作负载不同。早报引用的约 2.2× 与约 33% 需保留各自条件。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf#page=11",
-      "public_copy_included": false
+      "paper": "PD3",
+      "figure_number": 18,
+      "pdf_page_1based": 12,
+      "crop_bbox_pdf_points": [
+        53,
+        80,
+        173,
+        179
+      ],
+      "dimensions_px": [
+        480,
+        396
+      ],
+      "filename": "pd3-fig18.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/sankhe",
+      "paper_title": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+      "author_credit": "Sidharth Sankhe et al.",
+      "source_credit": "Sidharth Sankhe et al. · NSDI 2026 · Figure 18 · PDF p. 12",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/pd3-fig18.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "看同一系统的预取开关消融，而不是跨系统最高倍数。纵轴为对数尺度，不能按柱子高度直接读线性比例。它把“提前取数据”的作用与“把传输搬到DPU”的作用分开。"
     }
   ],
   "authors": [
@@ -38,5 +74,6 @@
     "Jiasheng Hu",
     "Jialin Li",
     "Qizhen Zhang"
-  ]
+  ],
+  "review_revision": "technical-depth-v2"
 }

@@ -1,16 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
-  "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
-  "source_location": "图3（PDF第6页）；图6（PDF第10页）",
-  "caption": "CPU 仍负责初始化和资源不足等慢路径；一个块或 window 组同一时刻归一个计算节点。",
-  "interpretation": "减少管理 CPU 负担的同时，检查细粒度分配对吞吐、空间利用率和隔离的影响。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
-  "source_authors": [
-    "Zixuan Wang",
-    "Jinyu Gu",
-    "Xingda Wei",
-    "Yubin Xia"
-  ]
+  "paper": "OneSidedMW",
+  "excerpts": [
+    {
+      "paper": "OneSidedMW",
+      "figure_number": 5,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        51,
+        74,
+        562,
+        167
+      ],
+      "dimensions_px": [
+        2044,
+        372
+      ],
+      "filename": "onesidedmw-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+      "paper_title": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+      "author_credit": "Zixuan Wang et al.",
+      "source_credit": "Zixuan Wang et al. · NSDI 2026 · Figure 5 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/onesidedmw-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "从左到右追踪红色可修改字段：前一条WR的读结果成为后一条WR的操作数，使RNIC完成“取空闲项→绑定→返回”。同一chunk的多个MW分别服务Free和Access QP，图中不是多份物理内存。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

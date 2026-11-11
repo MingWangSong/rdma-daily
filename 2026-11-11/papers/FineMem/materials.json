@@ -18,60 +18,30 @@
   "code_note_zh": "项目源码采用 BSD-3-Clause。保留完整 LICENSE；论文、图片、数据轨迹/结果和带独立 GPL-2.0 声明的 .clang-format 未收入源码子集。",
   "figures": [
     {
-      "role": "architecture",
-      "number": 6,
-      "pdf_page": 7,
-      "printed_page": "62",
-      "section": "3.2–4",
-      "title_zh": "计算侧分配服务与内存侧元数据",
-      "interpretation_zh": "应用调用计算节点的可信分配服务，服务经单边 RDMA 操作远程预注册区内的位图与日志。Memory Window 限制应用可访问的内存范围，避免把整个共享 MR 暴露给应用。",
-      "structure_points_zh": [
-        "计算节点：应用与可信 Allocation Service，隔离分配元数据。",
-        "内存节点：预注册的大 MR 与细粒度 chunks。",
-        "元数据：两层位图、重做日志、MW capability 表。",
-        "分配热路径：计算侧以单边 RDMA 更新远程元数据，不由内存侧 CPU 逐次处理。"
+      "paper": "FineMem",
+      "figure_number": 8,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        319,
+        70,
+        555,
+        159
       ],
-      "caveat_zh": "“不涉及内存侧 CPU”指分配热路径，不是初始化、恢复等所有操作都不需要 CPU。",
-      "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf#page=7",
-      "attribution": "Xiaoyang Wang, Yongkun Li, Kan Wu, Wenzhe Zhu, Yuqi Li, Yinlong Xu; USENIX OSDI 2025",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
-    },
-    {
-      "role": "evaluation",
-      "number": 10,
-      "pdf_page": 11,
-      "printed_page": "66",
-      "section": "6.2",
-      "title_zh": "平均分配延迟随并发与内存节点数变化",
-      "interpretation_zh": "左图为线程数，右图为内存节点数；纵轴是平均分配延迟，不是吞吐量。4KB 分配下，RPC 基线超过 16 客户端线程后扩展受限，FineMem 依靠单边路径维持低延迟。",
-      "metrics": [
-        {
-          "value": "43.215μs vs 763.01μs",
-          "metric": "平均分配延迟",
-          "scope_zh": "4KB、512 客户端线程，FineMem 对比 Premmap-One-sided；约降低 94.3%",
-          "source": "Table 2, PDF p.11"
-        },
-        {
-          "value": "1.333 vs 45.108",
-          "metric": "平均 CAS 重试次数",
-          "scope_zh": "同一 Table 2 微基准",
-          "source": "Table 2, PDF p.11"
-        },
-        {
-          "value": "约 95% 更低",
-          "metric": "分配延迟",
-          "scope_zh": "两层位图与竞争控制组合，相对数组元数据基线的消融总结",
-          "source": "Fig.11 / §6.2, PDF p.11"
-        }
+      "dimensions_px": [
+        944,
+        356
       ],
-      "experiment_zh": "4KB 分配粒度；多内存节点实验使用 round-robin 分配。评测的分配微基准先建立碎片化地址空间，测量不是纯空闲池的理想情况。",
-      "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf#page=11",
-      "attribution": "Xiaoyang Wang, Yongkun Li, Kan Wu, Wenzhe Zhu, Yuqi Li, Yinlong Xu; USENIX OSDI 2025",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
+      "filename": "finemem-fig8.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/wang-xiaoyang",
+      "paper_title": "FineMem: Breaking the Allocation Overhead vs. Memory Waste Dilemma in Fine-Grained Disaggregated Memory Management",
+      "author_credit": "Xiaoyang Wang et al.",
+      "source_credit": "Xiaoyang Wang et al. · OSDI 2025 · Figure 8 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/finemem-fig8.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "关键看位图、临时日志与时间戳处于同一个CAS提交点。完整日志与上层位图随后更新，但任何线程可帮助补齐恢复记录，因此故障不能让成功分配变成不可追踪的泄漏。"
     }
   ],
   "extra_references": [
@@ -97,14 +67,9 @@
   "paper_sha256": "2bed19a3354ae8e4ba59c957345cc95af29b76fbac52b033d1766ca4cb330441",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已核对论文全文，未见向公众再分发全文或图片的明确许可。USENIX 的开放获取说明不等于再分发授权；作者保留著作权，示例出版许可授予 USENIX 且不可转授权。公开包仅保留原站链接、事实性元数据和原创解读。",
-    "evidence_urls": [
-      "https://www.usenix.org/conferences/author-resources/submissions-policy",
-      "https://www.usenix.org/sites/default/files/consent_author_proceedings.pdf"
-    ],
-    "checked_at": "2026-11-11"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures_public_copy_included": false,
   "figure_rights_zh": "原论文图未获明确公开再分发许可，不附裁图；以下为原图定位和原创事实解读，方便回到原文核验。",
@@ -123,5 +88,6 @@
     "executed": false,
     "built": false,
     "sha256": "3f6e14c5542c344407e4b1f087536c40814dba6162c5fd042ec6a5b245f4affb"
-  }
+  },
+  "review_revision": "technical-depth-v2"
 }

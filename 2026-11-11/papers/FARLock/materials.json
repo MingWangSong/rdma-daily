@@ -16,54 +16,30 @@
   "code_note_zh": "项目自身代码头明确采用 GPL-3.0-or-later；保留完整 LICENSE 和源码版权头。未完全核验的 include/third_party 依赖被排除，故不是可直接构建的完整仓库。",
   "figures": [
     {
-      "role": "architecture",
-      "number": 4,
-      "pdf_page": 6,
-      "printed_page": "1535",
-      "section": "3–4.1",
-      "title_zh": "双队列与全局公平次序",
-      "interpretation_zh": "本地和远程请求分队列排队，票号统一决定获锁先后。本地访问无需因原子性而走 RNIC 回环；票号与队列顺序通过专门协议协调。",
-      "structure_points_zh": [
-        "本地队列：本地内存访问。",
-        "远程队列：RDMA 访问。",
-        "全局 ticket 次序连接两个队列；Peterson 锁保护票号相关状态。",
-        "FARLock-G 只将不破坏公平次序的连续请求合组。"
+      "paper": "FARLock",
+      "figure_number": 4,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        59,
+        68,
+        288,
+        196
       ],
-      "caveat_zh": "票号是协议建立的全局次序，不应画成无协调的 CPU 原子指令直接与 RDMA 原子指令混用。",
-      "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf#page=6",
-      "attribution": "Yuehao Hu, Jiatang Zhou, Tianzheng Wang, Keval Vora; USENIX OSDI 2026",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
-    },
-    {
-      "role": "evaluation",
-      "number": 7,
-      "pdf_page": 11,
-      "printed_page": "1540",
-      "section": "5.1–5.2",
-      "title_zh": "高竞争下本地与远程尾延迟",
-      "interpretation_zh": "1 与 10 把锁构成高竞争条件，图分开呈现本地/远程请求及四个尾分位。收益最显著的是本地尾延迟；不能把局部最优倍数说成所有请求的平均提升。",
-      "metrics": [
-        {
-          "value": "最高 62× 更低",
-          "metric": "本地尾延迟",
-          "scope_zh": "高竞争微基准中相对公平锁 MCS、Ticket",
-          "source": "§5.2, PDF p.10; Fig.7, PDF p.11"
-        },
-        {
-          "value": "8× 更低",
-          "metric": "本地尾延迟",
-          "scope_zh": "同一高竞争实验中相对 ALock",
-          "source": "§5.2, PDF p.10"
-        }
+      "dimensions_px": [
+        916,
+        512
       ],
-      "experiment_zh": "10 节点，56Gbps Mellanox FDR CX3；每节点 12 线程，本地临界区约 100ns、远程约 5μs；图中分位为 P95、P99、P99.9、P99.999。",
-      "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf#page=11",
-      "attribution": "Yuehao Hu, Jiatang Zhou, Tianzheng Wang, Keval Vora; USENIX OSDI 2026",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
+      "filename": "farlock-fig4.png",
+      "source_url": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi26/presentation/hu-yuehao",
+      "paper_title": "FARLock: Asymmetric RDMA Locking Made Fair",
+      "author_credit": "Yuehao Hu et al.",
+      "source_credit": "Yuehao Hu et al. · OSDI 2026 · Figure 4 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/farlock-fig4.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "图中的两条队列不是两个互不相干的锁。A/B/C/D/E最终由共享票号串成一个顺序；与“轮流放行任意数量本地/远端请求”不同。"
     }
   ],
   "extra_references": [
@@ -89,14 +65,9 @@
   "paper_sha256": "18d38e2b5a2801fcd69acac571f27abac68a0b1bd7488b6282827d6283c299d6",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已核对论文全文，未见向公众再分发全文或图片的明确许可。USENIX 的开放获取说明不等于再分发授权；作者保留著作权，示例出版许可授予 USENIX 且不可转授权。公开包仅保留原站链接、事实性元数据和原创解读。",
-    "evidence_urls": [
-      "https://www.usenix.org/conferences/author-resources/submissions-policy",
-      "https://www.usenix.org/sites/default/files/consent_author_proceedings.pdf"
-    ],
-    "checked_at": "2026-11-11"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures_public_copy_included": false,
   "figure_rights_zh": "原论文图未获明确公开再分发许可，不附裁图；以下为原图定位和原创事实解读，方便回到原文核验。",
@@ -115,5 +86,6 @@
     "executed": false,
     "built": false,
     "sha256": "aa6ac22468fa82c75b3368e81ed8194b2d7c506d5ef4316bbc145c147f0a0483"
-  }
+  },
+  "review_revision": "technical-depth-v2"
 }

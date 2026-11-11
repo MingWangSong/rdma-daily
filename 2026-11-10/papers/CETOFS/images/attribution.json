@@ -1,15 +1,32 @@
 {
-  "type": "original_explanatory_diagram",
-  "not_a_paper_figure": true,
-  "source_paper": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
-  "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf",
-  "source_location": "图5（PDF第6页）；图13（PDF第12页）",
-  "caption": "主机内核仍管理文件系统元数据；下沉的是选定的数据路径语义。",
-  "interpretation": "沿着数据流找权限、顺序与持久化的责任边界，再决定哪些步骤适合下沉。",
-  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
-  "source_authors": [
-    "Wenqing Jia",
-    "Dejun Jiang",
-    "Jin Xiong"
-  ]
+  "paper": "CETOFS",
+  "excerpts": [
+    {
+      "paper": "CETOFS",
+      "figure_number": 5,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        52,
+        72,
+        295,
+        169
+      ],
+      "dimensions_px": [
+        972,
+        388
+      ],
+      "filename": "cetofs-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf",
+      "paper_url": "https://www.usenix.org/conference/fast26/presentation/jia",
+      "paper_title": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
+      "author_credit": "Wenqing Jia et al.",
+      "source_credit": "Wenqing Jia et al. · FAST 2026 · Figure 5 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/cetofs-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "沿 U-Lib、K-FS、T-Handler 三条职责读图：真正被旁路的是数据访问的主机内核路径，不是元数据和权限管理。"
+    }
+  ],
+  "rights_note": "Copyright remains with the authors. These limited excerpts accompany direct technical commentary. No blanket redistribution license is claimed."
 }

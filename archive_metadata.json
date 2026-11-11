@@ -7,9 +7,9 @@
   "prepared_on": "2026-11-11",
   "publication_status": "public_repository_archive",
   "paper_count": 10,
-  "original_diagram_count": 10,
+  "original_diagram_count": 0,
   "source_pdfs_included": false,
-  "extracted_paper_figures_included": false,
+  "extracted_paper_figures_included": true,
   "papers": {
     "CETOFS": {
       "date": "2026-11-10",
@@ -19,30 +19,11 @@
       "url": "https://www.usenix.org/conference/fast26/presentation/jia",
       "pdf": "https://www.usenix.org/system/files/fast26-jia.pdf",
       "ref": "图5（PDF第6页）；图13（PDF第12页）",
-      "boxes": [
-        [
-          "应用与用户态数据路径",
-          "读写进入 U-Lib"
-        ],
-        [
-          "RDMA 传输",
-          "请求可并行跨网传输"
-        ],
-        [
-          "存储端执行",
-          "权限检查 · 冲突排序 · 日志"
-        ],
-        [
-          "远端 NVMe",
-          "执行存储访问"
-        ]
-      ],
-      "note": "主机内核仍管理文件系统元数据；下沉的是选定的数据路径语义。",
-      "insight": "沿着数据流找权限、顺序与持久化的责任边界，再决定哪些步骤适合下沉。",
-      "checks": [
-        "分别测元数据与数据路径的 CPU 和网络成本。",
-        "覆盖共享文件、并发冲突、崩溃及恢复语义。",
-        "将单 SSD、O_DIRECT 的实验条件与实际部署逐项比较。"
+      "review_figures": [
+        {
+          "number": 5,
+          "pdf_page": 6
+        }
       ]
     },
     "PD3": {
@@ -54,30 +35,15 @@
       "pdf": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
       "repo": "https://github.com/fardatalab/PD3",
       "ref": "图3（PDF第5页）；图10（PDF第11页）",
-      "boxes": [
-        [
-          "请求抵达 DPU",
-          "解析可见的访问 key"
-        ],
-        [
-          "查询 Host View",
-          "判断主机缓存状态"
-        ],
-        [
-          "提前读取远端数据",
-          "利用应用访问前的窗口"
-        ],
-        [
-          "主机 Loading Zone",
-          "应用随后取走预取结果"
-        ]
-      ],
-      "note": "示意的是预取支路，不是完整网络时序；请求正常进入应用的路径仍存在。",
-      "insight": "关键资源是提前量，而不只是 RDMA 带宽；先测请求进入与真正访问之间的时间。",
-      "checks": [
-        "测可解析请求比例、提前量和预取准确性。",
-        "覆盖读写比例变化、突发流量与预取区容量。",
-        "单独计入 DPU 处理、主机消费和失效维护的成本。"
+      "review_figures": [
+        {
+          "number": 3,
+          "pdf_page": 5
+        },
+        {
+          "number": 18,
+          "pdf_page": 12
+        }
       ]
     },
     "BURST": {
@@ -88,30 +54,11 @@
       "url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
       "pdf": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
       "ref": "图5（PDF第6页）；表1（PDF第12页）",
-      "boxes": [
-        [
-          "现有应用接口",
-          "verbs 与连接管理"
-        ],
-        [
-          "共享资源与队列",
-          "把请求交给 worker"
-        ],
-        [
-          "用户态 Soft-RDMA",
-          "DPDK 数据路径"
-        ],
-        [
-          "普通网卡与硬件 RNIC",
-          "按互通能力处理请求"
-        ]
-      ],
-      "note": "发送与接收复制开销不同；软件双方的增强重传不能直接套用到硬件互通。",
-      "insight": "异构节点的价值要用小 RPC 的尾延迟、CPU 消耗和丢包恢复共同衡量。",
-      "checks": [
-        "分别测试软件对软件、软件对 RNIC 的互通。",
-        "同时记录 QP 数量、批大小、CPU 核数和尾延迟。",
-        "不要用元数据 GetAttr 结果替代文件读写负载。"
+      "review_figures": [
+        {
+          "number": 5,
+          "pdf_page": 6
+        }
       ]
     },
     "OneSidedMW": {
@@ -123,32 +70,13 @@
       "pdf": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
       "slides": "https://www.usenix.org/system/files/nsdi26_slides-wang-zixuan.pdf",
       "ref": "图3（PDF第6页）；图6（PDF第10页）",
-      "boxes": [
-        [
-          "计算节点发起管理操作",
-          "申请或释放远端内存"
-        ],
-        [
-          "管理 QP 与 WR 链",
-          "组织 RNIC 执行步骤"
-        ],
-        [
-          "Memory Window",
-          "绑定或解绑访问范围"
-        ],
-        [
-          "数据访问 QP",
-          "使用获授权的内存块"
-        ]
-      ],
-      "note": "CPU 仍负责初始化和资源不足等慢路径；一个块或 window 组同一时刻归一个计算节点。",
-      "insight": "减少管理 CPU 负担的同时，检查细粒度分配对吞吐、空间利用率和隔离的影响。",
-      "checks": [
-        "同时画吞吐、P99、内存占用与碎片曲线。",
-        "测试初始化、资源耗尽和回收慢路径。",
-        "RoCE 部署需要独立验证，不能直接套用 InfiniBand 结果。"
-      ],
-      "repo": "https://github.com/RussellWang9/OneSidedMW"
+      "repo": "https://github.com/RussellWang9/OneSidedMW",
+      "review_figures": [
+        {
+          "number": 5,
+          "pdf_page": 8
+        }
+      ]
     },
     "Scalio": {
       "date": "2026-11-10",
@@ -159,30 +87,15 @@
       "pdf": "https://www.usenix.org/system/files/osdi25-sun.pdf",
       "repo": "https://github.com/madsys-dev/scalio-osdi25-ae",
       "ref": "图9（PDF第8页）；图11（PDF第11页）",
-      "boxes": [
-        [
-          "读请求查缓存",
-          "热数据用 one-sided RDMA"
-        ],
-        [
-          "未命中读取 SSD",
-          "NVMe-oF target offload"
-        ],
-        [
-          "并发写仍经目标 CPU",
-          "写入与缓存更新协同"
-        ],
-        [
-          "状态与 CAS 协议",
-          "协调 refill · 写入 · 失效"
-        ]
-      ],
-      "note": "四个框表示设计责任，并非一条串行路径；前三者的并发由缓存协议约束。",
-      "insight": "缓存一致性协议比“再加一层缓存”更值得迁移；先把并发状态与失败窗口写清楚。",
-      "checks": [
-        "使用真实后端测 refill 与并发写的版本一致性。",
-        "覆盖客户端暂停、恢复和持久化边界。",
-        "主要评测用 Xeon 限制资源模拟 DPU，真实 ARM DPU 需另测。"
+      "review_figures": [
+        {
+          "number": 9,
+          "pdf_page": 8
+        },
+        {
+          "number": 11,
+          "pdf_page": 11
+        }
       ]
     },
     "DMTree": {
@@ -194,30 +107,11 @@
       "pdf": "https://www.usenix.org/system/files/fast26-wei.pdf",
       "repo": "https://github.com/muouim/DMTree",
       "ref": "图6（PDF第6页）；图14（PDF第12页）",
-      "boxes": [
-        [
-          "计算节点缓存",
-          "保留定位所需的信息"
-        ],
-        [
-          "分布 fingerprint 与叶锁",
-          "分散远端热点操作"
-        ],
-        [
-          "内存节点的连续叶节点",
-          "保留范围扫描能力"
-        ],
-        [
-          "版本校验与副本修正",
-          "处理缓存信息变化"
-        ]
-      ],
-      "note": "这是职责划分示意，不是完整协议；优化关注瓶颈节点承受的 RDMA 操作数。",
-      "insight": "全系统操作总数不是唯一目标；热点转移后还要计算节点间流量与副本维护成本。",
-      "checks": [
-        "记录内存节点和各计算节点的 RNIC 操作负荷。",
-        "将约 5.4GB 每节点缓存与指纹占用纳入预算。",
-        "覆盖缓存失效、故障重建与大对象扫描。"
+      "review_figures": [
+        {
+          "number": 9,
+          "pdf_page": 8
+        }
       ]
     },
     "FARLock": {
@@ -229,30 +123,11 @@
       "pdf": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
       "repo": "https://github.com/pdclab/farlock",
       "ref": "图4（PDF第6页）；图7（PDF第11页）",
-      "boxes": [
-        [
-          "本地与远端请求",
-          "两类访问延迟不同"
-        ],
-        [
-          "分别组织请求队列",
-          "组内交接减小协调开销"
-        ],
-        [
-          "全局 ticket 协调",
-          "约束组间服务顺序"
-        ],
-        [
-          "共享临界区",
-          "兼顾本地快路径与公平"
-        ]
-      ],
-      "note": "公平性针对所讨论的锁路径；乐观读扩展不自动具有读写公平，也未完成节点故障恢复。",
-      "insight": "应按真实的本地与远端请求比例评估，而不是只看总吞吐是否变化。",
-      "checks": [
-        "分别统计本地与远端 P99 和等待时间分布。",
-        "扫描本地访问比例与锁竞争强度。",
-        "验证客户端停顿和故障下的行为，不假定论文已解决恢复。"
+      "review_figures": [
+        {
+          "number": 4,
+          "pdf_page": 6
+        }
       ]
     },
     "FORGE": {
@@ -265,30 +140,11 @@
       "slides": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-slides.pdf",
       "repo": "https://github.com/cszjyang/forge",
       "ref": "图4（PDF第6页）；图13（PDF第12页）",
-      "boxes": [
-        [
-          "对象级 Get 与 Set",
-          "保留对象访问语义"
-        ],
-        [
-          "缓存项分组",
-          "组作为维护单位"
-        ],
-        [
-          "热度在本地暂存",
-          "接近淘汰时再合并"
-        ],
-        [
-          "成组淘汰与维护",
-          "减少频繁管理操作"
-        ]
-      ],
-      "note": "访问粒度与管理粒度分离；这不是把每次 Get 或 Set 改成批量接口。",
-      "insight": "降低元数据成本可能改变淘汰精度，必须用热度漂移和真实后端代价检验。",
-      "checks": [
-        "测试组内冷热混合与突变的访问分布。",
-        "用真实后端 miss 替代等待模拟。",
-        "增加多租户隔离与多内存节点的扩展测试。"
+      "review_figures": [
+        {
+          "number": 4,
+          "pdf_page": 6
+        }
       ]
     },
     "Juneberry": {
@@ -300,30 +156,15 @@
       "pdf": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
       "slides": "https://www.usenix.org/system/files/nsdi25_slides-wang_qing.pdf",
       "ref": "图1（PDF第5页）；图7（PDF第11页）",
-      "boxes": [
-        [
-          "客户端提交 RDMA SEND",
-          "仅适用于一类特定请求"
-        ],
-        [
-          "RNIC 接收并硬件 ACK",
-          "客户端提交路径缩短"
-        ],
-        [
-          "服务端 CPU 顺序执行",
-          "CPU 工作仍然存在"
-        ],
-        [
-          "持久化与错误语义",
-          "需额外机制或回退处理"
-        ]
-      ],
-      "note": "硬件 ACK、执行完成、持久化成功是不同事件；图中的顺序不构成通用正确性保证。",
-      "insight": "先明确客户端何时可返回，再审查错误、重试与非幂等请求，而不是仅优化往返次数。",
-      "checks": [
-        "区分请求到达、提交、执行与持久化时刻。",
-        "分别测试读多写少与写密集负载。",
-        "检查错误返回、崩溃重试和非幂等操作的回退条件。"
+      "review_figures": [
+        {
+          "number": 1,
+          "pdf_page": 5
+        },
+        {
+          "number": 7,
+          "pdf_page": 11
+        }
       ]
     },
     "FineMem": {
@@ -335,32 +176,16 @@
       "pdf": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
       "repo": "https://github.com/ADSLMemoryDisaggregation/FineMem",
       "ref": "图6（PDF第7页）；图10（PDF第11页）",
-      "boxes": [
-        [
-          "预注册 Memory Region",
-          "减少按需注册开销"
-        ],
-        [
-          "两层 bitmap 与 CAS",
-          "执行细粒度分配"
-        ],
-        [
-          "Memory Window 与 rkey",
-          "约束细粒度访问权限"
-        ],
-        [
-          "后台管理与日志恢复",
-          "回收和计算节点故障处理"
-        ]
-      ],
-      "note": "后台 CPU 仍参与 rkey 再生成与恢复；它不是内存节点复制或完整缓存一致性方案。",
-      "insight": "分配快路径之外，后台回收能否跟上释放速率，决定长期运行是否稳定。",
-      "checks": [
-        "使用混合对象尺寸测碎片与空间利用率。",
-        "测 rkey 生命周期、回收积压和故障恢复。",
-        "把高并发分配延迟与业务端到端收益分开报告。"
+      "review_figures": [
+        {
+          "number": 8,
+          "pdf_page": 8
+        }
       ]
     }
   },
-  "repository_url": "https://github.com/MingWangSong/rdma-daily"
+  "repository_url": "https://github.com/MingWangSong/rdma-daily",
+  "figure_excerpt_count": 13,
+  "revision": "technical-depth-v2",
+  "revision_date": "2026-11-12"
 }

@@ -8,26 +8,36 @@
   "retrieved_at": "2026-11-11",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures": [
     {
-      "number": 5,
-      "pdf_page": 6,
-      "title_zh": "用户态 Soft-RDMA",
-      "interpretation_zh": "图5展示共享资源管理、数据路径和连接管理。读图时应区分发送与接收路径，及软件对软件与硬件互通。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf#page=6",
-      "public_copy_included": false
-    },
-    {
-      "number": "表1",
-      "pdf_page": 12,
-      "title_zh": "企业存储元数据请求",
-      "interpretation_zh": "表1报告 GetAttr 延迟与吞吐。平均延迟和 P99.9 是不同统计量，也不代表完整文件读写负载。",
-      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf#page=12",
-      "public_copy_included": false
+      "paper": "BURST",
+      "figure_number": 5,
+      "pdf_page_1based": 6,
+      "crop_bbox_pdf_points": [
+        57,
+        74,
+        558,
+        184
+      ],
+      "dimensions_px": [
+        2004,
+        440
+      ],
+      "filename": "burst-fig5.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
+      "paper_title": "BURST: Seeking High-performance, Interoperability and Scalability in Soft-RDMA",
+      "author_credit": "Huijun Shen et al.",
+      "source_credit": "Huijun Shen et al. · NSDI 2026 · Figure 5 · PDF p. 6",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/burst-fig5.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "区分三块：内核/用户共享资源管理、DPDK数据路径、用户态CM。应用和BURST是不同进程，共享Doorbell不代表直接访问NIC硬件寄存器。"
     }
   ],
   "authors": [
@@ -48,5 +58,6 @@
     "Xingyu Zhang",
     "Xingyu Guo",
     "Guo Chen"
-  ]
+  ],
+  "review_revision": "technical-depth-v2"
 }

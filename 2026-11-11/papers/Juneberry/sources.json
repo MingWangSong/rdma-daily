@@ -5,5 +5,19 @@
   "url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
   "pdf": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
   "slides": "https://www.usenix.org/system/files/nsdi25_slides-wang_qing.pdf",
-  "ref": "图1（PDF第5页）；图7（PDF第11页）"
+  "ref": "图1（PDF第5页）；图7（PDF第11页）",
+  "review_figures": [
+    {
+      "number": 1,
+      "pdf_page": 5,
+      "path": "images/juneberry-fig1.png",
+      "source": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf#page=5"
+    },
+    {
+      "number": 7,
+      "pdf_page": 11,
+      "path": "images/juneberry-fig7.png",
+      "source": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf#page=11"
+    }
+  ]
 }

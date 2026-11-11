@@ -14,5 +14,19 @@
     "Jiasheng Hu",
     "Jialin Li",
     "Qizhen Zhang"
+  ],
+  "review_figures": [
+    {
+      "number": 3,
+      "pdf_page": 5,
+      "path": "images/pd3-fig3.png",
+      "source": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf#page=5"
+    },
+    {
+      "number": 18,
+      "pdf_page": 12,
+      "path": "images/pd3-fig18.png",
+      "source": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf#page=12"
+    }
   ]
 }

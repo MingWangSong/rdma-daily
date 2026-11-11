@@ -13,5 +13,19 @@
     "Kang Chen",
     "Jinlei Jiang",
     "Yongwei Wu"
+  ],
+  "review_figures": [
+    {
+      "number": 9,
+      "pdf_page": 8,
+      "path": "images/scalio-fig9.png",
+      "source": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=8"
+    },
+    {
+      "number": 11,
+      "pdf_page": 11,
+      "path": "images/scalio-fig11.png",
+      "source": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=11"
+    }
   ]
 }

@@ -16,54 +16,56 @@
   "code_note_zh": "本次给定资料未包含已核实的官方源码仓库；不把同名项目当作本文代码。",
   "figures": [
     {
-      "role": "architecture",
-      "number": 1,
-      "pdf_page": 5,
-      "printed_page": "1088",
-      "section": "4",
-      "title_zh": "硬件 ACK 提交与 CPU 有序执行",
-      "interpretation_zh": "RNIC 按顺序分配接收缓冲并在分配后发 ACK；CPU 也按该缓冲次序执行。这样先提交的 set 会在后续 get 返回值前执行，从而维持线性一致性。",
-      "structure_points_zh": [
-        "客户端发出 nil-externalizing 请求。",
-        "RNIC 依序分配接收缓冲，再发硬件 ACK 作为提交信号。",
-        "CPU 依序执行已接收请求。",
-        "需要返回状态的请求在执行后发软件响应。"
+      "paper": "Juneberry",
+      "figure_number": 1,
+      "pdf_page_1based": 5,
+      "crop_bbox_pdf_points": [
+        315,
+        70,
+        560,
+        317
       ],
-      "caveat_zh": "硬件 ACK 不代表请求已经执行；快路径也不适用于所有操作。耐久版本还要求持久内存及相应平台条件。",
-      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf#page=5",
-      "attribution": "Qing Wang, Jiwu Shu, Jing Wang, Yuhao Zhang; USENIX NSDI 2025",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
+      "dimensions_px": [
+        980,
+        988
+      ],
+      "filename": "juneberry-fig1.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 1 · PDF p. 5",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig1.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "注意set已ACK时引擎内的值可能尚未改变，但随后get被接收队列排在后面，执行时必然先看到set效果。图成立依赖NIC与CPU两条顺序规则，不是无条件“先应答后执行”。"
     },
     {
-      "role": "evaluation",
-      "number": 7,
-      "pdf_page": 11,
-      "printed_page": "1094",
-      "section": "6.3",
-      "title_zh": "Memcached 的中位延迟与吞吐",
-      "interpretation_zh": "四种 Twitter 负载的 set 比例不同，写密集负载获益更大；各系统峰值吞吐相同，因为瓶颈在后端存储引擎。",
-      "metrics": [
-        {
-          "value": "82.30% / 50.74% / 32.89% / 90.70% 更低",
-          "metric": "中位延迟",
-          "scope_zh": "峰值吞吐下，Cluster-12/19/27/31 相对 RawRPC",
-          "source": "§6.3, Fig.7, PDF p.11"
-        },
-        {
-          "value": "最高 32.43% / 42.86% 更低",
-          "metric": "P99 延迟",
-          "scope_zh": "写密集 Cluster-12/31 相对第二名 DeferredExec",
-          "source": "§6.3, Fig.8, PDF p.11"
-        }
+      "paper": "Juneberry",
+      "figure_number": 7,
+      "pdf_page_1based": 11,
+      "crop_bbox_pdf_points": [
+        53,
+        72,
+        295,
+        258
       ],
-      "experiment_zh": "后端 Memcached 1.6.19；四个负载 set 比例为 80%、25%、15%、94%。",
-      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf#page=11",
-      "attribution": "Qing Wang, Jiwu Shu, Jing Wang, Yuhao Zhang; USENIX NSDI 2025",
-      "local_image_path": null,
-      "public_copy_included": false,
-      "label_checked": true
+      "dimensions_px": [
+        968,
+        744
+      ],
+      "filename": "juneberry-fig7.png",
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+      "paper_url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+      "paper_title": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+      "author_credit": "Qing Wang et al.",
+      "source_credit": "Qing Wang et al. · NSDI 2025 · Figure 7 · PDF p. 11",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/juneberry-fig7.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "这是中位延迟而非P99；四个负载set比例分别为80%、25%、15%、94%。写比例越高，能提前ACK的请求越多，但峰值吞吐并未提高。"
     }
   ],
   "extra_references": [
@@ -89,14 +91,9 @@
   "paper_sha256": "d971d88e6da43eff9edbd8144eb6c7f3d46749fec22aed079029f3090a58ef4a",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已核对论文全文，未见向公众再分发全文或图片的明确许可。USENIX 的开放获取说明不等于再分发授权；作者保留著作权，示例出版许可授予 USENIX 且不可转授权。公开包仅保留原站链接、事实性元数据和原创解读。",
-    "evidence_urls": [
-      "https://www.usenix.org/conferences/author-resources/submissions-policy",
-      "https://www.usenix.org/sites/default/files/consent_author_proceedings.pdf"
-    ],
-    "checked_at": "2026-11-11"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures_public_copy_included": false,
   "figure_rights_zh": "原论文图未获明确公开再分发许可，不附裁图；以下为原图定位和原创事实解读，方便回到原文核验。",
@@ -106,5 +103,6 @@
     "public_copy_included": false,
     "pages": 61,
     "reason_zh": "已检查幻灯片，未发现明确再分发许可，公开包仅保存作者或会议原站链接。"
-  }
+  },
+  "review_revision": "technical-depth-v2"
 }

@@ -8,26 +8,62 @@
   "retrieved_at": "2026-11-11",
   "paper_local_path": null,
   "paper_redistribution": {
-    "status": "not_verified_for_public_redistribution",
+    "status": "no_general_public_republication_license_asserted",
     "public_copy_included": false,
-    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+    "reason_zh": "不重发整篇论文或幻灯片；少量原图局部仅用于直接的技术评论和研究分析，不宣称获得开放图像许可。"
   },
   "figures": [
     {
-      "number": 9,
-      "pdf_page": 8,
-      "title_zh": "缓存一致性状态机",
-      "interpretation_zh": "图9与图8的竞态一起阅读，关注 refill、写入和失效如何避免读到倒退版本。",
-      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=8",
-      "public_copy_included": false
+      "paper": "Scalio",
+      "figure_number": 9,
+      "pdf_page_1based": 8,
+      "crop_bbox_pdf_points": [
+        317,
+        268,
+        559,
+        415
+      ],
+      "dimensions_px": [
+        968,
+        588
+      ],
+      "filename": "scalio-fig9.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+      "paper_title": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+      "author_credit": "Xun Sun et al.",
+      "source_credit": "Xun Sun et al. · OSDI 2025 · Figure 9 · PDF p. 8",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/scalio-fig9.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "四个状态中最重要的是D：它保留“有旧填充者仍在写”的事实。若把D当作普通空槽，旧RDMA写可能污染新占用者；若把旧填充结束当作有效发布，又会复活旧值。"
     },
     {
-      "number": 11,
-      "pdf_page": 11,
-      "title_zh": "YCSB 与 SSD 扩展",
-      "interpretation_zh": "图11在不同 YCSB 工作负载和 SSD 数量下比较吞吐；须保留 Xeon 模拟 DPU 资源预算这一条件。",
-      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=11",
-      "public_copy_included": false
+      "paper": "Scalio",
+      "figure_number": 11,
+      "pdf_page_1based": 11,
+      "crop_bbox_pdf_points": [
+        51,
+        70,
+        560,
+        205
+      ],
+      "dimensions_px": [
+        2036,
+        540
+      ],
+      "filename": "scalio-fig11.png",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+      "paper_url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+      "paper_title": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+      "author_credit": "Xun Sun et al.",
+      "source_credit": "Xun Sun et al. · OSDI 2025 · Figure 11 · PDF p. 11",
+      "rights_note": "Original paper figure, limited excerpt for research and technical criticism; no open image license asserted.",
+      "caption_included": false,
+      "local_path": "images/scalio-fig11.png",
+      "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
+      "analysis_zh": "读多负载与写多负载应分开看。SSD数量增加时基线CPU先饱和，而卸载读延长了可扩展区间；硬件是Xeon模拟DPU。"
     }
   ],
   "authors": [
@@ -37,5 +73,6 @@
     "Kang Chen",
     "Jinlei Jiang",
     "Yongwei Wu"
-  ]
+  ],
+  "review_revision": "technical-depth-v2"
 }
