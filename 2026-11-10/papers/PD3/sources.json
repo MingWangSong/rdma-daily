@@ -1,0 +1,18 @@
+{
+  "full": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+  "conference": "NSDI 2026",
+  "org": "多伦多大学、新加坡国立大学",
+  "url": "https://www.usenix.org/conference/nsdi26/presentation/sankhe",
+  "pdf": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+  "repo": "https://github.com/fardatalab/PD3",
+  "ref": "图3（PDF第5页）；图10（PDF第11页）",
+  "authors": [
+    "Sidharth Sankhe",
+    "Felix Zhang",
+    "Umayrah Chonee",
+    "Sherman Lim",
+    "Jiasheng Hu",
+    "Jialin Li",
+    "Qizhen Zhang"
+  ]
+}

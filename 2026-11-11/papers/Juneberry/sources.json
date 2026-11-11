@@ -1,0 +1,9 @@
+{
+  "full": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+  "conference": "NSDI 2025",
+  "org": "清华大学",
+  "url": "https://www.usenix.org/conference/nsdi25/presentation/wang-qing",
+  "pdf": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+  "slides": "https://www.usenix.org/system/files/nsdi25_slides-wang_qing.pdf",
+  "ref": "图1（PDF第5页）；图7（PDF第11页）"
+}

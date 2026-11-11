@@ -1,0 +1,35 @@
+{
+  "paper": "OneSidedMW",
+  "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+  "repository_url": "https://github.com/RussellWang9/OneSidedMW",
+  "ref": "master",
+  "commit": "ababff38b283c9f3d29426f101d6dc135b34b025",
+  "status": "link_only_no_repository_wide_license",
+  "license": null,
+  "redistributable_snapshot": false,
+  "snapshot_path": null,
+  "reason": "找到与论文实现匹配的作者仓库，根目录没有 LICENSE。README 的 RedN GPLv2 致谢及子目录许可证没有明确覆盖整个仓库，因此不生成整仓可再分发快照。",
+  "evidence_urls": [
+    "https://github.com/RussellWang9/OneSidedMW/tree/ababff38b283c9f3d29426f101d6dc135b34b025",
+    "https://github.com/RussellWang9/OneSidedMW/blob/ababff38b283c9f3d29426f101d6dc135b34b025/README.md",
+    "https://github.com/RussellWang9",
+    "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan"
+  ],
+  "checks": [
+    "公开 GitHub profile 显示 Zixuan Wang / Shanghai Jiao Tong University，与论文作者一致",
+    "README 的 OneSidedMW、KVS 和 swap 实现与论文一致",
+    "GitHub repository license 字段为空；递归树未见根 LICENSE",
+    "部分许可文件：lib/libmlx5/COPYING、lib/libmlx5/debian/copyright、swap/LICENSE",
+    "未下载整仓、未执行代码或固件设置脚本"
+  ],
+  "license_files": [
+    "lib/libmlx5/COPYING",
+    "lib/libmlx5/debian/copyright",
+    "swap/LICENSE"
+  ],
+  "checked_at_utc": "2026-11-11T08:30:50Z",
+  "intended_archive_visibility": "public",
+  "published": false,
+  "archive_policy": "公开可访问不等于可以再分发；仅在显式许可覆盖将要公开的完整内容时收录源码快照。",
+  "verification_limits": "这是基于已查看文件与公开元数据的归档筛查，不是法律意见；没有宣称未发现的许可必然不存在。"
+}

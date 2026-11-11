@@ -1,0 +1,9 @@
+{
+  "full": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
+  "conference": "FAST 2026",
+  "org": "中国科学技术大学、安徽省高性能计算重点实验室、香港大学",
+  "url": "https://www.usenix.org/conference/fast26/presentation/wei",
+  "pdf": "https://www.usenix.org/system/files/fast26-wei.pdf",
+  "repo": "https://github.com/muouim/DMTree",
+  "ref": "图6（PDF第6页）；图14（PDF第12页）"
+}

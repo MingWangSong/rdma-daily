@@ -1,0 +1,17 @@
+{
+  "full": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+  "conference": "OSDI 2025",
+  "org": "清华大学、泉城实验室",
+  "url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+  "pdf": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+  "repo": "https://github.com/madsys-dev/scalio-osdi25-ae",
+  "ref": "图9（PDF第8页）；图11（PDF第11页）",
+  "authors": [
+    "Xun Sun",
+    "Mingxing Zhang",
+    "Yingdi Shan",
+    "Kang Chen",
+    "Jinlei Jiang",
+    "Yongwei Wu"
+  ]
+}

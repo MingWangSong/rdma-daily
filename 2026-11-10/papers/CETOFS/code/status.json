@@ -1,0 +1,31 @@
+{
+  "paper": "CETOFS",
+  "paper_url": "https://www.usenix.org/conference/fast26/presentation/jia",
+  "repository_url": null,
+  "ref": null,
+  "commit": null,
+  "status": "official_code_not_found",
+  "license": null,
+  "redistributable_snapshot": false,
+  "snapshot_path": null,
+  "reason": "截至核验时，官方会议页、论文中的代码/仓库线索及 GitHub 仓库检索未找到 CETOFS 本身的公开代码；不能据此断言作者没有发布代码。",
+  "evidence_urls": [
+    "https://www.usenix.org/conference/fast26/presentation/jia",
+    "https://www.usenix.org/system/files/fast26-jia.pdf"
+  ],
+  "searches": [
+    "CETOFS code github",
+    "\"CETOFS\" \"github.com\"",
+    "GitHub repository search: CETOFS"
+  ],
+  "checks": [
+    "会议页未列出代码链接",
+    "论文未发现 source code / artifact / available 声明；GitHub 链接是依赖或参考文献",
+    "GitHub 仓库名/描述检索为空"
+  ],
+  "checked_at_utc": "2026-11-11T08:30:50Z",
+  "intended_archive_visibility": "public",
+  "published": false,
+  "archive_policy": "公开可访问不等于可以再分发；仅在显式许可覆盖将要公开的完整内容时收录源码快照。",
+  "verification_limits": "这是基于已查看文件与公开元数据的归档筛查，不是法律意见；没有宣称未发现的许可必然不存在。"
+}

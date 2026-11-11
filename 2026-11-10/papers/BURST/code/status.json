@@ -1,0 +1,33 @@
+{
+  "paper": "BURST",
+  "paper_url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
+  "repository_url": null,
+  "ref": null,
+  "commit": null,
+  "status": "official_code_not_found",
+  "license": null,
+  "redistributable_snapshot": false,
+  "snapshot_path": null,
+  "reason": "截至核验时，官方会议页、官方论文与作者单位报道未找到 BURST 论文实现的公开仓库。GitHub 同名 RDMA 文件传输项目不能作为该论文官方代码。",
+  "evidence_urls": [
+    "https://www.usenix.org/conference/nsdi26/presentation/shen",
+    "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+    "https://csee.hnu.edu.cn/info/1060/13877.htm"
+  ],
+  "searches": [
+    "\"BURST\" \"Soft-RDMA\" github",
+    "\"BURST\" \"Soft-RDMA\" \"code\"",
+    "GitHub repository search: BURST RDMA"
+  ],
+  "checks": [
+    "会议页未列出代码链接",
+    "论文未发现 source code / artifact 声明",
+    "湖南大学作者单位报道未给代码地址",
+    "dyx-ai/rdma-burst 描述为单操作传输大文件的工具，不是可确认的论文实现"
+  ],
+  "checked_at_utc": "2026-11-11T08:30:50Z",
+  "intended_archive_visibility": "public",
+  "published": false,
+  "archive_policy": "公开可访问不等于可以再分发；仅在显式许可覆盖将要公开的完整内容时收录源码快照。",
+  "verification_limits": "这是基于已查看文件与公开元数据的归档筛查，不是法律意见；没有宣称未发现的许可必然不存在。"
+}

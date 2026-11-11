@@ -1,0 +1,29 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "BURST: Seeking High-performance, Interoperability and Scalability in Soft-RDMA",
+  "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+  "source_location": "图5（PDF第6页）；表1（PDF第12页）",
+  "caption": "发送与接收复制开销不同；软件双方的增强重传不能直接套用到硬件互通。",
+  "interpretation": "异构节点的价值要用小 RPC 的尾延迟、CPU 消耗和丢包恢复共同衡量。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
+  "source_authors": [
+    "Huijun Shen",
+    "Zelong Yue",
+    "Jian Yang",
+    "Zhuo Jiang",
+    "Lang An",
+    "Yulin Chen",
+    "Yong Zhang",
+    "Luochangqi Ding",
+    "Xiaolong Zhong",
+    "Zhihong Wang",
+    "Jie Ding",
+    "Hongyu Wu",
+    "Jianxi Ye",
+    "Xijin Yin",
+    "Xingyu Zhang",
+    "Xingyu Guo",
+    "Guo Chen"
+  ]
+}

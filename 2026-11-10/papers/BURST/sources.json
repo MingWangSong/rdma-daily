@@ -1,0 +1,27 @@
+{
+  "full": "BURST: Seeking High-performance, Interoperability and Scalability in Soft-RDMA",
+  "conference": "NSDI 2026",
+  "org": "湖南大学、字节跳动",
+  "url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
+  "pdf": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+  "ref": "图5（PDF第6页）；表1（PDF第12页）",
+  "authors": [
+    "Huijun Shen",
+    "Zelong Yue",
+    "Jian Yang",
+    "Zhuo Jiang",
+    "Lang An",
+    "Yulin Chen",
+    "Yong Zhang",
+    "Luochangqi Ding",
+    "Xiaolong Zhong",
+    "Zhihong Wang",
+    "Jie Ding",
+    "Hongyu Wu",
+    "Jianxi Ye",
+    "Xijin Yin",
+    "Xingyu Zhang",
+    "Xingyu Guo",
+    "Guo Chen"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "full": "FineMem: Breaking the Allocation Overhead vs. Memory Waste Dilemma in Fine-Grained Disaggregated Memory Management",
+  "conference": "OSDI 2025",
+  "org": "中国科学技术大学、安徽省高性能计算重点实验室、Google",
+  "url": "https://www.usenix.org/conference/osdi25/presentation/wang-xiaoyang",
+  "pdf": "https://www.usenix.org/system/files/osdi25-wang-xiaoyang.pdf",
+  "repo": "https://github.com/ADSLMemoryDisaggregation/FineMem",
+  "ref": "图6（PDF第7页）；图10（PDF第11页）"
+}

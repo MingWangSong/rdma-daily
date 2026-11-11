@@ -1,0 +1,19 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "PD3: Prefetching Data with DPUs for Disaggregated Memory",
+  "source_url": "https://www.usenix.org/system/files/nsdi26-sankhe.pdf",
+  "source_location": "图3（PDF第5页）；图10（PDF第11页）",
+  "caption": "示意的是预取支路，不是完整网络时序；请求正常进入应用的路径仍存在。",
+  "interpretation": "关键资源是提前量，而不只是 RDMA 带宽；先测请求进入与真正访问之间的时间。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
+  "source_authors": [
+    "Sidharth Sankhe",
+    "Felix Zhang",
+    "Umayrah Chonee",
+    "Sherman Lim",
+    "Jiasheng Hu",
+    "Jialin Li",
+    "Qizhen Zhang"
+  ]
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="390" viewBox="0 0 1160 390" role="img" aria-labelledby="title desc">
+<title id="title">Scalio 原创机制解读示意</title>
+<desc id="desc">四个框表示设计责任，并非一条串行路径；前三者的并发由缓存协议约束。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#7a8896"/></marker></defs>
+<rect width="1160" height="390" rx="16" fill="#fafbf9"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+<text x="32" y="46" font-size="23" font-weight="700" fill="#182b40">Scalio 的核心设计</text>
+<text x="1126" y="45" text-anchor="end" font-size="17" fill="#657482">原创概念示意 · 非论文原图</text>
+<rect x="32" y="91" width="248" height="168" rx="10" fill="#e9eff7"/>
+<text x="51" y="123" font-size="16" fill="#617280">01</text>
+<rect x="314" y="91" width="248" height="168" rx="10" fill="#e6f3ee"/>
+<text x="333" y="123" font-size="16" fill="#617280">02</text>
+<rect x="596" y="91" width="248" height="168" rx="10" fill="#edf0fb"/>
+<text x="615" y="123" font-size="16" fill="#617280">03</text>
+<rect x="878" y="91" width="248" height="168" rx="10" fill="#fbf0e5"/>
+<text x="897" y="123" font-size="16" fill="#617280">04</text>
+<text x="32" y="307" font-size="18" fill="#43576b">四个框表示设计责任，并非一条串行路径；前三者的并发由缓存协议约束。</text>
+<text x="51" y="157" font-size="20" font-weight="600" fill="#182b40">读请求查缓存</text><text x="51" y="217" font-size="16" fill="#43576b">热数据用 one-sided RDMA</text><text x="333" y="157" font-size="20" font-weight="600" fill="#182b40">未命中读取 SSD</text><text x="333" y="217" font-size="16" fill="#43576b">NVMe-oF target offload</text><text x="615" y="157" font-size="20" font-weight="600" fill="#182b40">并发写仍经目标 CPU</text><text x="615" y="217" font-size="16" fill="#43576b">写入与缓存更新协同</text><text x="897" y="157" font-size="20" font-weight="600" fill="#182b40">状态与 CAS 协议</text><text x="897" y="217" font-size="16" fill="#43576b">协调 refill · 写入 · 失效</text></g></svg>

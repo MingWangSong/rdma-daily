@@ -1,0 +1,10 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "DMTree: Towards Efficient Tree Indexing on Disaggregated Memory via Compute-side Collaborative Design",
+  "source_url": "https://www.usenix.org/system/files/fast26-wei.pdf",
+  "source_location": "图6（PDF第6页）；图14（PDF第12页）",
+  "caption": "这是职责划分示意，不是完整协议；优化关注瓶颈节点承受的 RDMA 操作数。",
+  "interpretation": "全系统操作总数不是唯一目标；热点转移后还要计算节点间流量与副本维护成本。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+}

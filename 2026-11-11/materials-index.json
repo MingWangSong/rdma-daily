@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-11",
+  "papers": [
+    {
+      "paper_id": "DMTree",
+      "metadata": "papers/DMTree/materials.json"
+    },
+    {
+      "paper_id": "FARLock",
+      "metadata": "papers/FARLock/materials.json"
+    },
+    {
+      "paper_id": "FORGE",
+      "metadata": "papers/FORGE/materials.json"
+    },
+    {
+      "paper_id": "Juneberry",
+      "metadata": "papers/Juneberry/materials.json"
+    },
+    {
+      "paper_id": "FineMem",
+      "metadata": "papers/FineMem/materials.json"
+    }
+  ],
+  "public_redistribution_checked": true,
+  "paper_pdfs_included": 0,
+  "original_figures_included": 0,
+  "licensed_source_subsets_included": 2
+}

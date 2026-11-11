@@ -1,0 +1,13 @@
+{
+  "full": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
+  "conference": "FAST 2026",
+  "org": "中国科学院计算技术研究所处理器全国重点实验室、中国科学院大学",
+  "url": "https://www.usenix.org/conference/fast26/presentation/jia",
+  "pdf": "https://www.usenix.org/system/files/fast26-jia.pdf",
+  "ref": "图5（PDF第6页）；图13（PDF第12页）",
+  "authors": [
+    "Wenqing Jia",
+    "Dejun Jiang",
+    "Jin Xiong"
+  ]
+}

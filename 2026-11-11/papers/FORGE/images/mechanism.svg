@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="390" viewBox="0 0 1160 390" role="img" aria-labelledby="title desc">
+<title id="title">FORGE 原创机制解读示意</title>
+<desc id="desc">访问粒度与管理粒度分离；这不是把每次 Get 或 Set 改成批量接口。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10Z" fill="#7a8896"/></marker></defs>
+<rect width="1160" height="390" rx="16" fill="#fafbf9"/>
+<g font-family="Noto Sans CJK SC,Microsoft YaHei,PingFang SC,sans-serif">
+<text x="32" y="46" font-size="23" font-weight="700" fill="#182b40">FORGE 的核心设计</text>
+<text x="1126" y="45" text-anchor="end" font-size="17" fill="#657482">原创概念示意 · 非论文原图</text>
+<rect x="32" y="91" width="248" height="168" rx="10" fill="#e9eff7"/>
+<text x="51" y="123" font-size="16" fill="#617280">01</text>
+<rect x="314" y="91" width="248" height="168" rx="10" fill="#e6f3ee"/>
+<text x="333" y="123" font-size="16" fill="#617280">02</text>
+<rect x="596" y="91" width="248" height="168" rx="10" fill="#edf0fb"/>
+<text x="615" y="123" font-size="16" fill="#617280">03</text>
+<rect x="878" y="91" width="248" height="168" rx="10" fill="#fbf0e5"/>
+<text x="897" y="123" font-size="16" fill="#617280">04</text>
+<text x="32" y="307" font-size="18" fill="#43576b">访问粒度与管理粒度分离；这不是把每次 Get 或 Set 改成批量接口。</text>
+<text x="51" y="157" font-size="20" font-weight="600" fill="#182b40">对象级 Get 与 Set</text><text x="51" y="217" font-size="16" fill="#43576b">保留对象访问语义</text><text x="333" y="157" font-size="20" font-weight="600" fill="#182b40">缓存项分组</text><text x="333" y="217" font-size="16" fill="#43576b">组作为维护单位</text><text x="615" y="157" font-size="20" font-weight="600" fill="#182b40">热度在本地暂存</text><text x="615" y="217" font-size="16" fill="#43576b">接近淘汰时再合并</text><text x="897" y="157" font-size="20" font-weight="600" fill="#182b40">成组淘汰与维护</text><text x="897" y="217" font-size="16" fill="#43576b">减少频繁管理操作</text></g></svg>

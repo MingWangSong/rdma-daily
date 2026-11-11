@@ -1,0 +1,16 @@
+{
+  "full": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+  "conference": "NSDI 2026",
+  "org": "上海交通大学",
+  "url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+  "pdf": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+  "slides": "https://www.usenix.org/system/files/nsdi26_slides-wang-zixuan.pdf",
+  "ref": "图3（PDF第6页）；图6（PDF第10页）",
+  "repo": "https://github.com/RussellWang9/OneSidedMW",
+  "authors": [
+    "Zixuan Wang",
+    "Jinyu Gu",
+    "Xingda Wei",
+    "Yubin Xia"
+  ]
+}

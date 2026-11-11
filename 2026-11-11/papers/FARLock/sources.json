@@ -1,0 +1,9 @@
+{
+  "full": "FARLock: Asymmetric RDMA Locking Made Fair",
+  "conference": "OSDI 2026",
+  "org": "Simon Fraser University",
+  "url": "https://www.usenix.org/conference/osdi26/presentation/hu-yuehao",
+  "pdf": "https://www2.cs.sfu.ca/~tzwang/farlock.pdf",
+  "repo": "https://github.com/pdclab/farlock",
+  "ref": "图4（PDF第6页）；图7（PDF第11页）"
+}

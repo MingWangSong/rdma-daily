@@ -1,0 +1,1023 @@
+{
+  "archive_title": "RDMA 与分布式存储论文早报 2026-11-10 与 2026-11-11",
+  "prepared_on": "2026-11-11",
+  "publication_status": "public_repository_archive",
+  "scope": "Original Chinese analysis, original mechanism diagrams, source/figure references, and two curated licensed source subsets. No original paper PDFs, slide PDFs, text extracts, or paper figure crops.",
+  "paper_count": 10,
+  "html_pages": 3,
+  "original_diagrams": 10,
+  "code_subsets": [
+    "FARLock GPL-3.0-or-later",
+    "FineMem BSD-3-Clause"
+  ],
+  "quality_notes": "PNG diagrams visually inspected; internal HTML links checked. Full browser desktop/mobile rendering could not be completed because local previews are not allowed in this environment.",
+  "files_count_excluding_manifest_and_checksums": 201,
+  "files": [
+    {
+      "path": "2026-11-10/index.html",
+      "bytes": 22814,
+      "sha256": "4f93fd5b6735bf26736e6a440746b95da6af5a5ae22ca3adc98e900a194576b4"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/README.md",
+      "bytes": 870,
+      "sha256": "02e233c584caa5ef425edc58e76974e49a150c81bfc60b76031a9e1b028ca73d"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/code/README.md",
+      "bytes": 1288,
+      "sha256": "e9427b98d3782effc32431431a3e7e3f4288b48c09ea912ac970a167b248dff1"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/code/status.json",
+      "bytes": 1503,
+      "sha256": "f75e2b7abd441ca3743436bfdfe00989670cdf075e3e4d8839ec8753d95db850"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/images/attribution.json",
+      "bytes": 1024,
+      "sha256": "eff5ec3d2e0d26048b029f02bdddecf14364ea6c4ff8f7f7f59616bb855f99ea"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/images/mechanism.png",
+      "bytes": 141306,
+      "sha256": "bb536614d3822042691ede41b8ee5fc4bc5f9d89924915d3e614a5526c3b126f"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/images/mechanism.svg",
+      "bytes": 2538,
+      "sha256": "8fa2056b480fdae86b8178831654e9641856cc16a777be88f49a2381ea923260"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/materials.json",
+      "bytes": 1784,
+      "sha256": "6610de53b57c57ea25018d70848d02542ecd386949df488a60411a6722df9332"
+    },
+    {
+      "path": "2026-11-10/papers/BURST/sources.json",
+      "bytes": 683,
+      "sha256": "6483c5fe80fdcb2b2dabe27cb07ef69947cffded0cd3678ca529274a23306f6d"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/README.md",
+      "bytes": 942,
+      "sha256": "94e8bf1390c6b3f8259cd4b1d80d0a06906b2dc0b75d2d17989425e5de151711"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/code/README.md",
+      "bytes": 1172,
+      "sha256": "b126c264ca17487bf27aa1fa2e82cb55f128eb7bc8d61896755d4bffd690f9d3"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/code/status.json",
+      "bytes": 1353,
+      "sha256": "2991b43f6d11eed1893b440dabd5a300bf50bb628fc893089ff48f1cbcf95589"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/images/attribution.json",
+      "bytes": 777,
+      "sha256": "7f3f8f7fd53f316c28dfa135781bd004eeed7a4f4c73e3084ebfdd5790a13b0b"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/images/mechanism.png",
+      "bytes": 134357,
+      "sha256": "dac134e094e90da447aea486013b1f4e818e33242e1ca05f859bc727aa2a59bf"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/images/mechanism.svg",
+      "bytes": 2513,
+      "sha256": "adc32bc8ba2077f3f0846ba1bcc869c1fc8ab514234149ace5579b8d704e9ffe"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/materials.json",
+      "bytes": 1614,
+      "sha256": "5bd321b2ea3e2c0d0505349c06d7378a0165973b77b1b6f69bd6ba9005a03f41"
+    },
+    {
+      "path": "2026-11-10/papers/CETOFS/sources.json",
+      "bytes": 501,
+      "sha256": "0e913c5b2162b55575398647a84e8c3ea007196edf7db94fa25ded74d7132299"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/README.md",
+      "bytes": 905,
+      "sha256": "a269f9eb24417f4e8c54483ff572c81c0aef4ac467389adc9d8719e5899920fa"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/code/README.md",
+      "bytes": 1634,
+      "sha256": "20e65f8a99741a8ac293817d64aa4f0c7ca35d8e2c408c4783faa99f6a1f172b"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/code/status.json",
+      "bytes": 1874,
+      "sha256": "153996b138c4c2c6d00902906d2657bfee9659f703833f00d5d5cfdad9dd186b"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/images/attribution.json",
+      "bytes": 838,
+      "sha256": "289fb8847199f6d4fcd330a979e8b4bcfb1e471fff336ae2c8f61071518eb05c"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/images/mechanism.png",
+      "bytes": 156001,
+      "sha256": "b16d267a4cf6f40c52daae0e5f3196d19d69a3d499e327056e45a4299efead90"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/images/mechanism.svg",
+      "bytes": 2584,
+      "sha256": "62e108821e064f623096b0cd14b6dab69a1d107fe70e69b4b33de7d58300e8f6"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/materials.json",
+      "bytes": 1586,
+      "sha256": "b4a7e0c3c45185895942ccbeeb85dc89bb22d2ec7dc72b349a2a78f182337fb5"
+    },
+    {
+      "path": "2026-11-10/papers/OneSidedMW/sources.json",
+      "bytes": 606,
+      "sha256": "9df9a13417cf961d2207e95b3858410c0774beb53a2b80494a41b040dd959d4b"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/README.md",
+      "bytes": 892,
+      "sha256": "5128f17a1b0ee68cda1fe352a3d27acd51c1babdfedba4b5dfdcd243d54421b4"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/code/README.md",
+      "bytes": 1569,
+      "sha256": "365e57c241c0a82628634f8ea81ccfc0dd93170239026d268ffab892ab65b692"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/code/status.json",
+      "bytes": 2260,
+      "sha256": "3a0305a221881c5068e18469853725d226736ec359b5f4bbd61e82fcb3e4ca70"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/images/attribution.json",
+      "bytes": 850,
+      "sha256": "21ea4fc9e8317ae84a85cc36c0091c22ef151e55ab78d7834218852ed8781d7b"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/images/mechanism.png",
+      "bytes": 140669,
+      "sha256": "83fa3853e50a9c15dd0f87205cae3516bdf6f67ed8076281b48174c03e7a2094"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/images/mechanism.svg",
+      "bytes": 2547,
+      "sha256": "6a5f0482bb7c6689cdd6ccd1c465bc0884dd12670957215f749de5c039ec731e"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/materials.json",
+      "bytes": 1586,
+      "sha256": "e541661842ff5046f171c579e9502cd2f5e5c7bbb8360328034b72933957cae1"
+    },
+    {
+      "path": "2026-11-10/papers/PD3/sources.json",
+      "bytes": 555,
+      "sha256": "1653e2aa43413e3902ef7b1ae0bdbd0f55b1077560b285709081317551ccc979"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/README.md",
+      "bytes": 899,
+      "sha256": "315c5e7fd7ccdfb447038a925be64b452d2f5cd2dae180314d1dd07e0cf041ea"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/code/README.md",
+      "bytes": 1512,
+      "sha256": "07e71075bb2e34550d75812a36cf61b17185a57631bec0cd9406576128073245"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/code/status.json",
+      "bytes": 1895,
+      "sha256": "ea0411f307417c1e50309e2e26ee108bf8b72e1370209754a7879f09c0b1d5ed"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/images/attribution.json",
+      "bytes": 846,
+      "sha256": "d95a84243e9e5e28ac873f7998ce98e27eef7261077dc66e922d3ad67459d7db"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/images/mechanism.png",
+      "bytes": 149785,
+      "sha256": "bbfad636145313288bd6b4641e8822e5ca2f5b23ff4ee1859fe66d847e9ec561"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/images/mechanism.svg",
+      "bytes": 2257,
+      "sha256": "55137ef11c7981b44816118e18b60620dbb1ab09ee125dfdba8e78e0c294ff33"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/materials.json",
+      "bytes": 1536,
+      "sha256": "9cbaa271b60445b432866551d1a7865886725d614bfecabb9d63ff352767e1f8"
+    },
+    {
+      "path": "2026-11-10/papers/Scalio/sources.json",
+      "bytes": 546,
+      "sha256": "b7cd516c6120408cc102f0ed3ed71bd9cace39a80070a006dc867af139a5929e"
+    },
+    {
+      "path": "2026-11-11/index.html",
+      "bytes": 24014,
+      "sha256": "6b0d4b125b11bcb1bca5eda50900bdbd25558f760eb10fffcad1f9e78f9f51cc"
+    },
+    {
+      "path": "2026-11-11/materials-index.json",
+      "bytes": 647,
+      "sha256": "91c96b8fe355c4a317f9d22b5d8beda45e4d6a3e2ecf30a5111785a9d8903c6d"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/README.md",
+      "bytes": 3048,
+      "sha256": "a74a2d107151f4b1a7f10623602c181a7eaa69f16ffced3b7889285c971e54ad"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/code/README.md",
+      "bytes": 185,
+      "sha256": "1ec4386273ee8e0c426452614a4f769959c1d1a87dc31dd44aeba1a4cb10f4a6"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/images/attribution.json",
+      "bytes": 730,
+      "sha256": "cbff38c4e163fa7908622cb8aef3fbeeffc59b32a614dc3702e4c79f196ca860"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/images/mechanism.png",
+      "bytes": 147932,
+      "sha256": "24d088af26bde0f8c6dde94eab5075da3c1676d4d0d54e900d2b76e335a18818"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/images/mechanism.svg",
+      "bytes": 2268,
+      "sha256": "52d7f4e99d9f0f014a2ec49819a350cff22ebf5f2e1420af965c062417a2cd3b"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/materials.json",
+      "bytes": 5360,
+      "sha256": "9c6845c5b143ff1daf23444fe354a81baab0c5cbe0e0cd1476def53ea85566ea"
+    },
+    {
+      "path": "2026-11-11/papers/DMTree/sources.json",
+      "bytes": 477,
+      "sha256": "a7cf08fa70bbcda46911e1e8b0efd7d1890076dc1e1676eb375512bd5035c367"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/CODE-SNAPSHOT.md",
+      "bytes": 759,
+      "sha256": "6cc2818e043849a6c5fc9309a51932ee68859e2cfd3765576539ad675962aed9"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/README.md",
+      "bytes": 3254,
+      "sha256": "4b4b1fa387011ceae1b8e68079c9d54da5531bb3283126a2c9ff5537ebfa12e2"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/.gitignore",
+      "bytes": 9,
+      "sha256": "e2eb93a61ffd7877ea5c751abcb3a618e8e2e9a2073a27f66d4114fe10819f86"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/README.md",
+      "bytes": 3102,
+      "sha256": "06407a61e8d1654102d0876585e1a9e2082e0e06ede65f20f32c5cd2e4e0ed9c"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/CMakeLists.txt",
+      "bytes": 4055,
+      "sha256": "d13a0c954d19f418a3774927b259173224d06ea527b8b4f89385384a031d9bb9"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/a_lock.cc",
+      "bytes": 1488,
+      "sha256": "9758a497494f57e5c4ac967fe1837b22eb8dbb0a745d190787f29d06a6a2fe08"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/farlock.cc",
+      "bytes": 1486,
+      "sha256": "a9a3f7103116603bf1aab891461a58731cf3f26be26301593a2fbe97b951c664"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/farlockg.cc",
+      "bytes": 1488,
+      "sha256": "2a473630960d9cd3f833831c24ecc7e14ab42544fb91f330558e95c58de79fe5"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/rdma_mcs_lock.cc",
+      "bytes": 1516,
+      "sha256": "030313a7c1b3a1bc8ff4ce7ba81204a7f07038bdd4e730440178870e441ce54e"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/rdma_spin_lock.cc",
+      "bytes": 1518,
+      "sha256": "3037dd47fdaf8dfc957d94b43d321f316ef0029f6a4489b7e8a122b7fa704e94"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/benchmark/rdma_ticket_lock.cc",
+      "bytes": 1566,
+      "sha256": "ed2db956a5ac6aef5b7ccc0eca55e78023bf7fb37de745cbe14f48334e25b151"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/config/config.json",
+      "bytes": 920,
+      "sha256": "abdce4fbf3b31fc50e33c8a7808bfdc3b61f841f51c5209071962da04b626434"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/benchmark/benchmark.h",
+      "bytes": 20485,
+      "sha256": "3822769b9eeed7c03a117697c5db31fdda3ef176a94a71389965278bd5098e03"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/benchmark/common.h",
+      "bytes": 1782,
+      "sha256": "0459ba8bafb64a6d92f6d3b80c5c7d9b796a858cef588c466a25fb47e06c896c"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/benchmark/config.h",
+      "bytes": 6119,
+      "sha256": "98e5848a13c6a08cdaf9494ac0814349bac6febef605b0c6480ad6e0f03b1963"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/benchmark/result.h",
+      "bytes": 4866,
+      "sha256": "4964d3155882475352215a736261e44c0d228dad51272a403fe56db7ac7b4afd"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/a_lock_wrap.h",
+      "bytes": 2209,
+      "sha256": "c9a1da9062dcfed715d1205e0a711d926571a92729fe698043ab63f4182ab05e"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/common.h",
+      "bytes": 2472,
+      "sha256": "32ebe88f2cc118f972f42338df863d367cc6b415316aaf6be749058b7c8b9b51"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/farlock.h",
+      "bytes": 12906,
+      "sha256": "fe3e7f9a22285eb2396355853ad44722af7e61f96b42c2b616281c43e07427cc"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/farlockg.h",
+      "bytes": 16142,
+      "sha256": "d4419e95e05f8d63d36245a6054150b890b251123648641de1ebe933bdf70b92"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/rdma_mcs_lock_wrap.h",
+      "bytes": 2268,
+      "sha256": "90e07e9b65a0a13d177dc4b6b6ab47c0c8892b2a8335661601c349bd82dc4230"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/rdma_spin_lock_wrap.h",
+      "bytes": 2198,
+      "sha256": "04507a70457342a03715cf239626de87601ed83c743b1d639478e7cac17d09ce"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/locks/rdma_ticket_lock.h",
+      "bytes": 2905,
+      "sha256": "86815dc408a6b9c7a63fb64001d0e37c4c6373f9dbf629693b41b9b4d2e13625"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/logging/logging.h",
+      "bytes": 2907,
+      "sha256": "903d22e0f09017803e54b19c700d565679f661748a302c1d38e438363dd4c28e"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/connector.h",
+      "bytes": 7039,
+      "sha256": "0b038c4ada3046aceae3da9310b160785ee86e95c7192836d76002cba96cfb79"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/listener.h",
+      "bytes": 10793,
+      "sha256": "10d4eab42b219322820256d51a978aee0edbe7abbf770d47ce3a813b01c56ca7"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/manager.h",
+      "bytes": 17030,
+      "sha256": "941725098b93ca9f91589277f68018390e8d27bb1e3d88b3a758e1f257d859fa"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/memory_pool.h",
+      "bytes": 20831,
+      "sha256": "e50a65304e107483b4d6b05b7f9165ac232a779ef0e0d86bd0a7a26f0a1ae8a1"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/pointer.h",
+      "bytes": 2966,
+      "sha256": "d917ba6985c644c18620bdc5b146fcc89f267237b6367ab9c5e04a3c0e4914fe"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/include/rdma/utils.h",
+      "bytes": 8637,
+      "sha256": "f8aba453d2fa3c8b617b859ff60cf63dc5f308c3f1a1e74f7d7d4f3e24d53b17"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/scripts/cloudlab.sh",
+      "bytes": 2019,
+      "sha256": "dffa24ccae71b0e8d2c1f3044d0d0c88c6398df282539ec8aeea6ce0a63724d5"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code/scripts/test.py",
+      "bytes": 10646,
+      "sha256": "dcd79b47d538cefe8ba2f02bb24b95adef4d05bbbed71e5ae2a4703afd014749"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code-manifest.json",
+      "bytes": 27401,
+      "sha256": "7768e0d95464c47346cc9e1cd4bd3408ad8083e9341cb06f9eaf92266e3a5d4a"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/code-source-subset.tar.gz",
+      "bytes": 45979,
+      "sha256": "aa6ac22468fa82c75b3368e81ed8194b2d7c506d5ef4316bbc145c147f0a0483"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/images/attribution.json",
+      "bytes": 662,
+      "sha256": "efe3c7a6250fd8614d746619832f27973d6f7d78519ea07af00a31e9f4775493"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/images/mechanism.png",
+      "bytes": 148248,
+      "sha256": "076d37dc9b25671b23e31be4097d5cdd035a2957244ab6ecc17cf9c08ec181f3"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/images/mechanism.svg",
+      "bytes": 2595,
+      "sha256": "7b3585572672ff86d5dcee8dda1f7df576a0d977592eee13cc7dc85f7b8f54a1"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/materials.json",
+      "bytes": 5741,
+      "sha256": "2e5c911f370862b4ec456c41f5b8ce72fb6cb255f9e931e570d44c10d7e6c417"
+    },
+    {
+      "path": "2026-11-11/papers/FARLock/sources.json",
+      "bytes": 358,
+      "sha256": "aaa43142f477337c472b351324bedab070587050aa53b524cbde2a4e044d4867"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/README.md",
+      "bytes": 3383,
+      "sha256": "2ddcd3e6fe058922763d44c986b9cbc98114699b4c368b7ba276908aeec2e39f"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/code/README.md",
+      "bytes": 216,
+      "sha256": "37590a1bd8114d0b315a6280fe47724788a8ece02b592e333d2e0ea8df85e096"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/images/attribution.json",
+      "bytes": 714,
+      "sha256": "fceb16ece9ac44df3bb6ac7916b93d2b49ce2c28d1a45cc28809926985b8b636"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/images/mechanism.png",
+      "bytes": 141036,
+      "sha256": "fbdc5a9cc939457ea901f83efba70c60b7e12e39fe96105bff766d30c4e35f65"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/images/mechanism.svg",
+      "bytes": 2213,
+      "sha256": "e746da5a3506be9faadb7037efafaa2b1e7c785ae20443814b30136c74f5ab76"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/materials.json",
+      "bytes": 5861,
+      "sha256": "b2d977572709fa00961b97c16b4f56f9e9be69525fdd9014e23c128ed15e9f9c"
+    },
+    {
+      "path": "2026-11-11/papers/FORGE/sources.json",
+      "bytes": 511,
+      "sha256": "fb243714d23378cfafe1221d5310f9e08223dcb2a20df3b309f4ee44c6baebe7"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/CODE-SNAPSHOT.md",
+      "bytes": 670,
+      "sha256": "1e3dabe3d475dbc11d7007d373bad6405b7fb7d828650874b59b997222ccc0ca"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/README.md",
+      "bytes": 3770,
+      "sha256": "6576b7e17c145c98f57e12cebcff7f249907ce6e55df1f232fc73a3c2f14a565"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/.gitignore",
+      "bytes": 42,
+      "sha256": "392914f57325d883f639416342ff3a08ed5c11cda7cccc914e5df214f2dc6cdf"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/CMakeLists.txt",
+      "bytes": 881,
+      "sha256": "f65406572a585afe83d9edb8ac6e8615b275c3262a09ef677d1567cd76fb8028"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/LICENSE",
+      "bytes": 1507,
+      "sha256": "7bd85279b5b3d3880befe0d3c4a1d9bdebd735182d9730621f5da075587140c1"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/README.md",
+      "bytes": 4955,
+      "sha256": "37d8ea40a368dadd54f7d978e77290225925cf05643ce85c8501b266a83e9e5a"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/README.md",
+      "bytes": 3974,
+      "sha256": "ddfc60ec109c57dddbb7f571f4e4016a3d253740878fc9dfd02e1d7e28179ff0"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/draw_remote_mem_usage.py",
+      "bytes": 2388,
+      "sha256": "44c7d09e64513c2fedd3ae58e3110474767a56fa845c80e0951ab993c3956ae2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/draw_throughput_improvement_cdf.py",
+      "bytes": 1147,
+      "sha256": "a6f453d1535669715d6b4e9847e15e5f280487224c228c6965764a2d129637c0"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/run.sh",
+      "bytes": 431,
+      "sha256": "62e32a9a439515c9442288f603da5aa58361371217884646d0ee78b5c9069a3c"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/run_large_trace.py",
+      "bytes": 2566,
+      "sha256": "a0ba0d18c37ff5e0246703eff1f4e105fcba87018df0c17f5ed2c8f6cf9b25b7"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/run_small_traces.py",
+      "bytes": 2655,
+      "sha256": "d5029ea74ffe9e8f70b81193116bdb3bb4bbdc33215048b5b0e996782176f7b4"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/simulation.py",
+      "bytes": 19474,
+      "sha256": "3fff6b3aad175e673020108bebefc2ae3fca1cf8a672a8ca69b786dc937fd931"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/simulation_one_time.py",
+      "bytes": 2836,
+      "sha256": "f34c857ca5ecb58e751a61cd257ab86b722b928511d0a50fddc12a670a6d7544"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/applications/Swap_FineMem_Sim/workloads_simu.py",
+      "bytes": 4402,
+      "sha256": "ddb02b056b756f6740acb6d5d44701522fffa4206583acb972b33189924e8a17"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config.json",
+      "bytes": 118,
+      "sha256": "43bd23be6c6e74f26ee6baf182e5e865df97a1a7eb60618764a835b294ca2e44"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_1.json",
+      "bytes": 116,
+      "sha256": "9a606c46726e8bc60727238084bf9e807536c0017970a0c19c975963ea8fedcd"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_2.json",
+      "bytes": 138,
+      "sha256": "8ad17284268c788096d334a45a871dda54d777371516df8ad907dd9346a7b609"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_3.json",
+      "bytes": 159,
+      "sha256": "807570cb7a267eef0aaad08a69e9b6c9c8ec0cc494f2f82506f7b11157e624dd"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_4.json",
+      "bytes": 180,
+      "sha256": "c4178f0e89c220e6633cf8d6e272ea4272bff16a78e45c364784997d720c2de2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_5.json",
+      "bytes": 201,
+      "sha256": "71d5c6dd890f6348379f8b153714a76e5211acf7ed598db64c98340fd2aac896"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/config/config_node_num_6.json",
+      "bytes": 222,
+      "sha256": "397e185a662b551bb96f94c8fc727506efa4c54c9d120bd8f1252f8e6a266fe8"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/CMakeLists.txt",
+      "bytes": 231,
+      "sha256": "4f697968adadf32d63e4e8524973f44a4515c01012b344f499a417427973aa65"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/computing_node.h",
+      "bytes": 6724,
+      "sha256": "bb54493be4af67a110bf201e4d53c48bed164e8bd5762be8a834689fb48f7a55"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/cpu_cache.h",
+      "bytes": 22655,
+      "sha256": "89dd19fbec7bd468b5e53169563886b91c76d829e2ce580f3566b218bc4b72a7"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/free_block_manager.h",
+      "bytes": 20200,
+      "sha256": "9cfa1894748e48eb835db7e87bc5d4ce1171f0010a841ae990a4724b6f8ea288"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/legoalloc.h",
+      "bytes": 495,
+      "sha256": "f4ec085ad6fc03f8fe45536744f323eb2688077df7fd8b0a0575091f5e736b5e"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/memory_node.h",
+      "bytes": 6276,
+      "sha256": "cf9b40cf4f208892686dd149818bc7287d911b73016f8697dd968f72864dde46"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/mr_utils.h",
+      "bytes": 264,
+      "sha256": "fdc26974d671d01b5ea48779fe281c43a137d8e8b88f2dd2dd51dac1cf0ef2b8"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/msg.h",
+      "bytes": 4123,
+      "sha256": "4c9ec53996acc88381d6883cb94ec46a3546943f44e293a73250511845590ead"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/rdma_conn.h",
+      "bytes": 9248,
+      "sha256": "de2fe6c335fe420eff0016ed56f3f270307b5619dedd467f899b06dd415abc25"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/rdma_conn_manager.h",
+      "bytes": 6533,
+      "sha256": "f1a487ff2e1166c188670d85c7d7fb708a946d34c4452508dce765b20668bfae"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/include/rpc_server.h",
+      "bytes": 5930,
+      "sha256": "1479486c9addff6ea46f91c3882c7bc4126f3e75ba949b2bca0cf43c509825c2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/microbench/CMakeLists.txt",
+      "bytes": 750,
+      "sha256": "df5ef2aa43b85ca0d8c4f233c6a761d2428dd5f498a81f3f82e8bf5b9c90e5de"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/microbench/input_microbench.cc",
+      "bytes": 39901,
+      "sha256": "b67f413f30a319ef8622b3ea632a73af7d7fd4abb09224784687e8ae366f31b7"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/microbench/microbench_common.cc",
+      "bytes": 39404,
+      "sha256": "5384c57dc49cce3e7a93713fd8ee0ae97d4e8dbcdc7ce28390e52d848364ac3b"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/microbench/multiple_microbench.cc",
+      "bytes": 41347,
+      "sha256": "da5c9b9fcdef6ebdab91d4cf8d7411cd37483f27b87a87a6d3e7ed05887036e2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/microbench/v_microbench.cc",
+      "bytes": 39319,
+      "sha256": "6ac51e54e5a0bfecd6d9d62caccbfd5c213f924f1d20db485cf8e5fe9c629c49"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/batch_build_fusee.sh",
+      "bytes": 123,
+      "sha256": "14cd31a0e54a16344cf4015233eaaa27b95be628cd39ce4c82e826af94034933"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/build_fusee.sh",
+      "bytes": 852,
+      "sha256": "2b48bf13fb8e778e10cb864d795912ca1b9230ff7b5ccbba4503da8f8182cb9f"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/collect_bench.sh",
+      "bytes": 392,
+      "sha256": "cf3d006442ecbcde60713c0dd6843d4c81fb4612af4ae3ebdf737c15f748b0b4"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/draw_kv.py",
+      "bytes": 1548,
+      "sha256": "977b507e9c23e7ea3a3ccf7452284525bfc435cbe45f270e3acb4086affefaa8"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/env_buildup_all.sh",
+      "bytes": 128,
+      "sha256": "ed45aa105ffdbffc7c76eb73646aecfe04c2b749c9628e226099ae2a36773578"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/env_setup_r6525.sh",
+      "bytes": 2863,
+      "sha256": "7a59045f9ff349251e8eb33d10a0d7ea1e04422fffa3f448867bcf80386a75df"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/env_setup_xl170.sh",
+      "bytes": 2504,
+      "sha256": "c98766c73efcf8b268deb0b69c784b84938dcc7220fd935f1d449147c66f3ced"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/env_setup_xl170_batch.sh",
+      "bytes": 196,
+      "sha256": "50c2549feac13dc6263b33de69ed3a032c6630a59c44f8af940a34b3dd67583c"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/filter.py",
+      "bytes": 3235,
+      "sha256": "deb108ca7a99ceb041cc0f9b5fae8f434bdf57068ef621167434fe008fd9c07d"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/fresh_all.sh",
+      "bytes": 161,
+      "sha256": "4e840b66082608f07eadbdec6bd671c104fe62f8bc24cbfde2f20f8d1b98696b"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/fusee_bench.sh",
+      "bytes": 2143,
+      "sha256": "88e89febe457645bc1ad32aa8d38fb8c5229f3aa8b8e66ab85c99daaa5764662"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/open_vf.sh",
+      "bytes": 946,
+      "sha256": "f231fded3e397507d2d3a1cd025a94936b148c518799239e397d53e821ade048"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_bench.sh",
+      "bytes": 406,
+      "sha256": "86f174a32e2fb97ba1169abff07bdeff007afde7e77ca4af8055b9192006cb18"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_different_allocator.sh",
+      "bytes": 9963,
+      "sha256": "0994cec85d85f33f10f70b322701600d0dcef550cf7bdae579b834add670c990"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_different_node.sh",
+      "bytes": 2051,
+      "sha256": "de064541d09bba23b0520bdbbefd2d7abefc87463b7703328ab867a28177a0b2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_different_size_128.sh",
+      "bytes": 3225,
+      "sha256": "dd39526d5e8df459f189a29dbd6a2187a6d05138bb559927a8b10a441b8cd9fb"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_different_size_16.sh",
+      "bytes": 3133,
+      "sha256": "17d38818d7bd5d0805fdb6e66f44a7d8289dcece9532ff2f1ecfd3d6ccdb409e"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_different_thread.sh",
+      "bytes": 2493,
+      "sha256": "45efc120fc2deebff209673a8e111105dfe7822fecb96be28165c78f5ee41afa"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_fusee_2MB.sh",
+      "bytes": 2209,
+      "sha256": "dc36ddcde8a9161f8c35aba80a42dea4f0b53c1e888a09e7723667dabc54fd30"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_fusee_4KB.sh",
+      "bytes": 2079,
+      "sha256": "1cb2fe77785d9c9d8b8b9065ebb2011ab380a22a952900b2bb3c9b84cc6ddd0e"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/run_mix.sh",
+      "bytes": 1126,
+      "sha256": "b3ba096d0f7d44f6d0b4f948e7c250673b3f3b1f501b070afd5841d49a7d314d"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/set_2MB_hugepage.sh",
+      "bytes": 132,
+      "sha256": "cbbdfd93a660ed2a69edcc5c12f5848657b805e318e0abc62319766740bb8588"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/set_mac.sh",
+      "bytes": 353,
+      "sha256": "5d5c09ce007e9fc10b36ef88ae1e6a97b9287845e9a0f0c8899c5c9abf6b8c09"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/size_alloc.py",
+      "bytes": 2032,
+      "sha256": "fa8900495650aab0493ad4c8bab30beeb574d153fbe58272ff409522f0bc7927"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_microbench.sh",
+      "bytes": 1142,
+      "sha256": "cb8d1f17d6507ec758b91eea04b329974bc52c1525f99b43b08ef58afbc3d9e3"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_microbench_multiple.sh",
+      "bytes": 1333,
+      "sha256": "9e4db29cad6898b99740dfa79196371808b35b3bacddd60acaa63644f059529f"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_microbench_trace.sh",
+      "bytes": 1338,
+      "sha256": "11c5ad214b256f35054f8845518471d932586c1eca540f9dd9454557700dcd67"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_mix.sh",
+      "bytes": 3201,
+      "sha256": "b5fe89bd804632696812e4c8ee21a827698675e24905d4829e579b4b8120b35e"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_remote_client.sh",
+      "bytes": 221,
+      "sha256": "4e48c0e6f71200903e3a9aaa1f8fc1c68b661875083e297297f065a61fd190c2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_remote_client_multiple.sh",
+      "bytes": 279,
+      "sha256": "74467393bbaf7e661dbd6e6eb0c1b3723cdeb757da2aa8c3c011d82fafc77896"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_server.sh",
+      "bytes": 269,
+      "sha256": "ac1e28def684eecff7ac20a215334705b9041c64a50bd2a66afcb70de873cc7a"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/start_server_multiple.sh",
+      "bytes": 429,
+      "sha256": "218d129dbc4e1915e6d83620eebb47584f0ec63a79c83328f6d8fac69aee244c"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/stop_local_client.sh",
+      "bytes": 229,
+      "sha256": "b0039a4c19451dac19edb8e9287f876866d0c62eaab83d903e42c6630e922e45"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/stop_remote_client.sh",
+      "bytes": 108,
+      "sha256": "371a3dc82b89c38bab5b1dc44002a228d751b561c9003ba0d5a5cf54a2553ce0"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/stop_server.sh",
+      "bytes": 405,
+      "sha256": "9a86ee77c66c1165ea6c0338de13746db31d39be9b95f649ec576c101bcc846e"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/stop_server_multiple.sh",
+      "bytes": 455,
+      "sha256": "dd4e06379b68d8d04d896590d36b8a7717867c41fb0794964756eecbc04e089f"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/scripts/update.sh",
+      "bytes": 128,
+      "sha256": "45d9ebaaf5f9c85f1151da8ef4fdd08db97cf11822fe1870851ec69710bccb1b"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/CMakeLists.txt",
+      "bytes": 751,
+      "sha256": "963473c1cd133da2c651fcb2e3abf9f5c4866a9fdc157b65cf923521b1cbd749"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/client.cc",
+      "bytes": 4478,
+      "sha256": "9ebdc674a4f7c4319b250acf8a04154c879b77abedae2ccfefe4582c21a269a7"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/computing_node.cc",
+      "bytes": 13362,
+      "sha256": "ec6604f015f654901d7fdc7539762b641df0b732be87c2bb3bfdb6eb5508baae"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/free_block_manager.cc",
+      "bytes": 39939,
+      "sha256": "2d8e89c3d1f0f6648bad7d55210b89740a2bf14113e18997747e49dafe656f0a"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/legoalloc.cc",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/memory_node.cc",
+      "bytes": 42272,
+      "sha256": "01d07f3f65ac95c6bf4f23c3cb0b5df15656d5ba6115692f6555330690d31815"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/mr_utils.cc",
+      "bytes": 1707,
+      "sha256": "384a55057992ef087ffcd5f630a10e8241c62ccf8e552539f8da6729b853d7db"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/rdma_conn.cc",
+      "bytes": 101560,
+      "sha256": "a646081d3c919b00affb0a1ce244e7343a6bbf7a03bea8970e4d41c3345c2f2a"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/rdma_conn_manager.cc",
+      "bytes": 11316,
+      "sha256": "62780b6047e6bed7f21d33ce0f52cd7b58d0fc1b4440590f96f62e5c31ef31c0"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code/source/server.cc",
+      "bytes": 1341,
+      "sha256": "d9d770ec8e9b4d155b7ffe3e26d7c263c742e0bd4026added7fafe5b4e2f5e6a"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code-manifest.json",
+      "bytes": 18725,
+      "sha256": "84af66e0ad48642998371b500320a2ccbd90406d3c83d218b1d44d7a2d75b2d0"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/code-source-subset.tar.gz",
+      "bytes": 103916,
+      "sha256": "3f6e14c5542c344407e4b1f087536c40814dba6162c5fd042ec6a5b245f4affb"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/images/attribution.json",
+      "bytes": 749,
+      "sha256": "3fee24729acd5045cad83404dfbe85f4821f8a3279b080b4e8508bf0e4f849cd"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/images/mechanism.png",
+      "bytes": 153321,
+      "sha256": "6436b2efe82c28026b046d904c8bce0115c1307608bf1023f597e2a99b9f99d2"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/images/mechanism.svg",
+      "bytes": 2433,
+      "sha256": "1a51073d7b12945748204f8bcf046346a618b90a9c34878774ee52058b4b2f09"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/materials.json",
+      "bytes": 6425,
+      "sha256": "6a730e34d8605577b8a1a58e1cd2ef93ea34ba64fea8bde4f3b7715877745448"
+    },
+    {
+      "path": "2026-11-11/papers/FineMem/sources.json",
+      "bytes": 523,
+      "sha256": "03bfbecdc2c3f9c6e1153aa10825c2a3b0bd91b461c08c07c6020c7e51af4ea4"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/README.md",
+      "bytes": 2974,
+      "sha256": "a20faef522e7a998c8fafc94b64d6b3b382b46192d2f990614ec998e57ddd79d"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/code/README.md",
+      "bytes": 182,
+      "sha256": "40c1e17d21578483ccdad5dd45ae615f15bc898e4af7f2e1c2fb94a54299c93a"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/images/attribution.json",
+      "bytes": 716,
+      "sha256": "e8cf0ce3d817a96ce5b19b3d6f10c5eea62d45efc821f98ac91b33a85c1d7f8d"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/images/mechanism.png",
+      "bytes": 154877,
+      "sha256": "756e2f329ea54c95907099551f9f4e06ebf2229bdb9cda5f6aa83b05f170ad77"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/images/mechanism.svg",
+      "bytes": 2678,
+      "sha256": "fd634bc72dd4ab18a1c570407f2477e6063e323049ad660040e91ec19eea1e5c"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/materials.json",
+      "bytes": 5376,
+      "sha256": "bba4935863f476d519072a3defbb4642720e033980c8d9d58bf8b6a6f12f8dd4"
+    },
+    {
+      "path": "2026-11-11/papers/Juneberry/sources.json",
+      "bytes": 417,
+      "sha256": "f87b64f6d21b56a7be32b81811f61e0465ba1c40ec791713ee3c8a43baf21496"
+    },
+    {
+      "path": "PUBLICATION_READINESS.md",
+      "bytes": 3989,
+      "sha256": "8ed8225a9ea8e8e3fbd9dc72cb963ef53eeac50d219889b4ad6f97c51f77e4cf"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1579,
+      "sha256": "4a57b9441578757623d0e5aa26bdba4e47fbb4c692755b94807b7b4108e3933e"
+    },
+    {
+      "path": "archive_metadata.json",
+      "bytes": 14394,
+      "sha256": "136eb691dae4f74564f2a2fa9e98375dea026460250af26f7b33396f47938bc3"
+    },
+    {
+      "path": "assets/style.css",
+      "bytes": 3568,
+      "sha256": "1f73e5e71c65ea74e6ab81bfb0dd5539fe98263ccc4d9a214d795a22a134b1ff"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1556,
+      "sha256": "6e0b3f69acfde08e1d170061efdc42234a950717cd7a030b13e0355fc7fad08f"
+    }
+  ],
+  "repository_url": "https://github.com/MingWangSong/rdma-daily"
+}

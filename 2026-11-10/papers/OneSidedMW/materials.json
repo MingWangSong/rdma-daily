@@ -1,0 +1,39 @@
+{
+  "paper_id": "OneSidedMW",
+  "title": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+  "authors_affiliations": "上海交通大学",
+  "venue": "NSDI 2026",
+  "paper_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+  "landing_url": "https://www.usenix.org/conference/nsdi26/presentation/wang-zixuan",
+  "retrieved_at": "2026-11-11",
+  "paper_local_path": null,
+  "paper_redistribution": {
+    "status": "not_verified_for_public_redistribution",
+    "public_copy_included": false,
+    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+  },
+  "figures": [
+    {
+      "number": 3,
+      "pdf_page": 6,
+      "title_zh": "RNIC 管理流程",
+      "interpretation_zh": "图3展示架构与工作流。把内存管理 QP 和数据访问 QP 分开理解，CPU 慢路径仍存在。",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf#page=6",
+      "public_copy_included": false
+    },
+    {
+      "number": 6,
+      "pdf_page": 10,
+      "title_zh": "分配性能与代价",
+      "interpretation_zh": "图6比较不同分配粒度下的吞吐、P99 和内存节点 CPU。10.6× 是相对 RPC 管理的特定结果，不表示优于所有静态预分配方案。",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf#page=10",
+      "public_copy_included": false
+    }
+  ],
+  "authors": [
+    "Zixuan Wang",
+    "Jinyu Gu",
+    "Xingda Wei",
+    "Yubin Xia"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "OneSidedMW: Managing Disaggregated Memory Efficiently, Flexibly, and Securely with RNIC Offloading",
+  "source_url": "https://www.usenix.org/system/files/nsdi26-wang-zixuan.pdf",
+  "source_location": "图3（PDF第6页）；图6（PDF第10页）",
+  "caption": "CPU 仍负责初始化和资源不足等慢路径；一个块或 window 组同一时刻归一个计算节点。",
+  "interpretation": "减少管理 CPU 负担的同时，检查细粒度分配对吞吐、空间利用率和隔离的影响。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
+  "source_authors": [
+    "Zixuan Wang",
+    "Jinyu Gu",
+    "Xingda Wei",
+    "Yubin Xia"
+  ]
+}

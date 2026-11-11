@@ -1,0 +1,41 @@
+{
+  "paper_id": "Scalio",
+  "title": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+  "authors_affiliations": "清华大学、泉城实验室",
+  "venue": "OSDI 2025",
+  "paper_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+  "landing_url": "https://www.usenix.org/conference/osdi25/presentation/sun",
+  "retrieved_at": "2026-11-11",
+  "paper_local_path": null,
+  "paper_redistribution": {
+    "status": "not_verified_for_public_redistribution",
+    "public_copy_included": false,
+    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+  },
+  "figures": [
+    {
+      "number": 9,
+      "pdf_page": 8,
+      "title_zh": "缓存一致性状态机",
+      "interpretation_zh": "图9与图8的竞态一起阅读，关注 refill、写入和失效如何避免读到倒退版本。",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=8",
+      "public_copy_included": false
+    },
+    {
+      "number": 11,
+      "pdf_page": 11,
+      "title_zh": "YCSB 与 SSD 扩展",
+      "interpretation_zh": "图11在不同 YCSB 工作负载和 SSD 数量下比较吞吐；须保留 Xeon 模拟 DPU 资源预算这一条件。",
+      "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf#page=11",
+      "public_copy_included": false
+    }
+  ],
+  "authors": [
+    "Xun Sun",
+    "Mingxing Zhang",
+    "Yingdi Shan",
+    "Kang Chen",
+    "Jinlei Jiang",
+    "Yongwei Wu"
+  ]
+}

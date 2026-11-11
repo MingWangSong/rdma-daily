@@ -1,0 +1,40 @@
+{
+  "paper": "Scalio",
+  "paper_url": null,
+  "repository_url": "https://github.com/madsys-dev/scalio-osdi25-ae",
+  "ref": "main",
+  "commit": "e203addb26a4e1615b26dabab7566406c2786dda",
+  "status": "link_only_no_repository_wide_license",
+  "license": null,
+  "redistributable_snapshot": false,
+  "snapshot_path": null,
+  "reason": "官方 artifact 仓库可访问，但根目录没有 LICENSE；SPDK/DPDK 等依赖的许可证不等于 Scalio 脚本、图表和全部新增代码获得了仓库级再分发授权。",
+  "evidence_urls": [
+    "https://github.com/madsys-dev/scalio-osdi25-ae/tree/e203addb26a4e1615b26dabab7566406c2786dda",
+    "https://github.com/madsys-dev/scalio-osdi25-ae/blob/e203addb26a4e1615b26dabab7566406c2786dda/README.md",
+    "https://github.com/madsys-dev/scalio-osdi25-ae/blob/e203addb26a4e1615b26dabab7566406c2786dda/spdk/LICENSE"
+  ],
+  "checks": [
+    "README 明确说明是 Scalio OSDI '25 artifact",
+    "GitHub repository license 字段为空；根目录未见 LICENSE",
+    "递归树发现许可证只位于 SPDK 及其依赖下",
+    "scripts/evaluate.sh 头部未见许可证",
+    "未下载整仓、未执行脚本"
+  ],
+  "license_files": [
+    "spdk/LICENSE",
+    "spdk/dpdk/license/README",
+    "spdk/dpdk/license/bsd-3-clause.txt",
+    "spdk/dpdk/license/exceptions.txt",
+    "spdk/dpdk/license/gpl-2.0.txt",
+    "spdk/dpdk/license/lgpl-2.1.txt",
+    "spdk/intel-ipsec-mb/LICENSE",
+    "spdk/isa-l/LICENSE",
+    "spdk/ocf/LICENSE"
+  ],
+  "checked_at_utc": "2026-11-11T08:30:50Z",
+  "intended_archive_visibility": "public",
+  "published": false,
+  "archive_policy": "公开可访问不等于可以再分发；仅在显式许可覆盖将要公开的完整内容时收录源码快照。",
+  "verification_limits": "这是基于已查看文件与公开元数据的归档筛查，不是法律意见；没有宣称未发现的许可必然不存在。"
+}

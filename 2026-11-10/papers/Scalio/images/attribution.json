@@ -1,0 +1,18 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "Scalio: Scaling up DPU-based JBOF Key-value Store with NVMe-oF Target Offload",
+  "source_url": "https://www.usenix.org/system/files/osdi25-sun.pdf",
+  "source_location": "图9（PDF第8页）；图11（PDF第11页）",
+  "caption": "四个框表示设计责任，并非一条串行路径；前三者的并发由缓存协议约束。",
+  "interpretation": "缓存一致性协议比“再加一层缓存”更值得迁移；先把并发状态与失败窗口写清楚。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
+  "source_authors": [
+    "Xun Sun",
+    "Mingxing Zhang",
+    "Yingdi Shan",
+    "Kang Chen",
+    "Jinlei Jiang",
+    "Yongwei Wu"
+  ]
+}

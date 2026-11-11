@@ -1,0 +1,599 @@
+{
+  "repository": "https://github.com/pdclab/farlock",
+  "commit": "a1dcda36d74b1242be2a854b1ccaf628861d7da2",
+  "commit_url": "https://github.com/pdclab/farlock/commit/a1dcda36d74b1242be2a854b1ccaf628861d7da2",
+  "retrieved_at": "2026-11-11",
+  "license": "GPL-3.0-or-later",
+  "license_url": "https://github.com/pdclab/farlock/blob/a1dcda36d74b1242be2a854b1ccaf628861d7da2/LICENSE",
+  "snapshot_type": "curated source-only subset; retained files are byte-for-byte upstream copies",
+  "source_executed": false,
+  "build_verified": false,
+  "excluded_files": [
+    {
+      "path": "include/third_party/foedus/uniform_random.hpp",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/foedus/zipfian_random.hpp",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/locks/a_lock.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/locks/rdma_mcs_lock.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/locks/rdma_spin_lock.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/nlohmann/json.hpp",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/remus/rdma/rdma.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/remus/rdma/rdma_ptr.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/remus/rdma/status.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/async.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/async_logger-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/async_logger.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/cfg/argv.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/cfg/env.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/cfg/helpers-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/cfg/helpers.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/common-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/common.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/backtracer-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/backtracer.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/circular_q.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/console_globals.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/file_helper-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/file_helper.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/fmt_helper.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/log_msg-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/log_msg.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/log_msg_buffer-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/log_msg_buffer.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/mpmc_blocking_q.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/null_mutex.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/os-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/os.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/periodic_worker-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/periodic_worker.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/registry-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/registry.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/synchronous_factory.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/tcp_client-windows.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/tcp_client.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/thread_pool-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/thread_pool.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/udp_client-windows.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/udp_client.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/details/windows_include.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bin_to_hex.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/args.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/base.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/chrono.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/color.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/compile.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/core.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/fmt.license.rst",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/format-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/format.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/locale.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/os.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/ostream.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/printf.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/ranges.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/std.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/bundled/xchar.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/chrono.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/compile.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/fmt.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/ostr.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/ranges.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/std.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fmt/xchar.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/formatter.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/fwd.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/logger-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/logger.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/mdc.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/pattern_formatter-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/pattern_formatter.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/android_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/ansicolor_sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/ansicolor_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/base_sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/base_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/basic_file_sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/basic_file_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/callback_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/daily_file_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/dist_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/dup_filter_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/hourly_file_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/kafka_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/mongo_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/msvc_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/null_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/ostream_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/qt_sinks.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/ringbuffer_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/rotating_file_sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/rotating_file_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/stdout_color_sinks-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/stdout_color_sinks.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/stdout_sinks-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/stdout_sinks.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/syslog_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/systemd_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/tcp_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/udp_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/win_eventlog_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/wincolor_sink-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/sinks/wincolor_sink.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/spdlog-inl.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/spdlog.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/stopwatch.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/tweakme.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    },
+    {
+      "path": "include/third_party/spdlog/version.h",
+      "reason": "Third-party dependency omitted from the curated source snapshot; licenses not fully bundled/verified."
+    }
+  ],
+  "included_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "e2eb93a61ffd7877ea5c751abcb3a618e8e2e9a2073a27f66d4114fe10819f86"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "README.md",
+      "sha256": "06407a61e8d1654102d0876585e1a9e2082e0e06ede65f20f32c5cd2e4e0ed9c"
+    },
+    {
+      "path": "benchmark/CMakeLists.txt",
+      "sha256": "d13a0c954d19f418a3774927b259173224d06ea527b8b4f89385384a031d9bb9"
+    },
+    {
+      "path": "benchmark/a_lock.cc",
+      "sha256": "9758a497494f57e5c4ac967fe1837b22eb8dbb0a745d190787f29d06a6a2fe08"
+    },
+    {
+      "path": "benchmark/farlock.cc",
+      "sha256": "a9a3f7103116603bf1aab891461a58731cf3f26be26301593a2fbe97b951c664"
+    },
+    {
+      "path": "benchmark/farlockg.cc",
+      "sha256": "2a473630960d9cd3f833831c24ecc7e14ab42544fb91f330558e95c58de79fe5"
+    },
+    {
+      "path": "benchmark/rdma_mcs_lock.cc",
+      "sha256": "030313a7c1b3a1bc8ff4ce7ba81204a7f07038bdd4e730440178870e441ce54e"
+    },
+    {
+      "path": "benchmark/rdma_spin_lock.cc",
+      "sha256": "3037dd47fdaf8dfc957d94b43d321f316ef0029f6a4489b7e8a122b7fa704e94"
+    },
+    {
+      "path": "benchmark/rdma_ticket_lock.cc",
+      "sha256": "ed2db956a5ac6aef5b7ccc0eca55e78023bf7fb37de745cbe14f48334e25b151"
+    },
+    {
+      "path": "config/config.json",
+      "sha256": "abdce4fbf3b31fc50e33c8a7808bfdc3b61f841f51c5209071962da04b626434"
+    },
+    {
+      "path": "include/benchmark/benchmark.h",
+      "sha256": "3822769b9eeed7c03a117697c5db31fdda3ef176a94a71389965278bd5098e03"
+    },
+    {
+      "path": "include/benchmark/common.h",
+      "sha256": "0459ba8bafb64a6d92f6d3b80c5c7d9b796a858cef588c466a25fb47e06c896c"
+    },
+    {
+      "path": "include/benchmark/config.h",
+      "sha256": "98e5848a13c6a08cdaf9494ac0814349bac6febef605b0c6480ad6e0f03b1963"
+    },
+    {
+      "path": "include/benchmark/result.h",
+      "sha256": "4964d3155882475352215a736261e44c0d228dad51272a403fe56db7ac7b4afd"
+    },
+    {
+      "path": "include/locks/a_lock_wrap.h",
+      "sha256": "c9a1da9062dcfed715d1205e0a711d926571a92729fe698043ab63f4182ab05e"
+    },
+    {
+      "path": "include/locks/common.h",
+      "sha256": "32ebe88f2cc118f972f42338df863d367cc6b415316aaf6be749058b7c8b9b51"
+    },
+    {
+      "path": "include/locks/farlock.h",
+      "sha256": "fe3e7f9a22285eb2396355853ad44722af7e61f96b42c2b616281c43e07427cc"
+    },
+    {
+      "path": "include/locks/farlockg.h",
+      "sha256": "d4419e95e05f8d63d36245a6054150b890b251123648641de1ebe933bdf70b92"
+    },
+    {
+      "path": "include/locks/rdma_mcs_lock_wrap.h",
+      "sha256": "90e07e9b65a0a13d177dc4b6b6ab47c0c8892b2a8335661601c349bd82dc4230"
+    },
+    {
+      "path": "include/locks/rdma_spin_lock_wrap.h",
+      "sha256": "04507a70457342a03715cf239626de87601ed83c743b1d639478e7cac17d09ce"
+    },
+    {
+      "path": "include/locks/rdma_ticket_lock.h",
+      "sha256": "86815dc408a6b9c7a63fb64001d0e37c4c6373f9dbf629693b41b9b4d2e13625"
+    },
+    {
+      "path": "include/logging/logging.h",
+      "sha256": "903d22e0f09017803e54b19c700d565679f661748a302c1d38e438363dd4c28e"
+    },
+    {
+      "path": "include/rdma/connector.h",
+      "sha256": "0b038c4ada3046aceae3da9310b160785ee86e95c7192836d76002cba96cfb79"
+    },
+    {
+      "path": "include/rdma/listener.h",
+      "sha256": "10d4eab42b219322820256d51a978aee0edbe7abbf770d47ce3a813b01c56ca7"
+    },
+    {
+      "path": "include/rdma/manager.h",
+      "sha256": "941725098b93ca9f91589277f68018390e8d27bb1e3d88b3a758e1f257d859fa"
+    },
+    {
+      "path": "include/rdma/memory_pool.h",
+      "sha256": "e50a65304e107483b4d6b05b7f9165ac232a779ef0e0d86bd0a7a26f0a1ae8a1"
+    },
+    {
+      "path": "include/rdma/pointer.h",
+      "sha256": "d917ba6985c644c18620bdc5b146fcc89f267237b6367ab9c5e04a3c0e4914fe"
+    },
+    {
+      "path": "include/rdma/utils.h",
+      "sha256": "f8aba453d2fa3c8b617b859ff60cf63dc5f308c3f1a1e74f7d7d4f3e24d53b17"
+    },
+    {
+      "path": "scripts/cloudlab.sh",
+      "sha256": "dffa24ccae71b0e8d2c1f3044d0d0c88c6398df282539ec8aeea6ce0a63724d5"
+    },
+    {
+      "path": "scripts/test.py",
+      "sha256": "dcd79b47d538cefe8ba2f02bb24b95adef4d05bbbed71e5ae2a4703afd014749"
+    }
+  ]
+}

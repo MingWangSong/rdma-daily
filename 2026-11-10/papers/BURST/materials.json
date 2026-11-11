@@ -1,0 +1,52 @@
+{
+  "paper_id": "BURST",
+  "title": "BURST: Seeking High-performance, Interoperability and Scalability in Soft-RDMA",
+  "authors_affiliations": "湖南大学、字节跳动",
+  "venue": "NSDI 2026",
+  "paper_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf",
+  "landing_url": "https://www.usenix.org/conference/nsdi26/presentation/shen",
+  "retrieved_at": "2026-11-11",
+  "paper_local_path": null,
+  "paper_redistribution": {
+    "status": "not_verified_for_public_redistribution",
+    "public_copy_included": false,
+    "reason_zh": "已检查正式论文，未见明确允许第三方公开再分发全文或图片的许可；不把免费获取视为授权。"
+  },
+  "figures": [
+    {
+      "number": 5,
+      "pdf_page": 6,
+      "title_zh": "用户态 Soft-RDMA",
+      "interpretation_zh": "图5展示共享资源管理、数据路径和连接管理。读图时应区分发送与接收路径，及软件对软件与硬件互通。",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf#page=6",
+      "public_copy_included": false
+    },
+    {
+      "number": "表1",
+      "pdf_page": 12,
+      "title_zh": "企业存储元数据请求",
+      "interpretation_zh": "表1报告 GetAttr 延迟与吞吐。平均延迟和 P99.9 是不同统计量，也不代表完整文件读写负载。",
+      "source_url": "https://www.usenix.org/system/files/nsdi26-shen.pdf#page=12",
+      "public_copy_included": false
+    }
+  ],
+  "authors": [
+    "Huijun Shen",
+    "Zelong Yue",
+    "Jian Yang",
+    "Zhuo Jiang",
+    "Lang An",
+    "Yulin Chen",
+    "Yong Zhang",
+    "Luochangqi Ding",
+    "Xiaolong Zhong",
+    "Zhihong Wang",
+    "Jie Ding",
+    "Hongyu Wu",
+    "Jianxi Ye",
+    "Xijin Yin",
+    "Xingyu Zhang",
+    "Xingyu Guo",
+    "Guo Chen"
+  ]
+}

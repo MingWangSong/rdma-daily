@@ -1,0 +1,10 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems",
+  "source_url": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
+  "source_location": "图4（PDF第6页）；图13（PDF第12页）",
+  "caption": "访问粒度与管理粒度分离；这不是把每次 Get 或 Set 改成批量接口。",
+  "interpretation": "降低元数据成本可能改变淘汰精度，必须用热度漂移和真实后端代价检验。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+}

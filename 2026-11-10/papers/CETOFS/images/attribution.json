@@ -1,0 +1,15 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "CetoFS: A High-Performance File System with Host-Server Collaboration for Remote Storage",
+  "source_url": "https://www.usenix.org/system/files/fast26-jia.pdf",
+  "source_location": "图5（PDF第6页）；图13（PDF第12页）",
+  "caption": "主机内核仍管理文件系统元数据；下沉的是选定的数据路径语义。",
+  "interpretation": "沿着数据流找权限、顺序与持久化的责任边界，再决定哪些步骤适合下沉。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle",
+  "source_authors": [
+    "Wenqing Jia",
+    "Dejun Jiang",
+    "Jin Xiong"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "original_explanatory_diagram",
+  "not_a_paper_figure": true,
+  "source_paper": "Achieving Wire-Latency Storage Systems by Exploiting Hardware ACKs",
+  "source_url": "https://www.usenix.org/system/files/nsdi25-wang-qing.pdf",
+  "source_location": "图1（PDF第5页）；图7（PDF第11页）",
+  "caption": "硬件 ACK、执行完成、持久化成功是不同事件；图中的顺序不构成通用正确性保证。",
+  "interpretation": "先明确客户端何时可返回，再审查错误、重试与非幂等请求，而不是仅优化往返次数。",
+  "public_redistribution_of_source_pdf": "unverified; source PDF, extracted text, slides and original figure crops excluded from public bundle"
+}

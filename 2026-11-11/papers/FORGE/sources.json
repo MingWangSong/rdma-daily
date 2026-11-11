@@ -1,0 +1,10 @@
+{
+  "full": "FORGE: Mitigating Synchronization Amplification for Memory-Disaggregated Caching Systems",
+  "conference": "OSDI 2026",
+  "org": "华中科技大学",
+  "url": "https://www.usenix.org/conference/osdi26/presentation/yang-zhijun",
+  "pdf": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-paper.pdf",
+  "repo": "https://github.com/cszjyang/forge",
+  "slides": "https://sosposdi.com/publications/2026/forge/OSDI26-FORGE-slides.pdf",
+  "ref": "图4（PDF第6页）；图13（PDF第12页）"
+}

@@ -1,0 +1,44 @@
+{
+  "paper": "PD3",
+  "paper_url": null,
+  "repository_url": "https://github.com/fardatalab/PD3",
+  "ref": "main",
+  "commit": "a431cd05b93082f87d880d222a7dc5bfdd6adc06",
+  "status": "link_only_mixed_license_restriction",
+  "license": "MIT at repository root; NVIDIA proprietary files present",
+  "redistributable_snapshot": false,
+  "snapshot_path": null,
+  "reason": "根 LICENSE 为 MIT，但两个随仓文件声明为 NVIDIA proprietary 并受另行 EULA 管辖。未核验到足够的整仓再分发许可，因此不生成公开源码快照。",
+  "evidence_urls": [
+    "https://github.com/fardatalab/PD3/blob/a431cd05b93082f87d880d222a7dc5bfdd6adc06/LICENSE",
+    "https://github.com/fardatalab/PD3/blob/a431cd05b93082f87d880d222a7dc5bfdd6adc06/src/PD3/system/external/dma_common.c",
+    "https://github.com/fardatalab/PD3/blob/a431cd05b93082f87d880d222a7dc5bfdd6adc06/src/PD3/system/external/dma_common.h"
+  ],
+  "checks": [
+    "根 MIT 许可证允许复制与分发，并要求保留版权及许可声明",
+    "NVIDIA 两个文件使用专有软件版权头，根 MIT 不能替第三方授予权利",
+    "未下载整仓、未抓取子模块内容、未执行代码"
+  ],
+  "copyright_notices": [
+    "Root LICENSE: Copyright (c) 2025 sidsankhe",
+    "src/PD3/system/external/dma_common.c and .h: Copyright (c) 2022 NVIDIA CORPORATION & AFFILIATES, ALL RIGHTS RESERVED."
+  ],
+  "submodules": [
+    {
+      "path": "external/SPSCQueue",
+      "commit": "1053918dbd251fbff69b24ef27fa5d51c29ec2af",
+      "downloaded": false
+    },
+    {
+      "path": "external/json",
+      "commit": "9a737481aed085fd289f82dff1fa8c3c66627a7e",
+      "downloaded": false
+    }
+  ],
+  "next_step": "如需公开快照，应先核验相关 NVIDIA EULA 的再分发条款，或在完整逐文件审核后建立明确标注删减内容的许可子集。",
+  "checked_at_utc": "2026-11-11T08:30:50Z",
+  "intended_archive_visibility": "public",
+  "published": false,
+  "archive_policy": "公开可访问不等于可以再分发；仅在显式许可覆盖将要公开的完整内容时收录源码快照。",
+  "verification_limits": "这是基于已查看文件与公开元数据的归档筛查，不是法律意见；没有宣称未发现的许可必然不存在。"
+}

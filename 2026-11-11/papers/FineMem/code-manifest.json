@@ -1,0 +1,511 @@
+{
+  "repository": "https://github.com/ADSLMemoryDisaggregation/FineMem",
+  "commit": "3a9ecc5955ae2cd394e473ab6abe6b912e14b3fa",
+  "commit_url": "https://github.com/ADSLMemoryDisaggregation/FineMem/commit/3a9ecc5955ae2cd394e473ab6abe6b912e14b3fa",
+  "retrieved_at": "2026-11-11",
+  "license": "BSD-3-Clause",
+  "license_url": "https://github.com/ADSLMemoryDisaggregation/FineMem/blob/3a9ecc5955ae2cd394e473ab6abe6b912e14b3fa/LICENSE",
+  "snapshot_type": "curated source-only subset; retained files are byte-for-byte upstream copies",
+  "source_executed": false,
+  "build_verified": false,
+  "excluded_files": [
+    {
+      "path": ".clang-format",
+      "reason": "Separate GPL-2.0 header; excluded from BSD-licensed source selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/figures/remote_mem_usage.pdf",
+      "reason": "Paper/figure excluded; code license not assumed to cover publication imagery."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/figures/remote_mem_usage.png",
+      "reason": "Paper/figure excluded; code license not assumed to cover publication imagery."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/figures/throughput_improvement.pdf",
+      "reason": "Paper/figure excluded; code license not assumed to cover publication imagery."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/figures/throughput_improvement.png",
+      "reason": "Paper/figure excluded; code license not assumed to cover publication imagery."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/large_traces/detailed_res.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/large_traces/res.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/remote_mem_usage/fastswap.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/remote_mem_usage/finememswap.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/small_traces/FastSwap.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/small_traces/FineMemSwap.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/small_traces/res.txt",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.larson.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.lean.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.lua.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.mstress.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.rptest.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.sh8bench.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.je.xmalloc-test.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.larson.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.lean.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.lua.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.mstress.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.rptest.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.sh8bench.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.mi.xmalloc-test.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.larson.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.lean.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.lua.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.mstress.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.rptest.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.sh8bench.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.sys.xmalloc-test.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.larson.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.lean.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.lua.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.mstress.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.rptest.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.sh8bench.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "microbench/traces/trace.tcg.xmalloc-test.16",
+      "reason": "Benchmark data/outputs excluded from the source-only selection."
+    },
+    {
+      "path": "osdi25-paper686.pdf",
+      "reason": "Paper/figure excluded; code license not assumed to cover publication imagery."
+    }
+  ],
+  "included_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "392914f57325d883f639416342ff3a08ed5c11cda7cccc914e5df214f2dc6cdf"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "f65406572a585afe83d9edb8ac6e8615b275c3262a09ef677d1567cd76fb8028"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "7bd85279b5b3d3880befe0d3c4a1d9bdebd735182d9730621f5da075587140c1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "37d8ea40a368dadd54f7d978e77290225925cf05643ce85c8501b266a83e9e5a"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/README.md",
+      "sha256": "ddfc60ec109c57dddbb7f571f4e4016a3d253740878fc9dfd02e1d7e28179ff0"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/draw_remote_mem_usage.py",
+      "sha256": "44c7d09e64513c2fedd3ae58e3110474767a56fa845c80e0951ab993c3956ae2"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/draw_throughput_improvement_cdf.py",
+      "sha256": "a6f453d1535669715d6b4e9847e15e5f280487224c228c6965764a2d129637c0"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/run.sh",
+      "sha256": "62e32a9a439515c9442288f603da5aa58361371217884646d0ee78b5c9069a3c"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/run_large_trace.py",
+      "sha256": "a0ba0d18c37ff5e0246703eff1f4e105fcba87018df0c17f5ed2c8f6cf9b25b7"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/run_small_traces.py",
+      "sha256": "d5029ea74ffe9e8f70b81193116bdb3bb4bbdc33215048b5b0e996782176f7b4"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/simulation.py",
+      "sha256": "3fff6b3aad175e673020108bebefc2ae3fca1cf8a672a8ca69b786dc937fd931"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/simulation_one_time.py",
+      "sha256": "f34c857ca5ecb58e751a61cd257ab86b722b928511d0a50fddc12a670a6d7544"
+    },
+    {
+      "path": "applications/Swap_FineMem_Sim/workloads_simu.py",
+      "sha256": "ddb02b056b756f6740acb6d5d44701522fffa4206583acb972b33189924e8a17"
+    },
+    {
+      "path": "config/config.json",
+      "sha256": "43bd23be6c6e74f26ee6baf182e5e865df97a1a7eb60618764a835b294ca2e44"
+    },
+    {
+      "path": "config/config_node_num_1.json",
+      "sha256": "9a606c46726e8bc60727238084bf9e807536c0017970a0c19c975963ea8fedcd"
+    },
+    {
+      "path": "config/config_node_num_2.json",
+      "sha256": "8ad17284268c788096d334a45a871dda54d777371516df8ad907dd9346a7b609"
+    },
+    {
+      "path": "config/config_node_num_3.json",
+      "sha256": "807570cb7a267eef0aaad08a69e9b6c9c8ec0cc494f2f82506f7b11157e624dd"
+    },
+    {
+      "path": "config/config_node_num_4.json",
+      "sha256": "c4178f0e89c220e6633cf8d6e272ea4272bff16a78e45c364784997d720c2de2"
+    },
+    {
+      "path": "config/config_node_num_5.json",
+      "sha256": "71d5c6dd890f6348379f8b153714a76e5211acf7ed598db64c98340fd2aac896"
+    },
+    {
+      "path": "config/config_node_num_6.json",
+      "sha256": "397e185a662b551bb96f94c8fc727506efa4c54c9d120bd8f1252f8e6a266fe8"
+    },
+    {
+      "path": "include/CMakeLists.txt",
+      "sha256": "4f697968adadf32d63e4e8524973f44a4515c01012b344f499a417427973aa65"
+    },
+    {
+      "path": "include/computing_node.h",
+      "sha256": "bb54493be4af67a110bf201e4d53c48bed164e8bd5762be8a834689fb48f7a55"
+    },
+    {
+      "path": "include/cpu_cache.h",
+      "sha256": "89dd19fbec7bd468b5e53169563886b91c76d829e2ce580f3566b218bc4b72a7"
+    },
+    {
+      "path": "include/free_block_manager.h",
+      "sha256": "9cfa1894748e48eb835db7e87bc5d4ce1171f0010a841ae990a4724b6f8ea288"
+    },
+    {
+      "path": "include/legoalloc.h",
+      "sha256": "f4ec085ad6fc03f8fe45536744f323eb2688077df7fd8b0a0575091f5e736b5e"
+    },
+    {
+      "path": "include/memory_node.h",
+      "sha256": "cf9b40cf4f208892686dd149818bc7287d911b73016f8697dd968f72864dde46"
+    },
+    {
+      "path": "include/mr_utils.h",
+      "sha256": "fdc26974d671d01b5ea48779fe281c43a137d8e8b88f2dd2dd51dac1cf0ef2b8"
+    },
+    {
+      "path": "include/msg.h",
+      "sha256": "4c9ec53996acc88381d6883cb94ec46a3546943f44e293a73250511845590ead"
+    },
+    {
+      "path": "include/rdma_conn.h",
+      "sha256": "de2fe6c335fe420eff0016ed56f3f270307b5619dedd467f899b06dd415abc25"
+    },
+    {
+      "path": "include/rdma_conn_manager.h",
+      "sha256": "f1a487ff2e1166c188670d85c7d7fb708a946d34c4452508dce765b20668bfae"
+    },
+    {
+      "path": "include/rpc_server.h",
+      "sha256": "1479486c9addff6ea46f91c3882c7bc4126f3e75ba949b2bca0cf43c509825c2"
+    },
+    {
+      "path": "microbench/CMakeLists.txt",
+      "sha256": "df5ef2aa43b85ca0d8c4f233c6a761d2428dd5f498a81f3f82e8bf5b9c90e5de"
+    },
+    {
+      "path": "microbench/input_microbench.cc",
+      "sha256": "b67f413f30a319ef8622b3ea632a73af7d7fd4abb09224784687e8ae366f31b7"
+    },
+    {
+      "path": "microbench/microbench_common.cc",
+      "sha256": "5384c57dc49cce3e7a93713fd8ee0ae97d4e8dbcdc7ce28390e52d848364ac3b"
+    },
+    {
+      "path": "microbench/multiple_microbench.cc",
+      "sha256": "da5c9b9fcdef6ebdab91d4cf8d7411cd37483f27b87a87a6d3e7ed05887036e2"
+    },
+    {
+      "path": "microbench/v_microbench.cc",
+      "sha256": "6ac51e54e5a0bfecd6d9d62caccbfd5c213f924f1d20db485cf8e5fe9c629c49"
+    },
+    {
+      "path": "scripts/batch_build_fusee.sh",
+      "sha256": "14cd31a0e54a16344cf4015233eaaa27b95be628cd39ce4c82e826af94034933"
+    },
+    {
+      "path": "scripts/build_fusee.sh",
+      "sha256": "2b48bf13fb8e778e10cb864d795912ca1b9230ff7b5ccbba4503da8f8182cb9f"
+    },
+    {
+      "path": "scripts/collect_bench.sh",
+      "sha256": "cf3d006442ecbcde60713c0dd6843d4c81fb4612af4ae3ebdf737c15f748b0b4"
+    },
+    {
+      "path": "scripts/draw_kv.py",
+      "sha256": "977b507e9c23e7ea3a3ccf7452284525bfc435cbe45f270e3acb4086affefaa8"
+    },
+    {
+      "path": "scripts/env_buildup_all.sh",
+      "sha256": "ed45aa105ffdbffc7c76eb73646aecfe04c2b749c9628e226099ae2a36773578"
+    },
+    {
+      "path": "scripts/env_setup_r6525.sh",
+      "sha256": "7a59045f9ff349251e8eb33d10a0d7ea1e04422fffa3f448867bcf80386a75df"
+    },
+    {
+      "path": "scripts/env_setup_xl170.sh",
+      "sha256": "c98766c73efcf8b268deb0b69c784b84938dcc7220fd935f1d449147c66f3ced"
+    },
+    {
+      "path": "scripts/env_setup_xl170_batch.sh",
+      "sha256": "50c2549feac13dc6263b33de69ed3a032c6630a59c44f8af940a34b3dd67583c"
+    },
+    {
+      "path": "scripts/filter.py",
+      "sha256": "deb108ca7a99ceb041cc0f9b5fae8f434bdf57068ef621167434fe008fd9c07d"
+    },
+    {
+      "path": "scripts/fresh_all.sh",
+      "sha256": "4e840b66082608f07eadbdec6bd671c104fe62f8bc24cbfde2f20f8d1b98696b"
+    },
+    {
+      "path": "scripts/fusee_bench.sh",
+      "sha256": "88e89febe457645bc1ad32aa8d38fb8c5229f3aa8b8e66ab85c99daaa5764662"
+    },
+    {
+      "path": "scripts/open_vf.sh",
+      "sha256": "f231fded3e397507d2d3a1cd025a94936b148c518799239e397d53e821ade048"
+    },
+    {
+      "path": "scripts/run_bench.sh",
+      "sha256": "86f174a32e2fb97ba1169abff07bdeff007afde7e77ca4af8055b9192006cb18"
+    },
+    {
+      "path": "scripts/run_different_allocator.sh",
+      "sha256": "0994cec85d85f33f10f70b322701600d0dcef550cf7bdae579b834add670c990"
+    },
+    {
+      "path": "scripts/run_different_node.sh",
+      "sha256": "de064541d09bba23b0520bdbbefd2d7abefc87463b7703328ab867a28177a0b2"
+    },
+    {
+      "path": "scripts/run_different_size_128.sh",
+      "sha256": "dd39526d5e8df459f189a29dbd6a2187a6d05138bb559927a8b10a441b8cd9fb"
+    },
+    {
+      "path": "scripts/run_different_size_16.sh",
+      "sha256": "17d38818d7bd5d0805fdb6e66f44a7d8289dcece9532ff2f1ecfd3d6ccdb409e"
+    },
+    {
+      "path": "scripts/run_different_thread.sh",
+      "sha256": "45efc120fc2deebff209673a8e111105dfe7822fecb96be28165c78f5ee41afa"
+    },
+    {
+      "path": "scripts/run_fusee_2MB.sh",
+      "sha256": "dc36ddcde8a9161f8c35aba80a42dea4f0b53c1e888a09e7723667dabc54fd30"
+    },
+    {
+      "path": "scripts/run_fusee_4KB.sh",
+      "sha256": "1cb2fe77785d9c9d8b8b9065ebb2011ab380a22a952900b2bb3c9b84cc6ddd0e"
+    },
+    {
+      "path": "scripts/run_mix.sh",
+      "sha256": "b3ba096d0f7d44f6d0b4f948e7c250673b3f3b1f501b070afd5841d49a7d314d"
+    },
+    {
+      "path": "scripts/set_2MB_hugepage.sh",
+      "sha256": "cbbdfd93a660ed2a69edcc5c12f5848657b805e318e0abc62319766740bb8588"
+    },
+    {
+      "path": "scripts/set_mac.sh",
+      "sha256": "5d5c09ce007e9fc10b36ef88ae1e6a97b9287845e9a0f0c8899c5c9abf6b8c09"
+    },
+    {
+      "path": "scripts/size_alloc.py",
+      "sha256": "fa8900495650aab0493ad4c8bab30beeb574d153fbe58272ff409522f0bc7927"
+    },
+    {
+      "path": "scripts/start_microbench.sh",
+      "sha256": "cb8d1f17d6507ec758b91eea04b329974bc52c1525f99b43b08ef58afbc3d9e3"
+    },
+    {
+      "path": "scripts/start_microbench_multiple.sh",
+      "sha256": "9e4db29cad6898b99740dfa79196371808b35b3bacddd60acaa63644f059529f"
+    },
+    {
+      "path": "scripts/start_microbench_trace.sh",
+      "sha256": "11c5ad214b256f35054f8845518471d932586c1eca540f9dd9454557700dcd67"
+    },
+    {
+      "path": "scripts/start_mix.sh",
+      "sha256": "b5fe89bd804632696812e4c8ee21a827698675e24905d4829e579b4b8120b35e"
+    },
+    {
+      "path": "scripts/start_remote_client.sh",
+      "sha256": "4e48c0e6f71200903e3a9aaa1f8fc1c68b661875083e297297f065a61fd190c2"
+    },
+    {
+      "path": "scripts/start_remote_client_multiple.sh",
+      "sha256": "74467393bbaf7e661dbd6e6eb0c1b3723cdeb757da2aa8c3c011d82fafc77896"
+    },
+    {
+      "path": "scripts/start_server.sh",
+      "sha256": "ac1e28def684eecff7ac20a215334705b9041c64a50bd2a66afcb70de873cc7a"
+    },
+    {
+      "path": "scripts/start_server_multiple.sh",
+      "sha256": "218d129dbc4e1915e6d83620eebb47584f0ec63a79c83328f6d8fac69aee244c"
+    },
+    {
+      "path": "scripts/stop_local_client.sh",
+      "sha256": "b0039a4c19451dac19edb8e9287f876866d0c62eaab83d903e42c6630e922e45"
+    },
+    {
+      "path": "scripts/stop_remote_client.sh",
+      "sha256": "371a3dc82b89c38bab5b1dc44002a228d751b561c9003ba0d5a5cf54a2553ce0"
+    },
+    {
+      "path": "scripts/stop_server.sh",
+      "sha256": "9a86ee77c66c1165ea6c0338de13746db31d39be9b95f649ec576c101bcc846e"
+    },
+    {
+      "path": "scripts/stop_server_multiple.sh",
+      "sha256": "dd4e06379b68d8d04d896590d36b8a7717867c41fb0794964756eecbc04e089f"
+    },
+    {
+      "path": "scripts/update.sh",
+      "sha256": "45d9ebaaf5f9c85f1151da8ef4fdd08db97cf11822fe1870851ec69710bccb1b"
+    },
+    {
+      "path": "source/CMakeLists.txt",
+      "sha256": "963473c1cd133da2c651fcb2e3abf9f5c4866a9fdc157b65cf923521b1cbd749"
+    },
+    {
+      "path": "source/client.cc",
+      "sha256": "9ebdc674a4f7c4319b250acf8a04154c879b77abedae2ccfefe4582c21a269a7"
+    },
+    {
+      "path": "source/computing_node.cc",
+      "sha256": "ec6604f015f654901d7fdc7539762b641df0b732be87c2bb3bfdb6eb5508baae"
+    },
+    {
+      "path": "source/free_block_manager.cc",
+      "sha256": "2d8e89c3d1f0f6648bad7d55210b89740a2bf14113e18997747e49dafe656f0a"
+    },
+    {
+      "path": "source/legoalloc.cc",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/memory_node.cc",
+      "sha256": "01d07f3f65ac95c6bf4f23c3cb0b5df15656d5ba6115692f6555330690d31815"
+    },
+    {
+      "path": "source/mr_utils.cc",
+      "sha256": "384a55057992ef087ffcd5f630a10e8241c62ccf8e552539f8da6729b853d7db"
+    },
+    {
+      "path": "source/rdma_conn.cc",
+      "sha256": "a646081d3c919b00affb0a1ce244e7343a6bbf7a03bea8970e4d41c3345c2f2a"
+    },
+    {
+      "path": "source/rdma_conn_manager.cc",
+      "sha256": "62780b6047e6bed7f21d33ce0f52cd7b58d0fc1b4440590f96f62e5c31ef31c0"
+    },
+    {
+      "path": "source/server.cc",
+      "sha256": "d9d770ec8e9b4d155b7ffe3e26d7c263c742e0bd4026added7fafe5b4e2f5e6a"
+    }
+  ]
+}
