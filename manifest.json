@@ -17,8 +17,8 @@
   "files": [
     {
       "path": "2026-11-10/index.html",
-      "bytes": 38354,
-      "sha256": "39f9065025da4624de66e82ff03ea206ec63eefdb2f0bc9bfb9ecfc64a7a5342"
+      "bytes": 38362,
+      "sha256": "588d9edf84ae2c24a430a2553ac4a99738a43e8a941af278169f12c4a5820899"
     },
     {
       "path": "2026-11-10/papers/BURST/README.md",
@@ -207,8 +207,8 @@
     },
     {
       "path": "2026-11-11/index.html",
-      "bytes": 39100,
-      "sha256": "a88a9e0f647f3ff9f004ee15d38782ddcb07125e19b6eb20d68c72eb15a48835"
+      "bytes": 39108,
+      "sha256": "c4efcd4cfe384e00f53fbf59a1c06f5d685f4528befbf6d184aba3bcfd4a5e7e"
     },
     {
       "path": "2026-11-11/materials-index.json",
@@ -997,8 +997,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 2948,
-      "sha256": "f28551e241224ee74dd7a9aeb5042d6e99dc09bb9f6f62fc0fc696d1c58e3c0a"
+      "bytes": 2956,
+      "sha256": "aa1f2a278ec9f5c0b2ce74503f3e9dc46bf34ee6a41d8d6fb6f8c9c7d64f2ddc"
     },
     {
       "path": "research-notes.json",
