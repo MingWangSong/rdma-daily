@@ -12,7 +12,7 @@
     "FARLock GPL-3.0-or-later",
     "FineMem BSD-3-Clause"
   ],
-  "quality_notes": "13 excerpts visually inspected; HTML links, anchors, image dimensions, and JavaScript syntax checked. Full browser layout/interaction checks pending due to environment restrictions. See VALIDATION.md.",
+  "quality_notes": "13 excerpts visually inspected; HTML links, anchors, image dimensions, and JavaScript syntax checked. GitHub Pages desktop layout at 1180px, all 13 figures, modal repeat/Escape/focus, anchors and browser history verified. Mobile viewport/device QA remains unrun. See VALIDATION.md.",
   "files_count_excluding_manifest_and_checksums": 199,
   "files": [
     {
@@ -972,8 +972,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1467,
-      "sha256": "7c210037018a872ebbf6fa626ee6e87520d8d45d5296b855b6ef43154e21a64e"
+      "bytes": 1910,
+      "sha256": "e2f5c1044b4a3ad354a724f92637d6284844728bdc4915b4e3acb99cb9062f86"
     },
     {
       "path": "archive_metadata.json",
