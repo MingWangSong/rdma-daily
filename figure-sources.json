@@ -1,5 +1,5 @@
 {
-  "count": 13,
+  "count": 19,
   "scope": "Limited excerpts for direct technical commentary, not open-licensed figure collection.",
   "figures": [
     {
@@ -352,6 +352,132 @@
       "purpose": "Limited figure excerpt directly discussed in the Chinese technical review; no open license asserted.",
       "analysis_zh": "关键看位图、临时日志与时间戳处于同一个CAS提交点。完整日志与上层位图随后更新，但任何线程可帮助补齐恢复记录，因此故障不能让成功分配变成不可追踪的泄漏。",
       "archive_path": "2026-11-11/papers/FineMem/images/finemem-fig8.png"
+    },
+    {
+      "path": "uccl-fig3.png",
+      "num": 3,
+      "page": 6,
+      "title": "控制交付与payload分离",
+      "analysis": "CPU接收的是immediate而非整个payload，这是把控制策略放软件但保留GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。",
+      "archive_path": "2026-11-12/papers/uccl-tran/images/uccl-fig3.png",
+      "dimensions_px": [
+        1016,
+        220
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+      "author_credit": "Yang Zhou et al.",
+      "analysis_zh": "CPU接收的是immediate而非整个payload，这是把控制策略放软件但保留GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "UCCL-Tran",
+      "paper_title": "UCCL-Tran: An Extensible Software Transport Layer for GPU Networking",
+      "figure_number": 3,
+      "pdf_page_1based": 6
+    },
+    {
+      "path": "uccl-fig12.png",
+      "num": 12,
+      "page": 13,
+      "title": "接收端控制保护无辜流的尾延迟",
+      "analysis": "蓝线对permutation流的尾部改善远大于incast本身，说明接收端限流的价值也在于保护共享网络。注意CCDF对数轴与FCT(ms)；这里是消息完成时间，不是NVMe I/O时延。",
+      "archive_path": "2026-11-12/papers/uccl-tran/images/uccl-fig12.png",
+      "dimensions_px": [
+        1016,
+        448
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+      "author_credit": "Yang Zhou et al.",
+      "analysis_zh": "蓝线对permutation流的尾部改善远大于incast本身，说明接收端限流的价值也在于保护共享网络。注意CCDF对数轴与FCT(ms)；这里是消息完成时间，不是NVMe I/O时延。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "UCCL-Tran",
+      "paper_title": "UCCL-Tran: An Extensible Software Transport Layer for GPU Networking",
+      "figure_number": 12,
+      "pdf_page_1based": 13
+    },
+    {
+      "path": "figures/dpa-store-fig3.png",
+      "num": 3,
+      "page": 5,
+      "title": "读数据路径与更新索引路径",
+      "analysis": "绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再把结构接回NIC。两条路径解释了GET快不等于INSERT快。“host replica”是单机数据结构副本，不是跨机器容灾副本。",
+      "archive_path": "2026-11-12/papers/dpa-store/images/dpa-store-fig3.png",
+      "dimensions_px": [
+        1536,
+        474
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+      "author_credit": "Frederic Schimmelpfennig et al.",
+      "analysis_zh": "绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再把结构接回NIC。两条路径解释了GET快不等于INSERT快。“host replica”是单机数据结构副本，不是跨机器容灾副本。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "DPA-Store",
+      "paper_title": "DPA-Store: An Ordered Network Data Path Key-Value Store",
+      "figure_number": 3,
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "figures/dpa-store-fig13.png",
+      "num": 13,
+      "page": 13,
+      "title": "UPDATE与新增key的INSERT是两种成本",
+      "analysis": "上半图为吞吐MOPS，下半图为p50延迟μs；50%/5%写之外是GET。UPDATE可只改host值，INSERT可能触发结构COPY，因此不能用左图更新吞吐估算新文件创建和新索引项承载力。",
+      "archive_path": "2026-11-12/papers/dpa-store/images/dpa-store-fig13.png",
+      "dimensions_px": [
+        738,
+        465
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+      "author_credit": "Frederic Schimmelpfennig et al.",
+      "analysis_zh": "上半图为吞吐MOPS，下半图为p50延迟μs；50%/5%写之外是GET。UPDATE可只改host值，INSERT可能触发结构COPY，因此不能用左图更新吞吐估算新文件创建和新索引项承载力。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "DPA-Store",
+      "paper_title": "DPA-Store: An Ordered Network Data Path Key-Value Store",
+      "figure_number": 13,
+      "pdf_page_1based": 13
+    },
+    {
+      "path": "nvme-control/figure-10.png",
+      "num": 10,
+      "page": 7,
+      "title": "把网络排队与SSD执行时间拆开",
+      "analysis": "只有RTT无法区分网络排队与SSD执行，只有本跳ECN也看不到后续路径。TS、ECN与Req.Lat.共同提供可归因反馈；附加头随跳数增长，部署需计入MTU、解析器与路径状态成本。",
+      "archive_path": "2026-11-12/papers/nvme-traffic-control/images/figure-10.png",
+      "dimensions_px": [
+        729,
+        267
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+      "author_credit": "Chendong Wang、Joontaek Oh、Ming Liu",
+      "analysis_zh": "只有RTT无法区分网络排队与SSD执行，只有本跳ECN也看不到后续路径。TS、ECN与Req.Lat.共同提供可归因反馈；附加头随跳数增长，部署需计入MTU、解析器与路径状态成本。",
+      "version": "NSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "NVMe-oF 流控",
+      "paper_title": "Co-Designing Traffic Control with NVMe-oF for Disaggregated Storage: A Comparative Study of Switched and Switchless SAN Architectures",
+      "figure_number": 10,
+      "pdf_page_1based": 7
+    },
+    {
+      "path": "nvme-control/figure-12.png",
+      "num": 12,
+      "page": 11,
+      "title": "相近吞吐下的平均与尾部读延迟",
+      "analysis": "三面板一起读：吞吐近似相同，作者汇总平均读延迟下降28.3%、P99.9下降25.0%。这是8个RocksDB实例、Zipf0.99、1KB KV的结果，不说明SSD物理IOPS上限提高。",
+      "archive_path": "2026-11-12/papers/nvme-traffic-control/images/figure-12.png",
+      "dimensions_px": [
+        1512,
+        258
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+      "author_credit": "Chendong Wang、Joontaek Oh、Ming Liu",
+      "analysis_zh": "三面板一起读：吞吐近似相同，作者汇总平均读延迟下降28.3%、P99.9下降25.0%。这是8个RocksDB实例、Zipf0.99、1KB KV的结果，不说明SSD物理IOPS上限提高。",
+      "version": "NSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted.",
+      "paper": "NVMe-oF 流控",
+      "paper_title": "Co-Designing Traffic Control with NVMe-oF for Disaggregated Storage: A Comparative Study of Switched and Switchless SAN Architectures",
+      "figure_number": 12,
+      "pdf_page_1based": 11
     }
   ]
 }

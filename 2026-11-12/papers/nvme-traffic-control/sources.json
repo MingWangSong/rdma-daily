@@ -1,0 +1,55 @@
+{
+  "id": "nvme-traffic-control",
+  "name": "NVMe-oF 流控",
+  "title": "Co-Designing Traffic Control with NVMe-oF for Disaggregated Storage: A Comparative Study of Switched and Switchless SAN Architectures",
+  "title_zh": "盘端credit、读响应预留和逐I/O选路如何衔接",
+  "venue": "NSDI 2026",
+  "date": "2026年5月，会议5月4–6日；报告5月6日，论文集2651–2669页",
+  "org": "University of Wisconsin–Madison",
+  "authors": "Chendong Wang、Joontaek Oh、Ming Liu",
+  "url": "https://www.usenix.org/conference/nsdi26/presentation/wang-chendong",
+  "pdf": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+  "scope": "实测为NVMe-over-TCP；迁移到NVMe/RDMA需要重新验证QP、顺序与遥测约束",
+  "summary": "网络未拥塞不等于SSD还有余量。先控制端到端队列，再讨论复杂网内调度。",
+  "figures": [
+    {
+      "path": "nvme-control/figure-10.png",
+      "num": 10,
+      "page": 7,
+      "title": "把网络排队与SSD执行时间拆开",
+      "analysis": "只有RTT无法区分网络排队与SSD执行，只有本跳ECN也看不到后续路径。TS、ECN与Req.Lat.共同提供可归因反馈；附加头随跳数增长，部署需计入MTU、解析器与路径状态成本。",
+      "archive_path": "2026-11-12/papers/nvme-traffic-control/images/figure-10.png",
+      "dimensions_px": [
+        729,
+        267
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+      "author_credit": "Chendong Wang、Joontaek Oh、Ming Liu",
+      "analysis_zh": "只有RTT无法区分网络排队与SSD执行，只有本跳ECN也看不到后续路径。TS、ECN与Req.Lat.共同提供可归因反馈；附加头随跳数增长，部署需计入MTU、解析器与路径状态成本。",
+      "version": "NSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "path": "nvme-control/figure-12.png",
+      "num": 12,
+      "page": 11,
+      "title": "相近吞吐下的平均与尾部读延迟",
+      "analysis": "三面板一起读：吞吐近似相同，作者汇总平均读延迟下降28.3%、P99.9下降25.0%。这是8个RocksDB实例、Zipf0.99、1KB KV的结果，不说明SSD物理IOPS上限提高。",
+      "archive_path": "2026-11-12/papers/nvme-traffic-control/images/figure-12.png",
+      "dimensions_px": [
+        1512,
+        258
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+      "author_credit": "Chendong Wang、Joontaek Oh、Ming Liu",
+      "analysis_zh": "三面板一起读：吞吐近似相同，作者汇总平均读延迟下降28.3%、P99.9下降25.0%。这是8个RocksDB实例、Zipf0.99、1KB KV的结果，不说明SSD物理IOPS上限提高。",
+      "version": "NSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "archive": {
+    "paper_pdf": "官方原文链接保留；未公开整篇PDF",
+    "slides": "NVMe-oF报告已读；DPA报告403未读；UCCL报告未读；完整幻灯片均不转载",
+    "code": "未核实专属公开代码仓库；未创建fork"
+  }
+}

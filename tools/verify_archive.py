@@ -16,11 +16,11 @@ class Page(HTMLParser):
   if tag=='figure':self.figures+=1
   if tag=='img' and a.get('src'):self.images.append(a)
 pages={};errors=[]
-for rel in ['index.html','2026-11-10/index.html','2026-11-11/index.html']:
+for rel in ['index.html']+[str(p.relative_to(R)) for p in sorted(R.glob('20??-??-??/index.html'))]:
  f=R/rel;text=f.read_text();p=Page();p.feed(text);pages[f.resolve()]=p
  if text.lower().count('<!doctype')!=1:errors.append(rel+': DOCTYPE count')
  if len(p.ids)!=len(set(p.ids)):errors.append(rel+': duplicate IDs')
- if rel!='index.html' and p.papers!=5:errors.append(rel+': expected 5 papers')
+ if rel!='index.html' and p.papers != (3 if rel.startswith('2026-11-12') else 5):errors.append(rel+': unexpected paper count')
 for f,p in pages.items():
  for ref in p.refs:
   u=urlsplit(ref)
@@ -47,7 +47,7 @@ for f in R.rglob('*.pdf'):errors.append('full PDF must not be republished '+str(
 manifest=R/'manifest.json'
 if manifest.exists():
  listed=json.loads(manifest.read_text())['files'];expected={x['path'] for x in listed}
- actual={str(f.relative_to(R)) for f in R.rglob('*') if f.is_file() and f.name not in ('manifest.json','SHA256SUMS.txt')}
+ actual={str(f.relative_to(R)) for f in R.rglob('*') if f.is_file() and '.git' not in f.parts and f.name not in ('manifest.json','SHA256SUMS.txt')}
  if expected!=actual:errors.append('manifest file set mismatch')
  for x in listed:
   f=R/x['path']

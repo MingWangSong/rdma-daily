@@ -1,0 +1,61 @@
+{
+  "id": "uccl-tran",
+  "name": "UCCL-Tran",
+  "title": "UCCL-Tran: An Extensible Software Transport Layer for GPU Networking",
+  "title_zh": "软件传输控制与接收端信用：别把GPU吞吐等同存储收益",
+  "venue": "OSDI 2026",
+  "date": "2026年7月13–15日；论文集1143–1166页，未核实首次上线日",
+  "org": "UC Berkeley、UC Davis、清华大学、Harvard、IBM Research、AWS、Broadcom、布加勒斯特理工大学及独立研究者",
+  "authors": "Yang Zhou et al.",
+  "url": "https://www.usenix.org/conference/osdi26/presentation/zhou-yang",
+  "pdf": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+  "scope": "直接RDMA传输研究；实测对象为GPU网络，存储应用属于待验证迁移",
+  "summary": "拆开UC、可靠性、RTT选路和接收端credit，识别CPU代价与尾延迟边界。",
+  "figures": [
+    {
+      "path": "uccl-fig3.png",
+      "num": 3,
+      "page": 6,
+      "title": "控制交付与payload分离",
+      "analysis": "CPU接收的是immediate而非整个payload，这是把控制策略放软件但保留GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。",
+      "archive_path": "2026-11-12/papers/uccl-tran/images/uccl-fig3.png",
+      "dimensions_px": [
+        1016,
+        220
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+      "author_credit": "Yang Zhou et al.",
+      "analysis_zh": "CPU接收的是immediate而非整个payload，这是把控制策略放软件但保留GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "path": "uccl-fig12.png",
+      "num": 12,
+      "page": 13,
+      "title": "接收端控制保护无辜流的尾延迟",
+      "analysis": "蓝线对permutation流的尾部改善远大于incast本身，说明接收端限流的价值也在于保护共享网络。注意CCDF对数轴与FCT(ms)；这里是消息完成时间，不是NVMe I/O时延。",
+      "archive_path": "2026-11-12/papers/uccl-tran/images/uccl-fig12.png",
+      "dimensions_px": [
+        1016,
+        448
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+      "author_credit": "Yang Zhou et al.",
+      "analysis_zh": "蓝线对permutation流的尾部改善远大于incast本身，说明接收端限流的价值也在于保护共享网络。注意CCDF对数轴与FCT(ms)；这里是消息完成时间，不是NVMe I/O时延。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "archive": {
+    "paper_pdf": "官方原文链接保留；未公开整篇PDF",
+    "slides": "NVMe-oF报告已读；DPA报告403未读；UCCL报告未读；完整幻灯片均不转载",
+    "code": "Apache-2.0固定commit源码阅读子集，非完整可构建代码或fork"
+  },
+  "code_snapshot": {
+    "commit": "52d4184c89deb5631be6dac6a9b1c40896c9e26e",
+    "upstream": "https://github.com/uccl-project/uccl",
+    "path": "papers/uccl-tran/code/ARCHIVE.md",
+    "license": "Apache-2.0"
+  }
+}

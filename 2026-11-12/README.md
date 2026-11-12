@@ -1,0 +1,201 @@
+# 2026-11-12 RDMA 与分布式存储早报
+
+[打开渲染页面](https://mingwangsong.github.io/rdma-daily/2026-11-12/)
+
+本期三篇近期正式顶会论文：一篇直接RDMA传输研究，两篇与存储数据路径强相关的设计对照。未核实到当日新发表合格论文，不为凑五篇降低标准。
+
+# UCCL-Tran：把传输控制搬回 CPU，代价是否适合存储？
+
+论文：UCCL-Tran: An Extensible Software Transport Layer for GPU Networking。正式 OSDI 2026，2026-07-13—15，pp.1143–1166；本期是近期已发表论文回溯，不是11月12日新发。
+主要作者单位：UC Berkeley、UC Davis、清华大学、Harvard、IBM Research、AWS、Broadcom、布加勒斯特理工大学及独立研究者。AWS作者明确说明该研究与其AWS职位无关。
+原文：https://www.usenix.org/system/files/osdi26-zhou-yang.pdf
+正式收录：https://www.usenix.org/conference/osdi26/presentation/zhou-yang
+作者代码：https://github.com/uccl-project/uccl （本次核查main 52d4184c89deb5631be6dac6a9b1c40896c9e26e，Apache-2.0；当前仓库比论文实现新，不能把当前README指标混入论文实验）
+实际阅读：已读正文§1–9、表1–4及相关图3/6–15；浏览当前仓库README/LICENSE；未复现实验，未观看报告，不声称逐行代码审计。
+
+## 为什么不是“多建几个QP”就够了
+传统RC将可靠性、拥塞控制绑在RNIC固定逻辑内。增加QP只增加ECMP哈希熵，并不会让应用根据路径拥塞主动选路。UCCL-Tran把控制状态留在主机，用现有RNIC完成大块数据DMA，再由软件实现逐路径RTT观测、选路、可靠性与接收端信用控制。目标是GPU大消息集合通信；对存储的迁移点是复制/重建等批量数据路径，以及incast对无关RPC的干扰，绝不是证明小KV访问也更快。
+
+## 关键机制：一次消息如何通过
+1. **UC绕开固定控制，保留硬件分段与重组。** 首选UC QP：没有硬件重传/拥塞控制，但支持write_with_imm。发送方指定源GPU地址、目标GPU地址与长度，RNIC把chunk切包、传输并DMA到目标地址；32位immediate随成功接收的chunk进入接收端CQE，由CPU处理。控制信息与数据交付绑定，CPU无需读取GPU里的包头。这里的“接收完成”仍只代表传输交付，不代表存储写入持久化。
+2. **32位预算决定协议上限。** immediate含8位connection ID、7位message ID、8位chunk sequence number、1位末块标记、余下8位供高级控制使用。在单engine、单NIC对内支持256连接和每连接128在途消息。不能把这直接当无限连接数存储RPC层；扩展需要分片或改变编码。
+3. **多个逻辑连接共享每NIC对256个QP。** 用逐路径RTT做power-of-two采样，选较低RTT路径。UC/RC预先指定每个chunk的最终位置，跨QP乱序不要求拷贝到RNIC重排缓冲；CPU维护序号/ACK与选择性重传状态。丢失chunk后重传、超时及重复ACK规则在软件完成，不是依靠UC自动可靠。
+4. **控制合并和connection splitting换CPU效率。** 默认每32KB chunk作一次控制，而非每个MTU包；一条逻辑连接分给多个engine，每个维护独立子连接CC/LB状态。run-to-completion线程用DRR兼顾RX/TX/pacing/重传，并优先处理ACK。这样降低MMIO与CQ处理成本，但控制粒度、CPU调度抖动和ACK延迟成为新约束。
+5. **非UC路径有明确降级。** Broadcom走关闭CC的RC，但无法自定义其可靠性；AWS EFA走UD，以scatter-gather把CPU控制头与GPU数据合成同一报文、接收时再分开。UD没有硬件分段重组，需要逐包操作和GPU scattered memcpy；论文为此改了约170行NCCL。不同后端不是同一成本模型。
+
+## 证据与实验边界
+- **表1、图7：跨机架6台服务器，每台8×H100、8×ConnectX-7 400Gb/s，MTU4KB、fat-tree。** NCCL v2.23.4，消息1MB–1GB；基线RC分别4/8/16 QP。all-to-all的最高相对提升分别1.79/3.82/4.54×；这是不同基线配置与消息点的最大值，不是普遍4.5×。图15只保留到128QP的历史基线日志，没有实测256QP RC对照，作者对更高QP的趋势属于推断。
+- **图12：2台CX_IB服务器、共16个400G NIC，以关闭NVLink/SHM模拟16个网络端点。** 15→1 incast与16-NIC permutation流量并行，每条流发1MB消息、最多4个在途。uTran EQDS相对ConnectX-7 InfiniBand，incast P99/P99.9改善1.73/1.72×，无辜permutation流改善4.50/4.88×。收益来自接收端发信用、在队列积压前限制总入流，避免链路级流控向上游传播。它是消息FCT尾延迟，不是NVMe I/O尾延迟。
+- **图14、表3/4：吞吐不是免费。** 该CX_IB环境1个engine核心只能达到双向29GB/s，2核心达50GB/s；作者对应表述为每核400Gb/s单向。connection splitting使all-to-all峰值busbw从39.9升至48.5GB/s。重负载下ACK turnaround P99达36μs，足以对数微秒小RPC造成影响；不能把bulk吞吐结果当作小请求延迟保证。
+- **图11：真正端到端收益较小。** AMD四机、每机8×MI300X及8×Thor-2的rail-optimized拓扑上，DeepSeek-V2-Lite训练最高7.5%提升，另耗每NIC2个CPU核心。DeepSeek-V3 serving是trace驱动模拟，不是完整数百GPU线上集群实测。
+- **图13丢包研究需谨慎。** 注入丢包在软件内完成且考虑整个chunk损失；硬件对照取自Flor文献而非同一平台直接A/B。其结果说明软件选择性重传值得验证，不能作为生产RoCE禁用PFC的证据。
+
+## 对分布式存储的可执行判断（分析推断）
+优先试验大块复制、纠删码重建、远程缓存预取，保留现有可靠小RPC控制面。若业务依赖一侧RDMA READ，UC不支持READ，这不是换一个参数即可替代的方案；必须引入目标端参与的请求/响应以及应用完成语义。复制写还需要独立的epoch、重复请求去重、校验和、落盘/quorum ACK，论文不提供这些。
+
+在2–4台机器上构建RC基线与UC软件控制原型，固定MTU、NUMA与路径数，测4KB/32KB/1MB混合负载，在大流重建旁放置4KB延迟敏感读；记录吞吐、P99.9、CPU核占用、RNIC QP/cache压力、PCIe流量、重传字节及CNP/PFC。逐个增加QP数、32KB合并、RTT选路、接收端信用，区分真正收益来源。故障注入需覆盖丢包、进程重启和消息重复，不能只看带宽跑满。
+
+尤其不能把论文“6万UC QP几乎无损”直接推广到CPU存储：GPU直连PCIe交换机的数据不经过CPU root complex，且满MTU大包摊销QP换入；CPU小IO的控制与数据可能争用同一PCIe/内存路径。专用轮询核与中断隔离在GPU服务器可能便宜，在压缩、校验、EC已吃满CPU的存储节点可能比网络收益更贵。
+
+## 必要图表与读图
+- uccl-fig3.png：原文图3，PDF第6页，裁剪原图，保留头/数据/网络图例。读图：CPU接收的是immediate而非整个payload；这是把控制策略放软件但不牺牲GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。
+- uccl-fig12.png：原文图12，PDF第13页，保留a/b两面板、CCDF对数轴、FCT(ms)、P99和P99.9。读图：蓝线对无辜permutation流的尾部改善远大于incast本身，说明保护共享网络中的其他流也是接收端控制的价值，不只是让热点接收者更快。
+两图各自支撑独立机制/实验论证，采用有限必要技术评论引用；未核实原图开放再分发授权，不把代码Apache许可扩展到PDF。不公开全文PDF。代码README/LICENSE仅备份明确许可内容；作者仓库可供进一步阅读。
+
+
+![图3 控制交付与payload分离](papers/uccl-tran/images/uccl-fig3.png)
+
+CPU接收的是immediate而非整个payload，这是把控制策略放软件但保留GPU零拷贝数据路径的关键。UC与RC都可使用图中原语，但只有UC卸下硬件可靠性。
+
+来源：Yang Zhou et al.，OSDI 2026，图3，PDF第6页。
+
+
+![图12 接收端控制保护无辜流的尾延迟](papers/uccl-tran/images/uccl-fig12.png)
+
+蓝线对permutation流的尾部改善远大于incast本身，说明接收端限流的价值也在于保护共享网络。注意CCDF对数轴与FCT(ms)；这里是消息完成时间，不是NVMe I/O时延。
+
+来源：Yang Zhou et al.，OSDI 2026，图12，PDF第13页。
+
+
+# DPA-Store：把有序索引移到网卡，为什么读得快、插入却慢？
+
+**DPA-Store: An Ordered Network Data Path Key-Value Store** · OSDI 2026 正式论文，1513–1530页。会期2026年7月13–15日；官方书目记2026年7月，未核实首次上线的具体日期。本期是近期论文补选，不是11月12日新发表。
+
+**作者单位**：Johannes Gutenberg University Mainz、Saarland University、RWTH Aachen University。作者为Frederic Schimmelpfennig、Jan Sass、Reza Salkhordeh、Martin Kröning、Stefan Lankes、André Brinkmann；论文注明Sass与Brinkmann的工作完成于Mainz任职期间。
+
+**定位**：这是UDP over Ethernet的on-path DPA KV系统，并非用RDMA传输客户端请求。纳入的理由是它直接回答存储研发中的取舍：有序索引应由带元数据缓存的RDMA客户端遍历，还是集中放到网卡执行？不能把其性能等同为“RDMA加速收益”。
+
+## 瓶颈与结构
+
+有序范围查询不能简单替换为SmartNIC哈希表；如果树留在host内存，每层遍历又要付DMA往返。DPA-Store把learned index的导航结构放进BlueField-3的1 GiB DPA内存，把值和树副本放host；只有到叶级才跨PCIe。难点不是只减少树高：论文采用的DPA内存平均访问延迟为465 ns，约是普通CPU DRAM访问的5倍，host DMA约910 ns。因此它优化每层访问多少条cache line，而不是笼统地“把计算卸载到网卡”。
+
+## 请求实际怎样走（§3.1，图3、4）
+
+1. 客户端对key做共享哈希，选择UDP端口；硬件steering把包交给对应DPA traverser。默认176个traverser，客户端不维护远端树地址/模型缓存，但仍要做发包、超时与重试。
+2. 一个inner node含7个线性模型分段，段首key与元数据放在一条64B cache line；先定位分段，再计算预测位置，只搜索误差界内的连续窗口。默认ε_inner=4、ε_leaf=8，分别把内层候选访问限在最多2条cache line、叶层候选key限在最多3条DMA访问cache line。不是每层总共只访问2条，元数据、模型、child指针也有成本。
+3. DPA没有浮点单元，模型用定点计算，临时扩到128 bit保持64 bit key精度；计算期间预取模型、pivots及叶key，以重叠访存。作者测得预取优化带来19%提升（§4.2.6）。
+4. GET到叶后先查16项insert buffer，命中直接返回新值；未命中才用叶模型预测host key位置、DMA查key并读取value。RANGE从起始叶开始合并buffer与host数据；跨叶时重新下降到严格大于上一个返回key的后继位置，不能当成无成本的链表扫描。每响应包至多64个KV对以满足1500B MTU。
+5. 每traverser另有96个热点项及Bloom过滤器。key的home线程拥有该缓存，正常写入无需广播失效；UPDATE/DELETE回包前失效相应槽。重路由到非home线程的GET绕过cache，写则额外跨线程失效。更高命中率也未必更快：作者尝试heavy-hitter admission把命中率提高到50%，额外内存读写仍使吞吐不超过简单随机准入。
+
+
+**图3解读（正式PDF第5页/论文1516页）**：绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再将结构接回NIC。两条路径分工解释了为什么GET快不意味着INSERT快。图中“host replica”是单机数据结构副本，不能理解成跨机器容灾副本。来源：Schimmelpfennig等，OSDI26，原图3，裁剪保留完整图体。
+
+## 写入、并发和故障边界（§3.1.3、§3.2）
+
+INSERT/UPDATE/DELETE先追加叶buffer，用写前与写后两次原子计数协调并发；读者先读value再读对应key，避免不匹配映射。追加成功即可ACK，这是作者对已送达请求历史定义的写线性化点，**并不是持久化或复制完成点**。buffer满时，填最后一个槽的线程唯一负责发送patch，后续读仍可读该buffer，写放不进去就重新排队。
+
+Host patcher把buffer与叶数据合并、重训并在必要时向上分裂。纯UPDATE不需要复制新的索引节点；新增key可能使多个层级重建。DPA stitcher先按顺序执行COPY安装完整新节点，再用一个CONNECT指针交换使新子树可见。四个stitcher分管root之下的分区；root split还需UID检查和queue fence，避免连接到尚未复制的节点。旧节点和host DMA区域要等所有traverser离开旧请求epoch才可回收，否则无锁读仍可能踩到释放内存。
+
+这些机制保护的是并发结构可见性，不能扩张为生产级故障恢复。UDP丢请求由客户端超时重发；系统不保存请求去重历史，不提供exactly-once。重复写如果夹在另一个冲突写之后到达，可能覆盖后者；需要特定顺序时客户端必须串行。论文没有提供持久化日志、跨机复制或DPA重启后的已ACK写恢复证明，也没有建立多key快照事务语义。迁移到文件系统元数据权威写路径之前，这些都是必须补上的协议。
+
+## 关键实验：读、更新、新插入不能混为一谈
+
+**条件（§4.1）**：1台server+6台client，100 Gb/s Dell S5232F交换机；server是32核EPYC 9354P、128 GB DDR5、BlueField-3 B3140L。client是双路EPYC 7301合计32核与ConnectX-5，DPDK发包。BlueField采用NIC mode，启用DPA访问host，ARM核禁用。默认预装25M项，64 bit key+64 bit value，偏斜测试Zipf α=0.99；SOSD合成/真实key集合。不能外推到KiB对象值、远距离网络或有持久化语义的数据库。
+
+- **图11/§4.2.4**：默认配置sparse均匀GET为26.3 MOPS；偏斜访问某些数据集最高33.0 MOPS。热点cache可提升吞吐至多约30%，但一些traverser排队加重，尾延迟上升。摘要中的33 MOPS不是所有工作负载的结果。
+- **图10/§4.2.3**：6×31 client threads，queue depth从32增至64，均匀GET吞吐从26.3升至30.0 MOPS，但p50/p90升到约539/554 μs。作者故而选GET QD=32，而INSERT/RANGE选18。吞吐最大值不该脱离延迟约束宣传；这里报告p90，不是p99。
+- **图13/§4.2.8**：纯UPDATE最高12.1 MOPS，新增key的纯INSERT最高仅1.7 MOPS。纯UPDATE只改host值并清buffer；INSERT触发索引COPY。50M项bulk load需复制192 MB索引，实测host→DPA约120 MB/s（§4.2.7）。换成host主动push仍无改善，说明不能简单靠换DMA发起方向修复。
+- **图12**：learned index并非全面压倒B+tree。sparse为26.3 vs 21.5 MOPS；osmc因用更大的ε=16降低元数据占用，扫描窗口变大，变成14.6 vs 20.8 MOPS。这是访问局部性与容量的实测取舍，不是模型永远优于传统索引。
+- **图15/§4.3**：同平台比较ROLEX，range-only为10个相邻key查询，DPA-Store在三数据集range吞吐都领先；新插入则ROLEX更好。图横轴是对数尺度p50延迟，不可写成平均或尾延迟。结论不能套到任意range长度或带复制事务的KV服务。
+
+
+**图13解读（正式PDF第13页/论文1524页）**：上半图是吞吐MOPS，下半图是p50延迟μs；50%/5%写比例的其余请求为GET。左侧UPDATE和右侧INSERT不是同一种写：前者无需复制新索引结构，后者受host→DPA更新路径限制。不能用左侧更新吞吐估算新文件创建/新增索引项的承载力。来源：Schimmelpfennig等，OSDI26，原图13局部裁图，保留全部坐标、图例和工作负载标签。
+
+## 分布式存储可怎样试（以下为分析建议）
+
+更适合先用于**只读/读多写少的元数据二级索引、缓存目录、区间映射查询**，而非直接承载rename/事务提交等权威元数据写路径。收益依据是将多层host DMA/客户端RDMA往返折叠成NIC侧本地导航及叶级DMA，代价是BlueField-3专用硬件、DPA索引容量、更新复制带宽及host patcher CPU；也会引入NIC故障域、升级重建及运维依赖。
+
+最小验证应固定同一台BF3+host，使用真实key分布，分别比较host RPC有序树、RDMA客户端索引和DPA布局；把GET、existing-key UPDATE、new-key INSERT、10/64项range分开。测p50/p99、有效完成吞吐、丢包/重试率、每次操作DMA次数、DPA占用和stitch backlog；再扫QD、热点偏斜及key增长率。故障测试重点是在ACK后立即重启DPA/host，并注入重复、乱序写，检查系统是否丢已确认更新或让旧重试覆盖新值。若需要生产级语义，应先定义去重序列号、恢复来源和持久化/复制ACK条件，重新测其代价，不能沿用论文33 MOPS。
+
+## 原文与阅读范围
+
+- 正式论文及会议确认：https://www.usenix.org/conference/osdi26/presentation/schimmelpfennig
+- 正式PDF：https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf
+- 作者报告视频（官方页面链接）：https://youtu.be/D5nHTHdKeoY
+- 官方slides链接：https://www.usenix.org/system/files/osdi26_slides-schimmelpfennig.pdf （本次访问返回403，未阅读）
+- NVIDIA DPA背景：https://docs.nvidia.com/doca/sdk/dpa+subsystem/index.html （参考入口，本次未单独逐页核验）
+
+实际阅读：正式PDF正文§1–5及全部核心图表，核对作者/会期与书目；未看完报告视频，未复现实验；本轮未核实作者公开代码仓库，未将第三方同名结果当作源码。全文PDF只留私用研究副本，不公开转载。图3和13分别支持数据路径与写入代价的独立实质评论，仅作必要局部引用；未发现明确开放再分发许可，也未声称署名即授权或法律保证。
+
+
+![图3 读数据路径与更新索引路径](papers/dpa-store/images/dpa-store-fig3.png)
+
+绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再把结构接回NIC。两条路径解释了GET快不等于INSERT快。“host replica”是单机数据结构副本，不是跨机器容灾副本。
+
+来源：Frederic Schimmelpfennig et al.，OSDI 2026，图3，PDF第5页。
+
+
+![图13 UPDATE与新增key的INSERT是两种成本](papers/dpa-store/images/dpa-store-fig13.png)
+
+上半图为吞吐MOPS，下半图为p50延迟μs；50%/5%写之外是GET。UPDATE可只改host值，INSERT可能触发结构COPY，因此不能用左图更新吞吐估算新文件创建和新索引项承载力。
+
+来源：Frederic Schimmelpfennig et al.，OSDI 2026，图13，PDF第13页。
+
+
+# NVMe-oF 流量控制：先识别盘端瓶颈，再决定路径和速率
+
+**论文**：Co-Designing Traffic Control with NVMe-oF for Disaggregated Storage: A Comparative Study of Switched and Switchless SAN Architectures  
+**作者与机构**：Chendong Wang、Joontaek Oh、Ming Liu；University of Wisconsin–Madison（威斯康星大学麦迪逊分校）。机构按论文署名核实，不把赞助方当作作者单位。  
+**发表**：NSDI 2026 正式论文，论文集 pp.2651–2669，2026年5月；会议5月4–6日，作者报告首页注明5月6日。**本期状态：近期已发表精选，非11月12日新论文。**  
+**读了什么**：已读正式PDF正文§1–7和作者30页报告；分析重点为§3实验方法、§4协议与调度、§5条件化实验。未运行原型、未观看视频；本轮未找到并核实该论文独立开源仓库。
+
+## 为什么纳入 RDMA 早报
+
+这是与 RDMA 存储强相关的**跨层控制研究**，不是 RoCE 性能论文：作者原型使用 **SPDK NVMe-over-TCP**。它回答的关键问题是：当远端 SSD 的服务速率变化时，仅按链路 ECN/RTT 调节发送，是否会把已经堵在 SSD 上的 I/O 继续灌入网络？可迁移的是存储端 credit、请求/响应不对称性和 I/O 粒度路由；以下数值不能直接外推到 NVMe/RDMA、ConnectX-5 或现成 LACP bond。
+
+## 瓶颈成因：SSD 的“服务管道”并不恒速
+
+一条远程 I/O 的上限是网络传输能力与 SSD 服务能力中较小者。盘的垃圾回收、碎片、读写干扰会改变后者，网络没有拥塞不代表盘还能接单。作者在§4.1发现，同样4KB负载，纯读比50/50读写混合多356.0MB/s；预置128KB随机写形成的碎片盘，相比干净盘读、写吞吐分别下降25.9%和31.9%。此时请求在目标端堆积，再反向影响共享路径，形成无关流的队头阻塞。
+
+为什么敢采用更多转发跳数？测得QD=1时跨I/O大小平均网络时间只占随机读4.8%、顺序写12.7%；QD=64时4KB读/写分别仅3.8%/2.8%。这是这套SSD与软件栈的测量前提，不是所有远程存储都成立：对超低延迟介质、内存缓存命中路径，额外跳数可能更昂贵。
+
+## 三个机制如何衔接
+
+1. **请求探路，完成包带回证据。** ISR 在NVMe-oF头后加入所经跳点、时间戳向量、ECN向量和SSD服务时延（图10）。请求逐跳选择候选路径并记录转发信息；目标把SSD服务时延填入完成包，完成包按同一次I/O的反向路径返回。每一跳据此更新到目标的延迟估计，以EWMA平滑。扣除SSD处理时间、结合沿路ECN，能区分“网络排队”与“盘慢”。较低网络延迟优先，条件相同时选择较短路径；记录已访问跳点以避免环路。**对称性要求针对一次命令/完成对，而非整个会话**，不同I/O可以换路；同一I/O的包保持同路径，避免重排。
+2. **从小请求提前推断大响应。** 一条读命令远小于返回数据，写完成则很小。请求经过入端口时，系统根据I/O类型和大小，为该端口稍后的反向响应预配带宽；每会话token bucket限制流量，读数据完成与小写完成进入不同优先级队列。估计来自离线I/O profile，因此只是上界，不能代表实时盘能力。严格预留会让带宽被尚未返回的数据占住，需允许适量超订，权衡利用率和短读延迟。注意§4.4的Rover≤1与图18的o=1/2/4记号不一致，本稿不把图中参数照抄为可执行配置。
+3. **把盘的headroom转换为credit，再指导调度。** 目标比较实际I/O服务延迟与动态阈值，估计可接受提交速率，将其归一为credit，并在竞争流之间加权公平分配。完成包把credit带回客户端和沿途交换点：客户端限流，交换点让目标盘更有余量的I/O优先。实现接近SP-PIFO：用多优先级队列近似按rank插入；只给I/O首包计算rank，后续包沿用，避免包重排。读完成使用相同rank，写完成独占最高优先队列。它不是全局最优解，而是以可编程数据面可承受的计算、状态成本逼近较好的端到端调度。
+
+**图10，PDF第7页（论文p.2656）**：本图的价值不是“多了一个头”，而是解释反馈如何有可归因性。只有RTT，无法区分网内排队与SSD执行；只有本跳ECN，看不见后续路径。TS、ECN、Req.Lat.三组字段共同提供可拆分反馈。附加头随跳数增长，部署要核对MTU、解析器和路径状态成本。
+
+## 实验说明了什么，又没说明什么
+
+- **真实原型条件**：四个存储节点，每节点4×100GbE。switched方案将四端口聚合为到ToR的一条路径；switchless采用2D Torus四条路径。Dell Z9100-ON交换机、Aurora 710 Tofino P4、ConnectX-6，与BlueField-2低radix适配器对比；x86双Intel Xeon、256GB DDR4、Samsung PM9A3 960GB NVMe，Ubuntu 22.04。switchless的3+端口通过多块BF2组合，跨卡转发会走PCIe；不是量产高端ASIC的直接测评。
+- **FIO极限吞吐附近（图11，§5.1）**：对一台目标的四块NVMe，clean SSD上4KB随机读、128KB顺序写延迟分别下降32.3%、18.0%；fragmented SSD分别下降43.1%、20.3%。总体吞吐相近，主要改善排队时延。这里不能把43.1%写成“所有负载或尾延迟下降43.1%”。
+- **RocksDB应用结果（图12，PDF第11页）**：两台target共8块NVMe，四客户端各运行两个RocksDB（共8实例），BlobFS；每实例YCSB生成1000万条1KB KV，Zipf偏斜0.99，覆盖A/B/C/D/F。吞吐近似相同，作者汇总平均读延迟下降28.3%，99.9分位读延迟下降25.0%。图的三面板应一起读：收益来自更低排队，不是提高SSD物理IOPS上限。
+- **敏感性与反例（§5.5）**：仅有ring时，相比switched读/写延迟反而增加25.8%/38.3%；具有更丰富路径的2D mesh配置才降低16.1%/6.4%。拓扑比较还涉及不同聚合带宽（200/200/300/400GbE），不能据此单独证明某一种拓扑无条件更优。预留也会过度限流：严格配置下1或4流仅达到最大带宽的49.6%/62.1%；完全不预留则在高并发混合读中显著增加短I/O延迟。
+- **模拟与实机要分开**：27节点、每节点600GbE的3D Torus，以及更大客户端数使用HTsim＋SSD模型，不是部署规模。单适配器故障下0.5–2ms级恢复和最高6.8%临时吞吐损失也来自模拟。成本下降50.5%是特定报价下仅交换机/适配器的资本开支计算，不含运维、人力、线缆、电力和故障定位成本。
+
+## 故障与语义边界
+
+失败路径被设为不可达，后续请求绕行；尚在传输的I/O可能暂时破坏来回对称性。失败出口的预留token撤销，改道响应缺少原来的预留约束，于是写完成仍最高优先、读响应落到低优先队列，恢复期间读吞吐会掉。目标盘或节点真的失效则停止对应存储服务，**多路径不等于数据复制或盘故障恢复**。论文不提供分布式一致性、exactly-once提交或崩溃持久性的新协议，不能替代存储栈的重试、去重、日志与副本策略。
+
+## 对分布式存储研发的可执行迁移
+
+**最先做端到端credit，不必先重建网络。** 在块存储target、SSD后端队列或缓存落盘路径记录每设备服务时延/队列深度，把可接收I/O额度反馈给客户端。先在客户端按目标限流并分离小读、大读和写完成，再评估是否有必要把调度下沉到SmartNIC。把“链路很空但盘排队很长”与“盘很快但网口拥塞”作为两个控制状态，避免重复限流或过量提交。
+
+**RDMA移植成本需单列。** 现成RNIC未必允许解析自定义NVMe-oF遥测头；RoCE可靠连接的QP与报文顺序也约束了逐I/O换路。不能直接修改一个RC QP的包级路径就宣称复现ISR。可以从多个独立QP/会话分担I/O开始，保留单I/O顺序；在host或DPU提取盘端credit，测新增CPU轮询、CQ处理、QP状态、遥测字节和PCIe流量。是否采用自定义数据面取决于固件/可编程硬件能力。
+
+**建议小实验（本稿分析，非作者结果）**：4客户端＋2target，固定SSD和总带宽，以4KB读混128KB写覆盖QD1/8/32/64；预置干净/碎片盘并注入一个慢盘。依次比较现有NVMe/RDMA、仅目标credit、credit＋独立QP多路径；记录吞吐、p50/p99/p99.9、SSD服务时延与队列、RNIC重传/ECN、CPU开销。最后断链验证重试、重复执行保护及恢复后credit刷新。只有在相同吞吐下尾延迟下降且CPU/RNIC成本可接受，才值得考虑更复杂的网内调度。
+
+## 参考资料与引用说明
+
+- 正式论文与视频入口：https://www.usenix.org/conference/nsdi26/presentation/wang-chendong
+- 正式论文PDF：https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf
+- 作者报告（已阅读）：https://www.usenix.org/system/files/nsdi26_slides-wang-chendong.pdf
+- DBLP正式收录：https://dblp.org/rec/conf/nsdi/WangOL26.html
+- 本轮未找到论文专属源码仓库，未声称已有代码备份或fork。SPDK/DPDK/Gimbal为文中依赖，不等于该论文实现已公开。
+- 两张原图为必要机制/实验评论的有限局部引用，署名Chendong Wang、Joontaek Oh、Ming Liu，NSDI 2026正式版本。未核实到明确开放再分发许可，不将署名视为授权，不声称版权例外有法律保证；保留图号和原文链接。完整PDF与作者报告不进入公开仓库。
+
+
+![图10 把网络排队与SSD执行时间拆开](papers/nvme-traffic-control/images/figure-10.png)
+
+只有RTT无法区分网络排队与SSD执行，只有本跳ECN也看不到后续路径。TS、ECN与Req.Lat.共同提供可归因反馈；附加头随跳数增长，部署需计入MTU、解析器与路径状态成本。
+
+来源：Chendong Wang、Joontaek Oh、Ming Liu，NSDI 2026，图10，PDF第7页。
+
+
+![图12 相近吞吐下的平均与尾部读延迟](papers/nvme-traffic-control/images/figure-12.png)
+
+三面板一起读：吞吐近似相同，作者汇总平均读延迟下降28.3%、P99.9下降25.0%。这是8个RocksDB实例、Zipf0.99、1KB KV的结果，不说明SSD物理IOPS上限提高。
+
+来源：Chendong Wang、Joontaek Oh、Ming Liu，NSDI 2026，图12，PDF第11页。

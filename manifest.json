@@ -1,19 +1,4 @@
 {
-  "archive_title": "RDMA技术研读：2026-11-10与2026-11-11",
-  "prepared_on": "2026-11-12",
-  "publication_status": "public_repository_archive",
-  "revision": "technical-depth-v2",
-  "scope": "Original Chinese technical commentary with 13 limited original-paper figure excerpts and two existing licensed code subsets. No full paper/slide PDFs.",
-  "paper_count": 10,
-  "html_pages": 3,
-  "original_diagrams": 0,
-  "paper_figure_excerpts": 13,
-  "code_subsets": [
-    "FARLock GPL-3.0-or-later",
-    "FineMem BSD-3-Clause"
-  ],
-  "quality_notes": "13 excerpts visually inspected; HTML links, anchors, image dimensions, and JavaScript syntax checked. GitHub Pages desktop layout at 1180px, all 13 figures, modal repeat/Escape/focus, anchors and browser history verified. Mobile viewport/device QA remains unrun. See VALIDATION.md.",
-  "files_count_excluding_manifest_and_checksums": 199,
   "files": [
     {
       "path": "2026-11-10/index.html",
@@ -961,14 +946,119 @@
       "sha256": "9edf342605a749bf36ede5d8f276351435b3d84b6b95bc1ebe4a417aaad7e9f3"
     },
     {
+      "path": "2026-11-12/README.md",
+      "bytes": 29039,
+      "sha256": "809fbd6c54f649f443f2883c7a9919d7e034d2c21e3a7ee356f19ad70968fd06"
+    },
+    {
+      "path": "2026-11-12/VALIDATION.md",
+      "bytes": 342,
+      "sha256": "b4672e6bbe36aca12156c799c95673b6100a95fa8dc8a2a3ebe39ab076058fe4"
+    },
+    {
+      "path": "2026-11-12/index.html",
+      "bytes": 41941,
+      "sha256": "51ee436ce866e4b07025e63a59604473d4fd928c1136c7c4155858fe14fb7eb6"
+    },
+    {
+      "path": "2026-11-12/materials-index.json",
+      "bytes": 10992,
+      "sha256": "85d7afd9928b2bff40260230e59a61d471f24c5bebc8ace95de2a0aec77163da"
+    },
+    {
+      "path": "2026-11-12/papers/dpa-store/images/dpa-store-fig13.png",
+      "bytes": 37144,
+      "sha256": "ad094350886bb71f3494c9aa297656ba7a6880bb386943865495bb3776ce3069"
+    },
+    {
+      "path": "2026-11-12/papers/dpa-store/images/dpa-store-fig3.png",
+      "bytes": 181613,
+      "sha256": "6a7539820ca7c7d5588292d0fe64a733b16f32815ab0008388024eccacf7e202"
+    },
+    {
+      "path": "2026-11-12/papers/dpa-store/sources.json",
+      "bytes": 3322,
+      "sha256": "fcf02d1894b1ec3d920e5d06702feb984f2f7f2dfb7299b243edc0f8742dc92a"
+    },
+    {
+      "path": "2026-11-12/papers/nvme-traffic-control/images/figure-10.png",
+      "bytes": 39913,
+      "sha256": "feddc20eaeba329817bd5805e6491502916d70a88274ec0513690f9209521425"
+    },
+    {
+      "path": "2026-11-12/papers/nvme-traffic-control/images/figure-12.png",
+      "bytes": 49586,
+      "sha256": "1159d321babe20cc7880bf05837ac1843532e895cff1fb07691af8baebe9dcec"
+    },
+    {
+      "path": "2026-11-12/papers/nvme-traffic-control/sources.json",
+      "bytes": 3343,
+      "sha256": "69f0462a2cd23272168b6da76d1240c14d8468933b21e66730f44f70c81f4e18"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/ARCHIVE.md",
+      "bytes": 1072,
+      "sha256": "498b103ebaa2f384f297877187f5e40fea3813ca3452beccb1e1968ad145ec1c"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/LICENSE",
+      "bytes": 11356,
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/eqds.h",
+      "bytes": 3516,
+      "sha256": "6b88716d1cad79e7a72485939d2bcac7e20858d7dd5621a592a28a3b17ef1b59"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/eqds_credit_test.cc",
+      "bytes": 4392,
+      "sha256": "72f6a1ba422e6f142ff622792f22da4c2ee391ceb6f5ce44ee370d8043b0024a"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/eqds_transfer_test.cc",
+      "bytes": 3371,
+      "sha256": "02ca47dccf43cfe7b0fb05921768e48012e9bd401bb0b0ea5d7f69765c7e7ffd"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/transport.h",
+      "bytes": 49318,
+      "sha256": "d97a9cb3e301e17db7b78bb698c23902bab1e26f3cfb47654691d6a589eb15f8"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/transport_config.h",
+      "bytes": 9218,
+      "sha256": "8b20dc9c9736dcaa537182941755712515f0b1b1a000237c285e2bfd25671602"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/code/upstream-README.md",
+      "bytes": 7189,
+      "sha256": "d4837dea5716f1267ca98f638b73470e7476eb9e89f9746c5b6c64b14d0c96d3"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/images/uccl-fig12.png",
+      "bytes": 47667,
+      "sha256": "e76f038e42030a59eaab38d34d54f02cc2c93eba122281ebdea52966f2f27976"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/images/uccl-fig3.png",
+      "bytes": 27508,
+      "sha256": "5b6c383c175b0774dceca90a66ded9618003ff65d6237b571cb59c8ad000963f"
+    },
+    {
+      "path": "2026-11-12/papers/uccl-tran/sources.json",
+      "bytes": 3426,
+      "sha256": "77ff57c8813f57b69738050637d19ec395aa329a79481eca3fbea142068d302d"
+    },
+    {
       "path": "PUBLICATION_READINESS.md",
-      "bytes": 2812,
-      "sha256": "12949e1be2a950e6ceec06d0f7ed14371d17d6d1429256b04662b7dcacb33119"
+      "bytes": 3280,
+      "sha256": "90db14d4203b1b33130dbf5feeb159cc88111da098295d5721fb9f56af39cac0"
     },
     {
       "path": "README.md",
-      "bytes": 1347,
-      "sha256": "e7ea2a31f01b46a0513e368df0ffd491612aa6576707d5d5dc2645e9eacac84d"
+      "bytes": 1790,
+      "sha256": "60d812ffb86db34ad0a4e661da97b587b5a800193a3b8942ae20e203639b29a3"
     },
     {
       "path": "VALIDATION.md",
@@ -977,8 +1067,8 @@
     },
     {
       "path": "archive_metadata.json",
-      "bytes": 6893,
-      "sha256": "5f71261040a81007c23364878e6aed8e091309c2786ccfe4ffeeb96e80e2b20d"
+      "bytes": 8567,
+      "sha256": "e9d38f98594f10d508d36dacad52b88d93823b6957f542d7a8a6d1a7f7a42318"
     },
     {
       "path": "assets/reader.js",
@@ -987,18 +1077,18 @@
     },
     {
       "path": "assets/style.css",
-      "bytes": 14674,
-      "sha256": "b54d02ea76e09078f64716c8b99ffb15cf6b7518bc4c86452988309956f4077f"
+      "bytes": 15729,
+      "sha256": "14300ba0fea816788ee006e09780bfb6fb4b82c3f6eda46648a8f585fd535aff"
     },
     {
       "path": "figure-sources.json",
-      "bytes": 16883,
-      "sha256": "d0b66aa3ccc18f790e283eb44f81f0fab747660c43e9210dc16463a8336550e1"
+      "bytes": 24545,
+      "sha256": "3413080e607982ec73b2d377f3614a5c9e8e3a2e39230ae7a7d9e932ee986555"
     },
     {
       "path": "index.html",
-      "bytes": 2956,
-      "sha256": "aa1f2a278ec9f5c0b2ce74503f3e9dc46bf34ee6a41d8d6fb6f8c9c7d64f2ddc"
+      "bytes": 3251,
+      "sha256": "3d29c52343530aa851fb7359face6f54400270f31b148c9fd8d6646d4a14ea69"
     },
     {
       "path": "research-notes.json",
@@ -1007,8 +1097,8 @@
     },
     {
       "path": "tools/verify_archive.py",
-      "bytes": 3217,
-      "sha256": "b30c5a12d5e1f9f71202c1652a55bd1cda7c95c182f28fecc721891287a77f0b"
+      "bytes": 3316,
+      "sha256": "45e79062491a61565a01bddf658ebdb66ced85a8e19422ef92d07c7633516d9e"
     }
   ]
 }

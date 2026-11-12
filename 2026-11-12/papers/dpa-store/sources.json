@@ -1,0 +1,55 @@
+{
+  "id": "dpa-store",
+  "name": "DPA-Store",
+  "title": "DPA-Store: An Ordered Network Data Path Key-Value Store",
+  "title_zh": "索引移到网卡后，GET快为什么不意味着INSERT快",
+  "venue": "OSDI 2026",
+  "date": "2026年7月，会议7月13–15日；论文集1513–1530页，未核实首次上线日",
+  "org": "Johannes Gutenberg University Mainz、Saarland University、RWTH Aachen University",
+  "authors": "Frederic Schimmelpfennig et al.",
+  "url": "https://www.usenix.org/conference/osdi26/presentation/schimmelpfennig",
+  "pdf": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+  "scope": "UDP/DPA有序KV；不是RDMA传输，作为RDMA客户端索引的存储设计对照",
+  "summary": "沿DPA导航、host DMA、buffer和COPY/CONNECT拆解读写不对称。",
+  "figures": [
+    {
+      "path": "figures/dpa-store-fig3.png",
+      "num": 3,
+      "page": 5,
+      "title": "读数据路径与更新索引路径",
+      "analysis": "绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再把结构接回NIC。两条路径解释了GET快不等于INSERT快。“host replica”是单机数据结构副本，不是跨机器容灾副本。",
+      "archive_path": "2026-11-12/papers/dpa-store/images/dpa-store-fig3.png",
+      "dimensions_px": [
+        1536,
+        474
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+      "author_credit": "Frederic Schimmelpfennig et al.",
+      "analysis_zh": "绿色读路径只在叶级通过DMA取值；橙色写路径把buffer送host重训，再把结构接回NIC。两条路径解释了GET快不等于INSERT快。“host replica”是单机数据结构副本，不是跨机器容灾副本。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "path": "figures/dpa-store-fig13.png",
+      "num": 13,
+      "page": 13,
+      "title": "UPDATE与新增key的INSERT是两种成本",
+      "analysis": "上半图为吞吐MOPS，下半图为p50延迟μs；50%/5%写之外是GET。UPDATE可只改host值，INSERT可能触发结构COPY，因此不能用左图更新吞吐估算新文件创建和新索引项承载力。",
+      "archive_path": "2026-11-12/papers/dpa-store/images/dpa-store-fig13.png",
+      "dimensions_px": [
+        738,
+        465
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+      "author_credit": "Frederic Schimmelpfennig et al.",
+      "analysis_zh": "上半图为吞吐MOPS，下半图为p50延迟μs；50%/5%写之外是GET。UPDATE可只改host值，INSERT可能触发结构COPY，因此不能用左图更新吞吐估算新文件创建和新索引项承载力。",
+      "version": "OSDI 2026正式论文集PDF",
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "archive": {
+    "paper_pdf": "官方原文链接保留；未公开整篇PDF",
+    "slides": "NVMe-oF报告已读；DPA报告403未读；UCCL报告未读；完整幻灯片均不转载",
+    "code": "未核实专属公开代码仓库；未创建fork"
+  }
+}

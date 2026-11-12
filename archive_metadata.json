@@ -2,11 +2,12 @@
   "title": "RDMA 与分布式存储论文早报",
   "dates": [
     "2026-11-10",
-    "2026-11-11"
+    "2026-11-11",
+    "2026-11-12"
   ],
-  "prepared_on": "2026-11-11",
+  "prepared_on": "2026-11-12",
   "publication_status": "public_repository_archive",
-  "paper_count": 10,
+  "paper_count": 13,
   "original_diagram_count": 0,
   "source_pdfs_included": false,
   "extracted_paper_figures_included": true,
@@ -182,10 +183,37 @@
           "pdf_page": 8
         }
       ]
+    },
+    "UCCL-Tran": {
+      "date": "2026-11-12",
+      "conference": "OSDI 2026",
+      "org": "UC Berkeley、UC Davis、清华大学、Harvard、IBM Research、AWS、Broadcom、布加勒斯特理工大学及独立研究者",
+      "full": "UCCL-Tran: An Extensible Software Transport Layer for GPU Networking",
+      "url": "https://www.usenix.org/conference/osdi26/presentation/zhou-yang",
+      "pdf": "https://www.usenix.org/system/files/osdi26-zhou-yang.pdf",
+      "scope": "直接RDMA传输研究；实测对象为GPU网络，存储应用属于待验证迁移"
+    },
+    "DPA-Store": {
+      "date": "2026-11-12",
+      "conference": "OSDI 2026",
+      "org": "Johannes Gutenberg University Mainz、Saarland University、RWTH Aachen University",
+      "full": "DPA-Store: An Ordered Network Data Path Key-Value Store",
+      "url": "https://www.usenix.org/conference/osdi26/presentation/schimmelpfennig",
+      "pdf": "https://www.usenix.org/system/files/osdi26-schimmelpfennig.pdf",
+      "scope": "UDP/DPA有序KV；不是RDMA传输，作为RDMA客户端索引的存储设计对照"
+    },
+    "NVMe-oF 流控": {
+      "date": "2026-11-12",
+      "conference": "NSDI 2026",
+      "org": "University of Wisconsin–Madison",
+      "full": "Co-Designing Traffic Control with NVMe-oF for Disaggregated Storage: A Comparative Study of Switched and Switchless SAN Architectures",
+      "url": "https://www.usenix.org/conference/nsdi26/presentation/wang-chendong",
+      "pdf": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
+      "scope": "实测为NVMe-over-TCP；迁移到NVMe/RDMA需要重新验证QP、顺序与遥测约束"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 13,
+  "figure_excerpt_count": 19,
   "revision": "technical-depth-v2",
   "revision_date": "2026-11-12"
 }
