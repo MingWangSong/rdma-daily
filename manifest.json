@@ -952,8 +952,8 @@
     },
     {
       "path": "2026-11-12/VALIDATION.md",
-      "bytes": 342,
-      "sha256": "b4672e6bbe36aca12156c799c95673b6100a95fa8dc8a2a3ebe39ab076058fe4"
+      "bytes": 1401,
+      "sha256": "b43391f1324c071b83fb39a7ead27cefec54968440aaa2c09551bb8085e90aed"
     },
     {
       "path": "2026-11-12/index.html",
@@ -1062,8 +1062,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 1910,
-      "sha256": "e2f5c1044b4a3ad354a724f92637d6284844728bdc4915b4e3acb99cb9062f86"
+      "bytes": 2137,
+      "sha256": "d5615fae39962d0b065341470bbebf1324efaccc2a442076042eb8227f257242"
     },
     {
       "path": "archive_metadata.json",
