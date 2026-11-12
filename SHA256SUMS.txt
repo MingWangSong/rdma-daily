@@ -217,7 +217,7 @@ b1e1ea53936300140af051ee73229e602c94d8f4a568ccc1b6e468610fdf1069  assets/reader.
 eddf9d7da885466281af74978f1dd6af5d97673727e01ef936d4721af15a2870  figure-sources.json
 25d4ef37d1348944251ed7d5691a879eb565d5e0dbef7985700be3fe9ab657d3  index.html
 7b84f657671a33b217c14fd1e282b275a3f9d283174cf2e868419d8d5772338e  reports/2026-11-12-nvmeof-kvcache/README.md
-1ebe68788c6db30cc0d37acf08ffb780014d9460c915b3d4f4ecdf395cf4c097  reports/2026-11-12-nvmeof-kvcache/VALIDATION.md
+30d5af5e05eeda36f88049ce45ce86c8489a5bef179707fe047824ae4fe59002  reports/2026-11-12-nvmeof-kvcache/VALIDATION.md
 cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  reports/2026-11-12-nvmeof-kvcache/code/mooncake/LICENSE-APACHE
 5f0f0bb3454e25ee864a50dd9e241da3fc9a1f231fc8e3fc037806cf80df0e29  reports/2026-11-12-nvmeof-kvcache/code/mooncake/README.md
 8a6fd4491fbe53db340825da1818b8d8a58b317b0ebe92abf86f3629b223a52b  reports/2026-11-12-nvmeof-kvcache/code/mooncake/types.h
@@ -225,7 +225,7 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  reports/2026-1
 feddc20eaeba329817bd5805e6491502916d70a88274ec0513690f9209521425  reports/2026-11-12-nvmeof-kvcache/images/nvme-control-fig10.png
 5bcff27ce5b05d87e697dadeea34d36cb667cef5a617ce7463d29759029c436f  reports/2026-11-12-nvmeof-kvcache/images/zcio-fig5.png
 42d3e627633372812d801e8635bde8597f28163dc1ce2526baa7a5be83e86c2b  reports/2026-11-12-nvmeof-kvcache/images/zcio-fig7bd.png
-984ff555b26c5f91eaf2d8b2648ca42871cdc11606edefc6eeb528cd8d7ca751  reports/2026-11-12-nvmeof-kvcache/index.html
+12f08c83937b61a5ad36bc25b55f60af21e7c658c09351119c20929b7bdc4d98  reports/2026-11-12-nvmeof-kvcache/index.html
 b1e1ea53936300140af051ee73229e602c94d8f4a568ccc1b6e468610fdf1069  reports/2026-11-12-nvmeof-kvcache/reader.js
 7df67a8b1bb6636c95359cadefb4eb671b34dbee43b55ca15eef3258f1130806  reports/2026-11-12-nvmeof-kvcache/report.css
 125279ae4b48529611e27d8134c8dd60b87c0322377d000b9ddd863b0944aef6  reports/2026-11-12-nvmeof-kvcache/sources.json

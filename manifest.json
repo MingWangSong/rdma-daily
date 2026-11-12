@@ -1097,8 +1097,8 @@
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/VALIDATION.md",
-      "bytes": 237,
-      "sha256": "1ebe68788c6db30cc0d37acf08ffb780014d9460c915b3d4f4ecdf395cf4c097"
+      "bytes": 1307,
+      "sha256": "30d5af5e05eeda36f88049ce45ce86c8489a5bef179707fe047824ae4fe59002"
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/code/mooncake/LICENSE-APACHE",
@@ -1137,8 +1137,8 @@
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/index.html",
-      "bytes": 62573,
-      "sha256": "984ff555b26c5f91eaf2d8b2648ca42871cdc11606edefc6eeb528cd8d7ca751"
+      "bytes": 62788,
+      "sha256": "12f08c83937b61a5ad36bc25b55f60af21e7c658c09351119c20929b7bdc4d98"
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/reader.js",
