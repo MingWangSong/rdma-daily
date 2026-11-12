@@ -1057,8 +1057,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 1790,
-      "sha256": "60d812ffb86db34ad0a4e661da97b587b5a800193a3b8942ae20e203639b29a3"
+      "bytes": 1940,
+      "sha256": "11652f1492d4b9066f9c1b419639b7684a343b20d3f7d20e0936edb47d29648f"
     },
     {
       "path": "VALIDATION.md",
@@ -1082,13 +1082,78 @@
     },
     {
       "path": "figure-sources.json",
-      "bytes": 24545,
-      "sha256": "3413080e607982ec73b2d377f3614a5c9e8e3a2e39230ae7a7d9e932ee986555"
+      "bytes": 30857,
+      "sha256": "eddf9d7da885466281af74978f1dd6af5d97673727e01ef936d4721af15a2870"
     },
     {
       "path": "index.html",
-      "bytes": 3251,
-      "sha256": "3d29c52343530aa851fb7359face6f54400270f31b148c9fd8d6646d4a14ea69"
+      "bytes": 3556,
+      "sha256": "25d4ef37d1348944251ed7d5691a879eb565d5e0dbef7985700be3fe9ab657d3"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/README.md",
+      "bytes": 48793,
+      "sha256": "7b84f657671a33b217c14fd1e282b275a3f9d283174cf2e868419d8d5772338e"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/VALIDATION.md",
+      "bytes": 237,
+      "sha256": "1ebe68788c6db30cc0d37acf08ffb780014d9460c915b3d4f4ecdf395cf4c097"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/code/mooncake/LICENSE-APACHE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/code/mooncake/README.md",
+      "bytes": 677,
+      "sha256": "5f0f0bb3454e25ee864a50dd9e241da3fc9a1f231fc8e3fc037806cf80df0e29"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/code/mooncake/types.h",
+      "bytes": 24774,
+      "sha256": "8a6fd4491fbe53db340825da1818b8d8a58b317b0ebe92abf86f3629b223a52b"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/images/bidaw-fig11.png",
+      "bytes": 54496,
+      "sha256": "6dddc5937b8cb3b2ded0f3ab1ff294c57e7baee4efdc38a2cc9228eb9f823d31"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/images/nvme-control-fig10.png",
+      "bytes": 39913,
+      "sha256": "feddc20eaeba329817bd5805e6491502916d70a88274ec0513690f9209521425"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/images/zcio-fig5.png",
+      "bytes": 68094,
+      "sha256": "5bcff27ce5b05d87e697dadeea34d36cb667cef5a617ce7463d29759029c436f"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/images/zcio-fig7bd.png",
+      "bytes": 133569,
+      "sha256": "42d3e627633372812d801e8635bde8597f28163dc1ce2526baa7a5be83e86c2b"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/index.html",
+      "bytes": 62573,
+      "sha256": "984ff555b26c5f91eaf2d8b2648ca42871cdc11606edefc6eeb528cd8d7ca751"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/reader.js",
+      "bytes": 2180,
+      "sha256": "b1e1ea53936300140af051ee73229e602c94d8f4a568ccc1b6e468610fdf1069"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/report.css",
+      "bytes": 6575,
+      "sha256": "7df67a8b1bb6636c95359cadefb4eb671b34dbee43b55ca15eef3258f1130806"
+    },
+    {
+      "path": "reports/2026-11-12-nvmeof-kvcache/sources.json",
+      "bytes": 9612,
+      "sha256": "125279ae4b48529611e27d8134c8dd60b87c0322377d000b9ddd863b0944aef6"
     },
     {
       "path": "research-notes.json",
@@ -1097,8 +1162,8 @@
     },
     {
       "path": "tools/verify_archive.py",
-      "bytes": 3316,
-      "sha256": "45e79062491a61565a01bddf658ebdb66ced85a8e19422ef92d07c7633516d9e"
+      "bytes": 3440,
+      "sha256": "3950b6e80db15e942b3363f9f28174dabd9c44d679f1e7d40f20e4de36b427b7"
     }
   ]
 }

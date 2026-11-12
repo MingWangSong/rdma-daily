@@ -16,11 +16,11 @@ class Page(HTMLParser):
   if tag=='figure':self.figures+=1
   if tag=='img' and a.get('src'):self.images.append(a)
 pages={};errors=[]
-for rel in ['index.html']+[str(p.relative_to(R)) for p in sorted(R.glob('20??-??-??/index.html'))]:
+for rel in ['index.html']+[str(p.relative_to(R)) for p in sorted(R.glob('20??-??-??/index.html'))]+[str(p.relative_to(R)) for p in sorted(R.glob('reports/*/index.html'))]:
  f=R/rel;text=f.read_text();p=Page();p.feed(text);pages[f.resolve()]=p
  if text.lower().count('<!doctype')!=1:errors.append(rel+': DOCTYPE count')
  if len(p.ids)!=len(set(p.ids)):errors.append(rel+': duplicate IDs')
- if rel!='index.html' and p.papers != (3 if rel.startswith('2026-11-12') else 5):errors.append(rel+': unexpected paper count')
+ if rel!='index.html' and not rel.startswith('reports/') and p.papers != (3 if rel.startswith('2026-11-12') else 5):errors.append(rel+': unexpected paper count')
 for f,p in pages.items():
  for ref in p.refs:
   u=urlsplit(ref)
@@ -33,7 +33,7 @@ for f,p in pages.items():
    if unquote(u.fragment) not in q.ids:errors.append(str(f.relative_to(R))+': missing anchor '+ref)
  for a in p.images:
   image=(f.parent/a['src']).resolve()
-  if not a.get('alt'):errors.append(str(image)+': missing alt')
+  if a.get('src') and not a.get('alt'):errors.append(str(image)+': missing alt')
   if image.is_file() and image.suffix=='.png':
    width,height=struct.unpack('>II',image.read_bytes()[16:24])
    if (str(width),str(height))!=(a.get('width'),a.get('height')):errors.append(str(image)+': dimension mismatch')

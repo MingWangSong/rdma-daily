@@ -7,6 +7,10 @@
 - [11月11日：从索引热点到公平锁与远端内存管理](2026-11-11/index.html)
 - [HTML 归档首页](index.html)
 
+## 研究专题
+
+- [NVMe-oF × KV Cache：最新研究与创新路线](https://mingwangsong.github.io/rdma-daily/reports/2026-11-12-nvmeof-kvcache/)
+
 ## 11月12日新增
 
 三篇近期正式顶会研究，含六幅必要原图与逐图解读。一篇直接RDMA传输研究，两篇存储数据路径设计对照，显式区分GPU/UDP/NVMe-TCP实验与存储迁移。未核实当日新增论文。UCCL按Apache-2.0保存固定commit源码阅读子集，非完整可构建分发或fork。
