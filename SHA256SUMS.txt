@@ -225,9 +225,9 @@ cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30  reports/2026-1
 feddc20eaeba329817bd5805e6491502916d70a88274ec0513690f9209521425  reports/2026-11-12-nvmeof-kvcache/images/nvme-control-fig10.png
 5bcff27ce5b05d87e697dadeea34d36cb667cef5a617ce7463d29759029c436f  reports/2026-11-12-nvmeof-kvcache/images/zcio-fig5.png
 42d3e627633372812d801e8635bde8597f28163dc1ce2526baa7a5be83e86c2b  reports/2026-11-12-nvmeof-kvcache/images/zcio-fig7bd.png
-12f08c83937b61a5ad36bc25b55f60af21e7c658c09351119c20929b7bdc4d98  reports/2026-11-12-nvmeof-kvcache/index.html
+7ac4c6ef75ad4a5f94df65ac913a1ffd61891f565ff56051ccde14a58f7ccb8e  reports/2026-11-12-nvmeof-kvcache/index.html
 b1e1ea53936300140af051ee73229e602c94d8f4a568ccc1b6e468610fdf1069  reports/2026-11-12-nvmeof-kvcache/reader.js
-7df67a8b1bb6636c95359cadefb4eb671b34dbee43b55ca15eef3258f1130806  reports/2026-11-12-nvmeof-kvcache/report.css
+da90230ab5db7edad4d2f0d977c07c2cf162263605dfdcb10af9a4b850039d77  reports/2026-11-12-nvmeof-kvcache/report.css
 125279ae4b48529611e27d8134c8dd60b87c0322377d000b9ddd863b0944aef6  reports/2026-11-12-nvmeof-kvcache/sources.json
 f6364d5d7feea22936a73a8f8db3b33f1bff06ea515bfcf3dd30152888083af4  research-notes.json
 3950b6e80db15e942b3363f9f28174dabd9c44d679f1e7d40f20e4de36b427b7  tools/verify_archive.py

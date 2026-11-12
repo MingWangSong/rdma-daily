@@ -1138,7 +1138,7 @@
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/index.html",
       "bytes": 62788,
-      "sha256": "12f08c83937b61a5ad36bc25b55f60af21e7c658c09351119c20929b7bdc4d98"
+      "sha256": "7ac4c6ef75ad4a5f94df65ac913a1ffd61891f565ff56051ccde14a58f7ccb8e"
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/reader.js",
@@ -1147,8 +1147,8 @@
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/report.css",
-      "bytes": 6575,
-      "sha256": "7df67a8b1bb6636c95359cadefb4eb671b34dbee43b55ca15eef3258f1130806"
+      "bytes": 6573,
+      "sha256": "da90230ab5db7edad4d2f0d977c07c2cf162263605dfdcb10af9a4b850039d77"
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/sources.json",
