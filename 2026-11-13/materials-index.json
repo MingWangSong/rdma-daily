@@ -1,0 +1,239 @@
+{
+  "date": "2026-11-13",
+  "papers": [
+    {
+      "id": "distvs",
+      "name": "DistVS",
+      "title": "DistVS: Large-scale Vector Search with Compute-Memory Disaggregation",
+      "venue": "NSDI 2026",
+      "date": "2026-05（会议2026-05-04至06）",
+      "org": "香港中文大学、武汉大学、华为云",
+      "authors": "Peiqi Yin, Xiao Yan, Shiyuan Deng, Hui Li, Yifan Zhu, Xiangyu Zhi, Jingqi Mao, Ran Xu, Wenliang Zhang, James Cheng",
+      "url": "https://www.usenix.org/conference/nsdi26/presentation/yin",
+      "pdf": "https://www.usenix.org/system/files/nsdi26-yin.pdf",
+      "summary": "以本地低精度PQ、共享远端高精度PQ/图索引和SSD精确向量分层，在远端计算高精度距离，降低每轮RDMA传输与最终磁盘IO。",
+      "scope": "深入阅读正文机制及实验、附录更新与故障讨论；核查作者主页；官方视频未观看；未复现实验；未核实源码及独立slides，未做源码归档或fork。",
+      "figures": [
+        {
+          "path": "papers/distvs/images/distvs-fig8.png",
+          "num": "8",
+          "page": 9,
+          "title": "连续RDMA批处理",
+          "analysis": "专用通信线程汇集各工作协程的无锁队列，以单边WRITE写入对端预分配缓冲区；远端仍需CPU拆批并处理距离计算。减少提交开销但多一个通信线程和批等待，不能据此断言p99改善。",
+          "archive_path": "2026-11-13/papers/distvs/images/distvs-fig8.png",
+          "dimensions_px": [
+            738,
+            285
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi26-yin.pdf",
+          "author_credit": "Peiqi Yin, Xiao Yan, Shiyuan Deng, Hui Li, Yifan Zhu, Xiangyu Zhi, Jingqi Mao, Ran Xu, Wenliang Zhang, James Cheng",
+          "analysis_zh": "专用通信线程汇集各工作协程的无锁队列，以单边WRITE写入对端预分配缓冲区；远端仍需CPU拆批并处理距离计算。减少提交开销但多一个通信线程和批等待，不能据此断言p99改善。",
+          "version": "NSDI 2026正式版本",
+          "paper": "DistVS",
+          "paper_title": "DistVS: Large-scale Vector Search with Compute-Memory Disaggregation",
+          "figure_number": "8",
+          "pdf_page_1based": 9,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        },
+        {
+          "path": "papers/distvs/images/distvs-fig9.png",
+          "num": "9",
+          "page": 11,
+          "title": "同召回率下吞吐和平均延迟比较",
+          "analysis": "5台集群，DistVS为4计算+1内存节点。吞吐优势不能解读成同等比例延迟下降，下排是平均延迟而非p99；测试SSD为680MB/s SATA RAID-0，高速NVMe收益需另测。",
+          "archive_path": "2026-11-13/papers/distvs/images/distvs-fig9.png",
+          "dimensions_px": [
+            1533,
+            588
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi26-yin.pdf",
+          "author_credit": "Peiqi Yin, Xiao Yan, Shiyuan Deng, Hui Li, Yifan Zhu, Xiangyu Zhi, Jingqi Mao, Ran Xu, Wenliang Zhang, James Cheng",
+          "analysis_zh": "5台集群，DistVS为4计算+1内存节点。吞吐优势不能解读成同等比例延迟下降，下排是平均延迟而非p99；测试SSD为680MB/s SATA RAID-0，高速NVMe收益需另测。",
+          "version": "NSDI 2026正式版本",
+          "paper": "DistVS",
+          "paper_title": "DistVS: Large-scale Vector Search with Compute-Memory Disaggregation",
+          "figure_number": "9",
+          "pdf_page_1based": 11,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        }
+      ],
+      "file": "distvs.md"
+    },
+    {
+      "id": "lcmp",
+      "name": "LCMP",
+      "title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+      "venue": "EuroSys 2026",
+      "date": "2026-04-27—30（会议）；2026-04-09（阅读版本公开）",
+      "org": "北京邮电大学、北京大学、清华大学、中关村实验室",
+      "authors": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+      "url": "https://doi.org/10.1145/3767295.3803593",
+      "pdf": "https://arxiv.org/pdf/2604.07836",
+      "summary": "跨机房RDMA通过路径质量与本地拥塞融合改善初始流放置，收益依赖路径多样性；不能将SoftRoCE和NS-3结论当作高速RNIC全栈实测。",
+      "scope": "正文§1—8与artifact appendix、图2/7/11、作者仓库README；未复现实验。",
+      "figures": [
+        {
+          "path": "papers/lcmp/images/lcmp-fig2.png",
+          "num": "2",
+          "page": 4,
+          "title": "首包决策与后续包粘性路径",
+          "analysis": "慢路径质量与本地队列融合仅在新流发生，后续packet命中flow2output；这是保序与实时迁移之间的取舍。",
+          "archive_path": "2026-11-13/papers/lcmp/images/lcmp-fig2.png",
+          "dimensions_px": [
+            732,
+            561
+          ],
+          "source_url": "https://arxiv.org/pdf/2604.07836",
+          "author_credit": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+          "analysis_zh": "慢路径质量与本地队列融合仅在新流发生，后续packet命中flow2output；这是保序与实时迁移之间的取舍。",
+          "version": "EuroSys 2026正式版本",
+          "paper": "LCMP",
+          "paper_title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+          "figure_number": "2",
+          "pdf_page_1based": 4,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        },
+        {
+          "path": "papers/lcmp/images/lcmp-fig7.png",
+          "num": "7",
+          "page": 9,
+          "title": "13-DC全局结果：不能只看最高提升",
+          "analysis": "相对ECMP中位基本不变，P99约改善2—9%；只有25.6%节点对有多路径，因而收益被单路径流稀释。",
+          "archive_path": "2026-11-13/papers/lcmp/images/lcmp-fig7.png",
+          "dimensions_px": [
+            723,
+            303
+          ],
+          "source_url": "https://arxiv.org/pdf/2604.07836",
+          "author_credit": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+          "analysis_zh": "相对ECMP中位基本不变，P99约改善2—9%；只有25.6%节点对有多路径，因而收益被单路径流稀释。",
+          "version": "EuroSys 2026正式版本",
+          "paper": "LCMP",
+          "paper_title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+          "figure_number": "7",
+          "pdf_page_1based": 9,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        }
+      ],
+      "license": "CC BY 4.0，PDF首页声明；裁切和分辨率调整，保留原图内容。",
+      "file": "lcmp.md"
+    },
+    {
+      "id": "odrp",
+      "name": "ODRP",
+      "title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+      "venue": "NSDI 2025",
+      "date": "2025-04-28（公开论文）；会议2025-04-28至30",
+      "org": "上海交通大学 SEIEE / IPADS",
+      "authors": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+      "url": "https://www.usenix.org/conference/nsdi25/presentation/wang-zixuan",
+      "pdf": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+      "summary": "针对Linux swap将4KB分配、TT翻译和访问卸载到RNIC固定WR链；以性能小幅开销换利用率，并依赖客户端辅助与单页串行swap语义。2025年回溯，非今日新增。",
+      "scope": "正式论文正文§1–8及图6–12；核实收录页，未观看完整视频或复现实验。代码URL404。",
+      "figures": [
+        {
+          "path": "papers/odrp/images/odrp-fig6.png",
+          "num": "6",
+          "page": 7,
+          "title": "分页操作的WR链",
+          "analysis": "三条链不同，未映射store还需FAA与TT更新；图省略WAIT/ENABLE，不能按可见框数当真实WQE成本。",
+          "archive_path": "2026-11-13/papers/odrp/images/odrp-fig6.png",
+          "dimensions_px": [
+            1542,
+            351
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+          "author_credit": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+          "analysis_zh": "三条链不同，未映射store还需FAA与TT更新；图省略WAIT/ENABLE，不能按可见框数当真实WQE成本。",
+          "version": "NSDI 2025正式版本",
+          "paper": "ODRP",
+          "paper_title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+          "figure_number": "6",
+          "pdf_page_1based": 7,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        },
+        {
+          "path": "papers/odrp/images/odrp-fig11.png",
+          "num": "11",
+          "page": 12,
+          "title": "不同数据路径的延迟",
+          "analysis": "保留断轴及图例；弱CPU导致动态分配/RPC在24worker下排队，ODRP并非零开销。该指标不是存储应用p99。",
+          "archive_path": "2026-11-13/papers/odrp/images/odrp-fig11.png",
+          "dimensions_px": [
+            729,
+            327
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+          "author_credit": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+          "analysis_zh": "保留断轴及图例；弱CPU导致动态分配/RPC在24worker下排队，ODRP并非零开销。该指标不是存储应用p99。",
+          "version": "NSDI 2025正式版本",
+          "paper": "ODRP",
+          "paper_title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+          "figure_number": "11",
+          "pdf_page_1based": 12,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        }
+      ],
+      "file": "odrp.md"
+    },
+    {
+      "id": "scalacn",
+      "name": "ScalaCN",
+      "title": "Mitigating Scalability Walls of RDMA-based Container Networks",
+      "venue": "NSDI 2025",
+      "date": "2025-04-28至30日（会议/论文集日期；旧文补读）",
+      "org": "清华大学、阿里云、南加州大学、UIUC",
+      "authors": "Wei Liu, Kun Qian, Zhenhua Li, Feng Qian, Tianyin Xu, Yunhao Liu, Yu Guan, Shuhong Zhu, Hongfei Xu, Lanlan Xi, Chao Qin, Ennan Zhai",
+      "url": "https://www.usenix.org/conference/nsdi25/presentation/liu-wei",
+      "pdf": "https://www.usenix.org/system/files/nsdi25-liu-wei.pdf",
+      "summary": "揭示RNIC eSwitch匹配掩码的顺序查询成本，以受约束灰盒测试、热流精确匹配和级联规则重排改善容器网络扩展性。",
+      "scope": "读官方正文§1–8、机制及实验图表、作者报告、项目页和带宽拟合源码；未复现。",
+      "figures": [
+        {
+          "path": "papers/scalacn/images/scalacn-fig13.png",
+          "num": "13",
+          "page": 11,
+          "title": "热流精确匹配与级联规则",
+          "analysis": "新流先走级联规则，后续包提升到前置精确匹配；降低查询数但增加表项与维护成本。",
+          "archive_path": "2026-11-13/papers/scalacn/images/scalacn-fig13.png",
+          "dimensions_px": [
+            522,
+            360
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi25-liu-wei.pdf",
+          "author_credit": "Wei Liu, Kun Qian, Zhenhua Li, Feng Qian, Tianyin Xu, Yunhao Liu, Yu Guan, Shuhong Zhu, Hongfei Xu, Lanlan Xi, Chao Qin, Ennan Zhai",
+          "analysis_zh": "新流先走级联规则，后续包提升到前置精确匹配；降低查询数但增加表项与维护成本。",
+          "version": "NSDI 2025正式版本",
+          "paper": "ScalaCN",
+          "paper_title": "Mitigating Scalability Walls of RDMA-based Container Networks",
+          "figure_number": "13",
+          "pdf_page_1based": 11,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        },
+        {
+          "path": "papers/scalacn/images/scalacn-fig18-19.png",
+          "num": "18–19",
+          "page": 13,
+          "title": "生产收益分布",
+          "analysis": "百分比改善CDF，生产平均约17%带宽与15%延迟收益，不能套用重负载40%结果。",
+          "archive_path": "2026-11-13/papers/scalacn/images/scalacn-fig18-19.png",
+          "dimensions_px": [
+            987,
+            339
+          ],
+          "source_url": "https://www.usenix.org/system/files/nsdi25-liu-wei.pdf",
+          "author_credit": "Wei Liu, Kun Qian, Zhenhua Li, Feng Qian, Tianyin Xu, Yunhao Liu, Yu Guan, Shuhong Zhu, Hongfei Xu, Lanlan Xi, Chao Qin, Ennan Zhai",
+          "analysis_zh": "百分比改善CDF，生产平均约17%带宽与15%延迟收益，不能套用重负载40%结果。",
+          "version": "NSDI 2025正式版本",
+          "paper": "ScalaCN",
+          "paper_title": "Mitigating Scalability Walls of RDMA-based Container Networks",
+          "figure_number": "18–19",
+          "pdf_page_1based": 13,
+          "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+        }
+      ],
+      "file": "scalacn.md"
+    }
+  ],
+  "scope": "Formal conference paper reviews; no verified same-day additions; full PDFs and slides not redistributed."
+}

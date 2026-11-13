@@ -1,0 +1,58 @@
+{
+  "id": "lcmp",
+  "name": "LCMP",
+  "title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+  "venue": "EuroSys 2026",
+  "date": "2026-04-27—30（会议）；2026-04-09（阅读版本公开）",
+  "org": "北京邮电大学、北京大学、清华大学、中关村实验室",
+  "authors": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+  "url": "https://doi.org/10.1145/3767295.3803593",
+  "pdf": "https://arxiv.org/pdf/2604.07836",
+  "summary": "跨机房RDMA通过路径质量与本地拥塞融合改善初始流放置，收益依赖路径多样性；不能将SoftRoCE和NS-3结论当作高速RNIC全栈实测。",
+  "scope": "正文§1—8与artifact appendix、图2/7/11、作者仓库README；未复现实验。",
+  "figures": [
+    {
+      "path": "papers/lcmp/images/lcmp-fig2.png",
+      "num": "2",
+      "page": 4,
+      "title": "首包决策与后续包粘性路径",
+      "analysis": "慢路径质量与本地队列融合仅在新流发生，后续packet命中flow2output；这是保序与实时迁移之间的取舍。",
+      "archive_path": "2026-11-13/papers/lcmp/images/lcmp-fig2.png",
+      "dimensions_px": [
+        732,
+        561
+      ],
+      "source_url": "https://arxiv.org/pdf/2604.07836",
+      "author_credit": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+      "analysis_zh": "慢路径质量与本地队列融合仅在新流发生，后续packet命中flow2output；这是保序与实时迁移之间的取舍。",
+      "version": "EuroSys 2026正式版本",
+      "paper": "LCMP",
+      "paper_title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+      "figure_number": "2",
+      "pdf_page_1based": 4,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "path": "papers/lcmp/images/lcmp-fig7.png",
+      "num": "7",
+      "page": 9,
+      "title": "13-DC全局结果：不能只看最高提升",
+      "analysis": "相对ECMP中位基本不变，P99约改善2—9%；只有25.6%节点对有多路径，因而收益被单路径流稀释。",
+      "archive_path": "2026-11-13/papers/lcmp/images/lcmp-fig7.png",
+      "dimensions_px": [
+        723,
+        303
+      ],
+      "source_url": "https://arxiv.org/pdf/2604.07836",
+      "author_credit": "Dong-Yang Yu, Yuchao Zhang, Xiaodi Wang, Jun Wang, Wenfei Wu, Haipeng Yao, Wendong Wang, Ke Xu",
+      "analysis_zh": "相对ECMP中位基本不变，P99约改善2—9%；只有25.6%节点对有多路径，因而收益被单路径流稀释。",
+      "version": "EuroSys 2026正式版本",
+      "paper": "LCMP",
+      "paper_title": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+      "figure_number": "7",
+      "pdf_page_1based": 9,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "license": "CC BY 4.0，PDF首页声明；裁切和分辨率调整，保留原图内容。"
+}

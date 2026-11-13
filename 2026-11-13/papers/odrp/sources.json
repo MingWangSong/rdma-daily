@@ -1,0 +1,57 @@
+{
+  "id": "odrp",
+  "name": "ODRP",
+  "title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+  "venue": "NSDI 2025",
+  "date": "2025-04-28（公开论文）；会议2025-04-28至30",
+  "org": "上海交通大学 SEIEE / IPADS",
+  "authors": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+  "url": "https://www.usenix.org/conference/nsdi25/presentation/wang-zixuan",
+  "pdf": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+  "summary": "针对Linux swap将4KB分配、TT翻译和访问卸载到RNIC固定WR链；以性能小幅开销换利用率，并依赖客户端辅助与单页串行swap语义。2025年回溯，非今日新增。",
+  "scope": "正式论文正文§1–8及图6–12；核实收录页，未观看完整视频或复现实验。代码URL404。",
+  "figures": [
+    {
+      "path": "papers/odrp/images/odrp-fig6.png",
+      "num": "6",
+      "page": 7,
+      "title": "分页操作的WR链",
+      "analysis": "三条链不同，未映射store还需FAA与TT更新；图省略WAIT/ENABLE，不能按可见框数当真实WQE成本。",
+      "archive_path": "2026-11-13/papers/odrp/images/odrp-fig6.png",
+      "dimensions_px": [
+        1542,
+        351
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+      "author_credit": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+      "analysis_zh": "三条链不同，未映射store还需FAA与TT更新；图省略WAIT/ENABLE，不能按可见框数当真实WQE成本。",
+      "version": "NSDI 2025正式版本",
+      "paper": "ODRP",
+      "paper_title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+      "figure_number": "6",
+      "pdf_page_1based": 7,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "path": "papers/odrp/images/odrp-fig11.png",
+      "num": "11",
+      "page": 12,
+      "title": "不同数据路径的延迟",
+      "analysis": "保留断轴及图例；弱CPU导致动态分配/RPC在24worker下排队，ODRP并非零开销。该指标不是存储应用p99。",
+      "archive_path": "2026-11-13/papers/odrp/images/odrp-fig11.png",
+      "dimensions_px": [
+        729,
+        327
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+      "author_credit": "Zixuan Wang, Xingda Wei, Jinyu Gu, Hongrui Xie, Rong Chen, Haibo Chen",
+      "analysis_zh": "保留断轴及图例；弱CPU导致动态分配/RPC在24worker下排队，ODRP并非零开销。该指标不是存储应用p99。",
+      "version": "NSDI 2025正式版本",
+      "paper": "ODRP",
+      "paper_title": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+      "figure_number": "11",
+      "pdf_page_1based": 12,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ]
+}

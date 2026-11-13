@@ -20,7 +20,7 @@ for rel in ['index.html']+[str(p.relative_to(R)) for p in sorted(R.glob('20??-??
  f=R/rel;text=f.read_text();p=Page();p.feed(text);pages[f.resolve()]=p
  if text.lower().count('<!doctype')!=1:errors.append(rel+': DOCTYPE count')
  if len(p.ids)!=len(set(p.ids)):errors.append(rel+': duplicate IDs')
- if rel!='index.html' and not rel.startswith('reports/') and p.papers != (3 if rel.startswith('2026-11-12') else 5):errors.append(rel+': unexpected paper count')
+ if rel!='index.html' and not rel.startswith('reports/') and p.papers != (3 if rel.startswith('2026-11-12') else 4 if rel.startswith('2026-11-13') else 5):errors.append(rel+': unexpected paper count')
 for f,p in pages.items():
  for ref in p.refs:
   u=urlsplit(ref)

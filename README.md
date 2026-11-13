@@ -2,6 +2,7 @@
 
 面向 RDMA、远端内存与分布式存储研发的中文技术研读。
 
+- [11月13日：共享连接、远端状态与多路径：RDMA 存储的扩展边界](https://mingwangsong.github.io/rdma-daily/2026-11-13/)
 - [11月12日：从 RNIC 与 DPA 到远端 SSD](https://mingwangsong.github.io/rdma-daily/2026-11-12/)
 - [11月10日：从远端 SSD 路径到缓存一致性](2026-11-10/index.html)
 - [11月11日：从索引热点到公平锁与远端内存管理](2026-11-11/index.html)

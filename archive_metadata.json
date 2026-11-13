@@ -3,11 +3,12 @@
   "dates": [
     "2026-11-10",
     "2026-11-11",
-    "2026-11-12"
+    "2026-11-12",
+    "2026-11-13"
   ],
-  "prepared_on": "2026-11-12",
+  "prepared_on": "2026-11-13",
   "publication_status": "public_repository_archive",
-  "paper_count": 13,
+  "paper_count": 17,
   "original_diagram_count": 0,
   "source_pdfs_included": false,
   "extracted_paper_figures_included": true,
@@ -210,10 +211,46 @@
       "url": "https://www.usenix.org/conference/nsdi26/presentation/wang-chendong",
       "pdf": "https://www.usenix.org/system/files/nsdi26-wang-chendong.pdf",
       "scope": "实测为NVMe-over-TCP；迁移到NVMe/RDMA需要重新验证QP、顺序与遥测约束"
+    },
+    "DistVS": {
+      "date": "2026-11-13",
+      "conference": "NSDI 2026",
+      "org": "香港中文大学、武汉大学、华为云",
+      "full": "DistVS: Large-scale Vector Search with Compute-Memory Disaggregation",
+      "url": "https://www.usenix.org/conference/nsdi26/presentation/yin",
+      "pdf": "https://www.usenix.org/system/files/nsdi26-yin.pdf",
+      "scope": "深入阅读正文机制及实验、附录更新与故障讨论；核查作者主页；官方视频未观看；未复现实验；未核实源码及独立slides，未做源码归档或fork。"
+    },
+    "LCMP": {
+      "date": "2026-11-13",
+      "conference": "EuroSys 2026",
+      "org": "北京邮电大学、北京大学、清华大学、中关村实验室",
+      "full": "LCMP: Distributed Long-Haul Cost-Aware Multi-Path Routing for Inter-Datacenter RDMA Networks",
+      "url": "https://doi.org/10.1145/3767295.3803593",
+      "pdf": "https://arxiv.org/pdf/2604.07836",
+      "scope": "正文§1—8与artifact appendix、图2/7/11、作者仓库README；未复现实验。"
+    },
+    "ODRP": {
+      "date": "2026-11-13",
+      "conference": "NSDI 2025",
+      "org": "上海交通大学 SEIEE / IPADS",
+      "full": "ODRP: On-Demand Remote Paging with Programmable RDMA",
+      "url": "https://www.usenix.org/conference/nsdi25/presentation/wang-zixuan",
+      "pdf": "https://www.usenix.org/system/files/nsdi25-wang-zixuan.pdf",
+      "scope": "正式论文正文§1–8及图6–12；核实收录页，未观看完整视频或复现实验。代码URL404。"
+    },
+    "ScalaCN": {
+      "date": "2026-11-13",
+      "conference": "NSDI 2025",
+      "org": "清华大学、阿里云、南加州大学、UIUC",
+      "full": "Mitigating Scalability Walls of RDMA-based Container Networks",
+      "url": "https://www.usenix.org/conference/nsdi25/presentation/liu-wei",
+      "pdf": "https://www.usenix.org/system/files/nsdi25-liu-wei.pdf",
+      "scope": "读官方正文§1–8、机制及实验图表、作者报告、项目页和带宽拟合源码；未复现。"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 19,
+  "figure_excerpt_count": 31,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-12"
+  "revision_date": "2026-11-13"
 }
