@@ -1057,13 +1057,13 @@
     },
     {
       "path": "2026-11-13/VALIDATION.md",
-      "bytes": 236,
-      "sha256": "459674e84d19d1cf5a08e3a181ba7c95d351ef4b9fee3469e6f35d9133adde32"
+      "bytes": 450,
+      "sha256": "b772c2affec615a19765e8f86dbdf526a75e8ee72a750326ec3d899ba680a1d3"
     },
     {
       "path": "2026-11-13/index.html",
-      "bytes": 53716,
-      "sha256": "b84b50026e8e36970f50e997451697eee169dc24825d27c1d58178d01f843457"
+      "bytes": 53817,
+      "sha256": "9955a4f4aee8d4972d275fb47092c1d1f0b186d9c863a9c81bbd67e71a1cb3c3"
     },
     {
       "path": "2026-11-13/materials-index.json",
