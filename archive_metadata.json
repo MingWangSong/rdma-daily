@@ -10,7 +10,7 @@
   "publication_status": "public_repository_archive",
   "paper_count": 17,
   "original_diagram_count": 0,
-  "source_pdfs_included": false,
+  "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
   "papers": {
     "CETOFS": {
@@ -252,5 +252,18 @@
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
   "figure_excerpt_count": 31,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-13"
+  "revision_date": "2026-11-13",
+  "licensed_pdf_archives": [
+    {
+      "path": "2026-11-13/papers/lcmp/lcmp.pdf",
+      "source_url": "https://arxiv.org/pdf/2604.07836v1",
+      "source_version": "arXiv:2604.07836v1 (2026-04-09)",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "bytes": 8326173,
+      "sha256": "f1d9ca66516dbb85ddc873fd5fe75d2800df731c67d3d7779bdd0e4016163a65",
+      "modifications": "PDF object-stream/recompression for archival size; extracted text matches source; no intentional content edits.",
+      "archived_on": "2026-11-13"
+    }
+  ]
 }

@@ -43,7 +43,10 @@ for f in figs:
  if not f.get('analysis_zh') or not f.get('author_credit') or not f.get('source_url'):errors.append('incomplete attribution '+str(f))
  if not (R/f['archive_path']).is_file():errors.append('missing excerpt '+f['archive_path'])
 for f in R.rglob('mechanism.*'):errors.append('legacy diagram remains '+str(f))
-for f in R.rglob('*.pdf'):errors.append('full PDF must not be republished '+str(f))
+licensed_pdfs={'2026-11-13/papers/lcmp/lcmp.pdf': 'f1d9ca66516dbb85ddc873fd5fe75d2800df731c67d3d7779bdd0e4016163a65'}
+for f in R.rglob('*.pdf'):
+ rel=str(f.relative_to(R))
+ if rel not in licensed_pdfs or hashlib.sha256(f.read_bytes()).hexdigest()!=licensed_pdfs[rel]:errors.append('unapproved or changed PDF '+rel)
 manifest=R/'manifest.json'
 if manifest.exists():
  listed=json.loads(manifest.read_text())['files'];expected={x['path'] for x in listed}

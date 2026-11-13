@@ -116,7 +116,18 @@
         }
       ],
       "license": "CC BY 4.0，PDF首页声明；裁切和分辨率调整，保留原图内容。",
-      "file": "lcmp.md"
+      "file": "lcmp.md",
+      "pdf_archive": {
+        "path": "2026-11-13/papers/lcmp/lcmp.pdf",
+        "source_url": "https://arxiv.org/pdf/2604.07836v1",
+        "source_version": "arXiv:2604.07836v1 (2026-04-09)",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "bytes": 8326173,
+        "sha256": "f1d9ca66516dbb85ddc873fd5fe75d2800df731c67d3d7779bdd0e4016163a65",
+        "modifications": "PDF object-stream/recompression for archival size; extracted text matches source; no intentional content edits.",
+        "archived_on": "2026-11-13"
+      }
     },
     {
       "id": "odrp",
@@ -235,5 +246,5 @@
       "file": "scalacn.md"
     }
   ],
-  "scope": "Formal conference paper reviews; no verified same-day additions; full PDFs and slides not redistributed."
+  "scope": "论文分析及必要图表节选；LCMP arXiv v1 全文按 CC BY 4.0 备份，其余完整论文仅保留原文链接。源码按逐项许可保存。"
 }
