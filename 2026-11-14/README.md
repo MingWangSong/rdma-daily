@@ -137,9 +137,9 @@ O3-LSM 的三个 offload 层次是 memtable、flush 和既有 compaction。真�
 
 已阅读 27 页 PDF 正文，重点检查 §§4–5、协议流程与图 5/12、表 2–4/6；核对官方接受名单和代码仓库首页。未编译代码、未复现实验；未找到并核读独立作者报告，不将摘要数字当作复现结果。
 
-- [正式 DOI](https://doi.org/10.1145/3802093) · [作者 PDF](https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_O3LSM.pdf) · [本地 PDF 备份](o3lsm.pdf)
+- [正式 DOI](https://doi.org/10.1145/3802093) · [作者 PDF](https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_O3LSM.pdf)
 - [SIGMOD 2026 官方接受名单](https://2026.sigmod.org/sigmod_papers.shtml) · [作者代码 O3-LSM](https://github.com/asu-idi/O3-LSM)
-- PDF 第 1 页明确 CC BY 4.0；全文按原样备份，必要图仅裁剪。作者及来源见上，许可为 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。代码仓库显示多种许可证，未完成逐文件审查，因此本期只保留源码入口，不声称已 fork/备份源码。
+- PDF 第 1 页明确 CC BY 4.0；全文备份暂未提交，保留作者原文链接；必要图仅裁剪。作者及来源见上，许可为 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。代码仓库显示多种许可证，未完成逐文件审查，因此本期只保留源码入口，不声称已 fork/备份源码。
 
 
 ![图5 关键机制与实验图 5](papers/o3lsm/images/o3lsm-fig5.png)
@@ -201,7 +201,7 @@ O3-LSM 的三个 offload 层次是 memtable、flush 和既有 compaction。真�
 
 [正式论文 PDF](https://www.vldb.org/pvldb/vol19/p684-zha.pdf) · [官方卷首与日期](https://www.vldb.org/pvldb/vol19/FrontMatterVol19No4.pdf) · [DOI](https://doi.org/10.14778/3785297.3785309) · [作者代码](https://github.com/zhtshr/Shard)
 
-资料说明：论文版权归作者，CC BY-NC-ND 4.0。此非商业学术评论保留原PDF；图10、17仅从官方论文提取完整图，未改变图中内容、坐标、图例，图旁给出实质解读。来源为 Hantian Zha 等，PVLDB19(4)，PDF第8/11页。[许可](https://creativecommons.org/licenses/by-nc-nd/4.0/)。代码仓库未发现根目录许可证，暂不公开复制代码。PDF版本及SHA-256见 metadata.json。
+资料说明：论文版权归作者，CC BY-NC-ND 4.0。此非商业学术评论保留官方原文链接，全文备份暂未提交；图10、17仅从官方论文提取完整图，未改变图中内容、坐标、图例，图旁给出实质解读。来源为 Hantian Zha 等，PVLDB19(4)，PDF第8/11页。[许可](https://creativecommons.org/licenses/by-nc-nd/4.0/)。代码仓库未发现根目录许可证，暂不公开复制代码。PDF版本及来源见逐篇 sources.json。
 
 
 ![图10 关键机制与实验图 10](papers/shard/images/fig10.png)
