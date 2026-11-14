@@ -1,0 +1,77 @@
+{
+  "title": "Revisiting RDMA Reliability for Lossy Fabrics",
+  "venue": "ACM SIGCOMM 2025",
+  "published_online": "2025-08-27",
+  "conference_dates": "2025-09-08/2025-09-11",
+  "status": "既有正式论文，非今日新增",
+  "institutions": [
+    "Hong Kong University of Science and Technology",
+    "Huawei"
+  ],
+  "doi": "10.1145/3718958.3750480",
+  "paper": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+  "slides": "https://leewxgit.github.io/slides/dcp-sigcomm25.pdf",
+  "reading": "Full paper sections 1–8 and appendix; selected author slide sections",
+  "figures": [
+    {
+      "file": "dcp-fig3.png",
+      "figure": 3,
+      "pdf_page": 5,
+      "path": "papers/dcp/images/dcp-fig3.png",
+      "num": 3,
+      "page": 5,
+      "title": "DCP 工作流",
+      "analysis": "红色 HO 必须先到接收端再返回发送端，蓝色重传仍走数据平面；WRR 决定丢包反馈可靠性，不能只在 RNIC 侧增加 selective repeat。",
+      "archive_path": "2026-11-14/papers/dcp/images/dcp-fig3.png",
+      "dimensions_px": [
+        732,
+        315
+      ],
+      "source_url": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+      "author_credit": "Wenxue Li, Xiangzhou Liu, Yunxuan Zhang, Zihao Wang, Wei Gu, Tao Qian, Gaoxiong Zeng, Shoushou Ren, Xinyang Huang, Zhenghang Ren, Bowen Liu, Junxue Zhang, Kai Chen, Bingyang Liu",
+      "analysis_zh": "红色 HO 必须先到接收端再返回发送端，蓝色重传仍走数据平面；WRR 决定丢包反馈可靠性，不能只在 RNIC 侧增加 selective repeat。",
+      "version": "ACM SIGCOMM 2025正式版本",
+      "paper": "DCP",
+      "paper_title": "Revisiting RDMA Reliability for Lossy Fabrics",
+      "figure_number": 3,
+      "pdf_page_1based": 5,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "file": "dcp-fig16.png",
+      "figure": 16,
+      "pdf_page": 11,
+      "path": "papers/dcp/images/dcp-fig16.png",
+      "num": 16,
+      "page": 11,
+      "title": "有无拥塞控制的 incast FCT slowdown",
+      "analysis": "上排 P50 不能代表尾延迟；下排表明无 CC 的快重传会加重过载。加入 CC 后 DCP P99 相对 MP-RDMA/IRN 约降低 31%/29%。两图纵轴范围不同，不能跨面板按高度估算百分比。",
+      "archive_path": "2026-11-14/papers/dcp/images/dcp-fig16.png",
+      "dimensions_px": [
+        720,
+        585
+      ],
+      "source_url": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+      "author_credit": "Wenxue Li, Xiangzhou Liu, Yunxuan Zhang, Zihao Wang, Wei Gu, Tao Qian, Gaoxiong Zeng, Shoushou Ren, Xinyang Huang, Zhenghang Ren, Bowen Liu, Junxue Zhang, Kai Chen, Bingyang Liu",
+      "analysis_zh": "上排 P50 不能代表尾延迟；下排表明无 CC 的快重传会加重过载。加入 CC 后 DCP P99 相对 MP-RDMA/IRN 约降低 31%/29%。两图纵轴范围不同，不能跨面板按高度估算百分比。",
+      "version": "ACM SIGCOMM 2025正式版本",
+      "paper": "DCP",
+      "paper_title": "Revisiting RDMA Reliability for Lossy Fabrics",
+      "figure_number": 16,
+      "pdf_page_1based": 11,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "rights": "Traditional ACM copyright notice; no full-PDF public archival. Two necessary scholarly-commentary excerpts, low proportion of work, full source and analysis adjacent; no claim of guaranteed legal exception.",
+  "code_status": "No author-verified repository found in checked sources",
+  "id": "dcp",
+  "org": "香港科技大学 iSING Lab、华为",
+  "url": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+  "summary": "用交换机裁剪载荷、保留 HO 控制消息实现精准丢包恢复；bitmap-free 依赖可靠控制平面的 exactly-once 假设，异常仍需超时与 epoch 回退。重 incast 下快重传必须结合拥塞控制。",
+  "scope": "完整正文 §1–8、附录及关键图表；作者报告协议、bitmap-free/fallback 和实验部分。",
+  "authors": "Wenxue Li, Xiangzhou Liu, Yunxuan Zhang, Zihao Wang, Wei Gu, Tao Qian, Gaoxiong Zeng, Shoushou Ren, Xinyang Huang, Zhenghang Ren, Bowen Liu, Junxue Zhang, Kai Chen, Bingyang Liu",
+  "name": "DCP",
+  "pdf": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+  "date": "2025-08-27",
+  "pdf_archive_status": "暂未提交全文备份，见官方原文链接"
+}

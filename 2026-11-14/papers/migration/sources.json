@@ -1,0 +1,81 @@
+{
+  "id": "migration",
+  "title": "Software-based Live Migration for RDMA",
+  "venue": "ACM SIGCOMM 2025",
+  "conference_dates": "2025-09-08/2025-09-11",
+  "status": "既有正式论文，非今日新增",
+  "authors": "Xiaoyu Li, Ran Shu, Yongqiang Xiong, Fengyuan Ren",
+  "institutions": [
+    "Tsinghua University",
+    "Microsoft Research"
+  ],
+  "doi": "10.1145/3718958.3750487",
+  "pdf_url": "https://raw.githubusercontent.com/hittingnote/migrrdma/master/docs/migrrdma_sigcomm.pdf",
+  "repo_url": "https://github.com/hittingnote/migrrdma",
+  "pdf_github_blob": "277ccaaa257609cf6fcad3d50ab6eefee0fcbce6",
+  "read_scope": "SIGCOMM正文§1–6、Figure2–6、Table4；作者仓库部署说明；未运行原型",
+  "figures": [
+    {
+      "file": "migration-fig2.png",
+      "figure": "2",
+      "pdf_page": 4,
+      "printed_page": 102,
+      "purpose": "解释驱动间接层及三方迁移时序",
+      "path": "papers/migration/images/migration-fig2.png",
+      "num": "2",
+      "page": 4,
+      "title": "解释驱动间接层及三方迁移时序",
+      "analysis": "驱动间接层与三方协议同时参与；资源预建立不在停机窗口，wait-before-stop为在途请求建立排空边界。",
+      "archive_path": "2026-11-14/papers/migration/images/migration-fig2.png",
+      "dimensions_px": [
+        729,
+        594
+      ],
+      "source_url": "https://raw.githubusercontent.com/hittingnote/migrrdma/master/docs/migrrdma_sigcomm.pdf",
+      "author_credit": "Xiaoyu Li, Ran Shu, Yongqiang Xiong, Fengyuan Ren",
+      "analysis_zh": "驱动间接层与三方协议同时参与；资源预建立不在停机窗口，wait-before-stop为在途请求建立排空边界。",
+      "version": "ACM SIGCOMM 2025正式版本",
+      "paper": "MigrRDMA",
+      "paper_title": "Software-based Live Migration for RDMA",
+      "figure_number": "2",
+      "pdf_page_1based": 4,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    },
+    {
+      "file": "migration-fig4.png",
+      "figure": "4",
+      "pdf_page": 11,
+      "printed_page": 109,
+      "purpose": "区分总体blackout与WBS排空代价，比较连接规模、消息大小、逻辑对端数",
+      "path": "papers/migration/images/migration-fig4.png",
+      "num": "4",
+      "page": 11,
+      "title": "区分总体blackout与WBS排空代价，比较连接规模、消息大小、逻辑对端数",
+      "analysis": "分别观察QP数量、消息大小与逻辑对端数。黑窗不是完整迁移耗时，WBS排空和恢复仍受对端数与在途工作影响。",
+      "archive_path": "2026-11-14/papers/migration/images/migration-fig4.png",
+      "dimensions_px": [
+        1530,
+        648
+      ],
+      "source_url": "https://raw.githubusercontent.com/hittingnote/migrrdma/master/docs/migrrdma_sigcomm.pdf",
+      "author_credit": "Xiaoyu Li, Ran Shu, Yongqiang Xiong, Fengyuan Ren",
+      "analysis_zh": "分别观察QP数量、消息大小与逻辑对端数。黑窗不是完整迁移耗时，WBS排空和恢复仍受对端数与在途工作影响。",
+      "version": "ACM SIGCOMM 2025正式版本",
+      "paper": "MigrRDMA",
+      "paper_title": "Software-based Live Migration for RDMA",
+      "figure_number": "4",
+      "pdf_page_1based": 11,
+      "use_basis": "Limited necessary excerpt for specific substantive scholarly commentary; no open image license or legal guarantee asserted."
+    }
+  ],
+  "rights": "两图用于相邻实质评论的必要有限引用；非通用再分发授权。保留作者、图号、版本与原文链接。未公开复制完整PDF或源码。",
+  "missing_resources": "PDF无已确认通用公开再分发许可；仓库统一代码许可未核实，故提供原始链接不整体备份。",
+  "name": "MigrRDMA",
+  "pdf": "https://raw.githubusercontent.com/hittingnote/migrrdma/master/docs/migrrdma_sigcomm.pdf",
+  "date": "2025-09-08～11（会议）",
+  "url": "https://doi.org/10.1145/3718958.3750487",
+  "org": "Tsinghua University、Microsoft Research",
+  "scope": "SIGCOMM正文§1–6、Figure2–6、Table4；作者仓库部署说明；未运行原型",
+  "summary": "预建立资源、标识间接层与Wait-before-stop将迁移黑窗缩短；需要对端共同参与，不等同故障恢复。",
+  "pdf_archive_status": "暂未提交全文备份，见官方原文链接"
+}

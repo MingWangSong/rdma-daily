@@ -4,11 +4,12 @@
     "2026-11-10",
     "2026-11-11",
     "2026-11-12",
-    "2026-11-13"
+    "2026-11-13",
+    "2026-11-14"
   ],
-  "prepared_on": "2026-11-13",
+  "prepared_on": "2026-11-14",
   "publication_status": "public_repository_archive",
-  "paper_count": 17,
+  "paper_count": 22,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -247,12 +248,57 @@
       "url": "https://www.usenix.org/conference/nsdi25/presentation/liu-wei",
       "pdf": "https://www.usenix.org/system/files/nsdi25-liu-wei.pdf",
       "scope": "读官方正文§1–8、机制及实验图表、作者报告、项目页和带宽拟合源码；未复现。"
+    },
+    "DART": {
+      "date": "2026-11-14",
+      "conference": "PACMMOD 4(1), SIGMOD 2026",
+      "org": "上海交通大学、Purdue University、北京大学",
+      "full": "DART: A Lock-free Two-layer Hashed ART Index for Disaggregated Memory",
+      "url": "https://doi.org/10.1145/3786636",
+      "pdf": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_DART.pdf",
+      "scope": "全文§1–7、算法1与实验图表；官方录用名单及作者仓库README；未复现实验或审计完整代码。"
+    },
+    "O3-LSM": {
+      "date": "2026-11-14",
+      "conference": "Proceedings of the ACM on Management of Data 4(3), SIGMOD 2026, Article 216",
+      "org": "Arizona State University；Purdue University；Boston University（正式PDF）",
+      "full": "O3-LSM: Maximizing Disaggregated LSM Write Performance via Three-Layer Offloading",
+      "url": "https://doi.org/10.1145/3802093",
+      "pdf": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_O3LSM.pdf",
+      "scope": "阅读27页PDF正文，重点§§4–5及图5、12、表2–4/6；核查官方接受名单及代码仓库首页。未运行代码，未复现实验。"
+    },
+    "Shard": {
+      "date": "2026-11-14",
+      "conference": "PVLDB 19(4):684–697; VLDB 2026 presentation",
+      "org": "中国人民大学、阿里巴巴、Microsoft Research、中国科学院计算机网络信息中心、腾讯",
+      "full": "Shard: A Scalable and Resize-optimized Hash Index on Disaggregated Memory",
+      "url": "https://doi.org/10.14778/3785297.3785309",
+      "pdf": "https://www.vldb.org/pvldb/vol19/p684-zha.pdf",
+      "scope": "正文1–6节与所有实验、算法及图表，未复现实验，仓库README辅助核查"
+    },
+    "MigrRDMA": {
+      "date": "2026-11-14",
+      "conference": "ACM SIGCOMM 2025",
+      "org": "Tsinghua University、Microsoft Research",
+      "full": "Software-based Live Migration for RDMA",
+      "url": "https://doi.org/10.1145/3718958.3750487",
+      "pdf": "https://raw.githubusercontent.com/hittingnote/migrrdma/master/docs/migrrdma_sigcomm.pdf",
+      "scope": "SIGCOMM正文§1–6、Figure2–6、Table4；作者仓库部署说明；未运行原型"
+    },
+    "DCP": {
+      "date": "2026-11-14",
+      "conference": "ACM SIGCOMM 2025",
+      "org": "香港科技大学 iSING Lab、华为",
+      "full": "Revisiting RDMA Reliability for Lossy Fabrics",
+      "url": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+      "pdf": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
+      "scope": "完整正文 §1–8、附录及关键图表；作者报告协议、bitmap-free/fallback 和实验部分。"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 31,
+  "figure_excerpt_count": 41,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-13",
+  "revision_date": "2026-11-14",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

@@ -1,0 +1,85 @@
+{
+  "id": "dart",
+  "title": "DART: A Lock-free Two-layer Hashed ART Index for Disaggregated Memory",
+  "venue": "PACMMOD 4(1), SIGMOD 2026",
+  "date": "2026-02",
+  "status": "既有正式论文，非今日新增",
+  "institutions": [
+    "上海交通大学",
+    "Purdue University",
+    "北京大学"
+  ],
+  "pdf": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_DART.pdf",
+  "doi": "https://doi.org/10.1145/3786636",
+  "license": "CC BY 4.0, PDF p1",
+  "archive_pdf": true,
+  "figures": [
+    {
+      "file": "dart-fig4.png",
+      "figure": "4",
+      "pdf_page": 10,
+      "crop": [
+        112,
+        80,
+        375,
+        230
+      ],
+      "path": "papers/dart/images/dart-fig4.png",
+      "num": "4",
+      "page": 10,
+      "title": "自适应哈希节点与元数据解耦",
+      "analysis": "U/1/N16/addr 槽同时给出下一层寻址元数据，Hash(T)只取目标桶，把先读头部再读指针压为一次小读取，不意味着完整查询一次RDMA。",
+      "archive_path": "2026-11-14/papers/dart/images/dart-fig4.png",
+      "dimensions_px": [
+        1052,
+        600
+      ],
+      "source_url": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_DART.pdf",
+      "author_credit": "Bowen Zhang, Shengan Zheng, Shi Shu, Jingxiang Li, Zhenlin Qi, Weiquan Huang, Jianguo Wang, Linpeng Huang, Hong Mei",
+      "analysis_zh": "U/1/N16/addr 槽同时给出下一层寻址元数据，Hash(T)只取目标桶，把先读头部再读指针压为一次小读取，不意味着完整查询一次RDMA。",
+      "version": "PACMMOD 4(1), SIGMOD 2026正式版本",
+      "paper": "DART",
+      "paper_title": "DART: A Lock-free Two-layer Hashed ART Index for Disaggregated Memory",
+      "figure_number": "4",
+      "pdf_page_1based": 10,
+      "use_basis": "CC BY 4.0, PDF p1"
+    },
+    {
+      "file": "dart-fig8.png",
+      "figure": "8",
+      "pdf_page": 18,
+      "crop": [
+        45,
+        80,
+        442,
+        233
+      ],
+      "path": "papers/dart/images/dart-fig8.png",
+      "num": "8",
+      "page": 18,
+      "title": "逐组件累计消融",
+      "analysis": "randint A负载在元数据解耦后明显提升，email的主要跃升在加入EST后；各组件最大倍数不可相乘，面板纵轴不同也不能按柱高跨面板比较。",
+      "archive_path": "2026-11-14/papers/dart/images/dart-fig8.png",
+      "dimensions_px": [
+        1588,
+        612
+      ],
+      "source_url": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_DART.pdf",
+      "author_credit": "Bowen Zhang, Shengan Zheng, Shi Shu, Jingxiang Li, Zhenlin Qi, Weiquan Huang, Jianguo Wang, Linpeng Huang, Hong Mei",
+      "analysis_zh": "randint A负载在元数据解耦后明显提升，email的主要跃升在加入EST后；各组件最大倍数不可相乘，面板纵轴不同也不能按柱高跨面板比较。",
+      "version": "PACMMOD 4(1), SIGMOD 2026正式版本",
+      "paper": "DART",
+      "paper_title": "DART: A Lock-free Two-layer Hashed ART Index for Disaggregated Memory",
+      "figure_number": "8",
+      "pdf_page_1based": 18,
+      "use_basis": "CC BY 4.0, PDF p1"
+    }
+  ],
+  "name": "DART",
+  "authors": "Bowen Zhang, Shengan Zheng, Shi Shu, Jingxiang Li, Zhenlin Qi, Weiquan Huang, Jianguo Wang, Linpeng Huang, Hong Mei",
+  "org": "上海交通大学、Purdue University、北京大学",
+  "url": "https://doi.org/10.1145/3786636",
+  "summary": "用跳转表减少串行远程遍历，以128B节点桶和8B复合指针削减读放大；适合有限客户端缓存下的点查与更新密集元数据索引。",
+  "scope": "全文§1–7、算法1与实验图表；官方录用名单及作者仓库README；未复现实验或审计完整代码。",
+  "pdf_archive_status": "暂未提交全文备份，见官方原文链接"
+}
