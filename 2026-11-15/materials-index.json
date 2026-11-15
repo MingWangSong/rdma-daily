@@ -1,0 +1,292 @@
+{
+  "date": "2026-11-15",
+  "papers": [
+    {
+      "id": "dualpath",
+      "name": "DualPath",
+      "title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+      "authors": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+      "org": "北京大学、清华大学、DeepSeek-AI",
+      "venue": "SIGCOMM 2026（正式议程确认）；解读基于作者 arXiv v2",
+      "date": "会议：2026-08-17 至 08-21；所读版本：2026-02-26；旧文深读",
+      "url": "https://conferences.sigcomm.org/sigcomm/2026/program/papers/",
+      "pdf": "https://arxiv.org/pdf/2602.21548v2",
+      "summary": "将闲置decode存储入口聚合为KV读带宽，同时用CNIC统一PCIe与网络QoS；重点辨析双路径收益的硬件假设与存储语义缺口。",
+      "scope": "全文§1–9及附录A、全部实验图表；最终ACM版差异未核对，未获得完整开源实现。",
+      "figures": [
+        {
+          "path": "papers/dualpath/images/fig4.png",
+          "num": "4",
+          "page": 5,
+          "title": "PE/DE两条KV读取路径",
+          "analysis": "DE先读历史KV后，PE逐层取用，只把新增KV写回；完整块用于后端I/O，层块用于计算流水。图中DE DRAM缓冲节省HBM但增加DRAM和CNIC压力。",
+          "use_basis": "仅引用17页论文中解释数据路径与验证服务指标所必需的2幅原图；紧邻独立技术评论，保留作者、版本、图号及原文链接，不替代论文。arXiv非独占分发许可不作为第三方公开复制全文授权；本次按有限学术评论引用评估，非法律保证，全文不公开归档。",
+          "version": "arXiv v2 (2026-02-26)",
+          "archive_path": "2026-11-15/papers/dualpath/images/fig4.png",
+          "dimensions_px": [
+            1196,
+            373
+          ],
+          "source_url": "https://arxiv.org/pdf/2602.21548v2",
+          "author_credit": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+          "analysis_zh": "DE先读历史KV后，PE逐层取用，只把新增KV写回；完整块用于后端I/O，层块用于计算流水。图中DE DRAM缓冲节省HBM但增加DRAM和CNIC压力。",
+          "paper": "DualPath",
+          "paper_title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+          "figure_number": "4",
+          "pdf_page_1based": 5
+        },
+        {
+          "path": "papers/dualpath/images/fig10.png",
+          "num": "10",
+          "page": 12,
+          "title": "到达率增加时TTFT、TTST与TPOT",
+          "analysis": "DS27B/660B在线APS容量分别提高1.67×/2.25×；阴影只是末150秒波动，不是P99。TTST、TPOT超出SLO的数据点被省略，不能把画面中曲线解释为无限负载稳定。",
+          "use_basis": "仅引用17页论文中解释数据路径与验证服务指标所必需的2幅原图；紧邻独立技术评论，保留作者、版本、图号及原文链接，不替代论文。arXiv非独占分发许可不作为第三方公开复制全文授权；本次按有限学术评论引用评估，非法律保证，全文不公开归档。",
+          "version": "arXiv v2 (2026-02-26)",
+          "archive_path": "2026-11-15/papers/dualpath/images/fig10.png",
+          "dimensions_px": [
+            1220,
+            393
+          ],
+          "source_url": "https://arxiv.org/pdf/2602.21548v2",
+          "author_credit": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+          "analysis_zh": "DS27B/660B在线APS容量分别提高1.67×/2.25×；阴影只是末150秒波动，不是P99。TTST、TPOT超出SLO的数据点被省略，不能把画面中曲线解释为无限负载稳定。",
+          "paper": "DualPath",
+          "paper_title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+          "figure_number": "10",
+          "pdf_page_1based": 12
+        }
+      ],
+      "version": "arXiv v2 (2026-02-26)"
+    },
+    {
+      "id": "sync",
+      "name": "RDMA同步语义与400G原子瓶颈",
+      "title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+      "authors": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+      "org": "TU Darmstadt；TU Munich；Google；DFKI。Jacob Nelson-Slivon的工作在Lehigh University完成。",
+      "venue": "ACM Transactions on Database Systems 50(1), Article 4",
+      "date": "2025-03-06",
+      "url": "https://doi.org/10.1145/3716377",
+      "pdf": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+      "summary": "旧文深读，非今日新文。单次READ的跨cache-line取数顺序不保证；ConnectX-7 400G仍存在原子地址布局引发的物理冲突；交换机版本窗口可降低同步开销，但需要PSN状态和恢复机制。",
+      "scope": "已读正文§1–7（p.1–36），核对参考文献与末页收稿信息；重点复核§3.2、§4.2–4.3、§5.1、§5.4–5.5及图17/23。作者代码README已读，未执行硬件复现。",
+      "figures": [
+        {
+          "path": "papers/sync/images/fig17.png",
+          "num": "17",
+          "page": 23,
+          "title": "ConnectX-7 400G上的地址对齐与padding对照",
+          "analysis": "左图大stride下原子吞吐约2.45M ops/s早饱和；右图增加8B padding后曲线重合并扩展。是原子吞吐，不是事务吞吐或尾延迟，不能据此断言400G不比100G快。",
+          "use_basis": "有限学术评论引用：仅裁切支撑正文具体分析所必要的两幅图，保留图例与轴；全文40页，不形成图集或替代原作。原PDF个人/课堂许可不覆盖公开镜像，故不镜像全文；此处不声称法律保证。",
+          "version": "TODS 2025最终期刊版",
+          "archive_path": "2026-11-15/papers/sync/images/fig17.png",
+          "dimensions_px": [
+            990,
+            300
+          ],
+          "source_url": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+          "author_credit": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+          "analysis_zh": "左图大stride下原子吞吐约2.45M ops/s早饱和；右图增加8B padding后曲线重合并扩展。是原子吞吐，不是事务吞吐或尾延迟，不能据此断言400G不比100G快。",
+          "paper": "RDMA同步语义与400G原子瓶颈",
+          "paper_title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+          "figure_number": "17",
+          "pdf_page_1based": 23
+        },
+        {
+          "path": "papers/sync/images/fig23.png",
+          "num": "23",
+          "page": 29,
+          "title": "交换机包围读取的版本校验窗口",
+          "analysis": "写入发生在读请求和响应之间时，交换机把数据标为无效，避开对PCIe取数顺序的错误假设；要求所有相关访问经过同一负责交换机。",
+          "use_basis": "有限学术评论引用：仅裁切支撑正文具体分析所必要的两幅图，保留图例与轴；全文40页，不形成图集或替代原作。原PDF个人/课堂许可不覆盖公开镜像，故不镜像全文；此处不声称法律保证。",
+          "version": "TODS 2025最终期刊版",
+          "archive_path": "2026-11-15/papers/sync/images/fig23.png",
+          "dimensions_px": [
+            995,
+            220
+          ],
+          "source_url": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+          "author_credit": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+          "analysis_zh": "写入发生在读请求和响应之间时，交换机把数据标为无效，避开对PCIe取数顺序的错误假设；要求所有相关访问经过同一负责交换机。",
+          "paper": "RDMA同步语义与400G原子瓶颈",
+          "paper_title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+          "figure_number": "23",
+          "pdf_page_1based": 29
+        }
+      ]
+    },
+    {
+      "id": "hdtx",
+      "name": "HDTX",
+      "title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+      "authors": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+      "org": "华中科技大学（计算机学院、大数据技术与系统国家工程研究中心等）",
+      "venue": "USENIX ATC 2025，正式发表，pp.943–958",
+      "date": "2025-07；会议2025-07-07至07-09。近期补读，非今日新发表。",
+      "url": "https://www.usenix.org/conference/atc25/presentation/lu",
+      "pdf": "https://www.usenix.org/system/files/atc25-lu.pdf",
+      "summary": "HDTX将只读验证与主备redo日志传播合并，用可见位隔离异步apply，再由RNIC执行本地日志回放和优先级锁调度。无争用且地址缓存命中时，提交临界路径缩短到2RTT；后台释放仍存在。适合远端内存KV和小对象元数据事务，不能直接泛化到NVMe SSD持久化。",
+      "scope": "已读论文正文§1–7、核查原图4/10和实验数据、作者25页报告、代码README及提交入口/Wait-Enable实现位置。未运行硬件实验，未观看视频。",
+      "figures": [
+        {
+          "path": "papers/hdtx/images/fig4.png",
+          "num": "4",
+          "page": "正文947 / PDF 6",
+          "title": "事务提交临界路径与后台释放",
+          "analysis": "A、B是写集，C是只读集。第二轮对A/B的主备redo日志传播与C的版本验证并行；Commit Point右侧才是后台offloading。因此2RTT只描述提交临界路径，不能理解为全部副本已完成apply、版本更新和解锁。",
+          "use_basis": "有限学术评论引用。技术事实性已发表论文，仅保留解释2RTT与可见性差异所需的这一流程图，紧邻实质协议分析，保留作者/来源/图号，不完整复制或替代原作。未发现图内第三方标记或禁引条款；依据四因素评估，不作法律保证。",
+          "version": "USENIX ATC 2025正式论文集版本，Lu等，2025年7月",
+          "archive_path": "2026-11-15/papers/hdtx/images/fig4.png",
+          "dimensions_px": [
+            972,
+            576
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-lu.pdf",
+          "author_credit": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+          "analysis_zh": "A、B是写集，C是只读集。第二轮对A/B的主备redo日志传播与C的版本验证并行；Commit Point右侧才是后台offloading。因此2RTT只描述提交临界路径，不能理解为全部副本已完成apply、版本更新和解锁。",
+          "paper": "HDTX",
+          "paper_title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+          "figure_number": "4",
+          "pdf_page_1based": "正文947 / PDF 6"
+        },
+        {
+          "path": "papers/hdtx/images/fig10.png",
+          "num": "10",
+          "page": "正文953 / PDF 12",
+          "title": "释放卸载对吞吐和网络带宽的消融",
+          "analysis": "高背景网络负载、每事务4个对象、64B–1KB扫描。对象越大，不卸载的网络流量增长越陡；两组吞吐均随对象放大下降。64B附近带宽接近，不能把最多19.1%的节省当作所有尺寸固定收益；最多18.5%吞吐改善也不必与该最大带宽节省同点发生。",
+          "use_basis": "有限学术评论引用。两实验面板共同用于检验卸载的收益与小对象边界，保留轴/单位/图例；与实质实验批评相邻，全文仅选两图，非图集，未转载全文。未发现第三方标记或禁引条款；四因素评估支持有限引用但不作法律保证。",
+          "version": "USENIX ATC 2025正式论文集版本，Lu等，2025年7月",
+          "archive_path": "2026-11-15/papers/hdtx/images/fig10.png",
+          "dimensions_px": [
+            972,
+            460
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-lu.pdf",
+          "author_credit": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+          "analysis_zh": "高背景网络负载、每事务4个对象、64B–1KB扫描。对象越大，不卸载的网络流量增长越陡；两组吞吐均随对象放大下降。64B附近带宽接近，不能把最多19.1%的节省当作所有尺寸固定收益；最多18.5%吞吐改善也不必与该最大带宽节省同点发生。",
+          "paper": "HDTX",
+          "paper_title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+          "figure_number": "10",
+          "pdf_page_1based": "正文953 / PDF 12"
+        }
+      ]
+    },
+    {
+      "id": "rcuckoo",
+      "name": "RCuckoo",
+      "title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+      "authors": "Stewart Grant、Alex C. Snoeren",
+      "org": "University of California San Diego（UC San Diego）",
+      "venue": "USENIX ATC 2025，pp.959–972",
+      "date": "2025-07-07（公开日期；会议7月7–9日），既有正式论文补读",
+      "url": "https://www.usenix.org/conference/atc25/presentation/grant",
+      "pdf": "https://www.usenix.org/system/files/atc25-grant.pdf",
+      "summary": "以局部性增强双哈希、RNIC内存锁位图和masked CAS压缩单边RDMA小KV路径；收益以高填充插入退化、硬件依赖及未实现的慢客户端fencing为边界。",
+      "scope": "阅读全文§1–6，目视核对Figures 3、7；未运行代码、未观看报告。对应公开代码库未确认。",
+      "figures": [
+        {
+          "path": "papers/rcuckoo/images/figure3.png",
+          "num": "3",
+          "page": 5,
+          "title": "RCuckoo操作协议",
+          "analysis": "灰区合批锁获取与行读取；插入锁后第二次搜索是正确性关口，猜测失败触发重试。蓝色写仍逐行有序，不能视为多行原子写。",
+          "use_basis": "USENIX正式版必要机制图的有限学术评论引用，邻接实质分析；未发现通用再分发许可，不归档整篇PDF。",
+          "archive_path": "2026-11-15/papers/rcuckoo/images/figure3.png",
+          "dimensions_px": [
+            726,
+            369
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-grant.pdf",
+          "author_credit": "Stewart Grant、Alex C. Snoeren",
+          "analysis_zh": "灰区合批锁获取与行读取；插入锁后第二次搜索是正确性关口，猜测失败触发重试。蓝色写仍逐行有序，不能视为多行原子写。",
+          "version": "USENIX ATC 2025，pp.959–972版本",
+          "paper": "RCuckoo",
+          "paper_title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+          "figure_number": "3",
+          "pdf_page_1based": 5
+        },
+        {
+          "path": "papers/rcuckoo/images/figure7.png",
+          "num": "7",
+          "page": 12,
+          "title": "填充率对插入成本的影响",
+          "analysis": "原图caption把(a)/(b)名称交换，按轴从左到右实际为延迟、吞吐、字节量、消息数。纯插入W从近空11.5 MOPS降至90%填充4.5 MOPS；这里A/B为读/插入混合，非Figure 6读/更新。",
+          "use_basis": "仅引用支持容量与写入SLO评论所需实验图，保留坐标、单位和图例；与Figure 3合计两图，不替代原作。",
+          "archive_path": "2026-11-15/papers/rcuckoo/images/figure7.png",
+          "dimensions_px": [
+            1398,
+            249
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-grant.pdf",
+          "author_credit": "Stewart Grant、Alex C. Snoeren",
+          "analysis_zh": "原图caption把(a)/(b)名称交换，按轴从左到右实际为延迟、吞吐、字节量、消息数。纯插入W从近空11.5 MOPS降至90%填充4.5 MOPS；这里A/B为读/插入混合，非Figure 6读/更新。",
+          "version": "USENIX ATC 2025，pp.959–972版本",
+          "paper": "RCuckoo",
+          "paper_title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+          "figure_number": "7",
+          "pdf_page_1based": 12
+        }
+      ]
+    },
+    {
+      "id": "swcc",
+      "name": "SwCC",
+      "title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+      "authors": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+      "org": "浙江大学计算机科学与技术学院",
+      "venue": "USENIX ATC 2025",
+      "date": "2025-07-07—09（会议日期，已正式发表；非今日新增）",
+      "url": "https://www.usenix.org/conference/atc25/presentation/huang-hongjing",
+      "pdf": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+      "summary": "将拥塞算法放到RISC-V核只是开始：专用QP状态预取、CSR交付与TX/RX分离才让C编写的逐包控制追上100Gb/s。",
+      "scope": "阅读全文§1–7及附录A，检查报告设计页与代码README；未复现实验。",
+      "figures": [
+        {
+          "path": "papers/swcc/images/fig4.png",
+          "num": "4",
+          "page": 7,
+          "title": "专用QP状态通路与TX/RX分离",
+          "analysis": "QPN Hint提前预取完整QP状态并送入CSR，避免事件执行阶段的普通访存；并不是只在NIC上加一个RISC-V核。",
+          "use_basis": "作者 Hongjing Huang 等，USENIX ATC 2025 正式PDF图4；有限引用供机制/实验评论，2幅/14图，紧邻实质解读，非全文替代；未发现明确再分发许可，不作许可授权声明。",
+          "archive_path": "2026-11-15/papers/swcc/images/fig4.png",
+          "dimensions_px": [
+            1545,
+            555
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+          "author_credit": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+          "analysis_zh": "QPN Hint提前预取完整QP状态并送入CSR，避免事件执行阶段的普通访存；并不是只在NIC上加一个RISC-V核。",
+          "version": "USENIX ATC 2025版本",
+          "paper": "SwCC",
+          "paper_title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+          "figure_number": "4",
+          "pdf_page_1based": 7
+        },
+        {
+          "path": "papers/swcc/images/fig11.png",
+          "num": "11",
+          "page": 12,
+          "title": "QP-aware存储子系统的消融",
+          "analysis": "状态访问、核周期、吞吐、ASIC预测分别呈现；右下800Gb/s为估算，不能写成实测。",
+          "use_basis": "作者 Hongjing Huang 等，USENIX ATC 2025 正式PDF图11；有限引用供机制/实验评论，2幅/14图，紧邻实质解读，非全文替代；未发现明确再分发许可，不作许可授权声明。",
+          "archive_path": "2026-11-15/papers/swcc/images/fig11.png",
+          "dimensions_px": [
+            741,
+            576
+          ],
+          "source_url": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+          "author_credit": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+          "analysis_zh": "状态访问、核周期、吞吐、ASIC预测分别呈现；右下800Gb/s为估算，不能写成实测。",
+          "version": "USENIX ATC 2025版本",
+          "paper": "SwCC",
+          "paper_title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+          "figure_number": "11",
+          "pdf_page_1based": 12
+        }
+      ]
+    }
+  ],
+  "scope": "Formal conference paper reviews; no verified same-day additions; full PDFs and slides not redistributed."
+}

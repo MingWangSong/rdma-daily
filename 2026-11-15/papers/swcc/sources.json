@@ -1,0 +1,57 @@
+{
+  "id": "swcc",
+  "name": "SwCC",
+  "title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+  "authors": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+  "org": "浙江大学计算机科学与技术学院",
+  "venue": "USENIX ATC 2025",
+  "date": "2025-07-07—09（会议日期，已正式发表；非今日新增）",
+  "url": "https://www.usenix.org/conference/atc25/presentation/huang-hongjing",
+  "pdf": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+  "summary": "将拥塞算法放到RISC-V核只是开始：专用QP状态预取、CSR交付与TX/RX分离才让C编写的逐包控制追上100Gb/s。",
+  "scope": "阅读全文§1–7及附录A，检查报告设计页与代码README；未复现实验。",
+  "figures": [
+    {
+      "path": "papers/swcc/images/fig4.png",
+      "num": "4",
+      "page": 7,
+      "title": "专用QP状态通路与TX/RX分离",
+      "analysis": "QPN Hint提前预取完整QP状态并送入CSR，避免事件执行阶段的普通访存；并不是只在NIC上加一个RISC-V核。",
+      "use_basis": "作者 Hongjing Huang 等，USENIX ATC 2025 正式PDF图4；有限引用供机制/实验评论，2幅/14图，紧邻实质解读，非全文替代；未发现明确再分发许可，不作许可授权声明。",
+      "archive_path": "2026-11-15/papers/swcc/images/fig4.png",
+      "dimensions_px": [
+        1545,
+        555
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+      "author_credit": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+      "analysis_zh": "QPN Hint提前预取完整QP状态并送入CSR，避免事件执行阶段的普通访存；并不是只在NIC上加一个RISC-V核。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "SwCC",
+      "paper_title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+      "figure_number": "4",
+      "pdf_page_1based": 7
+    },
+    {
+      "path": "papers/swcc/images/fig11.png",
+      "num": "11",
+      "page": 12,
+      "title": "QP-aware存储子系统的消融",
+      "analysis": "状态访问、核周期、吞吐、ASIC预测分别呈现；右下800Gb/s为估算，不能写成实测。",
+      "use_basis": "作者 Hongjing Huang 等，USENIX ATC 2025 正式PDF图11；有限引用供机制/实验评论，2幅/14图，紧邻实质解读，非全文替代；未发现明确再分发许可，不作许可授权声明。",
+      "archive_path": "2026-11-15/papers/swcc/images/fig11.png",
+      "dimensions_px": [
+        741,
+        576
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+      "author_credit": "Hongjing Huang, Jie Zhang, Xuzheng Chen, Ziyu Song, Jiajun Qin, Zeke Wang",
+      "analysis_zh": "状态访问、核周期、吞吐、ASIC预测分别呈现；右下800Gb/s为估算，不能写成实测。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "SwCC",
+      "paper_title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+      "figure_number": "11",
+      "pdf_page_1based": 12
+    }
+  ]
+}

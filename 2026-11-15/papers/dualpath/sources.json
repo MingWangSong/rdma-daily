@@ -1,0 +1,58 @@
+{
+  "id": "dualpath",
+  "name": "DualPath",
+  "title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+  "authors": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+  "org": "北京大学、清华大学、DeepSeek-AI",
+  "venue": "SIGCOMM 2026（正式议程确认）；解读基于作者 arXiv v2",
+  "date": "会议：2026-08-17 至 08-21；所读版本：2026-02-26；旧文深读",
+  "url": "https://conferences.sigcomm.org/sigcomm/2026/program/papers/",
+  "pdf": "https://arxiv.org/pdf/2602.21548v2",
+  "summary": "将闲置decode存储入口聚合为KV读带宽，同时用CNIC统一PCIe与网络QoS；重点辨析双路径收益的硬件假设与存储语义缺口。",
+  "scope": "全文§1–9及附录A、全部实验图表；最终ACM版差异未核对，未获得完整开源实现。",
+  "figures": [
+    {
+      "path": "papers/dualpath/images/fig4.png",
+      "num": "4",
+      "page": 5,
+      "title": "PE/DE两条KV读取路径",
+      "analysis": "DE先读历史KV后，PE逐层取用，只把新增KV写回；完整块用于后端I/O，层块用于计算流水。图中DE DRAM缓冲节省HBM但增加DRAM和CNIC压力。",
+      "use_basis": "仅引用17页论文中解释数据路径与验证服务指标所必需的2幅原图；紧邻独立技术评论，保留作者、版本、图号及原文链接，不替代论文。arXiv非独占分发许可不作为第三方公开复制全文授权；本次按有限学术评论引用评估，非法律保证，全文不公开归档。",
+      "version": "arXiv v2 (2026-02-26)",
+      "archive_path": "2026-11-15/papers/dualpath/images/fig4.png",
+      "dimensions_px": [
+        1196,
+        373
+      ],
+      "source_url": "https://arxiv.org/pdf/2602.21548v2",
+      "author_credit": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+      "analysis_zh": "DE先读历史KV后，PE逐层取用，只把新增KV写回；完整块用于后端I/O，层块用于计算流水。图中DE DRAM缓冲节省HBM但增加DRAM和CNIC压力。",
+      "paper": "DualPath",
+      "paper_title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+      "figure_number": "4",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/dualpath/images/fig10.png",
+      "num": "10",
+      "page": 12,
+      "title": "到达率增加时TTFT、TTST与TPOT",
+      "analysis": "DS27B/660B在线APS容量分别提高1.67×/2.25×；阴影只是末150秒波动，不是P99。TTST、TPOT超出SLO的数据点被省略，不能把画面中曲线解释为无限负载稳定。",
+      "use_basis": "仅引用17页论文中解释数据路径与验证服务指标所必需的2幅原图；紧邻独立技术评论，保留作者、版本、图号及原文链接，不替代论文。arXiv非独占分发许可不作为第三方公开复制全文授权；本次按有限学术评论引用评估，非法律保证，全文不公开归档。",
+      "version": "arXiv v2 (2026-02-26)",
+      "archive_path": "2026-11-15/papers/dualpath/images/fig10.png",
+      "dimensions_px": [
+        1220,
+        393
+      ],
+      "source_url": "https://arxiv.org/pdf/2602.21548v2",
+      "author_credit": "Yongtong Wu、Shaoyuan Chen、Yinmin Zhong 等（实际阅读v2作者表13人）",
+      "analysis_zh": "DS27B/660B在线APS容量分别提高1.67×/2.25×；阴影只是末150秒波动，不是P99。TTST、TPOT超出SLO的数据点被省略，不能把画面中曲线解释为无限负载稳定。",
+      "paper": "DualPath",
+      "paper_title": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+      "figure_number": "10",
+      "pdf_page_1based": 12
+    }
+  ],
+  "version": "arXiv v2 (2026-02-26)"
+}

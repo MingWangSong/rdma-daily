@@ -1,0 +1,57 @@
+{
+  "id": "rcuckoo",
+  "name": "RCuckoo",
+  "title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+  "authors": "Stewart Grant、Alex C. Snoeren",
+  "org": "University of California San Diego（UC San Diego）",
+  "venue": "USENIX ATC 2025，pp.959–972",
+  "date": "2025-07-07（公开日期；会议7月7–9日），既有正式论文补读",
+  "url": "https://www.usenix.org/conference/atc25/presentation/grant",
+  "pdf": "https://www.usenix.org/system/files/atc25-grant.pdf",
+  "summary": "以局部性增强双哈希、RNIC内存锁位图和masked CAS压缩单边RDMA小KV路径；收益以高填充插入退化、硬件依赖及未实现的慢客户端fencing为边界。",
+  "scope": "阅读全文§1–6，目视核对Figures 3、7；未运行代码、未观看报告。对应公开代码库未确认。",
+  "figures": [
+    {
+      "path": "papers/rcuckoo/images/figure3.png",
+      "num": "3",
+      "page": 5,
+      "title": "RCuckoo操作协议",
+      "analysis": "灰区合批锁获取与行读取；插入锁后第二次搜索是正确性关口，猜测失败触发重试。蓝色写仍逐行有序，不能视为多行原子写。",
+      "use_basis": "USENIX正式版必要机制图的有限学术评论引用，邻接实质分析；未发现通用再分发许可，不归档整篇PDF。",
+      "archive_path": "2026-11-15/papers/rcuckoo/images/figure3.png",
+      "dimensions_px": [
+        726,
+        369
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-grant.pdf",
+      "author_credit": "Stewart Grant、Alex C. Snoeren",
+      "analysis_zh": "灰区合批锁获取与行读取；插入锁后第二次搜索是正确性关口，猜测失败触发重试。蓝色写仍逐行有序，不能视为多行原子写。",
+      "version": "USENIX ATC 2025，pp.959–972版本",
+      "paper": "RCuckoo",
+      "paper_title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+      "figure_number": "3",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/rcuckoo/images/figure7.png",
+      "num": "7",
+      "page": 12,
+      "title": "填充率对插入成本的影响",
+      "analysis": "原图caption把(a)/(b)名称交换，按轴从左到右实际为延迟、吞吐、字节量、消息数。纯插入W从近空11.5 MOPS降至90%填充4.5 MOPS；这里A/B为读/插入混合，非Figure 6读/更新。",
+      "use_basis": "仅引用支持容量与写入SLO评论所需实验图，保留坐标、单位和图例；与Figure 3合计两图，不替代原作。",
+      "archive_path": "2026-11-15/papers/rcuckoo/images/figure7.png",
+      "dimensions_px": [
+        1398,
+        249
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-grant.pdf",
+      "author_credit": "Stewart Grant、Alex C. Snoeren",
+      "analysis_zh": "原图caption把(a)/(b)名称交换，按轴从左到右实际为延迟、吞吐、字节量、消息数。纯插入W从近空11.5 MOPS降至90%填充4.5 MOPS；这里A/B为读/插入混合，非Figure 6读/更新。",
+      "version": "USENIX ATC 2025，pp.959–972版本",
+      "paper": "RCuckoo",
+      "paper_title": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+      "figure_number": "7",
+      "pdf_page_1based": 12
+    }
+  ]
+}

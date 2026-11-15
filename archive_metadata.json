@@ -5,11 +5,12 @@
     "2026-11-11",
     "2026-11-12",
     "2026-11-13",
-    "2026-11-14"
+    "2026-11-14",
+    "2026-11-15"
   ],
-  "prepared_on": "2026-11-14",
+  "prepared_on": "2026-11-15",
   "publication_status": "public_repository_archive",
-  "paper_count": 22,
+  "paper_count": 27,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -293,12 +294,57 @@
       "url": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
       "pdf": "https://home.cse.ust.hk/~kaichen/papers/dcp-sigcomm25.pdf",
       "scope": "完整正文 §1–8、附录及关键图表；作者报告协议、bitmap-free/fallback 和实验部分。"
+    },
+    "DualPath": {
+      "date": "2026-11-15",
+      "conference": "SIGCOMM 2026（正式议程确认）；解读基于作者 arXiv v2",
+      "org": "北京大学、清华大学、DeepSeek-AI",
+      "full": "DualPath: Accelerating Agentic LLM Inference by Harvesting Disaggregated KV-Cache Storage I/O",
+      "url": "https://conferences.sigcomm.org/sigcomm/2026/program/papers/",
+      "pdf": "https://arxiv.org/pdf/2602.21548v2",
+      "scope": "全文§1–9及附录A、全部实验图表；最终ACM版差异未核对，未获得完整开源实现。"
+    },
+    "RDMA同步语义与400G原子瓶颈": {
+      "date": "2026-11-15",
+      "conference": "ACM Transactions on Database Systems 50(1), Article 4",
+      "org": "TU Darmstadt；TU Munich；Google；DFKI。Jacob Nelson-Slivon的工作在Lehigh University完成。",
+      "full": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+      "url": "https://doi.org/10.1145/3716377",
+      "pdf": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+      "scope": "已读正文§1–7（p.1–36），核对参考文献与末页收稿信息；重点复核§3.2、§4.2–4.3、§5.1、§5.4–5.5及图17/23。作者代码README已读，未执行硬件复现。"
+    },
+    "HDTX": {
+      "date": "2026-11-15",
+      "conference": "USENIX ATC 2025，正式发表，pp.943–958",
+      "org": "华中科技大学（计算机学院、大数据技术与系统国家工程研究中心等）",
+      "full": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+      "url": "https://www.usenix.org/conference/atc25/presentation/lu",
+      "pdf": "https://www.usenix.org/system/files/atc25-lu.pdf",
+      "scope": "已读论文正文§1–7、核查原图4/10和实验数据、作者25页报告、代码README及提交入口/Wait-Enable实现位置。未运行硬件实验，未观看视频。"
+    },
+    "RCuckoo": {
+      "date": "2026-11-15",
+      "conference": "USENIX ATC 2025，pp.959–972",
+      "org": "University of California San Diego（UC San Diego）",
+      "full": "Cuckoo for Clients: Disaggregated Cuckoo Hashing",
+      "url": "https://www.usenix.org/conference/atc25/presentation/grant",
+      "pdf": "https://www.usenix.org/system/files/atc25-grant.pdf",
+      "scope": "阅读全文§1–6，目视核对Figures 3、7；未运行代码、未观看报告。对应公开代码库未确认。"
+    },
+    "SwCC": {
+      "date": "2026-11-15",
+      "conference": "USENIX ATC 2025",
+      "org": "浙江大学计算机科学与技术学院",
+      "full": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
+      "url": "https://www.usenix.org/conference/atc25/presentation/huang-hongjing",
+      "pdf": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
+      "scope": "阅读全文§1–7及附录A，检查报告设计页与代码README；未复现实验。"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 41,
+  "figure_excerpt_count": 51,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-14",
+  "revision_date": "2026-11-15",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

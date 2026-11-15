@@ -1,0 +1,57 @@
+{
+  "id": "hdtx",
+  "name": "HDTX",
+  "title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+  "authors": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+  "org": "华中科技大学（计算机学院、大数据技术与系统国家工程研究中心等）",
+  "venue": "USENIX ATC 2025，正式发表，pp.943–958",
+  "date": "2025-07；会议2025-07-07至07-09。近期补读，非今日新发表。",
+  "url": "https://www.usenix.org/conference/atc25/presentation/lu",
+  "pdf": "https://www.usenix.org/system/files/atc25-lu.pdf",
+  "summary": "HDTX将只读验证与主备redo日志传播合并，用可见位隔离异步apply，再由RNIC执行本地日志回放和优先级锁调度。无争用且地址缓存命中时，提交临界路径缩短到2RTT；后台释放仍存在。适合远端内存KV和小对象元数据事务，不能直接泛化到NVMe SSD持久化。",
+  "scope": "已读论文正文§1–7、核查原图4/10和实验数据、作者25页报告、代码README及提交入口/Wait-Enable实现位置。未运行硬件实验，未观看视频。",
+  "figures": [
+    {
+      "path": "papers/hdtx/images/fig4.png",
+      "num": "4",
+      "page": "正文947 / PDF 6",
+      "title": "事务提交临界路径与后台释放",
+      "analysis": "A、B是写集，C是只读集。第二轮对A/B的主备redo日志传播与C的版本验证并行；Commit Point右侧才是后台offloading。因此2RTT只描述提交临界路径，不能理解为全部副本已完成apply、版本更新和解锁。",
+      "use_basis": "有限学术评论引用。技术事实性已发表论文，仅保留解释2RTT与可见性差异所需的这一流程图，紧邻实质协议分析，保留作者/来源/图号，不完整复制或替代原作。未发现图内第三方标记或禁引条款；依据四因素评估，不作法律保证。",
+      "version": "USENIX ATC 2025正式论文集版本，Lu等，2025年7月",
+      "archive_path": "2026-11-15/papers/hdtx/images/fig4.png",
+      "dimensions_px": [
+        972,
+        576
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-lu.pdf",
+      "author_credit": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+      "analysis_zh": "A、B是写集，C是只读集。第二轮对A/B的主备redo日志传播与C的版本验证并行；Commit Point右侧才是后台offloading。因此2RTT只描述提交临界路径，不能理解为全部副本已完成apply、版本更新和解锁。",
+      "paper": "HDTX",
+      "paper_title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+      "figure_number": "4",
+      "pdf_page_1based": "正文947 / PDF 6"
+    },
+    {
+      "path": "papers/hdtx/images/fig10.png",
+      "num": "10",
+      "page": "正文953 / PDF 12",
+      "title": "释放卸载对吞吐和网络带宽的消融",
+      "analysis": "高背景网络负载、每事务4个对象、64B–1KB扫描。对象越大，不卸载的网络流量增长越陡；两组吞吐均随对象放大下降。64B附近带宽接近，不能把最多19.1%的节省当作所有尺寸固定收益；最多18.5%吞吐改善也不必与该最大带宽节省同点发生。",
+      "use_basis": "有限学术评论引用。两实验面板共同用于检验卸载的收益与小对象边界，保留轴/单位/图例；与实质实验批评相邻，全文仅选两图，非图集，未转载全文。未发现第三方标记或禁引条款；四因素评估支持有限引用但不作法律保证。",
+      "version": "USENIX ATC 2025正式论文集版本，Lu等，2025年7月",
+      "archive_path": "2026-11-15/papers/hdtx/images/fig10.png",
+      "dimensions_px": [
+        972,
+        460
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-lu.pdf",
+      "author_credit": "Haodi Lu、Haikun Liu、Yujian Zhang、Zhuohui Duan、Xiaofei Liao、Hai Jin、Yu Zhang",
+      "analysis_zh": "高背景网络负载、每事务4个对象、64B–1KB扫描。对象越大，不卸载的网络流量增长越陡；两组吞吐均随对象放大下降。64B附近带宽接近，不能把最多19.1%的节省当作所有尺寸固定收益；最多18.5%吞吐改善也不必与该最大带宽节省同点发生。",
+      "paper": "HDTX",
+      "paper_title": "Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+      "figure_number": "10",
+      "pdf_page_1based": "正文953 / PDF 12"
+    }
+  ]
+}

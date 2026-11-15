@@ -1,0 +1,26 @@
+{
+  "title":"Fast Distributed Transactions for RDMA-based Disaggregated Memory",
+  "short_name":"HDTX",
+  "venue":"USENIX ATC 2025",
+  "date":"2025-07",
+  "event_dates":"2025-07-07/2025-07-09",
+  "status":"正式发表；近期补读，不是今日新增",
+  "institutions":["Huazhong University of Science and Technology / 华中科技大学"],
+  "official":"https://www.usenix.org/conference/atc25/presentation/lu",
+  "pdf":"https://www.usenix.org/system/files/atc25-lu.pdf",
+  "slides":"https://files.usenix.org/s3fs-public/conference/protected-files/atc25_slides-lu_haodi.pdf",
+  "code":"https://github.com/CGCL-codes/HDTX",
+  "code_commit":"9f9272b9aae0560d4fb30cb4d19f9d1bb8ff7e11",
+  "read_scope":"全文正文§1–7、论文图4/10、作者25页报告，仓库README及部分提交/verbs代码。未运行、未观看视频。",
+  "figures":[
+    {"file":"fig4.png","figure":"4","printed_page":947,"pdf_page":6,"purpose":"分析2RTT提交与后台释放的区别，避免将完成点误读为可见性全完成","basis":"有限学术评论引用。事实性已发表技术论文，仅截该流程图，紧邻独立协议分析，非完整复制，不替代阅读原文。未发现此图第三方素材标记或明确禁引限制。"},
+    {"file":"fig10.png","figure":"10","printed_page":953,"pdf_page":12,"purpose":"检验卸载的带宽/吞吐关系和小对象收益边界","basis":"有限学术评论引用。保留两个相互解释的实验面板及轴图例，与实质实验批评相邻；仅两幅图、不是图集，无完整论文转载。不将署名视作授权。"}
+  ],
+  "copyright_reference":"https://www.copyright.gov/fair-use/",
+  "copyright_evaluation":"按评论与研究目的、技术事实性、必要的最少两图、非替代原作四方面评估支持有限引用，但并非许可或法律保证；完整PDF与报告只链接。",
+  "archives":[
+    {"file":"code-README.md","source":"https://github.com/CGCL-codes/HDTX/blob/9f9272b9aae0560d4fb30cb4d19f9d1bb8ff7e11/README.md","license":"Apache-2.0 root repository license; copied unchanged; license retained"},
+    {"file":"code-Apache-LICENSE2.0","source":"https://github.com/CGCL-codes/HDTX/blob/9f9272b9aae0560d4fb30cb4d19f9d1bb8ff7e11/Apache-LICENSE2.0","note":"Original root license retained"}
+  ],
+  "not_publicly_archived":["paper.pdf：未核实针对该完整作品的公开再分发许可，只提供原文链接","slides.pdf：未核实完整报告再分发许可，只链接","完整源码：第三方代码与历史版权待逐项核查；仅备份本次核实的README和根许可，不声称完整fork"]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "sync",
+  "name": "RDMA同步语义与400G原子瓶颈",
+  "title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+  "authors": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+  "org": "TU Darmstadt；TU Munich；Google；DFKI。Jacob Nelson-Slivon的工作在Lehigh University完成。",
+  "venue": "ACM Transactions on Database Systems 50(1), Article 4",
+  "date": "2025-03-06",
+  "url": "https://doi.org/10.1145/3716377",
+  "pdf": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+  "summary": "旧文深读，非今日新文。单次READ的跨cache-line取数顺序不保证；ConnectX-7 400G仍存在原子地址布局引发的物理冲突；交换机版本窗口可降低同步开销，但需要PSN状态和恢复机制。",
+  "scope": "已读正文§1–7（p.1–36），核对参考文献与末页收稿信息；重点复核§3.2、§4.2–4.3、§5.1、§5.4–5.5及图17/23。作者代码README已读，未执行硬件复现。",
+  "figures": [
+    {
+      "path": "papers/sync/images/fig17.png",
+      "num": "17",
+      "page": 23,
+      "title": "ConnectX-7 400G上的地址对齐与padding对照",
+      "analysis": "左图大stride下原子吞吐约2.45M ops/s早饱和；右图增加8B padding后曲线重合并扩展。是原子吞吐，不是事务吞吐或尾延迟，不能据此断言400G不比100G快。",
+      "use_basis": "有限学术评论引用：仅裁切支撑正文具体分析所必要的两幅图，保留图例与轴；全文40页，不形成图集或替代原作。原PDF个人/课堂许可不覆盖公开镜像，故不镜像全文；此处不声称法律保证。",
+      "version": "TODS 2025最终期刊版",
+      "archive_path": "2026-11-15/papers/sync/images/fig17.png",
+      "dimensions_px": [
+        990,
+        300
+      ],
+      "source_url": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+      "author_credit": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+      "analysis_zh": "左图大stride下原子吞吐约2.45M ops/s早饱和；右图增加8B padding后曲线重合并扩展。是原子吞吐，不是事务吞吐或尾延迟，不能据此断言400G不比100G快。",
+      "paper": "RDMA同步语义与400G原子瓶颈",
+      "paper_title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+      "figure_number": "17",
+      "pdf_page_1based": 23
+    },
+    {
+      "path": "papers/sync/images/fig23.png",
+      "num": "23",
+      "page": 29,
+      "title": "交换机包围读取的版本校验窗口",
+      "analysis": "写入发生在读请求和响应之间时，交换机把数据标为无效，避开对PCIe取数顺序的错误假设；要求所有相关访问经过同一负责交换机。",
+      "use_basis": "有限学术评论引用：仅裁切支撑正文具体分析所必要的两幅图，保留图例与轴；全文40页，不形成图集或替代原作。原PDF个人/课堂许可不覆盖公开镜像，故不镜像全文；此处不声称法律保证。",
+      "version": "TODS 2025最终期刊版",
+      "archive_path": "2026-11-15/papers/sync/images/fig23.png",
+      "dimensions_px": [
+        995,
+        220
+      ],
+      "source_url": "https://www.informatik.tu-darmstadt.de/media/systems/pdf_publications/rdma_sync_tods.pdf",
+      "author_credit": "Matthias Jasny、Tobias Ziegler、Jacob Nelson-Slivon、Viktor Leis、Carsten Binnig",
+      "analysis_zh": "写入发生在读请求和响应之间时，交换机把数据标为无效，避开对PCIe取数顺序的错误假设；要求所有相关访问经过同一负责交换机。",
+      "paper": "RDMA同步语义与400G原子瓶颈",
+      "paper_title": "Synchronizing Disaggregated Data Structures with One-Sided RDMA: Pitfalls, Experiments and Design Guidelines",
+      "figure_number": "23",
+      "pdf_page_1based": 29
+    }
+  ]
+}
