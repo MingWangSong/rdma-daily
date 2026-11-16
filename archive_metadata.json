@@ -6,11 +6,12 @@
     "2026-11-12",
     "2026-11-13",
     "2026-11-14",
-    "2026-11-15"
+    "2026-11-15",
+    "2026-11-16"
   ],
-  "prepared_on": "2026-11-15",
+  "prepared_on": "2026-11-16",
   "publication_status": "public_repository_archive",
-  "paper_count": 27,
+  "paper_count": 31,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -339,12 +340,48 @@
       "url": "https://www.usenix.org/conference/atc25/presentation/huang-hongjing",
       "pdf": "https://www.usenix.org/system/files/atc25-huang-hongjing.pdf",
       "scope": "阅读全文§1–7及附录A，检查报告设计页与代码README；未复现实验。"
+    },
+    "Nos / Nostor": {
+      "date": "2026-11-16",
+      "conference": "OSDI 2025",
+      "org": "清华大学；华为",
+      "full": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+      "url": "https://www.usenix.org/conference/osdi25/presentation/gao",
+      "pdf": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+      "scope": "已读正式正文§1–8，设计证明/并发恢复/实验；检查作者README、HOWTOUSE与MIT许可证，未复现或观看报告。"
+    },
+    "Adios": {
+      "date": "2026-11-16",
+      "conference": "EuroSys 2025",
+      "org": "KAIST",
+      "full": "Adios to Busy-Waiting for Microsecond-scale Memory Disaggregation",
+      "url": "https://doi.org/10.1145/3689031.3717475",
+      "pdf": "https://yoon.ws/publication/adios-eurosys25.pdf",
+      "scope": "paper sections 1-8; figures and tables; 26 author slides text; code README only, not run"
+    },
+    "FLB": {
+      "date": "2026-11-16",
+      "conference": "USENIX ATC 2025",
+      "org": "中南大学、香港科技大学 iSING Lab、长沙理工大学、浪潮",
+      "full": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+      "url": "https://www.usenix.org/conference/atc25/presentation/hu-jinbin",
+      "pdf": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+      "scope": "正文§1–4、§6、附录A；作者13页报告；未观看视频，未复现"
+    },
+    "RTSFaaS": {
+      "date": "2026-11-16",
+      "conference": "USENIX ATC 2025",
+      "org": "华中科技大学；新加坡国立大学计算学院",
+      "full": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+      "url": "https://www.usenix.org/conference/atc25/presentation/zhao-jianjun",
+      "pdf": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+      "scope": "正文§1–5（重点§3–5）；作者报告和源码README/许可证；未运行代码"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 51,
+  "figure_excerpt_count": 59,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-15",
+  "revision_date": "2026-11-16",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

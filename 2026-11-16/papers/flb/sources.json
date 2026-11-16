@@ -1,0 +1,66 @@
+{
+  "id": "flb",
+  "name": "FLB",
+  "title": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+  "org": "中南大学、香港科技大学 iSING Lab、长沙理工大学、浪潮",
+  "authors": "Jinbin Hu, Wenxue Li, Xiangzhou Liu, Junfeng Wang, Bowen Liu, Ping Yin, Jianxin Wang, Jiawei Huang, Kai Chen",
+  "url": "https://www.usenix.org/conference/atc25/presentation/hu-jinbin",
+  "pdf": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+  "slides": "https://files.usenix.org/s3fs-public/conference/protected-files/atc25_slides_li_wenxue.pdf",
+  "scope": "正文§1–4、§6、附录A；作者13页报告；未观看视频，未复现",
+  "summary": "多路径不能一味喷洒：把责任拥塞流收拢，保护无辜存储流的尾延迟。",
+  "figures": [
+    {
+      "num": "6",
+      "page": 7,
+      "title": "拥塞流隔离机制",
+      "analysis": "从多路径扩散到P3隔离，保留P1/P2给无关流。隔离限制传播而不增加目的端带宽。",
+      "path": "papers/flb/images/fig6.png",
+      "source": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf#page=7",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/flb/images/fig6.png",
+      "dimensions_px": [
+        807,
+        720
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+      "author_credit": "Jinbin Hu, Wenxue Li, Xiangzhou Liu, Junfeng Wang, Bowen Liu, Ping Yin, Jianxin Wang, Jiawei Huang, Kai Chen",
+      "analysis_zh": "从多路径扩散到P3隔离，保留P1/P2给无关流。隔离限制传播而不增加目的端带宽。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "FLB",
+      "paper_title": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+      "figure_number": "6",
+      "pdf_page_1based": 7,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    },
+    {
+      "num": "8",
+      "page": 9,
+      "title": "实机Web Search：PAUSE、利用率与FCT",
+      "analysis": "目的端仍可PAUSE，但上游影响收窄；需同时看平均与99分位，图有对数轴。",
+      "path": "papers/flb/images/fig8.png",
+      "source": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf#page=9",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/flb/images/fig8.png",
+      "dimensions_px": [
+        810,
+        1026
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+      "author_credit": "Jinbin Hu, Wenxue Li, Xiangzhou Liu, Junfeng Wang, Bowen Liu, Ping Yin, Jianxin Wang, Jiawei Huang, Kai Chen",
+      "analysis_zh": "目的端仍可PAUSE，但上游影响收窄；需同时看平均与99分位，图有对数轴。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "FLB",
+      "paper_title": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+      "figure_number": "8",
+      "pdf_page_1based": 9,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    }
+  ],
+  "venue": "USENIX ATC 2025",
+  "date": "2025-07-07–09（正式会议/论文集；非当日新论文）",
+  "status": "2025正式论文回顾，非新收录",
+  "publication_verified": "https://www.usenix.org/conference/atc25/presentation/hu-jinbin",
+  "copyright": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。",
+  "license": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+}

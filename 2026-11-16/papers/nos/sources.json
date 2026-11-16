@@ -1,0 +1,63 @@
+{
+  "id": "nos",
+  "name": "Nos / Nostor",
+  "title": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+  "venue": "OSDI 2025",
+  "org": "清华大学；华为",
+  "date": "2025-07-07—09（会期；旧文补读）",
+  "url": "https://www.usenix.org/conference/osdi25/presentation/gao",
+  "pdf": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+  "authors": "Jian Gao, Jiwu Shu, Bin Yan, Yuhao Zhang, Keji Huang",
+  "scope": "已读正式正文§1–8，设计证明/并发恢复/实验；检查作者README、HOWTOUSE与MIT许可证，未复现或观看报告。",
+  "summary": "用受SBIBD约束的独立复制与后台XOR去除条带分配开销，常态小KV快，但额外网络副本、降级读与刚性故障域是代价。",
+  "figures": [
+    {
+      "path": "papers/nos/images/nos-fig3.png",
+      "num": "3",
+      "page": 10,
+      "title": "GET与PUT：对象扇出和额外副本的两面",
+      "analysis": "GET只有Split因k路扇出明显落后；大值PUT下Nos仍低于Repl，不能用小对象结果承诺大块复制加速。单位Mops/s，三列分别为不同(k,p)。",
+      "archive_path": "2026-11-16/papers/nos/images/nos-fig3.png",
+      "dimensions_px": [
+        1506,
+        441
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+      "author_credit": "Jian Gao, Jiwu Shu, Bin Yan, Yuhao Zhang, Keji Huang",
+      "analysis_zh": "GET只有Split因k路扇出明显落后；大值PUT下Nos仍低于Repl，不能用小对象结果承诺大块复制加速。单位Mops/s，三列分别为不同(k,p)。",
+      "version": "OSDI 2025版本",
+      "paper": "Nos / Nostor",
+      "paper_title": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+      "figure_number": "3",
+      "pdf_page_1based": 10,
+      "use_basis": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。"
+    },
+    {
+      "path": "papers/nos/images/nos-fig11.png",
+      "num": "11",
+      "page": 13,
+      "title": "节点重建快不等于单次降级读快",
+      "analysis": "上图修复时间秒，下图降级读中位延迟微秒；(6,3)特选递归恢复最坏组合，Nos黑柱最高。两图衡量的不是同一故障指标。",
+      "archive_path": "2026-11-16/papers/nos/images/nos-fig11.png",
+      "dimensions_px": [
+        711,
+        483
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+      "author_credit": "Jian Gao, Jiwu Shu, Bin Yan, Yuhao Zhang, Keji Huang",
+      "analysis_zh": "上图修复时间秒，下图降级读中位延迟微秒；(6,3)特选递归恢复最坏组合，Nos黑柱最高。两图衡量的不是同一故障指标。",
+      "version": "OSDI 2025版本",
+      "paper": "Nos / Nostor",
+      "paper_title": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+      "figure_number": "11",
+      "pdf_page_1based": 13,
+      "use_basis": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。"
+    }
+  ],
+  "rights": {
+    "paper": "作者保留版权；未核实全文开放再分发许可，不公开PDF。",
+    "figures": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。",
+    "code": "作者MIT许可证已核实，阅读子集可带原许可证备份；不将源码MIT许可扩展至论文。"
+  },
+  "license": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。"
+}

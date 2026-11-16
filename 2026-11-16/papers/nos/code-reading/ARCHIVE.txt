@@ -1,0 +1,2 @@
+Source: https://github.com/IcicleF/Nos/tree/6761d9efe82a78e67235ef1ddd93c4dbc92fe351
+MIT licensed documentation reading subset, not full source backup or fork. Files: README.md HOWTOUSE.md LICENSE. Full repository source still linked upstream.

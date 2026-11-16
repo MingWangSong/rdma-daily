@@ -20,7 +20,7 @@ for rel in ['index.html']+[str(p.relative_to(R)) for p in sorted(R.glob('20??-??
  f=R/rel;text=f.read_text();p=Page();p.feed(text);pages[f.resolve()]=p
  if text.lower().count('<!doctype')!=1:errors.append(rel+': DOCTYPE count')
  if len(p.ids)!=len(set(p.ids)):errors.append(rel+': duplicate IDs')
- if rel!='index.html' and not rel.startswith('reports/') and p.papers != (3 if rel.startswith('2026-11-12') else 4 if rel.startswith('2026-11-13') else 5 if rel.startswith('2026-11-15') else 5 if rel.startswith('2026-11-14') else 5):errors.append(rel+': unexpected paper count')
+ if rel!='index.html' and not rel.startswith('reports/') and p.papers != (3 if rel.startswith('2026-11-12') else 4 if rel.startswith('2026-11-13') else 4 if rel.startswith('2026-11-16') else 4 if rel.startswith('2026-11-16') else 5 if rel.startswith('2026-11-15') else 5 if rel.startswith('2026-11-14') else 5):errors.append(rel+': unexpected paper count')
 for f,p in pages.items():
  for ref in p.refs:
   u=urlsplit(ref)
@@ -43,7 +43,7 @@ for f in figs:
  if not f.get('analysis_zh') or not f.get('author_credit') or not f.get('source_url'):errors.append('incomplete attribution '+str(f))
  if not (R/f['archive_path']).is_file():errors.append('missing excerpt '+f['archive_path'])
 for f in R.rglob('mechanism.*'):errors.append('legacy diagram remains '+str(f))
-licensed_pdfs={'2026-11-13/papers/lcmp/lcmp.pdf': 'f1d9ca66516dbb85ddc873fd5fe75d2800df731c67d3d7779bdd0e4016163a65'}
+licensed_pdfs={'2026-11-16/papers/adios/paper.pdf':'40bad495e974b5146d1ca8500af36517c2d1ac2039e4421b7fd7f5d0b6f14d91','2026-11-13/papers/lcmp/lcmp.pdf': 'f1d9ca66516dbb85ddc873fd5fe75d2800df731c67d3d7779bdd0e4016163a65'}
 for f in R.rglob('*.pdf'):
  rel=str(f.relative_to(R))
  if rel not in licensed_pdfs or hashlib.sha256(f.read_bytes()).hexdigest()!=licensed_pdfs[rel]:errors.append('unapproved or changed PDF '+rel)

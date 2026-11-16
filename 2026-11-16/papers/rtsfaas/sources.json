@@ -1,0 +1,68 @@
+{
+  "id": "rtsfaas",
+  "name": "RTSFaaS",
+  "title": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+  "org": "华中科技大学；新加坡国立大学计算学院",
+  "authors": "Jianjun Zhao, Haikun Liu, Shuhao Zhang, Haodi Lu, Yancan Mao, Zhuohui Duan, Xiaofei Liao, Hai Jin",
+  "url": "https://www.usenix.org/conference/atc25/presentation/zhao-jianjun",
+  "pdf": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+  "slides": "https://files.usenix.org/s3fs-public/conference/protected-files/atc25_slides-zhao_jianjun.pdf",
+  "code": "https://github.com/CGCL-codes/RTSFaaS",
+  "scope": "正文§1–5（重点§3–5）；作者报告和源码README/许可证；未运行代码",
+  "summary": "用批内依赖图与访问权交接减少远程锁竞争，但大批处理会牺牲存储尾延迟。",
+  "figures": [
+    {
+      "num": "6",
+      "page": 8,
+      "title": "动态租约转移",
+      "analysis": "全局表保存主要驻留位置，lease flag保存当前访问权；virtual vertex和参数依赖共同控制执行。",
+      "path": "papers/rtsfaas/images/fig6.png",
+      "source": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf#page=8",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/rtsfaas/images/fig6.png",
+      "dimensions_px": [
+        828,
+        519
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+      "author_credit": "Jianjun Zhao, Haikun Liu, Shuhao Zhang, Haodi Lu, Yancan Mao, Zhuohui Duan, Xiaofei Liao, Hai Jin",
+      "analysis_zh": "全局表保存主要驻留位置，lease flag保存当前访问权；virtual vertex和参数依赖共同控制执行。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "RTSFaaS",
+      "paper_title": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+      "figure_number": "6",
+      "pdf_page_1based": 8,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    },
+    {
+      "num": "14",
+      "page": 13,
+      "title": "批大小的吞吐与延迟代价",
+      "analysis": "25,600附近吞吐饱和，继续增批主要增加平均/99分位延迟；微秒RDMA不等于微秒业务响应。",
+      "path": "papers/rtsfaas/images/fig14.png",
+      "source": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf#page=13",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/rtsfaas/images/fig14.png",
+      "dimensions_px": [
+        813,
+        474
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+      "author_credit": "Jianjun Zhao, Haikun Liu, Shuhao Zhang, Haodi Lu, Yancan Mao, Zhuohui Duan, Xiaofei Liao, Hai Jin",
+      "analysis_zh": "25,600附近吞吐饱和，继续增批主要增加平均/99分位延迟；微秒RDMA不等于微秒业务响应。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "RTSFaaS",
+      "paper_title": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+      "figure_number": "14",
+      "pdf_page_1based": 13,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    }
+  ],
+  "venue": "USENIX ATC 2025",
+  "date": "2025-07-07–09（正式会议/论文集；非当日新论文）",
+  "status": "2025正式论文回顾，非新收录",
+  "publication_verified": "https://www.usenix.org/conference/atc25/presentation/zhao-jianjun",
+  "copyright": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。",
+  "license": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。",
+  "public_full_archive_status": "not uploaded; original source link only"
+}

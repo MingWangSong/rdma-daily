@@ -1,5 +1,5 @@
 {
-  "count": 51,
+  "count": 59,
   "scope": "Limited excerpts for direct technical commentary, not open-licensed figure collection.",
   "figures": [
     {
@@ -1202,6 +1202,190 @@
       "paper_title": "SwCC: Software-Programmable and Per-Packet Congestion Control in RDMA Engine",
       "figure_number": "11",
       "pdf_page_1based": 12
+    },
+    {
+      "path": "papers/nos/images/nos-fig3.png",
+      "num": "3",
+      "page": 10,
+      "title": "GET与PUT：对象扇出和额外副本的两面",
+      "analysis": "GET只有Split因k路扇出明显落后；大值PUT下Nos仍低于Repl，不能用小对象结果承诺大块复制加速。单位Mops/s，三列分别为不同(k,p)。",
+      "archive_path": "2026-11-16/papers/nos/images/nos-fig3.png",
+      "dimensions_px": [
+        1506,
+        441
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+      "author_credit": "Jian Gao, Jiwu Shu, Bin Yan, Yuhao Zhang, Keji Huang",
+      "analysis_zh": "GET只有Split因k路扇出明显落后；大值PUT下Nos仍低于Repl，不能用小对象结果承诺大块复制加速。单位Mops/s，三列分别为不同(k,p)。",
+      "version": "OSDI 2025版本",
+      "paper": "Nos / Nostor",
+      "paper_title": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+      "figure_number": "3",
+      "pdf_page_1based": 10,
+      "use_basis": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。"
+    },
+    {
+      "path": "papers/nos/images/nos-fig11.png",
+      "num": "11",
+      "page": 13,
+      "title": "节点重建快不等于单次降级读快",
+      "analysis": "上图修复时间秒，下图降级读中位延迟微秒；(6,3)特选递归恢复最坏组合，Nos黑柱最高。两图衡量的不是同一故障指标。",
+      "archive_path": "2026-11-16/papers/nos/images/nos-fig11.png",
+      "dimensions_px": [
+        711,
+        483
+      ],
+      "source_url": "https://www.usenix.org/system/files/osdi25-gao.pdf",
+      "author_credit": "Jian Gao, Jiwu Shu, Bin Yan, Yuhao Zhang, Keji Huang",
+      "analysis_zh": "上图修复时间秒，下图降级读中位延迟微秒；(6,3)特选递归恢复最坏组合，Nos黑柱最高。两图衡量的不是同一故障指标。",
+      "version": "OSDI 2025版本",
+      "paper": "Nos / Nostor",
+      "paper_title": "Stripeless Data Placement for Erasure-Coded In-Memory Storage",
+      "figure_number": "11",
+      "pdf_page_1based": 13,
+      "use_basis": "仅引用图3、图11两个必要实验局部，紧邻针对扇出/大值反例与恢复成本的实质评论。未发现所选图另含第三方许可例外或明确禁止；非图集、非原文替代，保留完整轴图例与来源。基于有限必要学术评论引用评估，不声称法律保证。"
+    },
+    {
+      "file": "fig5.png",
+      "figure": 5,
+      "pdf_page": 6,
+      "change": "cropped surrounding text; no third-party credit observed",
+      "path": "papers/adios/images/fig5.png",
+      "num": "5",
+      "page": 6,
+      "title": "Yield-based page fault handling",
+      "analysis": "发读后切回 worker，完成后恢复缺页映射。",
+      "archive_path": "2026-11-16/papers/adios/images/fig5.png",
+      "dimensions_px": [
+        686,
+        513
+      ],
+      "source_url": "https://yoon.ws/publication/adios-eurosys25.pdf",
+      "author_credit": "Wonsup Yoon, Jisu Ok, Sue Moon, Youngjin Kwon",
+      "analysis_zh": "发读后切回 worker，完成后恢复缺页映射。",
+      "version": "EuroSys 2025版本",
+      "paper": "Adios",
+      "paper_title": "Adios to Busy-Waiting for Microsecond-scale Memory Disaggregation",
+      "figure_number": "5",
+      "pdf_page_1based": 6,
+      "use_basis": "CC BY 4.0, explicit on PDF first page"
+    },
+    {
+      "file": "fig11.png",
+      "figure": 11,
+      "pdf_page": 11,
+      "change": "cropped surrounding text; axes/legends retained; no third-party credit observed",
+      "path": "papers/adios/images/fig11.png",
+      "num": "11",
+      "page": 11,
+      "title": "RocksDB mixed GET/SCAN evaluation",
+      "analysis": "GET P99.9 饱和拐点后移；(e) 纵轴不从零开始，PF-aware 单独最高改善 27%。",
+      "archive_path": "2026-11-16/papers/adios/images/fig11.png",
+      "dimensions_px": [
+        1451,
+        373
+      ],
+      "source_url": "https://yoon.ws/publication/adios-eurosys25.pdf",
+      "author_credit": "Wonsup Yoon, Jisu Ok, Sue Moon, Youngjin Kwon",
+      "analysis_zh": "GET P99.9 饱和拐点后移；(e) 纵轴不从零开始，PF-aware 单独最高改善 27%。",
+      "version": "EuroSys 2025版本",
+      "paper": "Adios",
+      "paper_title": "Adios to Busy-Waiting for Microsecond-scale Memory Disaggregation",
+      "figure_number": "11",
+      "pdf_page_1based": 11,
+      "use_basis": "CC BY 4.0, explicit on PDF first page"
+    },
+    {
+      "num": "6",
+      "page": 7,
+      "title": "拥塞流隔离机制",
+      "analysis": "从多路径扩散到P3隔离，保留P1/P2给无关流。隔离限制传播而不增加目的端带宽。",
+      "path": "papers/flb/images/fig6.png",
+      "source": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf#page=7",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/flb/images/fig6.png",
+      "dimensions_px": [
+        807,
+        720
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+      "author_credit": "Jinbin Hu, Wenxue Li, Xiangzhou Liu, Junfeng Wang, Bowen Liu, Ping Yin, Jianxin Wang, Jiawei Huang, Kai Chen",
+      "analysis_zh": "从多路径扩散到P3隔离，保留P1/P2给无关流。隔离限制传播而不增加目的端带宽。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "FLB",
+      "paper_title": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+      "figure_number": "6",
+      "pdf_page_1based": 7,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    },
+    {
+      "num": "8",
+      "page": 9,
+      "title": "实机Web Search：PAUSE、利用率与FCT",
+      "analysis": "目的端仍可PAUSE，但上游影响收窄；需同时看平均与99分位，图有对数轴。",
+      "path": "papers/flb/images/fig8.png",
+      "source": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf#page=9",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/flb/images/fig8.png",
+      "dimensions_px": [
+        810,
+        1026
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-hu-jinbin.pdf",
+      "author_credit": "Jinbin Hu, Wenxue Li, Xiangzhou Liu, Junfeng Wang, Bowen Liu, Ping Yin, Jianxin Wang, Jiawei Huang, Kai Chen",
+      "analysis_zh": "目的端仍可PAUSE，但上游影响收窄；需同时看平均与99分位，图有对数轴。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "FLB",
+      "paper_title": "FLB: Fine-grained Load Balancing for Lossless Datacenter Networks",
+      "figure_number": "8",
+      "pdf_page_1based": 9,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    },
+    {
+      "num": "6",
+      "page": 8,
+      "title": "动态租约转移",
+      "analysis": "全局表保存主要驻留位置，lease flag保存当前访问权；virtual vertex和参数依赖共同控制执行。",
+      "path": "papers/rtsfaas/images/fig6.png",
+      "source": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf#page=8",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/rtsfaas/images/fig6.png",
+      "dimensions_px": [
+        828,
+        519
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+      "author_credit": "Jianjun Zhao, Haikun Liu, Shuhao Zhang, Haodi Lu, Yancan Mao, Zhuohui Duan, Xiaofei Liao, Hai Jin",
+      "analysis_zh": "全局表保存主要驻留位置，lease flag保存当前访问权；virtual vertex和参数依赖共同控制执行。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "RTSFaaS",
+      "paper_title": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+      "figure_number": "6",
+      "pdf_page_1based": 8,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
+    },
+    {
+      "num": "14",
+      "page": 13,
+      "title": "批大小的吞吐与延迟代价",
+      "analysis": "25,600附近吞吐饱和，继续增批主要增加平均/99分位延迟；微秒RDMA不等于微秒业务响应。",
+      "path": "papers/rtsfaas/images/fig14.png",
+      "source": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf#page=13",
+      "basis": "有限技术评论引用；保留图例/单位并紧邻分析",
+      "archive_path": "2026-11-16/papers/rtsfaas/images/fig14.png",
+      "dimensions_px": [
+        813,
+        474
+      ],
+      "source_url": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
+      "author_credit": "Jianjun Zhao, Haikun Liu, Shuhao Zhang, Haodi Lu, Yancan Mao, Zhuohui Duan, Xiaofei Liao, Hai Jin",
+      "analysis_zh": "25,600附近吞吐饱和，继续增批主要增加平均/99分位延迟；微秒RDMA不等于微秒业务响应。",
+      "version": "USENIX ATC 2025版本",
+      "paper": "RTSFaaS",
+      "paper_title": "Towards High-Performance Transactional Stateful Serverless Workflows with Affinity-Aware Leasing",
+      "figure_number": "14",
+      "pdf_page_1based": 13,
+      "use_basis": "PDF未见明确全文再分发许可，全文仅本地研究，不公开备份。选取2幅作者技术图表用于紧邻实质评论，引用目的为机制/实验评析，最小必要数量，不形成图集、不替代原文；属有限评论引用评估而非授权或法律保证；未发现所选图表单独第三方署名/禁止引用标注。"
     }
   ]
 }
