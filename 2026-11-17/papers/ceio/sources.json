@@ -1,0 +1,62 @@
+{
+  "id": "ceio",
+  "name": "CEIO",
+  "title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+  "venue": "SIGCOMM 2025",
+  "org": "香港科技大学；电子科技大学；中国科学技术大学；浪潮云（按论文署名）",
+  "date": "2025-09-08—11（会期；旧文补读）",
+  "url": "https://conferences.sigcomm.org/sigcomm/2025/program/papers-info/",
+  "pdf": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+  "scope": "已读正文机制、实现、评估及限制，检查项目README；未复现或观看报告。",
+  "summary": "接收NIC按LLC credit分流到主机快路径与NIC DRAM慢路径，改善缓存争用下尾延迟，但增加基本WRITE延迟和缓冲管理成本。",
+  "figures": [
+    {
+      "path": "papers/ceio/images/fig7.png",
+      "num": "7",
+      "page": 8,
+      "title": "弹性缓冲的顺序约束",
+      "analysis": "快慢环映射到软件环不等于可乱序交付，同流阶段排空防止快包越过慢包。",
+      "use_basis": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+      "archive_path": "2026-11-17/papers/ceio/images/fig7.png",
+      "dimensions_px": [
+        676,
+        433
+      ],
+      "source_url": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+      "author_credit": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen",
+      "analysis_zh": "快慢环映射到软件环不等于可乱序交付，同流阶段排空防止快包越过慢包。",
+      "version": "SIGCOMM 2025版本",
+      "paper": "CEIO",
+      "paper_title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+      "figure_number": "7",
+      "pdf_page_1based": 8
+    },
+    {
+      "path": "papers/ceio/images/table3.png",
+      "num": "表3",
+      "page": 11,
+      "title": "基本Write并未变快",
+      "analysis": "ib_write_lat下两条路径均比baseline慢；不能与echo P99.9混作一个指标。",
+      "use_basis": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+      "archive_path": "2026-11-17/papers/ceio/images/table3.png",
+      "dimensions_px": [
+        638,
+        263
+      ],
+      "source_url": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+      "author_credit": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen",
+      "analysis_zh": "ib_write_lat下两条路径均比baseline慢；不能与echo P99.9混作一个指标。",
+      "version": "SIGCOMM 2025版本",
+      "paper": "CEIO",
+      "paper_title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+      "figure_number": "表3",
+      "pdf_page_1based": 11
+    }
+  ],
+  "rights": {
+    "paper": "research-only.pdf仅研究中阅读；不得复制到公开发布目录。标准ACM许可未确认全文公开再分发授权。",
+    "figures": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+    "code": "未核实独立源码再分发许可，仅链接，不公开复制。"
+  },
+  "authors": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen"
+}

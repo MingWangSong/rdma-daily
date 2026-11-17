@@ -5,6 +5,7 @@
 - [11月14日：RDMA 的传输边界：可靠性、迁移与流量控制](https://mingwangsong.github.io/rdma-daily/2026-11-14/)
 - [11月15日：远端同步、事务与传输控制：从语义到瓶颈](https://mingwangsong.github.io/rdma-daily/2026-11-15/)
 - [11月16日：从纠删码到网络状态：RDMA 存储的系统取舍](https://mingwangsong.github.io/rdma-daily/2026-11-16/)
+- [11月17日：锁、路径与缓存：RDMA 数据通路的性能边界](https://mingwangsong.github.io/rdma-daily/2026-11-17/)
 - [11月13日：共享连接、远端状态与多路径：RDMA 存储的扩展边界](https://mingwangsong.github.io/rdma-daily/2026-11-13/)
 - [11月12日：从 RNIC 与 DPA 到远端 SSD](https://mingwangsong.github.io/rdma-daily/2026-11-12/)
 - [11月10日：从远端 SSD 路径到缓存一致性](2026-11-10/index.html)

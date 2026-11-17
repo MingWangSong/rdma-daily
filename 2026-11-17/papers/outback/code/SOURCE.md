@@ -1,0 +1,1 @@
+Author repository https://github.com/yliu634/outback ; main commit observed 61bc2454c3613dbe7aca6fe0522a85c70bc9a9b9. Only README and GPLv3 LICENSE retained as a documentation subset; not a complete source archive or tested build. Retrieved 2026-11-17.

@@ -1,0 +1,62 @@
+{
+  "id": "shiftlock",
+  "name": "ShiftLock",
+  "title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+  "venue": "FAST 2025",
+  "org": "清华大学",
+  "date": "2025-02-25—27（正式会期；旧文补读）",
+  "authors": "Jian Gao, Qing Wang, Jiwu Shu",
+  "url": "https://www.usenix.org/conference/fast25/presentation/gao",
+  "pdf": "https://www.usenix.org/system/files/fast25-gao.pdf",
+  "scope": "阅读正式论文设计、恢复、实验与讨论；检查作者仓库 README 和 MIT 许可证，未运行实验或观看报告。",
+  "summary": "把热点读写锁从服务端重试改为客户端排队交接；收益取决于读写公平性、RNIC 扩展原子和故障租约。",
+  "figures": [
+    {
+      "path": "papers/shiftlock/images/fig4.png",
+      "num": "4",
+      "page": 9,
+      "title": "热点下的有效吞吐，而非低竞争万能加速",
+      "analysis": "比较均匀与 Zipf 0.99，WI/RI/RO 分别为 50%/95%/100% 读；热点 WI/RI 相对 MCS 为 1.65×/1.27×，均匀场景收益有限。",
+      "use_basis": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+      "archive_path": "2026-11-17/papers/shiftlock/images/fig4.png",
+      "dimensions_px": [
+        735,
+        240
+      ],
+      "source_url": "https://www.usenix.org/system/files/fast25-gao.pdf",
+      "author_credit": "Jian Gao, Qing Wang, Jiwu Shu",
+      "analysis_zh": "比较均匀与 Zipf 0.99，WI/RI/RO 分别为 50%/95%/100% 读；热点 WI/RI 相对 MCS 为 1.65×/1.27×，均匀场景收益有限。",
+      "version": "FAST 2025版本",
+      "paper": "ShiftLock",
+      "paper_title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+      "figure_number": "4",
+      "pdf_page_1based": 9
+    },
+    {
+      "path": "papers/shiftlock/images/fig5.png",
+      "num": "5",
+      "page": 9,
+      "title": "把吞吐与 p50/p99 分开看",
+      "analysis": "图中两组分位数展示公平交接的尾部收益；作者报告的最高 76.6% p99 降幅只对应论文特定微基准比较，不能外推成所有操作延迟降幅。",
+      "use_basis": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+      "archive_path": "2026-11-17/papers/shiftlock/images/fig5.png",
+      "dimensions_px": [
+        735,
+        378
+      ],
+      "source_url": "https://www.usenix.org/system/files/fast25-gao.pdf",
+      "author_credit": "Jian Gao, Qing Wang, Jiwu Shu",
+      "analysis_zh": "图中两组分位数展示公平交接的尾部收益；作者报告的最高 76.6% p99 降幅只对应论文特定微基准比较，不能外推成所有操作延迟降幅。",
+      "version": "FAST 2025版本",
+      "paper": "ShiftLock",
+      "paper_title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+      "figure_number": "5",
+      "pdf_page_1based": 9
+    }
+  ],
+  "rights": {
+    "paper": "未核实全文公开再分发许可；完整 PDF 仅研究使用，不公开备份。",
+    "figures": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+    "code": "作者仓库 MIT；已保存 README 与 LICENSE 阅读子集，不是完整源码镜像，不能把代码许可扩展至论文。"
+  }
+}

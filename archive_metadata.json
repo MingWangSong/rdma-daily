@@ -7,11 +7,12 @@
     "2026-11-13",
     "2026-11-14",
     "2026-11-15",
-    "2026-11-16"
+    "2026-11-16",
+    "2026-11-17"
   ],
-  "prepared_on": "2026-11-16",
+  "prepared_on": "2026-11-17",
   "publication_status": "public_repository_archive",
-  "paper_count": 31,
+  "paper_count": 36,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -376,12 +377,57 @@
       "url": "https://www.usenix.org/conference/atc25/presentation/zhao-jianjun",
       "pdf": "https://www.usenix.org/system/files/atc25-zhao-jianjun.pdf",
       "scope": "正文§1–5（重点§3–5）；作者报告和源码README/许可证；未运行代码"
+    },
+    "ShiftLock": {
+      "date": "2026-11-17",
+      "conference": "FAST 2025",
+      "org": "清华大学",
+      "full": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+      "url": "https://www.usenix.org/conference/fast25/presentation/gao",
+      "pdf": "https://www.usenix.org/system/files/fast25-gao.pdf",
+      "scope": "阅读正式论文设计、恢复、实验与讨论；检查作者仓库 README 和 MIT 许可证，未运行实验或观看报告。"
+    },
+    "REPS": {
+      "date": "2026-11-17",
+      "conference": "EuroSys 2026",
+      "org": "ETH Zürich；Microsoft；Sapienza University of Rome",
+      "full": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+      "url": "https://2026.eurosys.org/papers.html",
+      "pdf": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+      "scope": "已读正文设计、故障处理、仿真与FPGA评估、限制；检查artifact仓库入口，未复现。"
+    },
+    "CEIO": {
+      "date": "2026-11-17",
+      "conference": "SIGCOMM 2025",
+      "org": "香港科技大学；电子科技大学；中国科学技术大学；浪潮云（按论文署名）",
+      "full": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+      "url": "https://conferences.sigcomm.org/sigcomm/2025/program/papers-info/",
+      "pdf": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+      "scope": "已读正文机制、实现、评估及限制，检查项目README；未复现或观看报告。"
+    },
+    "Outback": {
+      "date": "2026-11-17",
+      "conference": "PVLDB 18(2) / VLDB 2025",
+      "org": "University of California, Santa Cruz",
+      "full": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+      "url": "https://doi.org/10.14778/3705829.3705849",
+      "pdf": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+      "scope": "正式论文全文14页，重点§3–5、图6/9/13/17；作者仓库README；未运行代码"
+    },
+    "TeRM": {
+      "date": "2026-11-17",
+      "conference": "FAST 2024",
+      "org": "清华大学；华为",
+      "full": "TeRM: Extending RDMA-Attached Memory with SSD",
+      "url": "https://www.usenix.org/conference/fast24/presentation/yang-zhe",
+      "pdf": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+      "scope": "阅读 FAST 正式正文机制、实现、微基准与应用实验；核查作者仓库构建说明，未复现实验或观看报告。仓库另列 TOS 扩展版，本篇仅分析 FAST 版本，不混用数据。"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 59,
+  "figure_excerpt_count": 69,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-16",
+  "revision_date": "2026-11-17",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

@@ -1,0 +1,75 @@
+{
+  "slug": "outback",
+  "id": "outback",
+  "name": "Outback",
+  "title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+  "authors": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+  "institutions": [
+    "University of California, Santa Cruz"
+  ],
+  "org": "University of California, Santa Cruz",
+  "venue": "PVLDB 18(2) / VLDB 2025",
+  "date": "2024-10 (卷期); 2025-02-28 (online metadata)",
+  "status": "正式出版；旧论文补读",
+  "doi": "10.14778/3705829.3705849",
+  "url": "https://doi.org/10.14778/3705829.3705849",
+  "pdf": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+  "pdf_source": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+  "scope": "正式论文全文14页，重点§3–5、图6/9/13/17；作者仓库README；未运行代码",
+  "read_scope": "full paper 14 pages and artifact README; not reproduced",
+  "license": "CC BY-NC-ND 4.0 on first page; no full PDF public backup because NC applicability to work research not resolved",
+  "figures": [
+    {
+      "path": "papers/outback/images/fig6a.png",
+      "file": "fig6a.png",
+      "num": "6(a)",
+      "page": 5,
+      "title": "常态 Get 的定位计算与远端解引用",
+      "analysis": "客户端算桶和槽，远端仍需访问指针槽及数据；常态一轮不是纯单边。",
+      "use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+      "archive_path": "2026-11-17/papers/outback/images/fig6a.png",
+      "dimensions_px": [
+        516,
+        438
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+      "author_credit": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+      "analysis_zh": "客户端算桶和槽，远端仍需访问指针槽及数据；常态一轮不是纯单边。",
+      "version": "PVLDB 18(2) / VLDB 2025版本",
+      "paper": "Outback",
+      "paper_title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+      "figure_number": "6(a)",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/outback/images/fig17.png",
+      "file": "fig17.png",
+      "num": "17",
+      "page": 12,
+      "title": "扩容期间吞吐下降",
+      "analysis": "20M初始key、单服务端线程；重建约3秒、吞吐降约52%，并非尾延迟保证。",
+      "use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+      "archive_path": "2026-11-17/papers/outback/images/fig17.png",
+      "dimensions_px": [
+        708,
+        303
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+      "author_credit": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+      "analysis_zh": "20M初始key、单服务端线程；重建约3秒、吞吐降约52%，并非尾延迟保证。",
+      "version": "PVLDB 18(2) / VLDB 2025版本",
+      "paper": "Outback",
+      "paper_title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+      "figure_number": "17",
+      "pdf_page_1based": 12
+    }
+  ],
+  "figure_use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+  "code_backup": "README/LICENSE documentation subset, GPLv3; not complete code mirror",
+  "sources": [
+    "https://api.crossref.org/works/10.14778/3705829.3705849",
+    "https://hlitz.github.io/",
+    "https://github.com/yliu634/outback"
+  ],
+  "summary": "客户端计算桶与槽，远端保留解引用；常态一轮访问不等于单边或无故障代价。"
+}

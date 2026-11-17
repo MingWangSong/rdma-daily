@@ -1,0 +1,63 @@
+{
+  "id": "reps",
+  "name": "REPS",
+  "title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+  "venue": "EuroSys 2026",
+  "org": "ETH Zürich；Microsoft；Sapienza University of Rome",
+  "date": "2026-04-27—30（会期；旧文补读）",
+  "url": "https://2026.eurosys.org/papers.html",
+  "pdf": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+  "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+  "scope": "已读正文设计、故障处理、仿真与FPGA评估、限制；检查artifact仓库入口，未复现。",
+  "summary": "回收未拥塞ACK中的entropy以低状态成本适应路径容量及故障，但要求乱序运输层并承担ACK反馈和健康网络边界。",
+  "figures": [
+    {
+      "path": "papers/reps/images/fig1.png",
+      "num": "1",
+      "page": 2,
+      "title": "成功ACK即路径记忆",
+      "analysis": "ECN标记EV淘汰，干净EV回收；取出后失效避免误读为固定路径。",
+      "use_basis": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+      "archive_path": "2026-11-17/papers/reps/images/fig1.png",
+      "dimensions_px": [
+        675,
+        563
+      ],
+      "source_url": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+      "author_credit": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler",
+      "analysis_zh": "ECN标记EV淘汰，干净EV回收；取出后失效避免误读为固定路径。",
+      "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+      "paper": "REPS",
+      "paper_title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+      "figure_number": "1",
+      "pdf_page_1based": 2
+    },
+    {
+      "path": "papers/reps/images/fig10.png",
+      "num": "10",
+      "page": 11,
+      "title": "不对称网络收益与健康网络反例",
+      "analysis": "FPGA平均goodput，并非尾延迟；不对称明显受益，健康配置可能轻微退化。",
+      "use_basis": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+      "archive_path": "2026-11-17/papers/reps/images/fig10.png",
+      "dimensions_px": [
+        688,
+        438
+      ],
+      "source_url": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+      "author_credit": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler",
+      "analysis_zh": "FPGA平均goodput，并非尾延迟；不对称明显受益，健康配置可能轻微退化。",
+      "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+      "paper": "REPS",
+      "paper_title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+      "figure_number": "10",
+      "pdf_page_1based": 11
+    }
+  ],
+  "rights": {
+    "paper": "论文首页CC BY 4.0；全文上传仍待授权流程完成，当前未公开归档，保留原文链接。",
+    "figures": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+    "code": "仅源链接，本期未做源码备份。"
+  },
+  "authors": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler"
+}

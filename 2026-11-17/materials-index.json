@@ -1,0 +1,335 @@
+{
+  "date": "2026-11-17",
+  "papers": [
+    {
+      "id": "shiftlock",
+      "name": "ShiftLock",
+      "title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+      "venue": "FAST 2025",
+      "org": "清华大学",
+      "date": "2025-02-25—27（正式会期；旧文补读）",
+      "authors": "Jian Gao, Qing Wang, Jiwu Shu",
+      "url": "https://www.usenix.org/conference/fast25/presentation/gao",
+      "pdf": "https://www.usenix.org/system/files/fast25-gao.pdf",
+      "scope": "阅读正式论文设计、恢复、实验与讨论；检查作者仓库 README 和 MIT 许可证，未运行实验或观看报告。",
+      "summary": "把热点读写锁从服务端重试改为客户端排队交接；收益取决于读写公平性、RNIC 扩展原子和故障租约。",
+      "figures": [
+        {
+          "path": "papers/shiftlock/images/fig4.png",
+          "num": "4",
+          "page": 9,
+          "title": "热点下的有效吞吐，而非低竞争万能加速",
+          "analysis": "比较均匀与 Zipf 0.99，WI/RI/RO 分别为 50%/95%/100% 读；热点 WI/RI 相对 MCS 为 1.65×/1.27×，均匀场景收益有限。",
+          "use_basis": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+          "archive_path": "2026-11-17/papers/shiftlock/images/fig4.png",
+          "dimensions_px": [
+            735,
+            240
+          ],
+          "source_url": "https://www.usenix.org/system/files/fast25-gao.pdf",
+          "author_credit": "Jian Gao, Qing Wang, Jiwu Shu",
+          "analysis_zh": "比较均匀与 Zipf 0.99，WI/RI/RO 分别为 50%/95%/100% 读；热点 WI/RI 相对 MCS 为 1.65×/1.27×，均匀场景收益有限。",
+          "version": "FAST 2025版本",
+          "paper": "ShiftLock",
+          "paper_title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+          "figure_number": "4",
+          "pdf_page_1based": 9
+        },
+        {
+          "path": "papers/shiftlock/images/fig5.png",
+          "num": "5",
+          "page": 9,
+          "title": "把吞吐与 p50/p99 分开看",
+          "analysis": "图中两组分位数展示公平交接的尾部收益；作者报告的最高 76.6% p99 降幅只对应论文特定微基准比较，不能外推成所有操作延迟降幅。",
+          "use_basis": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+          "archive_path": "2026-11-17/papers/shiftlock/images/fig5.png",
+          "dimensions_px": [
+            735,
+            378
+          ],
+          "source_url": "https://www.usenix.org/system/files/fast25-gao.pdf",
+          "author_credit": "Jian Gao, Qing Wang, Jiwu Shu",
+          "analysis_zh": "图中两组分位数展示公平交接的尾部收益；作者报告的最高 76.6% p99 降幅只对应论文特定微基准比较，不能外推成所有操作延迟降幅。",
+          "version": "FAST 2025版本",
+          "paper": "ShiftLock",
+          "paper_title": "ShiftLock: Mitigate One-sided RDMA Lock Contention via Handover",
+          "figure_number": "5",
+          "pdf_page_1based": 9
+        }
+      ],
+      "rights": {
+        "paper": "未核实全文公开再分发许可；完整 PDF 仅研究使用，不公开备份。",
+        "figures": "有限引用图4和图5，保留轴、图例及来源，服务于相邻的吞吐/尾延迟实质评论。未见所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原文，不声称法律保证。",
+        "code": "作者仓库 MIT；已保存 README 与 LICENSE 阅读子集，不是完整源码镜像，不能把代码许可扩展至论文。"
+      },
+      "file": "shiftlock/analysis.md"
+    },
+    {
+      "id": "reps",
+      "name": "REPS",
+      "title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+      "venue": "EuroSys 2026",
+      "org": "ETH Zürich；Microsoft；Sapienza University of Rome",
+      "date": "2026-04-27—30（会期；旧文补读）",
+      "url": "https://2026.eurosys.org/papers.html",
+      "pdf": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+      "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+      "scope": "已读正文设计、故障处理、仿真与FPGA评估、限制；检查artifact仓库入口，未复现。",
+      "summary": "回收未拥塞ACK中的entropy以低状态成本适应路径容量及故障，但要求乱序运输层并承担ACK反馈和健康网络边界。",
+      "figures": [
+        {
+          "path": "papers/reps/images/fig1.png",
+          "num": "1",
+          "page": 2,
+          "title": "成功ACK即路径记忆",
+          "analysis": "ECN标记EV淘汰，干净EV回收；取出后失效避免误读为固定路径。",
+          "use_basis": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+          "archive_path": "2026-11-17/papers/reps/images/fig1.png",
+          "dimensions_px": [
+            675,
+            563
+          ],
+          "source_url": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+          "author_credit": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler",
+          "analysis_zh": "ECN标记EV淘汰，干净EV回收；取出后失效避免误读为固定路径。",
+          "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+          "paper": "REPS",
+          "paper_title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+          "figure_number": "1",
+          "pdf_page_1based": 2
+        },
+        {
+          "path": "papers/reps/images/fig10.png",
+          "num": "10",
+          "page": 11,
+          "title": "不对称网络收益与健康网络反例",
+          "analysis": "FPGA平均goodput，并非尾延迟；不对称明显受益，健康配置可能轻微退化。",
+          "use_basis": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+          "archive_path": "2026-11-17/papers/reps/images/fig10.png",
+          "dimensions_px": [
+            688,
+            438
+          ],
+          "source_url": "https://spcl.ethz.ch/Publications/.pdf/REPS_Latest.pdf",
+          "author_credit": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler",
+          "analysis_zh": "FPGA平均goodput，并非尾延迟；不对称明显受益，健康配置可能轻微退化。",
+          "version": "arXiv 2407.21625v6，2026-02-10；图号按所读版本",
+          "paper": "REPS",
+          "paper_title": "REPS: Recycled Entropy Packet Spraying for Adaptive Load Balancing and Failure Mitigation",
+          "figure_number": "10",
+          "pdf_page_1based": 11
+        }
+      ],
+      "rights": {
+        "paper": "论文首页CC BY 4.0；全文上传仍待授权流程完成，当前未公开归档，保留原文链接。",
+        "figures": "图1与图10取自同一CC BY 4.0论文；裁剪不改数据，已保留坐标和图例。",
+        "code": "仅源链接，本期未做源码备份。"
+      },
+      "authors": "Tommaso Bonato, Abdul Kabbani, Ahmad Ghalayini, Michael Papamichael, Mohammad Dohadwala, Lukas Gianinazzi, Mikhail Khalilov, Elias Achermann, Daniele De Sensi, Torsten Hoefler",
+      "file": "reps/analysis.md"
+    },
+    {
+      "id": "ceio",
+      "name": "CEIO",
+      "title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+      "venue": "SIGCOMM 2025",
+      "org": "香港科技大学；电子科技大学；中国科学技术大学；浪潮云（按论文署名）",
+      "date": "2025-09-08—11（会期；旧文补读）",
+      "url": "https://conferences.sigcomm.org/sigcomm/2025/program/papers-info/",
+      "pdf": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+      "scope": "已读正文机制、实现、评估及限制，检查项目README；未复现或观看报告。",
+      "summary": "接收NIC按LLC credit分流到主机快路径与NIC DRAM慢路径，改善缓存争用下尾延迟，但增加基本WRITE延迟和缓冲管理成本。",
+      "figures": [
+        {
+          "path": "papers/ceio/images/fig7.png",
+          "num": "7",
+          "page": 8,
+          "title": "弹性缓冲的顺序约束",
+          "analysis": "快慢环映射到软件环不等于可乱序交付，同流阶段排空防止快包越过慢包。",
+          "use_basis": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+          "archive_path": "2026-11-17/papers/ceio/images/fig7.png",
+          "dimensions_px": [
+            676,
+            433
+          ],
+          "source_url": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+          "author_credit": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen",
+          "analysis_zh": "快慢环映射到软件环不等于可乱序交付，同流阶段排空防止快包越过慢包。",
+          "version": "SIGCOMM 2025版本",
+          "paper": "CEIO",
+          "paper_title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+          "figure_number": "7",
+          "pdf_page_1based": 8
+        },
+        {
+          "path": "papers/ceio/images/table3.png",
+          "num": "表3",
+          "page": 11,
+          "title": "基本Write并未变快",
+          "analysis": "ib_write_lat下两条路径均比baseline慢；不能与echo P99.9混作一个指标。",
+          "use_basis": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+          "archive_path": "2026-11-17/papers/ceio/images/table3.png",
+          "dimensions_px": [
+            638,
+            263
+          ],
+          "source_url": "https://home.cse.ust.hk/~kaichen/papers/ceio-sigcomm25.pdf",
+          "author_credit": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen",
+          "analysis_zh": "ib_write_lat下两条路径均比baseline慢；不能与echo P99.9混作一个指标。",
+          "version": "SIGCOMM 2025版本",
+          "paper": "CEIO",
+          "paper_title": "CEIO: A Cache-Efficient Network I/O Architecture for NIC-CPU Data Paths",
+          "figure_number": "表3",
+          "pdf_page_1based": 11
+        }
+      ],
+      "rights": {
+        "paper": "research-only.pdf仅研究中阅读；不得复制到公开发布目录。标准ACM许可未确认全文公开再分发授权。",
+        "figures": "只引用图7与表3，必要于具体顺序机制与性能代价的实质评论；两处局部占14页论文很小比例，非图集、非论文替代。保留作者/论文/版本/图号/来源与完整信息；按有限学术评论必要引用评估，不主张全文再分发权、不保证法律结论。未发现所选局部独立第三方限制。",
+        "code": "未核实独立源码再分发许可，仅链接，不公开复制。"
+      },
+      "authors": "Bowen Liu, Xinyang Huang, Qijing Li, Zhuobin Huang, Yijun Sun, Wenxue Li, Junxue Zhang, Ping Yin, Kai Chen",
+      "file": "ceio/analysis.md"
+    },
+    {
+      "slug": "outback",
+      "id": "outback",
+      "name": "Outback",
+      "title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+      "authors": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+      "institutions": [
+        "University of California, Santa Cruz"
+      ],
+      "org": "University of California, Santa Cruz",
+      "venue": "PVLDB 18(2) / VLDB 2025",
+      "date": "2024-10 (卷期); 2025-02-28 (online metadata)",
+      "status": "正式出版；旧论文补读",
+      "doi": "10.14778/3705829.3705849",
+      "url": "https://doi.org/10.14778/3705829.3705849",
+      "pdf": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+      "pdf_source": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+      "scope": "正式论文全文14页，重点§3–5、图6/9/13/17；作者仓库README；未运行代码",
+      "read_scope": "full paper 14 pages and artifact README; not reproduced",
+      "license": "CC BY-NC-ND 4.0 on first page; no full PDF public backup because NC applicability to work research not resolved",
+      "figures": [
+        {
+          "path": "papers/outback/images/fig6a.png",
+          "file": "fig6a.png",
+          "num": "6(a)",
+          "page": 5,
+          "title": "常态 Get 的定位计算与远端解引用",
+          "analysis": "客户端算桶和槽，远端仍需访问指针槽及数据；常态一轮不是纯单边。",
+          "use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+          "archive_path": "2026-11-17/papers/outback/images/fig6a.png",
+          "dimensions_px": [
+            516,
+            438
+          ],
+          "source_url": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+          "author_credit": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+          "analysis_zh": "客户端算桶和槽，远端仍需访问指针槽及数据；常态一轮不是纯单边。",
+          "version": "PVLDB 18(2) / VLDB 2025版本",
+          "paper": "Outback",
+          "paper_title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+          "figure_number": "6(a)",
+          "pdf_page_1based": 5
+        },
+        {
+          "path": "papers/outback/images/fig17.png",
+          "file": "fig17.png",
+          "num": "17",
+          "page": 12,
+          "title": "扩容期间吞吐下降",
+          "analysis": "20M初始key、单服务端线程；重建约3秒、吞吐降约52%，并非尾延迟保证。",
+          "use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+          "archive_path": "2026-11-17/papers/outback/images/fig17.png",
+          "dimensions_px": [
+            708,
+            303
+          ],
+          "source_url": "https://www.vldb.org/pvldb/vol18/p335-liu.pdf",
+          "author_credit": "Yi Liu, Minghao Xie, Shouqian Shi, Yuanchao Xu, Heiner Litz, Chen Qian",
+          "analysis_zh": "20M初始key、单服务端线程；重建约3秒、吞吐降约52%，并非尾延迟保证。",
+          "version": "PVLDB 18(2) / VLDB 2025版本",
+          "paper": "Outback",
+          "paper_title": "Outback: Fast and Communication-efficient Index for Key-Value Store on Disaggregated Memory",
+          "figure_number": "17",
+          "pdf_page_1based": 12
+        }
+      ],
+      "figure_use_basis": "Two necessary excerpts for scholarly technical criticism; only Fig6(a) and Fig17, not full pages; scientific labels and axes preserved. Closely analyzed adjacent prose, citation/attribution included, no third-party credit observed. Limited quotation rationale considered separately from NC-ND license, not a guarantee of legal exception.",
+      "code_backup": "README/LICENSE documentation subset, GPLv3; not complete code mirror",
+      "sources": [
+        "https://api.crossref.org/works/10.14778/3705829.3705849",
+        "https://hlitz.github.io/",
+        "https://github.com/yliu634/outback"
+      ],
+      "file": "outback/analysis.md",
+      "summary": "客户端计算桶与槽，远端保留解引用；常态一轮访问不等于单边或无故障代价。"
+    },
+    {
+      "id": "term",
+      "name": "TeRM",
+      "title": "TeRM: Extending RDMA-Attached Memory with SSD",
+      "venue": "FAST 2024",
+      "org": "清华大学；华为",
+      "date": "2024-02-27—29（正式会期；旧文补读）",
+      "authors": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+      "url": "https://www.usenix.org/conference/fast24/presentation/yang-zhe",
+      "pdf": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+      "scope": "阅读 FAST 正式正文机制、实现、微基准与应用实验；核查作者仓库构建说明，未复现实验或观看报告。仓库另列 TOS 扩展版，本篇仅分析 FAST 版本，不混用数据。",
+      "summary": "用 magic 页把 RNIC 缺页变成显式 RPC 慢路径；大块读接近带宽上界，但小 KV 与写长尾仍显著受 SSD/RPC 限制。",
+      "figures": [
+        {
+          "path": "papers/term/images/fig6.png",
+          "num": "6",
+          "page": 5,
+          "title": "CPU 与 RNIC 页表有意不同",
+          "analysis": "非驻留 v2/v4/v6 映射 magic 物理页 M；跨页读先识别缺失片段再补取。magic 不是真实缓存内容，bitmap 也不承担正确性判定。",
+          "use_basis": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+          "archive_path": "2026-11-17/papers/term/images/fig6.png",
+          "dimensions_px": [
+            738,
+            339
+          ],
+          "source_url": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+          "author_credit": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+          "analysis_zh": "非驻留 v2/v4/v6 映射 magic 物理页 M；跨页读先识别缺失片段再补取。magic 不是真实缓存内容，bitmap 也不承担正确性判定。",
+          "version": "FAST 2024版本",
+          "paper": "TeRM",
+          "paper_title": "TeRM: Extending RDMA-Attached Memory with SSD",
+          "figure_number": "6",
+          "pdf_page_1based": 5
+        },
+        {
+          "path": "papers/term/images/fig8.png",
+          "num": "8",
+          "page": 9,
+          "title": "请求尺寸决定离 PIN 上界有多远",
+          "analysis": "纵轴为对数 Kops/s。小读≤512B最高仅 PIN 的37.79%，4KB读达96.71%；不能将接近全内存的结论泛化到小对象 KV。",
+          "use_basis": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+          "archive_path": "2026-11-17/papers/term/images/fig8.png",
+          "dimensions_px": [
+            738,
+            312
+          ],
+          "source_url": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+          "author_credit": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+          "analysis_zh": "纵轴为对数 Kops/s。小读≤512B最高仅 PIN 的37.79%，4KB读达96.71%；不能将接近全内存的结论泛化到小对象 KV。",
+          "version": "FAST 2024版本",
+          "paper": "TeRM",
+          "paper_title": "TeRM: Extending RDMA-Attached Memory with SSD",
+          "figure_number": "8",
+          "pdf_page_1based": 9
+        }
+      ],
+      "rights": {
+        "paper": "未核实 FAST 全文公开再分发许可；完整 PDF 不公开备份。",
+        "figures": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+        "code": "作者仓库已公开，但根目录未列许可证，LICENSE 路径未获得许可文本；不打包或重发布源码，只保存来源清单。"
+      },
+      "file": "term/analysis.md"
+    }
+  ],
+  "scope": "Formal conference paper reviews; no verified same-day additions; full PDFs and slides not redistributed."
+}

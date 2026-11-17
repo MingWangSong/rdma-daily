@@ -1,0 +1,62 @@
+{
+  "id": "term",
+  "name": "TeRM",
+  "title": "TeRM: Extending RDMA-Attached Memory with SSD",
+  "venue": "FAST 2024",
+  "org": "清华大学；华为",
+  "date": "2024-02-27—29（正式会期；旧文补读）",
+  "authors": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+  "url": "https://www.usenix.org/conference/fast24/presentation/yang-zhe",
+  "pdf": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+  "scope": "阅读 FAST 正式正文机制、实现、微基准与应用实验；核查作者仓库构建说明，未复现实验或观看报告。仓库另列 TOS 扩展版，本篇仅分析 FAST 版本，不混用数据。",
+  "summary": "用 magic 页把 RNIC 缺页变成显式 RPC 慢路径；大块读接近带宽上界，但小 KV 与写长尾仍显著受 SSD/RPC 限制。",
+  "figures": [
+    {
+      "path": "papers/term/images/fig6.png",
+      "num": "6",
+      "page": 5,
+      "title": "CPU 与 RNIC 页表有意不同",
+      "analysis": "非驻留 v2/v4/v6 映射 magic 物理页 M；跨页读先识别缺失片段再补取。magic 不是真实缓存内容，bitmap 也不承担正确性判定。",
+      "use_basis": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+      "archive_path": "2026-11-17/papers/term/images/fig6.png",
+      "dimensions_px": [
+        738,
+        339
+      ],
+      "source_url": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+      "author_credit": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+      "analysis_zh": "非驻留 v2/v4/v6 映射 magic 物理页 M；跨页读先识别缺失片段再补取。magic 不是真实缓存内容，bitmap 也不承担正确性判定。",
+      "version": "FAST 2024版本",
+      "paper": "TeRM",
+      "paper_title": "TeRM: Extending RDMA-Attached Memory with SSD",
+      "figure_number": "6",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/term/images/fig8.png",
+      "num": "8",
+      "page": 9,
+      "title": "请求尺寸决定离 PIN 上界有多远",
+      "analysis": "纵轴为对数 Kops/s。小读≤512B最高仅 PIN 的37.79%，4KB读达96.71%；不能将接近全内存的结论泛化到小对象 KV。",
+      "use_basis": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+      "archive_path": "2026-11-17/papers/term/images/fig8.png",
+      "dimensions_px": [
+        738,
+        312
+      ],
+      "source_url": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
+      "author_credit": "Zhe Yang, Qing Wang, Xiaojian Liao, Youyou Lu, Keji Huang, Jiwu Shu",
+      "analysis_zh": "纵轴为对数 Kops/s。小读≤512B最高仅 PIN 的37.79%，4KB读达96.71%；不能将接近全内存的结论泛化到小对象 KV。",
+      "version": "FAST 2024版本",
+      "paper": "TeRM",
+      "paper_title": "TeRM: Extending RDMA-Attached Memory with SSD",
+      "figure_number": "8",
+      "pdf_page_1based": 9
+    }
+  ],
+  "rights": {
+    "paper": "未核实 FAST 全文公开再分发许可；完整 PDF 不公开备份。",
+    "figures": "限图6机制与图8实验两处必要引用，逐图配实质分析、保留来源及完整轴图例。未发现所选图第三方素材例外或明确禁止；基于必要学术评论引用评估，不替代原作，不声称法律保证。",
+    "code": "作者仓库已公开，但根目录未列许可证，LICENSE 路径未获得许可文本；不打包或重发布源码，只保存来源清单。"
+  }
+}
