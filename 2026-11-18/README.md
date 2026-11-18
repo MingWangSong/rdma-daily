@@ -19,7 +19,7 @@ ECMP无法知道哈希后路径是否拥塞；只凭现有流反馈，又只能�
 3. **Give-and-Take交换，而非寄存器内维护长候选数组**：ACK到达时，如果其候选或GoodTable候选已不可接受，先换成当前最佳；再交换ACK与GoodTable的候选。相继ACK因此携带不同路径，只需少量流水线状态访问，避免多次访问同一寄存器阵列导致报文recirculation。图4不是在计算一次最短路，而是在说明候选如何在ACK与交换机间轮换。
 4. **源ToR一次性消费候选**（§3.2）：PathTable用默认4项的环形表收集新鲜候选，新流取最新尚未用过的有效项；同一项不连续分配给一批并发新流。无有效候选回退ECMP。FlowTable缓存该流路径，后续包保持同一路径；哈希冲突还需目的端校验，不能让冲突项把包转到错误目的。该设计降低同批流选同一候选的概率，但不是全网严格无冲突调度。
 
-![图4：ACK与交换机交换候选路径](fig4.png)
+![图4：ACK与交换机交换候选路径](papers/caver/images/fig4.png)
 *图4，PDF第6页，Deng等，ATC 2026。图中最佳CE保持10，GoodTable里的25/10/20却随ACK交换；不可接受的35与95先退回最佳路径。读图重点是候选多样性来自跨包交换，而非缓存很多路径。CC BY 4.0；原图裁切。*
 
 ### 实验证据：仿真优于强基线，不代表真机做过同样对照
@@ -28,7 +28,7 @@ ECMP无法知道哈希后路径是否拥塞；只凭现有流反馈，又只能�
 
 **真机（§4.3、图15）**：两台Tofino1借多流水线虚拟为2个leaf+2个spine，交换机间10Gbps、主机接入25Gbps；服务器PCIe 3.0 x8限制了测试速率。开启PFC/DCQCN，负载60%。只和ECMP比较，未实现CONGA/HULA的P4版本，ConWeave又要求Tofino2特性。三种工作负载平均FCT降低11%—49%，作者报告最高尾FCT降幅86.5%。图15分别列平均、P95、P99、P99.9，不能把最高尾部收益写成所有负载P99均下降86.5%。此处没有400Gbps硬件验证，也没有直接跑分布式存储引擎。
 
-![图15：真实交换机上的FCT](fig15.png)
+![图15：真实交换机上的FCT](papers/caver/images/fig15.png)
 *图15，PDF第13页，Deng等，ATC 2026，CC BY 4.0；原图裁切。纵轴是FCT（μs），四个面板刻度不同；Meta Hadoop的极端尾部改善明显，而AliCloud Storage与Solar RPC的收益幅度不同。应比较每个工作负载内的ECMP/CAVER柱，不能跨面板用柱高比较时延。*
 
 ### 资源、失效与部署边界
@@ -47,7 +47,7 @@ ECMP无法知道哈希后路径是否拥塞；只凭现有流反馈，又只能�
 
 **阅读与复现范围**：已读16页论文正文、机制/实验/讨论及图表；核查官方录用、作者PDF和作者P4/NS-3仓库README。未运行实验，未找到另行可核实的作者报告。P4说明使用BF-SDE-9.4.0；真实复现还依赖交换机SDK和设备，源码不是即装即用的软件包。
 
-**参考资料**：[正式录用名单](https://atc.sigops.org/2026/accepted.html) · [DOI](https://doi.org/10.1145/3828523.3857047) · [作者PDF](https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf) · [P4实现](https://github.com/CAVER-LB/CAVER-P4) · [NS-3实现](https://github.com/CAVER-LB/CAVER-ns3)。论文首页明确CC BY 4.0，所选图未见第三方独立限制；PDF与两幅裁图据此归档，保留作者署名与来源。两个代码库页面标MIT，源码归档需保留LICENSE及第三方文件原许可。
+**参考资料**：[正式录用名单](https://atc.sigops.org/2026/accepted.html) · [DOI](https://doi.org/10.1145/3828523.3857047) · [作者PDF](https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf) · [P4实现](https://github.com/CAVER-LB/CAVER-P4) · [NS-3实现](https://github.com/CAVER-LB/CAVER-ns3)。论文首页明确CC BY 4.0，所选图未见第三方独立限制；两幅裁图据此归档，保留作者署名与来源；全文 PDF 已确认许可，上传仍待平台授权，当前未计为已备份。两个代码库页面标MIT，源码归档需保留LICENSE及第三方文件原许可。
 
 
 ![图4 跨流共享拥塞信息与候选路径](papers/caver/images/fig4.png)
@@ -95,7 +95,7 @@ DPU 保存多层 learned index 与段描述，预测属于哪一段后再校正�
 
 图 10 的消融进一步拆开收益来源：先加入 Accurate 段，吞吐最高 1.27×、延迟降至 78%；仅添加 pilot cache 平均吞吐增益 1.03×，原因是普通哈希破坏连续性，命中率最低 19%。改用 LPTHash 后，256 并发下各 trace 命中率达到 80–97%，在前一变体上吞吐再提高最高 1.1×、延迟降至 91%。这说明“加缓存”本身不是核心，**先设计能被缓存的局部性**才是关键。
 
-图 9 的扩大 prn 轨迹测内存，1.35 billion 映射项下 D-Page 102 GB、HiDPU 29 GB。正文同段的“1.26 PB、1 MB 大页、1.35 billion pages”容量表述彼此不自洽；建议只引用明确的映射项数与内存测量，不把容量换算继续传播。图 11(a) 的局部重建实验用一个线程连续 1,000 次查询为一批取均值，报告重建期间平均查询延迟 +0.69%、缓存命中率平均下降 0.15%，瞬时降幅最高 9.9%。这不能证明 p99/p999 无尖峰，也不是全局重建结果。
+图 9 的扩大 prn 轨迹测内存，1.35 billion 映射项下 D-Page 102 GB、HiDPU 29 GB。容量单位保留论文原记法；这里以 1.35 billion 映射项及对应内存测量为准，不另作容量换算。图 11(a) 的局部重建实验用一个线程连续 1,000 次查询为一批取均值，报告重建期间平均查询延迟 +0.69%、缓存命中率平均下降 0.15%，瞬时降幅最高 9.9%。这不能证明 p99/p999 无尖峰，也不是全局重建结果。
 
 ## 对分布式存储的具体落地判断（分析）
 适合试在 DPU 前置块存储的 LBA→extent/page 映射，前提是映射数据能驻留主机 DRAM、地址具有连续性、查询远多于插入。它不直接加速数据复制、NVMe 设备访问或网络拥塞。对象存储的高熵对象 ID 不能假设具备同等 LPTHash 局部性；先转译到有连续性的内部 extent ID 才可能适配，且需要计入这一层开销。
@@ -119,7 +119,7 @@ DPU 保存多层 learned index 与段描述，预测属于哪一段后再校正�
 
 Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。
 
-来源：Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao，FAST 2025，pp.271–285，图仓库架构，PDF第1页。原文：https://www.usenix.org/system/files/fast25-zhu.pdf
+来源：Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao，FAST 2025，pp.271–285，作者仓库架构图，MIT许可。来源：https://github.com/quieoo/lmpthash/blob/3b934e27c4b5d4da093f06a2ae1e9a673b1650cf/documents/HiDPU.png
 
 
 ![图8(b) 四类应用地址轨迹的映射查询吞吐与平均延迟](papers/hidpu/images/figure8b.png)

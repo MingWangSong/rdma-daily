@@ -39,4 +39,4 @@ ECMP无法知道哈希后路径是否拥塞；只凭现有流反馈，又只能�
 
 **阅读与复现范围**：已读16页论文正文、机制/实验/讨论及图表；核查官方录用、作者PDF和作者P4/NS-3仓库README。未运行实验，未找到另行可核实的作者报告。P4说明使用BF-SDE-9.4.0；真实复现还依赖交换机SDK和设备，源码不是即装即用的软件包。
 
-**参考资料**：[正式录用名单](https://atc.sigops.org/2026/accepted.html) · [DOI](https://doi.org/10.1145/3828523.3857047) · [作者PDF](https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf) · [P4实现](https://github.com/CAVER-LB/CAVER-P4) · [NS-3实现](https://github.com/CAVER-LB/CAVER-ns3)。论文首页明确CC BY 4.0，所选图未见第三方独立限制；PDF与两幅裁图据此归档，保留作者署名与来源。两个代码库页面标MIT，源码归档需保留LICENSE及第三方文件原许可。
+**参考资料**：[正式录用名单](https://atc.sigops.org/2026/accepted.html) · [DOI](https://doi.org/10.1145/3828523.3857047) · [作者PDF](https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf) · [P4实现](https://github.com/CAVER-LB/CAVER-P4) · [NS-3实现](https://github.com/CAVER-LB/CAVER-ns3)。论文首页明确CC BY 4.0，所选图未见第三方独立限制；两幅裁图据此归档，保留作者署名与来源；全文 PDF 已确认许可，上传仍待平台授权，当前未计为已备份。两个代码库页面标MIT，源码归档需保留LICENSE及第三方文件原许可。

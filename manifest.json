@@ -1683,28 +1683,28 @@
     },
     {
       "path": "2026-11-18/README.md",
-      "bytes": 28041,
-      "sha256": "313731da2cbda1ccec9fa8c0cec127ff1180d7e63ee1cb4f167d02357b3ede39"
+      "bytes": 28155,
+      "sha256": "0445582c63e562e4486d294cad085553270467ddc3cd035246ea6cda8298567d"
     },
     {
       "path": "2026-11-18/VALIDATION.md",
-      "bytes": 236,
-      "sha256": "3bcd0c2be6296a8699724312380a76072253a47cbc01c1ab5bd7f73c4c43b852"
+      "bytes": 381,
+      "sha256": "74296c9d4ae0b89c511a9c25949a7f5f6aff188150d5b1ef8cbcf341a474dbca"
     },
     {
       "path": "2026-11-18/index.html",
-      "bytes": 40301,
-      "sha256": "30abc63ed8da7ab2235801132e83d35dbb4d93714c1af2f13b55910a6330306a"
+      "bytes": 40355,
+      "sha256": "35d4b39ee30d4b26400ee626feba171b9cfc00c6b7fa346c2540fdcc44f13711"
     },
     {
       "path": "2026-11-18/materials-index.json",
-      "bytes": 13024,
-      "sha256": "87ec599b056b8e476805bf0f58bafe1165c8fb0c9c9429d1b3b3d5cf6500fd05"
+      "bytes": 12994,
+      "sha256": "c9e2a19febe328f595e6b63d72b4a00016a317cbb20feabb2962407eaf5057c7"
     },
     {
       "path": "2026-11-18/papers/caver/analysis.md",
-      "bytes": 8089,
-      "sha256": "de17d99c61c0dcd83652d4ce7807512824c5bf7181a134635b54297438329bdf"
+      "bytes": 8166,
+      "sha256": "e3c5a886715c970aeae379a2634d1c08347202b71f5c9b7d488331c22444e033"
     },
     {
       "path": "2026-11-18/papers/caver/images/fig15.png",
@@ -1728,8 +1728,8 @@
     },
     {
       "path": "2026-11-18/papers/hidpu/analysis.md",
-      "bytes": 8351,
-      "sha256": "7723fc9ad5e453388349b517a0b4fdaaafaac06d61f7e792c1ead39efdd30ed9"
+      "bytes": 8293,
+      "sha256": "5f50e3f192a802fd9f4fa4f0961136bfb4ac19962ecf8f3fbe44ee964ab9fa6e"
     },
     {
       "path": "2026-11-18/papers/hidpu/images/architecture.png",
@@ -1743,8 +1743,8 @@
     },
     {
       "path": "2026-11-18/papers/hidpu/sources.json",
-      "bytes": 3860,
-      "sha256": "c4cee900c2cb07d12f17911b37c6235c554bc1377b8415fdea8933c304a878b3"
+      "bytes": 3838,
+      "sha256": "39cb39e7aa45e309ddedca0df1a90bdff5344910d1f08c5376d0685c86d42653"
     },
     {
       "path": "2026-11-18/papers/skew/analysis.md",
@@ -1798,8 +1798,8 @@
     },
     {
       "path": "figure-sources.json",
-      "bytes": 97835,
-      "sha256": "6d692c87611b242e7d8f57f3fc2dfe1bd432d7b06821eab9f43be1d5ff683bb8"
+      "bytes": 97813,
+      "sha256": "e6d7210e9e5eb9f25a5b41e139d444ba289f3f7aa75d3bf54ab2584290ec134d"
     },
     {
       "path": "index.html",

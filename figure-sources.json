@@ -1653,7 +1653,6 @@
     },
     {
       "num": "仓库架构",
-      "page": 1,
       "title": "DPU 查询路径与主机维护路径分离",
       "analysis": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
       "path": "papers/hidpu/images/architecture.png",
@@ -1667,11 +1666,10 @@
       ],
       "author_credit": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
       "analysis_zh": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
-      "version": "FAST 2025，pp.271–285版本",
+      "version": "作者仓库 3b934e27c4b5d4da093f06a2ae1e9a673b1650cf",
       "paper": "HiDPU",
       "paper_title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
-      "figure_number": "仓库架构",
-      "pdf_page_1based": 1
+      "figure_number": "仓库架构"
     },
     {
       "num": "8(b)",
