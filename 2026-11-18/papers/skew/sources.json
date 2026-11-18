@@ -1,0 +1,59 @@
+{
+  "id": "skew",
+  "title": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
+  "venue": "EuroSys 2025",
+  "published": "2025-03-30",
+  "status": "正式发表旧作，本期首次报道",
+  "institutions": [
+    "Shanghai Jiao Tong University",
+    "Alibaba Cloud",
+    "Shanghai Key Laboratory of Trusted Data Circulation, Governance and Web3"
+  ],
+  "doi": "10.1145/3689031.3696068",
+  "paper_url": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+  "full_pdf_public_backup": false,
+  "paper_sha256": "f071b77e4cac1c3dacce1398f7f431081c405c4550bbb728aa4367fdd4de1b7e",
+  "figure": {
+    "file": "fig7bc.png",
+    "source": "author PDF page 12 Figure 7(b,c)",
+    "modification": "cropped only, no data or axes alteration",
+    "basis": "Limited excerpt for substantive scholarly criticism, two necessary panels out of 7 figures/17 pages; not licensed full redistribution. Preserve source, author, panel/version, unit. Publication full-PDF posting restricted. This use relies on a context-specific quotation/fair-use assessment, not a guarantee. No watermark or protection circumvented.",
+    "purpose": "Critique misleading latency gain direction and p50-vs-p99 extrapolation; direct commentary adjacent to image."
+  },
+  "read_scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced",
+  "artifact": "https://github.com/Nan-Ge/eurosys25_ae",
+  "artifact_backup": false,
+  "artifact_reason": "No explicit license found; README dataset link placeholder; not repackaged",
+  "name": "Skewness",
+  "authors": "Haonan Wu 等",
+  "org": "上海交通大学；阿里云；上海市可信数据流通与治理及Web3重点实验室",
+  "date": "2025-03-30",
+  "pdf": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+  "url": "https://doi.org/10.1145/3689031.3696068",
+  "scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced",
+  "summary": "从生产块存储轨迹区分队列、配额、读写放置与缓存热点；平均改善不等于p99改善。",
+  "figures": [
+    {
+      "num": "7(b,c)",
+      "page": 12,
+      "path": "papers/skew/images/fig7bc.png",
+      "title": "缓存位置的延迟比值：越低越好",
+      "analysis": "纵轴为Lcache/Lbase×100%，不是提升百分比。CN缓存对写p50更有效，但p99仍接近100%；热点集中不等于长尾被缓存覆盖。",
+      "use_basis": "Limited excerpt for substantive scholarly criticism, two necessary panels out of 7 figures/17 pages; not licensed full redistribution. Preserve source, author, panel/version, unit. Publication full-PDF posting restricted. This use relies on a context-specific quotation/fair-use assessment, not a guarantee. No watermark or protection circumvented.",
+      "archive_path": "2026-11-18/papers/skew/images/fig7bc.png",
+      "dimensions_px": [
+        996,
+        308
+      ],
+      "source_url": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+      "author_credit": "Haonan Wu 等",
+      "analysis_zh": "纵轴为Lcache/Lbase×100%，不是提升百分比。CN缓存对写p50更有效，但p99仍接近100%；热点集中不等于长尾被缓存覆盖。",
+      "version": "EuroSys 2025版本",
+      "paper": "Skewness",
+      "paper_title": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
+      "figure_number": "7(b,c)",
+      "pdf_page_1based": 12
+    }
+  ],
+  "full_pdf_backup": "未核实全文公开再分发许可，仅来源链接及必要评论图"
+}

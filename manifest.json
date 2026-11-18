@@ -1,4 +1,5 @@
 {
+  "date": "2026-11-18",
   "files": [
     {
       "path": "2026-11-10/index.html",
@@ -1676,14 +1677,104 @@
       "sha256": "31070aedd99ba406550d48fd6d4ef7d69a86bc90088f467fba283641bd5ffdc2"
     },
     {
+      "path": "2026-11-18/ARCHIVE.md",
+      "bytes": 350,
+      "sha256": "5a56f24be2cfde3f63d8104f155b8a5d3791a0b37a351e8c0860df0f8dda8ae2"
+    },
+    {
+      "path": "2026-11-18/README.md",
+      "bytes": 28041,
+      "sha256": "313731da2cbda1ccec9fa8c0cec127ff1180d7e63ee1cb4f167d02357b3ede39"
+    },
+    {
+      "path": "2026-11-18/VALIDATION.md",
+      "bytes": 236,
+      "sha256": "3bcd0c2be6296a8699724312380a76072253a47cbc01c1ab5bd7f73c4c43b852"
+    },
+    {
+      "path": "2026-11-18/index.html",
+      "bytes": 40301,
+      "sha256": "30abc63ed8da7ab2235801132e83d35dbb4d93714c1af2f13b55910a6330306a"
+    },
+    {
+      "path": "2026-11-18/materials-index.json",
+      "bytes": 13024,
+      "sha256": "87ec599b056b8e476805bf0f58bafe1165c8fb0c9c9429d1b3b3d5cf6500fd05"
+    },
+    {
+      "path": "2026-11-18/papers/caver/analysis.md",
+      "bytes": 8089,
+      "sha256": "de17d99c61c0dcd83652d4ce7807512824c5bf7181a134635b54297438329bdf"
+    },
+    {
+      "path": "2026-11-18/papers/caver/images/fig15.png",
+      "bytes": 65789,
+      "sha256": "be9eedc300ca461e229142d059943fe94abbae024e3040d33d92a55155bfee81"
+    },
+    {
+      "path": "2026-11-18/papers/caver/images/fig4.png",
+      "bytes": 69271,
+      "sha256": "6fc01cfb4f2b86b86cb5696f65a162713f253ebf3244558b641f1c3dd086f515"
+    },
+    {
+      "path": "2026-11-18/papers/caver/sources.json",
+      "bytes": 4451,
+      "sha256": "b417ec5fc0739bff2a301cd633801245762d80dfadfc24009af6941d3ce4694a"
+    },
+    {
+      "path": "2026-11-18/papers/hidpu/LICENSE-code.txt",
+      "bytes": 1068,
+      "sha256": "0295ada0ed52b5559f2e08d15d4358e56e78be1180364a706b0683e8c6ccf4b3"
+    },
+    {
+      "path": "2026-11-18/papers/hidpu/analysis.md",
+      "bytes": 8351,
+      "sha256": "7723fc9ad5e453388349b517a0b4fdaaafaac06d61f7e792c1ead39efdd30ed9"
+    },
+    {
+      "path": "2026-11-18/papers/hidpu/images/architecture.png",
+      "bytes": 42691,
+      "sha256": "4c517b970d03a2949182ac9a21bf06a43aed93c7b8664b75752738a9869480cc"
+    },
+    {
+      "path": "2026-11-18/papers/hidpu/images/figure8b.png",
+      "bytes": 56810,
+      "sha256": "125984a6bd6099b9aee340c42193479fcf7e806db6f97757bdc8892e64335830"
+    },
+    {
+      "path": "2026-11-18/papers/hidpu/sources.json",
+      "bytes": 3860,
+      "sha256": "c4cee900c2cb07d12f17911b37c6235c554bc1377b8415fdea8933c304a878b3"
+    },
+    {
+      "path": "2026-11-18/papers/skew/analysis.md",
+      "bytes": 9105,
+      "sha256": "3feb7f89829e5b75d12938d926be21c1215d0d24c4c745c160a10e97120cd286"
+    },
+    {
+      "path": "2026-11-18/papers/skew/images/fig7bc.png",
+      "bytes": 31246,
+      "sha256": "28df0372aa034ca300438d55ba4adac66a921bc02f690c23e8d21a9a15341b9a"
+    },
+    {
+      "path": "2026-11-18/papers/skew/sources.json",
+      "bytes": 3596,
+      "sha256": "8a01df16ff0353b14808aa198cff4003b7f39c96bc31a4a4f0641be1a504d55b"
+    },
+    {
+      "path": "2026-11-18/selection.md",
+      "bytes": 432,
+      "sha256": "67eec3302fce3e026ce8d2ff47c6480f4092e74d6e3cb29056a259fba0ce1b11"
+    },
+    {
       "path": "PUBLICATION_READINESS.md",
       "bytes": 3573,
       "sha256": "a442bd438c32013297a4a61dbc08eb6367bf77f8a7fddd6bfb11346b78ec45e3"
     },
     {
       "path": "README.md",
-      "bytes": 2674,
-      "sha256": "910286f88a4e25a051e753e85dcd3990d77a08378fdd1d4bf7d31078da665bdc"
+      "bytes": 2807,
+      "sha256": "f1c9d56200abc27e0bf04cc3a94eb8aaf92572bb0eb68a09a6408d5760dd34da"
     },
     {
       "path": "VALIDATION.md",
@@ -1692,8 +1783,8 @@
     },
     {
       "path": "archive_metadata.json",
-      "bytes": 21576,
-      "sha256": "db9f14f2cc396fc5a192188ae2a4ac09b1dd90543349d9d333c92dcf6cfc15e1"
+      "bytes": 23140,
+      "sha256": "e13d17923dbbb4273f4f01e22f54e51c2eb002dbfd95adb41933b7567d3725ed"
     },
     {
       "path": "assets/reader.js",
@@ -1707,13 +1798,13 @@
     },
     {
       "path": "figure-sources.json",
-      "bytes": 91040,
-      "sha256": "011c9e4d1ba1132f200d856b3175aa2fef6b11ae24b5ba4647dc6eed9ce2f7f2"
+      "bytes": 97835,
+      "sha256": "6d692c87611b242e7d8f57f3fc2dfe1bd432d7b06821eab9f43be1d5ff683bb8"
     },
     {
       "path": "index.html",
-      "bytes": 4890,
-      "sha256": "72c081ecf8376a948c08640c5d73a2e7b9d38b506f86f11165c950c01515766a"
+      "bytes": 5136,
+      "sha256": "3c6cec4b4d93c47e500a252f246d82228142d9afc7266282ac0accb83ecb5b7a"
     },
     {
       "path": "reports/2026-11-12-nvmeof-kvcache/README.md",
@@ -1787,8 +1878,8 @@
     },
     {
       "path": "tools/verify_archive.py",
-      "bytes": 3969,
-      "sha256": "aa45292cf6f5778ca5ca313e912e29372b0c4b8f168a9f48a93a6c0f31d6e04d"
+      "bytes": 4008,
+      "sha256": "ec6a85e37b32e1b963cff67bc6b39a1d5181a149db290869fcc0c2dd21ca6912"
     }
   ]
 }

@@ -1,0 +1,220 @@
+{
+  "date": "2026-11-18",
+  "papers": [
+    {
+      "id": "caver",
+      "title": "CAVER: Enhancing RDMA Load Balancing by Hunting Less-Congested Paths",
+      "venue": "ACM SIGOPS ATC 2026",
+      "conference_dates": "2026-11-15/2026-11-18",
+      "publication_date": "Exact online date not independently verified",
+      "status": "本届新近正式论文；非今日首次发表",
+      "institutions": [
+        "Tsinghua University",
+        "Beihang University"
+      ],
+      "doi": "10.1145/3828523.3857047",
+      "official_acceptance": "https://atc.sigops.org/2026/accepted.html",
+      "pdf_url": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
+      "pdf_sha256": "e89ea1ea9a13b0e0e20e29a7dbecfadf4efca2bcd8d967c9a6f6f79dbe632dd4",
+      "license": "CC BY 4.0, explicit on PDF page 1",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "read_scope": "Full 16-page paper, figures and tables; author repository READMEs. No experiments executed.",
+      "figures": [
+        {
+          "file": "fig4.png",
+          "figure": "4",
+          "pdf_page": 6,
+          "basis": "CC BY 4.0",
+          "modification": "cropped from author PDF; no alterations to diagram",
+          "num": "4",
+          "page": 6,
+          "path": "papers/caver/images/fig4.png",
+          "use_basis": "CC BY 4.0",
+          "title": "跨流共享拥塞信息与候选路径",
+          "analysis": "通过ACK在交换机汇合已知路径信息，Best/Good候选防止新流同时选择同一个瞬时最优出口；没有探测包不等于没有ACK和状态开销。",
+          "archive_path": "2026-11-18/papers/caver/images/fig4.png",
+          "dimensions_px": [
+            744,
+            450
+          ],
+          "source_url": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
+          "author_credit": "Haotian Deng, Jue Zhang, Menghao Zhang, Yuan Yang, Xiao Li, Junhao Dong, Yi Liu, Mingwei Xu",
+          "analysis_zh": "通过ACK在交换机汇合已知路径信息，Best/Good候选防止新流同时选择同一个瞬时最优出口；没有探测包不等于没有ACK和状态开销。",
+          "version": "ACM SIGOPS ATC 2026版本",
+          "paper": "CAVER",
+          "paper_title": "CAVER: Enhancing RDMA Load Balancing by Hunting Less-Congested Paths",
+          "figure_number": "4",
+          "pdf_page_1based": 6
+        },
+        {
+          "file": "fig15.png",
+          "figure": "15",
+          "pdf_page": 13,
+          "basis": "CC BY 4.0",
+          "modification": "cropped; axes and legends retained",
+          "num": "15",
+          "page": 13,
+          "path": "papers/caver/images/fig15.png",
+          "use_basis": "CC BY 4.0",
+          "title": "硬件测试的平均与分位FCT",
+          "analysis": "两台Tofino1模拟四交换节点，10G网络互联、25G主机接入，60%负载。真机只对照ECMP；平均、P95、P99、P99.9不可混写为统一尾延迟收益。",
+          "archive_path": "2026-11-18/papers/caver/images/fig15.png",
+          "dimensions_px": [
+            747,
+            522
+          ],
+          "source_url": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
+          "author_credit": "Haotian Deng, Jue Zhang, Menghao Zhang, Yuan Yang, Xiao Li, Junhao Dong, Yi Liu, Mingwei Xu",
+          "analysis_zh": "两台Tofino1模拟四交换节点，10G网络互联、25G主机接入，60%负载。真机只对照ECMP；平均、P95、P99、P99.9不可混写为统一尾延迟收益。",
+          "version": "ACM SIGOPS ATC 2026版本",
+          "paper": "CAVER",
+          "paper_title": "CAVER: Enhancing RDMA Load Balancing by Hunting Less-Congested Paths",
+          "figure_number": "15",
+          "pdf_page_1based": 13
+        }
+      ],
+      "code": [
+        {
+          "url": "https://github.com/CAVER-LB/CAVER-P4",
+          "license": "MIT per GitHub; source backup delegated to publisher"
+        },
+        {
+          "url": "https://github.com/CAVER-LB/CAVER-ns3",
+          "license": "MIT per GitHub; source backup delegated to publisher"
+        }
+      ],
+      "file": "caver/analysis.md",
+      "name": "CAVER",
+      "authors": "Haotian Deng, Jue Zhang, Menghao Zhang, Yuan Yang, Xiao Li, Junhao Dong, Yi Liu, Mingwei Xu",
+      "org": "清华大学；北京航空航天大学",
+      "date": "2026-11-15—18（会议日期，单独上线日期未核实）",
+      "pdf": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
+      "url": "https://atc.sigops.org/2026/accepted.html",
+      "scope": "Full 16-page paper, figures and tables; author repository READMEs. No experiments executed.",
+      "summary": "ACK共享路径知识，避免新流同步涌向单条最优路径；区分大规模仿真和10/25G硬件验证。",
+      "full_pdf_backup": "尚未公开备份；合规全文将在上传完成后更新状态"
+    },
+    {
+      "name": "HiDPU",
+      "title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+      "authors": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+      "venue": "FAST 2025，pp.271–285",
+      "org": "山东大学；天津大学；华为；香港中文大学",
+      "date": "2025-02-25—2025-02-27（会议日期；往年补读）",
+      "pdf": "https://www.usenix.org/system/files/fast25-zhu.pdf",
+      "url": "https://www.usenix.org/conference/fast25/presentation/zhu",
+      "scope": "正文 §2–5、图4–11及结论；作者仓库 README/LICENSE。未运行代码，未观看视频。",
+      "summary": "将连续性敏感的混合索引和 pilot cache 放在 DPU 上，降低地址翻译的串行 PCIe 往返；查询实验不能外推为端到端存储或尾延迟收益。",
+      "file": "hidpu/analysis.md",
+      "figures": [
+        {
+          "num": "仓库架构",
+          "page": 1,
+          "title": "DPU 查询路径与主机维护路径分离",
+          "analysis": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
+          "path": "papers/hidpu/images/architecture.png",
+          "use_basis": "作者 quieoo/lmpthash 仓库 MIT 许可；保留随附 LICENSE-code.txt；固定版本 3b934e27c4b5d4da093f06a2ae1e9a673b1650cf。",
+          "source_label": "作者仓库架构图",
+          "source_url": "https://github.com/quieoo/lmpthash/blob/3b934e27c4b5d4da093f06a2ae1e9a673b1650cf/documents/HiDPU.png",
+          "archive_path": "2026-11-18/papers/hidpu/images/architecture.png",
+          "dimensions_px": [
+            494,
+            385
+          ],
+          "author_credit": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+          "analysis_zh": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
+          "version": "FAST 2025，pp.271–285版本",
+          "paper": "HiDPU",
+          "paper_title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+          "figure_number": "仓库架构",
+          "pdf_page_1based": 1
+        },
+        {
+          "num": "8(b)",
+          "page": 10,
+          "title": "四类应用地址轨迹的映射查询吞吐与平均延迟",
+          "analysis": "左轴MQPS、右轴μs。OLTP相对增益较低，高并发下吞吐平台化而延迟上升。数据是地址轨迹回放的映射查询，不是NVMe或网络端到端延迟，更没有p99结论。",
+          "path": "papers/hidpu/images/figure8b.png",
+          "use_basis": "论文单一实验面板有限裁切，用于紧邻的实质性技术评论；保留坐标图例单位，链接原作，不替代论文市场。未发现全文再分发许可；版权例外适用无保证。",
+          "archive_path": "2026-11-18/papers/hidpu/images/figure8b.png",
+          "dimensions_px": [
+            1245,
+            321
+          ],
+          "source_url": "https://www.usenix.org/system/files/fast25-zhu.pdf",
+          "author_credit": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+          "analysis_zh": "左轴MQPS、右轴μs。OLTP相对增益较低，高并发下吞吐平台化而延迟上升。数据是地址轨迹回放的映射查询，不是NVMe或网络端到端延迟，更没有p99结论。",
+          "version": "FAST 2025，pp.271–285版本",
+          "paper": "HiDPU",
+          "paper_title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+          "figure_number": "8(b)",
+          "pdf_page_1based": 10
+        }
+      ],
+      "id": "hidpu",
+      "status": "2025正式论文补读",
+      "full_pdf_backup": "未核实全文公开再分发许可，仅来源链接及必要评论图"
+    },
+    {
+      "id": "skew",
+      "title": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
+      "venue": "EuroSys 2025",
+      "published": "2025-03-30",
+      "status": "正式发表旧作，本期首次报道",
+      "institutions": [
+        "Shanghai Jiao Tong University",
+        "Alibaba Cloud",
+        "Shanghai Key Laboratory of Trusted Data Circulation, Governance and Web3"
+      ],
+      "doi": "10.1145/3689031.3696068",
+      "paper_url": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+      "full_pdf_public_backup": false,
+      "paper_sha256": "f071b77e4cac1c3dacce1398f7f431081c405c4550bbb728aa4367fdd4de1b7e",
+      "figure": {
+        "file": "fig7bc.png",
+        "source": "author PDF page 12 Figure 7(b,c)",
+        "modification": "cropped only, no data or axes alteration",
+        "basis": "Limited excerpt for substantive scholarly criticism, two necessary panels out of 7 figures/17 pages; not licensed full redistribution. Preserve source, author, panel/version, unit. Publication full-PDF posting restricted. This use relies on a context-specific quotation/fair-use assessment, not a guarantee. No watermark or protection circumvented.",
+        "purpose": "Critique misleading latency gain direction and p50-vs-p99 extrapolation; direct commentary adjacent to image."
+      },
+      "read_scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced",
+      "artifact": "https://github.com/Nan-Ge/eurosys25_ae",
+      "artifact_backup": false,
+      "artifact_reason": "No explicit license found; README dataset link placeholder; not repackaged",
+      "file": "skew/analysis.md",
+      "name": "Skewness",
+      "authors": "Haonan Wu 等",
+      "org": "上海交通大学；阿里云；上海市可信数据流通与治理及Web3重点实验室",
+      "date": "2025-03-30",
+      "pdf": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+      "url": "https://doi.org/10.1145/3689031.3696068",
+      "scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced",
+      "summary": "从生产块存储轨迹区分队列、配额、读写放置与缓存热点；平均改善不等于p99改善。",
+      "figures": [
+        {
+          "num": "7(b,c)",
+          "page": 12,
+          "path": "papers/skew/images/fig7bc.png",
+          "title": "缓存位置的延迟比值：越低越好",
+          "analysis": "纵轴为Lcache/Lbase×100%，不是提升百分比。CN缓存对写p50更有效，但p99仍接近100%；热点集中不等于长尾被缓存覆盖。",
+          "use_basis": "Limited excerpt for substantive scholarly criticism, two necessary panels out of 7 figures/17 pages; not licensed full redistribution. Preserve source, author, panel/version, unit. Publication full-PDF posting restricted. This use relies on a context-specific quotation/fair-use assessment, not a guarantee. No watermark or protection circumvented.",
+          "archive_path": "2026-11-18/papers/skew/images/fig7bc.png",
+          "dimensions_px": [
+            996,
+            308
+          ],
+          "source_url": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+          "author_credit": "Haonan Wu 等",
+          "analysis_zh": "纵轴为Lcache/Lbase×100%，不是提升百分比。CN缓存对写p50更有效，但p99仍接近100%；热点集中不等于长尾被缓存覆盖。",
+          "version": "EuroSys 2025版本",
+          "paper": "Skewness",
+          "paper_title": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
+          "figure_number": "7(b,c)",
+          "pdf_page_1based": 12
+        }
+      ],
+      "full_pdf_backup": "未核实全文公开再分发许可，仅来源链接及必要评论图"
+    }
+  ],
+  "scope": "Formal conference paper reviews; no verified same-day additions; full PDFs and slides not redistributed."
+}

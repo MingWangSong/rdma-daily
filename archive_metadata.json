@@ -8,11 +8,12 @@
     "2026-11-14",
     "2026-11-15",
     "2026-11-16",
-    "2026-11-17"
+    "2026-11-17",
+    "2026-11-18"
   ],
-  "prepared_on": "2026-11-17",
+  "prepared_on": "2026-11-18",
   "publication_status": "public_repository_archive",
-  "paper_count": 36,
+  "paper_count": 39,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -422,12 +423,39 @@
       "url": "https://www.usenix.org/conference/fast24/presentation/yang-zhe",
       "pdf": "https://www.usenix.org/system/files/fast24-yang-zhe.pdf",
       "scope": "阅读 FAST 正式正文机制、实现、微基准与应用实验；核查作者仓库构建说明，未复现实验或观看报告。仓库另列 TOS 扩展版，本篇仅分析 FAST 版本，不混用数据。"
+    },
+    "CAVER": {
+      "date": "2026-11-18",
+      "conference": "ACM SIGOPS ATC 2026",
+      "org": "清华大学；北京航空航天大学",
+      "full": "CAVER: Enhancing RDMA Load Balancing by Hunting Less-Congested Paths",
+      "url": "https://atc.sigops.org/2026/accepted.html",
+      "pdf": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
+      "scope": "Full 16-page paper, figures and tables; author repository READMEs. No experiments executed."
+    },
+    "HiDPU": {
+      "date": "2026-11-18",
+      "conference": "FAST 2025，pp.271–285",
+      "org": "山东大学；天津大学；华为；香港中文大学",
+      "full": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+      "url": "https://www.usenix.org/conference/fast25/presentation/zhu",
+      "pdf": "https://www.usenix.org/system/files/fast25-zhu.pdf",
+      "scope": "正文 §2–5、图4–11及结论；作者仓库 README/LICENSE。未运行代码，未观看视频。"
+    },
+    "Skewness": {
+      "date": "2026-11-18",
+      "conference": "EuroSys 2025",
+      "org": "上海交通大学；阿里云；上海市可信数据流通与治理及Web3重点实验室",
+      "full": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
+      "url": "https://doi.org/10.1145/3689031.3696068",
+      "pdf": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
+      "scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 69,
+  "figure_excerpt_count": 74,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-17",
+  "revision_date": "2026-11-18",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

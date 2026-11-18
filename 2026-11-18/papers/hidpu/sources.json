@@ -1,0 +1,60 @@
+{
+  "name": "HiDPU",
+  "title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+  "authors": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+  "venue": "FAST 2025，pp.271–285",
+  "org": "山东大学；天津大学；华为；香港中文大学",
+  "date": "2025-02-25—2025-02-27（会议日期；往年补读）",
+  "pdf": "https://www.usenix.org/system/files/fast25-zhu.pdf",
+  "url": "https://www.usenix.org/conference/fast25/presentation/zhu",
+  "scope": "正文 §2–5、图4–11及结论；作者仓库 README/LICENSE。未运行代码，未观看视频。",
+  "summary": "将连续性敏感的混合索引和 pilot cache 放在 DPU 上，降低地址翻译的串行 PCIe 往返；查询实验不能外推为端到端存储或尾延迟收益。",
+  "figures": [
+    {
+      "num": "仓库架构",
+      "page": 1,
+      "title": "DPU 查询路径与主机维护路径分离",
+      "analysis": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
+      "path": "papers/hidpu/images/architecture.png",
+      "use_basis": "作者 quieoo/lmpthash 仓库 MIT 许可；保留随附 LICENSE-code.txt；固定版本 3b934e27c4b5d4da093f06a2ae1e9a673b1650cf。",
+      "source_label": "作者仓库架构图",
+      "source_url": "https://github.com/quieoo/lmpthash/blob/3b934e27c4b5d4da093f06a2ae1e9a673b1650cf/documents/HiDPU.png",
+      "archive_path": "2026-11-18/papers/hidpu/images/architecture.png",
+      "dimensions_px": [
+        494,
+        385
+      ],
+      "author_credit": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+      "analysis_zh": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
+      "version": "FAST 2025，pp.271–285版本",
+      "paper": "HiDPU",
+      "paper_title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+      "figure_number": "仓库架构",
+      "pdf_page_1based": 1
+    },
+    {
+      "num": "8(b)",
+      "page": 10,
+      "title": "四类应用地址轨迹的映射查询吞吐与平均延迟",
+      "analysis": "左轴MQPS、右轴μs。OLTP相对增益较低，高并发下吞吐平台化而延迟上升。数据是地址轨迹回放的映射查询，不是NVMe或网络端到端延迟，更没有p99结论。",
+      "path": "papers/hidpu/images/figure8b.png",
+      "use_basis": "论文单一实验面板有限裁切，用于紧邻的实质性技术评论；保留坐标图例单位，链接原作，不替代论文市场。未发现全文再分发许可；版权例外适用无保证。",
+      "archive_path": "2026-11-18/papers/hidpu/images/figure8b.png",
+      "dimensions_px": [
+        1245,
+        321
+      ],
+      "source_url": "https://www.usenix.org/system/files/fast25-zhu.pdf",
+      "author_credit": "Wenbin Zhu, Zhaoyan Shen, Qian Wei, Renhai Chen, Xin Yao, Dongxiao Yu, Zili Shao",
+      "analysis_zh": "左轴MQPS、右轴μs。OLTP相对增益较低，高并发下吞吐平台化而延迟上升。数据是地址轨迹回放的映射查询，不是NVMe或网络端到端延迟，更没有p99结论。",
+      "version": "FAST 2025，pp.271–285版本",
+      "paper": "HiDPU",
+      "paper_title": "HiDPU: A DPU-Oriented Hybrid Indexing Scheme for Disaggregated Storage Systems",
+      "figure_number": "8(b)",
+      "pdf_page_1based": 10
+    }
+  ],
+  "id": "hidpu",
+  "status": "2025正式论文补读",
+  "full_pdf_backup": "未核实全文公开再分发许可，仅来源链接及必要评论图"
+}
