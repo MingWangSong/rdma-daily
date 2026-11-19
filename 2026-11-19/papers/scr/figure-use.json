@@ -1,0 +1,51 @@
+{
+  "figures": [
+    {
+      "file": "images/figure21b.png",
+      "figure": "21(b)",
+      "pdf_page_1based": 22,
+      "print_page": 447,
+      "source": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "authors": "Chenxingyu Zhao; Jaehong Min; Ming Liu; Arvind Krishnamurthy",
+      "explicit_redistribution_license_found": false,
+      "basis": "有限学术评论引用；逐项评估17 USC 107四因素，不是许可或法律保证",
+      "purpose": "NVMe-oF公平性原始柱形结果；必须保留两个QD、两种调度、IOPS标度以解释公平改善不等于总吞吐翻倍，NULL后端不代表实盘。",
+      "nature": "已发表技术研究，所取为作者实验/机制信息图，无发现独立第三方图像或单独限制",
+      "amount": "整篇24页仅两个小面板，不取相邻GPU图、RTT图和其他图表，不复制全文或幻灯片",
+      "market": "只支撑紧邻的具体批评与分析，链接免费官方全文，不构成论文替代品",
+      "review_reference": "https://www.copyright.gov/fair-use/more-info.html",
+      "crop": "仅裁切，不重绘数据；保留图例单位/箭头等必要解释元素",
+      "sha256": "1c0b258c773703c3a36f9cc97ba3fe58ba1705ea5c215e0c4855b183e069ac8a"
+    },
+    {
+      "file": "images/figure22a.png",
+      "figure": "22(a)",
+      "pdf_page_1based": 23,
+      "print_page": 448,
+      "source": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "authors": "Chenxingyu Zhao; Jaehong Min; Ming Liu; Arvind Krishnamurthy",
+      "explicit_redistribution_license_found": false,
+      "basis": "有限学术评论引用；逐项评估17 USC 107四因素，不是许可或法律保证",
+      "purpose": "解释包级信号与控制闭环延迟区别；保留7/4/6μs时序，评论控制延迟的落地约束。",
+      "nature": "已发表技术研究，所取为作者实验/机制信息图，无发现独立第三方图像或单独限制",
+      "amount": "整篇24页仅两个小面板，不取相邻GPU图、RTT图和其他图表，不复制全文或幻灯片",
+      "market": "只支撑紧邻的具体批评与分析，链接免费官方全文，不构成论文替代品",
+      "review_reference": "https://www.copyright.gov/fair-use/more-info.html",
+      "crop": "仅裁切，不重绘数据；保留图例单位/箭头等必要解释元素",
+      "sha256": "7327daa22536a2d519cb1b6d8648aeae47312ca877b42dc46ca6b6719e1faca4"
+    }
+  ],
+  "full_pdf": {
+    "public_backup": false,
+    "reason": "官方开放获取及作者公开版本不等于全文再分发许可；未找到CC或同等许可。PDF仅用于工作区研究，不上传。"
+  },
+  "slides": {
+    "public_backup": false,
+    "reason": "无明确再分发许可，保留官方链接"
+  },
+  "code": {
+    "status": "未发现可核实的SCR官方开源仓库"
+  }
+}

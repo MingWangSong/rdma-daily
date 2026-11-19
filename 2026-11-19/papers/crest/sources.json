@@ -1,0 +1,79 @@
+{
+  "id": "crest",
+  "name": "CREST",
+  "title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+  "venue": "ASPLOS 2026 Volume 2, pp.511–527",
+  "authors": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+  "org": "中科院计算所处理器芯片全国重点实验室；中国科学院大学；香港中文大学",
+  "date": "2026-03-22发表；会议2026-03-22至26",
+  "status": "2026年正式发表论文补读；非当日新收录",
+  "url": "https://doi.org/10.1145/3779212.3790148",
+  "pdf": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+  "scope": "作者正式版PDF正文§1–10、附录A；原图6/7/11/13/15；代码README。未运行实验。",
+  "summary": "字段级锁消除假冲突，本地未提交版本与依赖跟踪并行提交减少真冲突等待；远端热点与旧驱动要求限制迁移。",
+  "figures": [
+    {
+      "path": "papers/crest/images/fig6-7.png",
+      "num": "6–7",
+      "page": 5,
+      "title": "集中元数据与跨cell快照校验",
+      "analysis": "锁位图和epoch数组减少细粒度锁RTT；单cell原子可见仍不足以保证跨cell一致快照，必须检查锁和epoch。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig6-7.png",
+      "dimensions_px": [
+        1560,
+        315
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "锁位图和epoch数组减少细粒度锁RTT；单cell原子可见仍不足以保证跨cell一致快照，必须检查锁和epoch。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "6–7",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/crest/images/fig11.png",
+      "num": "11",
+      "page": 10,
+      "title": "吞吐扩展性",
+      "analysis": "144协调器TPC-C峰值743.7KOPS；240协调器相对Motor1.92×，这两种比较不能混用。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig11.png",
+      "dimensions_px": [
+        765,
+        309
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "144协调器TPC-C峰值743.7KOPS；240协调器相对Motor1.92×，这两种比较不能混用。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "11",
+      "pdf_page_1based": 10
+    },
+    {
+      "path": "papers/crest/images/fig13.png",
+      "num": "13",
+      "page": 10,
+      "title": "尾延迟边界",
+      "analysis": "TPC-C/SmallBank P99更低；YCSB P99近似、P999未改善，跨CN热点仍在。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig13.png",
+      "dimensions_px": [
+        750,
+        360
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "TPC-C/SmallBank P99更低；YCSB P99近似、P999未改善，跨CN热点仍在。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "13",
+      "pdf_page_1based": 10
+    }
+  ]
+}

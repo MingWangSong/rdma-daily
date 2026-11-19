@@ -9,11 +9,12 @@
     "2026-11-15",
     "2026-11-16",
     "2026-11-17",
-    "2026-11-18"
+    "2026-11-18",
+    "2026-11-19"
   ],
-  "prepared_on": "2026-11-18",
+  "prepared_on": "2026-11-19",
   "publication_status": "public_repository_archive",
-  "paper_count": 39,
+  "paper_count": 42,
   "original_diagram_count": 0,
   "source_pdfs_included": true,
   "extracted_paper_figures_included": true,
@@ -450,12 +451,39 @@
       "url": "https://doi.org/10.1145/3689031.3696068",
       "pdf": "https://yichao0319.github.io/assets/publications/eurosys25_wu.pdf",
       "scope": "Main text 1–10 and appendices A–D; author AE README; not reproduced"
+    },
+    "CIDER": {
+      "date": "2026-11-19",
+      "conference": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)",
+      "org": "复旦大学；并行与分布处理全国重点实验室；昆山杜克大学",
+      "full": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+      "url": "https://doi.org/10.14778/3811243.3811245",
+      "pdf": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+      "scope": "正式PDF正文§1–7；重点§4协议、§5实验；图7/16/17；作者代码README。未运行实验。"
+    },
+    "CREST": {
+      "date": "2026-11-19",
+      "conference": "ASPLOS 2026 Volume 2, pp.511–527",
+      "org": "中科院计算所处理器芯片全国重点实验室；中国科学院大学；香港中文大学",
+      "full": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "url": "https://doi.org/10.1145/3779212.3790148",
+      "pdf": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "scope": "作者正式版PDF正文§1–10、附录A；原图6/7/11/13/15；代码README。未运行实验。"
+    },
+    "SCR": {
+      "date": "2026-11-19",
+      "conference": "NSDI 2025",
+      "org": "University of Washington；University of Wisconsin–Madison",
+      "full": "White-Boxing RDMA with Packet-Granular Software Control",
+      "url": "https://www.usenix.org/conference/nsdi25/presentation/zhao-chenxingyu",
+      "pdf": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "scope": "机制§3–6及附录A.9–A.12，核对图21(b)/22(a)；辅助查看作者slides公平调度/More Use Cases，未看全程视频。"
     }
   },
   "repository_url": "https://github.com/MingWangSong/rdma-daily",
-  "figure_excerpt_count": 74,
+  "figure_excerpt_count": 80,
   "revision": "technical-depth-v2",
-  "revision_date": "2026-11-18",
+  "revision_date": "2026-11-19",
   "licensed_pdf_archives": [
     {
       "path": "2026-11-13/papers/lcmp/lcmp.pdf",

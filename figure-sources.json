@@ -1,5 +1,5 @@
 {
-  "count": 74,
+  "count": 80,
   "scope": "Limited excerpts for direct technical commentary, not open-licensed figure collection.",
   "figures": [
     {
@@ -1626,32 +1626,6 @@
       "pdf_page_1based": 6
     },
     {
-      "file": "fig15.png",
-      "figure": "15",
-      "pdf_page": 13,
-      "basis": "CC BY 4.0",
-      "modification": "cropped; axes and legends retained",
-      "num": "15",
-      "page": 13,
-      "path": "papers/caver/images/fig15.png",
-      "use_basis": "CC BY 4.0",
-      "title": "硬件测试的平均与分位FCT",
-      "analysis": "两台Tofino1模拟四交换节点，10G网络互联、25G主机接入，60%负载。真机只对照ECMP；平均、P95、P99、P99.9不可混写为统一尾延迟收益。",
-      "archive_path": "2026-11-18/papers/caver/images/fig15.png",
-      "dimensions_px": [
-        747,
-        522
-      ],
-      "source_url": "https://zhangmenghao.github.io/papers/ATC2026-CAVER.pdf",
-      "author_credit": "Haotian Deng, Jue Zhang, Menghao Zhang, Yuan Yang, Xiao Li, Junhao Dong, Yi Liu, Mingwei Xu",
-      "analysis_zh": "两台Tofino1模拟四交换节点，10G网络互联、25G主机接入，60%负载。真机只对照ECMP；平均、P95、P99、P99.9不可混写为统一尾延迟收益。",
-      "version": "ACM SIGOPS ATC 2026版本",
-      "paper": "CAVER",
-      "paper_title": "CAVER: Enhancing RDMA Load Balancing by Hunting Less-Congested Paths",
-      "figure_number": "15",
-      "pdf_page_1based": 13
-    },
-    {
       "num": "仓库架构",
       "title": "DPU 查询路径与主机维护路径分离",
       "analysis": "Accurate 路径绕过 bucket cache；哈希路径命中缓存时直接查询 Leaf Table，缺失时先取 PTHash Buckets。底部 Two-Level Reconstructor 仍在主机，不能把卸载理解为消除维护成本。",
@@ -1712,6 +1686,153 @@
       "paper_title": "Hey Hey, My My, Skewness Is Here to Stay: Challenges and Opportunities in Cloud Block Store Traffic",
       "figure_number": "7(b,c)",
       "pdf_page_1based": 12
+    },
+    {
+      "path": "papers/cider/images/fig7.png",
+      "num": "7",
+      "page": 5,
+      "title": "全局写合并的executor交接",
+      "analysis": "不是所有等待者都写MN：队尾executor写入，结果回传队首，再沿队列传播；每批付出固定跨CN协调开销。",
+      "use_basis": "正式PDF首页CC BY-NC-ND 4.0；非商业学术评论；完整原图框截图仅去除外围正文，无图内改动。保留作者、版本和图号。未发现单独第三方限制；不授权商业再使用。",
+      "archive_path": "2026-11-19/papers/cider/images/fig7.png",
+      "dimensions_px": [
+        705,
+        462
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+      "author_credit": "Yuxuan Du, Xuchuan Luo, Xin Wang, Yangfan Zhou, Jiacheng Shen",
+      "analysis_zh": "不是所有等待者都写MN：队尾executor写入，结果回传队首，再沿队列传播；每批付出固定跨CN协调开销。",
+      "version": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)版本",
+      "paper": "CIDER",
+      "paper_title": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+      "figure_number": "7",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/cider/images/fig16-17.png",
+      "num": "16–17",
+      "page": 11,
+      "title": "RACE吞吐与P50/P99",
+      "analysis": "50%写下吞吐/P99明显改善；95%读近乎持平；P99为右侧轴，不能与P50混读，512客户端P50较ShiftLock恶化1.9×。",
+      "use_basis": "正式PDF首页CC BY-NC-ND 4.0；非商业学术评论；完整原图框截图仅去除外围正文，无图内改动。保留作者、版本和图号。未发现单独第三方限制；不授权商业再使用。",
+      "archive_path": "2026-11-19/papers/cider/images/fig16-17.png",
+      "dimensions_px": [
+        1530,
+        360
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+      "author_credit": "Yuxuan Du, Xuchuan Luo, Xin Wang, Yangfan Zhou, Jiacheng Shen",
+      "analysis_zh": "50%写下吞吐/P99明显改善；95%读近乎持平；P99为右侧轴，不能与P50混读，512客户端P50较ShiftLock恶化1.9×。",
+      "version": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)版本",
+      "paper": "CIDER",
+      "paper_title": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+      "figure_number": "16–17",
+      "pdf_page_1based": 11
+    },
+    {
+      "path": "papers/crest/images/fig6-7.png",
+      "num": "6–7",
+      "page": 5,
+      "title": "集中元数据与跨cell快照校验",
+      "analysis": "锁位图和epoch数组减少细粒度锁RTT；单cell原子可见仍不足以保证跨cell一致快照，必须检查锁和epoch。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig6-7.png",
+      "dimensions_px": [
+        1560,
+        315
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "锁位图和epoch数组减少细粒度锁RTT；单cell原子可见仍不足以保证跨cell一致快照，必须检查锁和epoch。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "6–7",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/crest/images/fig11.png",
+      "num": "11",
+      "page": 10,
+      "title": "吞吐扩展性",
+      "analysis": "144协调器TPC-C峰值743.7KOPS；240协调器相对Motor1.92×，这两种比较不能混用。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig11.png",
+      "dimensions_px": [
+        765,
+        309
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "144协调器TPC-C峰值743.7KOPS；240协调器相对Motor1.92×，这两种比较不能混用。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "11",
+      "pdf_page_1based": 10
+    },
+    {
+      "path": "papers/crest/images/fig13.png",
+      "num": "13",
+      "page": 10,
+      "title": "尾延迟边界",
+      "analysis": "TPC-C/SmallBank P99更低；YCSB P99近似、P999未改善，跨CN热点仍在。",
+      "use_basis": "正式作者PDF首页CC BY 4.0；作者图表未见第三方限制，截图去除外围正文，保留图内数据和署名来源。",
+      "archive_path": "2026-11-19/papers/crest/images/fig13.png",
+      "dimensions_px": [
+        750,
+        360
+      ],
+      "source_url": "https://www.cse.cuhk.edu.hk/~pclee/www/pubs/asplos26.pdf",
+      "author_credit": "Qihan Kang, Mi Zhang, Patrick P. C. Lee, Yongkang Hu",
+      "analysis_zh": "TPC-C/SmallBank P99更低；YCSB P99近似、P999未改善，跨CN热点仍在。",
+      "version": "ASPLOS 2026 Volume 2, pp.511–527版本",
+      "paper": "CREST",
+      "paper_title": "CREST: High-Performance Contention Resolution for Disaggregated Transactions",
+      "figure_number": "13",
+      "pdf_page_1based": 10
+    },
+    {
+      "path": "papers/scr/images/figure21b.png",
+      "num": "21(b)",
+      "page": 22,
+      "title": "NVMe-oF公平分配：4KB写、NULL后端、QD128对QD16",
+      "analysis": "默认约2.2M/0.5M IOPS，公平控制后约1.3M/1.3M（均为读图近似）。浅队列租户得到份额，总IOPS大致保留。NULL后端隔离网络瓶颈，不能据此声称实盘吞吐、持久化延迟或p99改善。",
+      "use_basis": "仅取该存储子图用于紧邻实质评论，完整保存坐标图例；已发表研究性作品，两面板/24页，不代替原作；未发现第三方素材限制，按有限学术评论引用评估，非CC授权。详见materials.json。",
+      "archive_path": "2026-11-19/papers/scr/images/figure21b.png",
+      "dimensions_px": [
+        540,
+        465
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "author_credit": "Chenxingyu Zhao, Jaehong Min, Ming Liu, Arvind Krishnamurthy",
+      "analysis_zh": "默认约2.2M/0.5M IOPS，公平控制后约1.3M/1.3M（均为读图近似）。浅队列租户得到份额，总IOPS大致保留。NULL后端隔离网络瓶颈，不能据此声称实盘吞吐、持久化延迟或p99改善。",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "paper": "SCR",
+      "paper_title": "White-Boxing RDMA with Packet-Granular Software Control",
+      "figure_number": "21(b)",
+      "pdf_page_1based": 22
+    },
+    {
+      "path": "papers/scr/images/figure22a.png",
+      "num": "22(a)",
+      "page": 23,
+      "title": "包级观测并不等于即时反馈",
+      "analysis": "事件触发可达7μs、Swift计算及记账约4μs、rate生效可达6μs。三者为不同阶段测量，不是普遍端到端p99；说明短存储请求可能在控制完成前已执行，需按RTT尺度或容忍coalescing设计策略。",
+      "use_basis": "只裁用于讨论闭环时滞的带内子图，删去无需讨论的RTT图；作者原图保留箭头单位。有限学术评论引用逐项评估见materials.json，非法律保证。",
+      "archive_path": "2026-11-19/papers/scr/images/figure22a.png",
+      "dimensions_px": [
+        560,
+        485
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "author_credit": "Chenxingyu Zhao, Jaehong Min, Ming Liu, Arvind Krishnamurthy",
+      "analysis_zh": "事件触发可达7μs、Swift计算及记账约4μs、rate生效可达6μs。三者为不同阶段测量，不是普遍端到端p99；说明短存储请求可能在控制完成前已执行，需按RTT尺度或容忍coalescing设计策略。",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "paper": "SCR",
+      "paper_title": "White-Boxing RDMA with Packet-Granular Software Control",
+      "figure_number": "22(a)",
+      "pdf_page_1based": 23
     }
   ]
 }

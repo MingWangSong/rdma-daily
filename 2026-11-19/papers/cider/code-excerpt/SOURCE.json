@@ -1,0 +1,19 @@
+{
+  "repo": "dmemsys/CIDER",
+  "sha": "c1bf14224272ca4924f08405f3191316d52ea373",
+  "license": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "scope": "Selected unmodified README, license, and implementation files only. Not a full fork or buildable mirror. Third-party subtrees excluded.",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "src/lock/MCS.cpp",
+    "src/lock/SFL.cpp",
+    "src/RaceHash.cpp"
+  ]
+}

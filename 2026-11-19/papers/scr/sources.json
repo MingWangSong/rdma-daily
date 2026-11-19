@@ -1,0 +1,92 @@
+{
+  "slug": "scr",
+  "title": "White-Boxing RDMA with Packet-Granular Software Control",
+  "venue": "NSDI 2025",
+  "publication_month": "2025-04",
+  "conference_dates": "2025-04-28/2025-04-30",
+  "status": "正式发表；近期回溯，非2026-11-19新增",
+  "institutions": [
+    "University of Washington",
+    "University of Wisconsin–Madison"
+  ],
+  "official": "https://www.usenix.org/conference/nsdi25/presentation/zhao-chenxingyu",
+  "pdf": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+  "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+  "read_scope": [
+    "§3–6",
+    "A.9–A.12",
+    "Fig21(b), Fig22(a)",
+    "author slides fairness / more use cases, not complete video"
+  ],
+  "pdf_public_backup": false,
+  "pdf_reason": "官方开放获取及作者公开版本不等于全文再分发许可；未找到CC或同等许可。PDF仅用于工作区研究，不上传。",
+  "slides_public_backup": false,
+  "code_status": "未发现可核实的SCR官方开源仓库",
+  "pdf_sha256": "2e3227774966129556c335bf90cd3c670abbdf77371075d40ffb3965cbde07a7",
+  "sources": [
+    {
+      "url": "https://www.usenix.org/system/files/nsdi25_slides-zhao-chenxingyu.pdf",
+      "type": "author slides"
+    },
+    {
+      "url": "https://homes.cs.washington.edu/~arvind/papers/scr.pdf",
+      "type": "author paper alternative"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6fda5-FH4zY",
+      "type": "official video, not watched"
+    }
+  ],
+  "id": "scr",
+  "name": "SCR",
+  "authors": "Chenxingyu Zhao, Jaehong Min, Ming Liu, Arvind Krishnamurthy",
+  "org": "University of Washington；University of Wisconsin–Madison",
+  "date": "2025年4月（NSDI会议4月28–30日）",
+  "url": "https://www.usenix.org/conference/nsdi25/presentation/zhao-chenxingyu",
+  "scope": "机制§3–6及附录A.9–A.12，核对图21(b)/22(a)；辅助查看作者slides公平调度/More Use Cases，未看全程视频。",
+  "summary": "以DPA软件调节RNIC逐QP取消息速率，把NVMe-oF租户隔离下沉到硬件数据路径；NULL后端证实公平性，而非真实SSD吞吐或持久化优化。",
+  "figures": [
+    {
+      "path": "papers/scr/images/figure21b.png",
+      "num": "21(b)",
+      "page": 22,
+      "title": "NVMe-oF公平分配：4KB写、NULL后端、QD128对QD16",
+      "analysis": "默认约2.2M/0.5M IOPS，公平控制后约1.3M/1.3M（均为读图近似）。浅队列租户得到份额，总IOPS大致保留。NULL后端隔离网络瓶颈，不能据此声称实盘吞吐、持久化延迟或p99改善。",
+      "use_basis": "仅取该存储子图用于紧邻实质评论，完整保存坐标图例；已发表研究性作品，两面板/24页，不代替原作；未发现第三方素材限制，按有限学术评论引用评估，非CC授权。详见figure-use.json。",
+      "archive_path": "2026-11-19/papers/scr/images/figure21b.png",
+      "dimensions_px": [
+        540,
+        465
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "author_credit": "Chenxingyu Zhao, Jaehong Min, Ming Liu, Arvind Krishnamurthy",
+      "analysis_zh": "默认约2.2M/0.5M IOPS，公平控制后约1.3M/1.3M（均为读图近似）。浅队列租户得到份额，总IOPS大致保留。NULL后端隔离网络瓶颈，不能据此声称实盘吞吐、持久化延迟或p99改善。",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "paper": "SCR",
+      "paper_title": "White-Boxing RDMA with Packet-Granular Software Control",
+      "figure_number": "21(b)",
+      "pdf_page_1based": 22
+    },
+    {
+      "path": "papers/scr/images/figure22a.png",
+      "num": "22(a)",
+      "page": 23,
+      "title": "包级观测并不等于即时反馈",
+      "analysis": "事件触发可达7μs、Swift计算及记账约4μs、rate生效可达6μs。三者为不同阶段测量，不是普遍端到端p99；说明短存储请求可能在控制完成前已执行，需按RTT尺度或容忍coalescing设计策略。",
+      "use_basis": "只裁用于讨论闭环时滞的带内子图，删去无需讨论的RTT图；作者原图保留箭头单位。有限学术评论引用逐项评估见figure-use.json，非法律保证。",
+      "archive_path": "2026-11-19/papers/scr/images/figure22a.png",
+      "dimensions_px": [
+        560,
+        485
+      ],
+      "source_url": "https://www.usenix.org/system/files/nsdi25-zhao-chenxingyu.pdf",
+      "author_credit": "Chenxingyu Zhao, Jaehong Min, Ming Liu, Arvind Krishnamurthy",
+      "analysis_zh": "事件触发可达7μs、Swift计算及记账约4μs、rate生效可达6μs。三者为不同阶段测量，不是普遍端到端p99；说明短存储请求可能在控制完成前已执行，需按RTT尺度或容忍coalescing设计策略。",
+      "version": "NSDI25 proceedings, pp.427–449; PDF 24 pages including cover",
+      "paper": "SCR",
+      "paper_title": "White-Boxing RDMA with Packet-Granular Software Control",
+      "figure_number": "22(a)",
+      "pdf_page_1based": 23
+    }
+  ]
+}

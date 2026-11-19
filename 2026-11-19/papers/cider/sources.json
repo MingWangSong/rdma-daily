@@ -1,0 +1,58 @@
+{
+  "id": "cider",
+  "name": "CIDER",
+  "title": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+  "venue": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)",
+  "authors": "Yuxuan Du, Xuchuan Luo, Xin Wang, Yangfan Zhou, Jiacheng Shen",
+  "org": "复旦大学；并行与分布处理全国重点实验室；昆山杜克大学",
+  "date": "2026-07-15 online；2026-04-01 print（Crossref记录）",
+  "status": "2026年正式发表论文补读；非当日新收录",
+  "url": "https://doi.org/10.14778/3811243.3811245",
+  "pdf": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+  "scope": "正式PDF正文§1–7；重点§4协议、§5实验；图7/16/17；作者代码README。未运行实验。",
+  "summary": "利用MCS队列跨计算节点合并热点覆盖写，冷key保持乐观CAS；收益依赖写语义与偏斜，事务场景不能直接套用。",
+  "figures": [
+    {
+      "path": "papers/cider/images/fig7.png",
+      "num": "7",
+      "page": 5,
+      "title": "全局写合并的executor交接",
+      "analysis": "不是所有等待者都写MN：队尾executor写入，结果回传队首，再沿队列传播；每批付出固定跨CN协调开销。",
+      "use_basis": "正式PDF首页CC BY-NC-ND 4.0；非商业学术评论；完整原图框截图仅去除外围正文，无图内改动。保留作者、版本和图号。未发现单独第三方限制；不授权商业再使用。",
+      "archive_path": "2026-11-19/papers/cider/images/fig7.png",
+      "dimensions_px": [
+        705,
+        462
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+      "author_credit": "Yuxuan Du, Xuchuan Luo, Xin Wang, Yangfan Zhou, Jiacheng Shen",
+      "analysis_zh": "不是所有等待者都写MN：队尾executor写入，结果回传队首，再沿队列传播；每批付出固定跨CN协调开销。",
+      "version": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)版本",
+      "paper": "CIDER",
+      "paper_title": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+      "figure_number": "7",
+      "pdf_page_1based": 5
+    },
+    {
+      "path": "papers/cider/images/fig16-17.png",
+      "num": "16–17",
+      "page": 11,
+      "title": "RACE吞吐与P50/P99",
+      "analysis": "50%写下吞吐/P99明显改善；95%读近乎持平；P99为右侧轴，不能与P50混读，512客户端P50较ShiftLock恶化1.9×。",
+      "use_basis": "正式PDF首页CC BY-NC-ND 4.0；非商业学术评论；完整原图框截图仅去除外围正文，无图内改动。保留作者、版本和图号。未发现单独第三方限制；不授权商业再使用。",
+      "archive_path": "2026-11-19/papers/cider/images/fig16-17.png",
+      "dimensions_px": [
+        1530,
+        360
+      ],
+      "source_url": "https://www.vldb.org/pvldb/vol19/p1701-du.pdf",
+      "author_credit": "Yuxuan Du, Xuchuan Luo, Xin Wang, Yangfan Zhou, Jiacheng Shen",
+      "analysis_zh": "50%写下吞吐/P99明显改善；95%读近乎持平；P99为右侧轴，不能与P50混读，512客户端P50较ShiftLock恶化1.9×。",
+      "version": "PVLDB 19(8), pp.1701–1714 (VLDB 2026)版本",
+      "paper": "CIDER",
+      "paper_title": "CIDER: Boosting Memory-Disaggregated Key-Value Stores with Pessimistic Synchronization",
+      "figure_number": "16–17",
+      "pdf_page_1based": 11
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "repo": "adslabcuhk/crest",
+  "sha": "4715fef9928f9c66c8ac6bca8e9731ce51773b9d",
+  "license": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "scope": "Selected unmodified README, license, and implementation files only. Not a full fork or buildable mirror. Third-party subtrees excluded.",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "src/transaction/TxnLocal.cc",
+    "src/transaction/TxnRecord.cc"
+  ]
+}
