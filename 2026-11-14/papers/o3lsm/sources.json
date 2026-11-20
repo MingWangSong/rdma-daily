@@ -81,5 +81,6 @@
   "name": "O3-LSM",
   "pdf": "https://cs.purdue.edu/homes/csjgwang/pubs/SIGMOD26_O3LSM.pdf",
   "date": "2026-06",
-  "pdf_archive_status": "暂未提交全文备份，见官方原文链接"
+  "pdf_archive_status": "已补齐全文 PDF，原样保存（CC BY 4.0）",
+  "pdf_archive_path": "2026-11-14/papers/o3lsm/o3lsm.pdf"
 }
