@@ -1,0 +1,43 @@
+{
+  "id": "ldc",
+  "name": "LDC",
+  "title": "LDC：副本缓存的覆盖率与冗余取舍",
+  "venue": "EuroSys 2026",
+  "date": "2026-04-27至04-30（会议日期；精确上线日未核实）",
+  "org": "UIUC；Jump Trading Group",
+  "authors": "Kiran Hombal, Henry Zhu, Shreesha G. Bhat, Neil Kaushikkar, Ramnatthan Alagappan, Aishwarya Ganesan",
+  "url": "https://doi.org/10.1145/3767295.3803608",
+  "pdf": "https://shreesha00.github.io/assets/papers/ldc_eurosys26.pdf",
+  "scope": "正文§1–6、附录A、图4/8/11、作者报告印刷页25、artifact README与许可证；未复现实验",
+  "summary": "用单边RDMA共享副本内嵌缓存，以选择性快速写淘汰减少污染，再按收益模型保留有益热点冗余。",
+  "license": "论文CC BY4.0；代码MIT；报告未核实再分发许可",
+  "figures": [
+    {
+      "num": "4",
+      "page": 6,
+      "title": "选择性写淘汰与远端缓存读",
+      "analysis": "写miss进入私有tiny queue，已有对象仍留在主缓存；不是取消持久副本。",
+      "use_basis": "PDF首页CC BY4.0，作者图表无独立限制；仅裁切周围正文，保留图例坐标和署名。"
+    },
+    {
+      "num": "8",
+      "page": 10,
+      "title": "写污染消融与读写延迟",
+      "analysis": "50%写下吞吐4.2倍，写延迟增加约10μs，读延迟降低5.8倍；未证明p99。",
+      "use_basis": "PDF首页CC BY4.0，作者图表无独立限制；仅裁切周围正文，保留图例坐标和署名。"
+    },
+    {
+      "num": "11",
+      "page": 11,
+      "title": "NVMe介质对照",
+      "analysis": "YCSB C/A为2.2/2.5倍；NVMe型号未披露，不把SATA峰值泛化。",
+      "use_basis": "PDF首页CC BY4.0，作者图表无独立限制；仅裁切周围正文，保留图例坐标和署名。"
+    }
+  ],
+  "archive": {
+    "paper_pdf": "pending_platform_approval",
+    "figures": "embedded losslessly as PNG data in index.html",
+    "slides": "source link only; redistribution license unverified",
+    "source_code": "source link and commit recorded; snapshot not completed"
+  }
+}
