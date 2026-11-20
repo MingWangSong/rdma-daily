@@ -82,5 +82,6 @@
   "pdf": "https://yoon.ws/publication/adios-eurosys25.pdf",
   "scope": "paper sections 1-8; figures and tables; 26 author slides text; code README only, not run",
   "summary": "同一保护域内缺页后 yield，结合 QP 未完成请求感知分配，减少 RDMA 页拉取的队首阻塞。",
-  "public_full_archive_status": "not uploaded; original source link only"
+  "public_full_archive_status": "archived unmodified under CC BY 4.0",
+  "pdf_archive_path": "2026-11-16/papers/adios/paper.pdf"
 }
