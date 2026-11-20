@@ -1,0 +1,130 @@
+{
+  "upstream": "https://github.com/thustorage/shiftlock",
+  "commit": "bb73bf43e311c289809f06c1a4bae2149fffb5d2",
+  "license": "MIT",
+  "license_source": "https://github.com/thustorage/shiftlock/blob/bb73bf43e311c289809f06c1a4bae2149fffb5d2/LICENSE",
+  "scope": "Original upstream src/, Cargo.toml, README.md, HOWTOUSE.md and LICENSE; no compatibility or build testing performed.",
+  "omitted": "Not a complete repository mirror: scripts, configs (including Redis sample), external traces submodule and third-party Cargo dependency contents are not archived.",
+  "files": [
+    {
+      "path": "LICENSE",
+      "git_blob_sha": "0b7e968fd8a1aeb3171df8da76bd2d20f1aadf93"
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha": "f72f9fcc8ebf4acc3b1ef11b575131b0caaa743c"
+    },
+    {
+      "path": "src/app/trace.rs",
+      "git_blob_sha": "e4005ce46797fc14bdf96a14aa93ea1ce27b7fa5"
+    },
+    {
+      "path": "src/app/mod.rs",
+      "git_blob_sha": "f0eec7911264e3ad0827e177a4a1654a8859f88f"
+    },
+    {
+      "path": "src/baselines/cas.rs",
+      "git_blob_sha": "7d25e909d7a01f140424481b91d3be5d88880bec"
+    },
+    {
+      "path": "HOWTOUSE.md",
+      "git_blob_sha": "1b359f67a5897c42b98c6d68f0b6c295e59ec915"
+    },
+    {
+      "path": "src/app/micro_rmw.rs",
+      "git_blob_sha": "d46fd93e711b9039a2d9c31ae1e5d2a14b62ab21"
+    },
+    {
+      "path": "Cargo.toml",
+      "git_blob_sha": "9fec8608eb36e3dcf38ec7b1a512ab36852ad22d"
+    },
+    {
+      "path": "src/baselines/drtm.rs",
+      "git_blob_sha": "cea241ac49b275cd56e654c63fa9bafee6dcd6cb"
+    },
+    {
+      "path": "src/baselines/rpc.rs",
+      "git_blob_sha": "3cfccfc13c706abe3cf9573b189565af0c93b4db"
+    },
+    {
+      "path": "src/baselines/mcs.rs",
+      "git_blob_sha": "5618bc900d0bab8235ac8e3eb375c260ef52417e"
+    },
+    {
+      "path": "src/bin/client.rs",
+      "git_blob_sha": "741fcca1d65f47467172b331ee21ba752dbeeadf"
+    },
+    {
+      "path": "src/bin/client_fallible.rs",
+      "git_blob_sha": "5c2b3b98caf5a064945dcac695783b408492db6b"
+    },
+    {
+      "path": "src/baselines/rma_rw.rs",
+      "git_blob_sha": "233e77f9d08e4b53660e316804e95678d8b65871"
+    },
+    {
+      "path": "src/baselines/dslr.rs",
+      "git_blob_sha": "4c8e53ed61579f4a6527b77be11c2e8ee1c3e7d1"
+    },
+    {
+      "path": "src/baselines/mod.rs",
+      "git_blob_sha": "ae6e15cb1344f226af6845b9b5e72c4260c6a745"
+    },
+    {
+      "path": "src/shiftlock/ahcache.rs",
+      "git_blob_sha": "88a824950328b73e4916fadf49b6a7cec9750dc7"
+    },
+    {
+      "path": "src/bin/zero.rs",
+      "git_blob_sha": "e23e093790e892bb59299e4efe2a6f147ce63381"
+    },
+    {
+      "path": "src/bin/client_redis.rs",
+      "git_blob_sha": "7be14b55b47c756e9b264bc71da09a0aed45e2c6"
+    },
+    {
+      "path": "src/main.rs",
+      "git_blob_sha": "e4ae0c8f237919cff6e0226edefd3a5c20dd1106"
+    },
+    {
+      "path": "src/bin/server.rs",
+      "git_blob_sha": "60150a873aa9871bdc1f5266d4e6f204dcd99859"
+    },
+    {
+      "path": "src/lib.rs",
+      "git_blob_sha": "8e152e0e62a5cbc43c1bddf350609bced92817e8"
+    },
+    {
+      "path": "src/shiftlock/consrec.rs",
+      "git_blob_sha": "30a95507d5e33aa3c2c6368afd0cf2bb7b333187"
+    },
+    {
+      "path": "src/macros.rs",
+      "git_blob_sha": "9bcada53a336145da1552925ad49c9d391bb5950"
+    },
+    {
+      "path": "src/utils/timer.rs",
+      "git_blob_sha": "820394ef25adf427dab49ea02c14600a1345d70d"
+    },
+    {
+      "path": "src/utils/mod.rs",
+      "git_blob_sha": "819ef9e1890c385c0fac25e6ee4c9d0b782c45f9"
+    },
+    {
+      "path": "src/utils/wait.rs",
+      "git_blob_sha": "a3f4bbd6efde15530d908987248670f954a4355f"
+    },
+    {
+      "path": "src/utils/qp.rs",
+      "git_blob_sha": "917470048f3bf49b89fb73f4c4feef2ebbce0e49"
+    },
+    {
+      "path": "src/shiftlock/mod.rs",
+      "git_blob_sha": "7cc7b3b170cd5243e6c35e997d07b85221f81d20"
+    },
+    {
+      "path": "src/utils/timing.rs",
+      "git_blob_sha": "4d08325243c6681c46b66f8b554a7b7252c9550f"
+    }
+  ]
+}
