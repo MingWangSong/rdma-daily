@@ -38,6 +38,7 @@
     "paper_pdf": "pending_platform_approval",
     "figures": "embedded losslessly as PNG data in index.html",
     "slides": "source link only; redistribution license unverified",
-    "source_code": "source link and commit recorded; snapshot not completed"
+    "source_code": "MIT root repository snapshot archived at commit 26f73aab73cf019ea43dc4374ee58ac88b7bb49d; 8 submodule dependencies not included",
+    "source_code_path": "2026-11-20/papers/ldc/source/ldc-26f73aab.tar.gz"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "upstream": "https://github.com/dassl-uiuc/Logically-Disaggregated-Caches",
+  "commit": "26f73aab73cf019ea43dc4374ee58ac88b7bb49d",
+  "archive_source": "https://codeload.github.com/dassl-uiuc/Logically-Disaggregated-Caches/tar.gz/26f73aab73cf019ea43dc4374ee58ac88b7bb49d",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2024 DASSL @ UIUC",
+  "sha256": "ce74458645fd6a09b4b3ba443a0bf33e0407b9b31609accd1cf5a8f93f2fa6e0",
+  "size_bytes": 390716,
+  "scope": "Unmodified GitHub source archive of root repository only, original LICENSE preserved. No git history or submodule contents.",
+  "missing_submodules": [
+    "third_party/machnet",
+    "third_party/blkcache",
+    "third_party/RDMA",
+    "third_party/YCSB",
+    "third_party/eRPC",
+    "LDC-RethinkDB",
+    "CRAQ-KV",
+    "LDC-SIM"
+  ],
+  "archived_date": "2026-11-20"
+}
