@@ -1,0 +1,175 @@
+{
+  "issue": "2026-11-21",
+  "papers": [
+    {
+      "slug": "cotra",
+      "title": "CoTra: Towards Efficient and Scalable Distributed Vector Search with RDMA",
+      "date": "2026-02",
+      "venue": "PACMMOD 4(1), Article 20 · ACM SIGMOD 2026",
+      "affiliations": "香港中文大学；复旦大学；武汉大学（数学与人工智能研究院）；Microsoft Research",
+      "sources": {
+        "doi": "https://doi.org/10.1145/3786634",
+        "paper": "https://arxiv.org/html/2507.06653v1",
+        "pdf": "https://arxiv.org/pdf/2507.06653v1",
+        "venue": "https://sigmodconf.hosting.acm.org/2026/sigmod_program_detailed.shtml",
+        "license": "https://research.cuhk.edu.hk/en/publications/cotra-towards-efficient-and-scalable-distributed-vector-search-wi/",
+        "authors": "https://www.microsoft.com/en-us/research/publication/cotra-towards-efficient-and-scalable-distributed-vector-search-with-rdma/"
+      },
+      "archive_status": "正式版 CC BY 4.0，但 PDF 拉取 403；作者预印本为 arXiv 非独占许可且 PDF 明确限制网络转载，不随报备份；作者正式代码链接未核实。",
+      "figures": []
+    },
+    {
+      "id": "sphinx",
+      "name": "Sphinx",
+      "title": "High-Performance and Cache-Efficiency Adaptive Radix Tree for Disaggregated Memory",
+      "venue": "IEEE Transactions on Computers 75(11), 3997–4009",
+      "date": "2026-08-21 在线发表；2026-10-12 当前版本；2026 年 11 月期（非今日新发）",
+      "org": "上海交通大学计算机学院；上海交通大学人工智能研究院教育部人工智能重点实验室",
+      "authors": "Bowen Zhang, Shengan Zheng, Jingxiang Li, Shi Shu, Zhenlin Qi, Linpeng Huang, Hong Mei",
+      "url": "https://doi.org/10.1109/TC.2026.3726609",
+      "venue_url": "https://www.computer.org/csdl/journal/tc/2026/11/11663301/2j8uJbhEsIU",
+      "pdf": "https://venero.github.io/files/publications/2026-TC.pdf",
+      "scope": "期刊版 §I–VII、Fig.2–10、Table III–IV；回读 DAC 同系统设计与对照方案 RACE、SMART 的官方页；无独立运行",
+      "summary": "把远端 ART 的逐层地址依赖换成前缀提示和远端哈希跳转；点查受益，扫描仍由叶访问支配。",
+      "license": "IEEE ©2026 保留权利，正式 PDF 写明公开再分发需许可；不备份全文、不嵌入原图，链接至原文页。未找到 Sphinx 专属公开源码或报告录制。",
+      "figures": [],
+      "references": [
+        {
+          "title": "期刊版 Fig.4：机制与数据路径",
+          "url": "https://venero.github.io/files/publications/2026-TC.pdf#page=6"
+        },
+        {
+          "title": "期刊版 Fig.5–6：吞吐和伸缩性",
+          "url": "https://venero.github.io/files/publications/2026-TC.pdf#page=9"
+        },
+        {
+          "title": "期刊版 Table IV：扫描读放大",
+          "url": "https://venero.github.io/files/publications/2026-TC.pdf#page=11"
+        },
+        {
+          "title": "同系统 DAC 2025 版",
+          "url": "https://doi.org/10.1109/DAC63849.2025.11132093"
+        },
+        {
+          "title": "RACE hashing 来源",
+          "url": "https://www.usenix.org/conference/atc21/presentation/zuo"
+        },
+        {
+          "title": "SMART 论文及报告",
+          "url": "https://www.usenix.org/conference/osdi23/presentation/luo"
+        }
+      ]
+    },
+    {
+      "slug": "loco",
+      "title": "A Verified High-Performance Composable Object Library for Remote Direct Memory Access",
+      "date": "2026-01-08",
+      "venue": "PACMPL 10(POPL), Article 71 · POPL 2026",
+      "affiliations": "帝国理工学院；科罗拉多大学博尔德分校；萨里大学；马克斯·普朗克软件系统研究所",
+      "sources": {
+        "doi": "https://doi.org/10.1145/3776713",
+        "paper": "https://www.soundandcomplete.org/papers/POPL2026/Mowgli/mowgli.pdf",
+        "pdf": "https://www.soundandcomplete.org/papers/POPL2026/Mowgli/mowgli.pdf",
+        "venue": "https://popl26.sigplan.org/details/POPL-2026-popl-research-papers/73/A-Verified-High-Performance-Composable-Object-Library-for-Remote-Direct-Memory-Access",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "code": "https://github.com/CU-NVM/loco",
+        "talk": "https://www.youtube.com/watch?v=h0J9irkgCcg",
+        "extended": "https://arxiv.org/abs/2510.10531"
+      },
+      "archive_status": "正式出版版原件 CC BY 4.0（PDF 首页）；paper.pdf 32 页，SHA256 be5cb5e2b2a5d8ff30eed1c2ac10d1c3d4690968547b63f0dd3beb9e9ddb6bb6；源码根无已核实再分发许可证，仅链接。；PDF 备份尚未写入本期仓库。",
+      "figures": [
+        {
+          "num": 16,
+          "page": 24,
+          "analysis": "本地索引定位、远端值与代际校验。虚线为读：先查本机索引，读远端值及元数据，校验不匹配再重试；实线写则先获取分布式锁。",
+          "title": "KV 请求路径",
+          "use_basis": "Ambal 等，POPL 2026 正式版；CC BY 4.0，裁切，保留图例与坐标。"
+        },
+        {
+          "num": 17,
+          "page": 25,
+          "analysis": "读多和热点写有利于 LOCO，均匀纯写同窗口仍可能落后 Sherman；红色虚线改变了 outstanding 窗口，不是相同并发条件。",
+          "title": "比较吞吐及窗口条件",
+          "use_basis": "Ambal 等，POPL 2026 正式版；CC BY 4.0，裁切，保留图例与坐标。"
+        }
+      ],
+      "name": "LOCO"
+    },
+    {
+      "id": "selcc",
+      "name": "SELCC",
+      "title": "SELCC：把远端缓存目录装进 RDMA 锁字",
+      "venue": "PVLDB 18(9)，2978–2991",
+      "date": "2025-05（PVLDB 正式期次；精确上线日未核实，非今日新刊）",
+      "org": "普渡大学（Purdue University）",
+      "authors": "Ruihong Wang, Jianguo Wang, Walid G. Aref",
+      "url": "https://doi.org/10.14778/3746405.3746422",
+      "pdf": "https://www.vldb.org/pvldb/vol18/p2978-wang.pdf",
+      "scope": "正式 PDF §1–9，重点 §4–7 及图 4/6/7/9/13–16；核查作者 artifact README、根 LICENSE。未复现实验。",
+      "summary": "把共享者位图和独占持有者编码到 64-bit RDMA latch；以对端转发和延迟释放将内存端 CPU 从缓存一致性路径移开。",
+      "license": "论文 CC BY-NC-ND 4.0，仅链接全文，不把非商业许可用于未核实的工作用途。代码仓库根许可证 GPL v2；未完整核查所含第三方组件，暂只链接。",
+      "code": "https://github.com/ruihong123/SELCC",
+      "references": [
+        {
+          "title": "作者源码与测试说明",
+          "url": "https://github.com/ruihong123/SELCC"
+        },
+        {
+          "title": "作者代码 GPL v2 许可",
+          "url": "https://github.com/ruihong123/SELCC/blob/main/LICENSE"
+        },
+        {
+          "title": "PVLDB 第 18 卷第 9 期官方卷首（2025-05）",
+          "url": "https://www.vldb.org/pvldb/vol18/FrontMatterVol18No9.pdf"
+        }
+      ],
+      "figures": [
+        {
+          "num": "13",
+          "page": 11,
+          "title": "受限内存侧 CPU 如何影响 RDMA 缓存一致性吞吐",
+          "analysis": "不同远端 CPU 可用度是关键变量：stranded 不能代表 8 核的 ScaleStore；左右面板纵轴单位相同但刻度不同。",
+          "use_basis": "取 Ruihong Wang 等官方论文 Fig. 13 单图、保留原结构；为评论同一结论只取该图，不替代论文，以来源链接和紧邻实验比较说明有限学术评论引用。全文不归档。"
+        }
+      ]
+    },
+    {
+      "id": "presto",
+      "name": "Presto",
+      "title": "Presto：把 NVMe/TCP 的传输 CPU 成本与 RDMA 放在同一把尺上",
+      "venue": "ACM SIGCOMM 2026（最佳论文共同获奖）",
+      "date": "2026-08-17 至 08-21（会议日期；非本日新刊）",
+      "org": "华盛顿大学（University of Washington）、马克斯·普朗克软件系统研究所（MPI-SWS）",
+      "authors": "Rajath Shashidhara, Antoine Kaufmann, Simon Peter",
+      "url": "https://doi.org/10.1145/3789240.3829111",
+      "pdf": "https://arxiv.org/pdf/2504.19058v4",
+      "scope": "正式录用经 SIGCOMM 程序核实；阅读作者 2026-08-14 v4 正文、§3–5 和 Fig. 12，核对公开 artifact README。出版方 PDF 访问受限，未做逐页版本比较，未复现实验。",
+      "summary": "将 TCP 重组与发送状态实现为 Tofino 2 流水线，主机利用 RDMA 做 DMA；单核 SPDK 4 KiB 随机写与 NVMe/RDMA 接近（RAM 后端）。",
+      "license": "作者 v4 为 arXiv 非独占分发许可，只链接全文。代码根目录 BSD-3-Clause；未完整检查各子项目许可，暂仅链接。",
+      "code": "https://github.com/tcp-acceleration-service/Presto",
+      "references": [
+        {
+          "title": "SIGCOMM 2026 程序及奖项",
+          "url": "https://conferences.sigcomm.org/sigcomm/2026/program/papers/"
+        },
+        {
+          "title": "作者项目与论文入口",
+          "url": "https://os.mpi-sws.org/projects/netstacks.html"
+        },
+        {
+          "title": "公开实现与存储实验说明",
+          "url": "https://github.com/tcp-acceleration-service/Presto"
+        }
+      ],
+      "figures": [
+        {
+          "num": "12",
+          "page": 10,
+          "title": "单核 SPDK、RAM 后端：4 KiB 随机写吞吐和 P99",
+          "analysis": "并列保留两图：Linux 吞吐显著较低，而高 QD 下 Presto 和 RDMA 并不完全相同；读图必须区分 Gbps 与对数 P99 延迟。",
+          "use_basis": "Rajath Shashidhara 等作者版 v4，Fig. 12 的两张小图共同说明 NVMe-oF 对照，保留坐标图例和原题注；仅作紧邻方法与结果的有限评论引用，不得据此重发全文。"
+        }
+      ]
+    }
+  ]
+}
