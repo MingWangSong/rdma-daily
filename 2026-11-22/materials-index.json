@@ -1,0 +1,113 @@
+{
+  "issue": "2026-11-22",
+  "papers": [
+    {
+      "id": "fcp",
+      "name": "FCP",
+      "title": "FCP：拆开 RDMA 设备打开、注册与连接建立的启动成本",
+      "venue": "ACM SoCC 2026",
+      "date": "2026-11-18 至 11-20（会议；11-19 报告，近期非本日新刊）",
+      "org": "中国科学技术大学、香港科技大学、东南大学",
+      "authors": "Junxue Zhang, Han Tian, Xinyang Huang, Wenxue Li, Kaiqiang Xu, Dian Shen, Kai Chen",
+      "url": "https://doi.org/10.1145/3815789.3827946",
+      "pdf": "https://snowzjx.me/assets/fcp-socc26.pdf",
+      "scope": "正式正文 §1–7，重点 §3–5、图 5/6/7/11，核查作者 PDF 与会议程序、幻灯片入口和 Docker artifact；未复现实验。",
+      "summary": "区分冷、暖与 fork 启动，优化用户态 libibverbs，以 INIT 父进程预留同租户 RC 连接降低子 worker 首读之前的开销。",
+      "license": "论文首页 CC BY 4.0；仅论文及作者自有图按此许可。作者幻灯片及 Docker 产物的再分发条款未核实，暂仅链接。",
+      "references": [
+        {
+          "title": "SoCC 官方程序",
+          "url": "https://acmsocc.org/2026/socc26-program-papers.html"
+        },
+        {
+          "title": "作者报告幻灯片",
+          "url": "https://snowzjx.me/assets/fcp-slides.pdf"
+        },
+        {
+          "title": "作者 Docker artifact",
+          "url": "https://hub.docker.com/r/snowzjx/rdma-ec"
+        },
+        {
+          "title": "CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "figures": [
+        {
+          "num": "5",
+          "page": 8,
+          "title": "跨进程的 QP 分配表",
+          "analysis": "编排器按目的选 INIT；INIT 的分配表按 QP 编号找到空闲并匹配目的的槽，再到本地 QP 表取指针。三张表不代表三次数据面网络往返；真正的一侧读由子进程发出。",
+          "use_basis": "Junxue Zhang 等，ACM SoCC 2026 正式版，CC BY 4.0，裁切保留图表与题注。",
+          "position": "mechanism",
+          "location": "index.html#fcp-5"
+        },
+        {
+          "num": "6",
+          "page": 9,
+          "title": "相同 verbs 调用的关键路径比较",
+          "analysis": "优化后的面板纵轴跨度为约 3000 µs，而原生约 30000 µs；两图不能仅凭柱／线高度比。越多 CPU 并未消除原生的设备打开瓶颈。",
+          "use_basis": "Junxue Zhang 等，ACM SoCC 2026 正式版，CC BY 4.0，裁去图外正文，保持原图例、轴、刻度和题注。",
+          "url": "https://snowzjx.me/assets/fcp-socc26.pdf#page=9",
+          "location": "index.html#fcp-6"
+        },
+        {
+          "num": "7",
+          "page": 10,
+          "title": "冷、暖与 fork 启动的端到端对比",
+          "analysis": "冷和暖子图以 ms 为单位；fork 子图用 µs 且有轴断。如果仅看库所节省的毫秒，会高估冷启收益。",
+          "use_basis": "Junxue Zhang 等，ACM SoCC 2026 正式版，CC BY 4.0，裁去图外正文，保留原坐标、轴断和题注。",
+          "url": "https://snowzjx.me/assets/fcp-socc26.pdf#page=10",
+          "location": "index.html#fcp-7"
+        }
+      ],
+      "sha256": "05516d78a28ee607c4f8973bfecaf0474de0769122a189c4925d934fa904b94c",
+      "archive_status": "全文许可已核实；本期页面发布时引用原文，PDF 归档以仓库实际文件为准。"
+    },
+    {
+      "id": "tram",
+      "name": "TRAM",
+      "title": "TRAM：让跨分片元数据按树排序，而不是让所有分片互相对表",
+      "venue": "ACM SoCC 2026",
+      "date": "2026-11-18 至 11-20（会议；11-18 报告；近期正式发表，非今日新发）",
+      "org": "Università della Svizzera italiana（瑞士意大利语区大学）、Politecnico di Milano（米兰理工大学）",
+      "authors": "Lorenzo Martignetti, Eliã Batista, Gianpaolo Cugola, Fernando Pedone",
+      "url": "https://doi.org/10.1145/3815789.3827951",
+      "pdf": "https://www.inf.usi.ch/faculty/pedone/Paper/2026/2026SoCCa.pdf",
+      "scope": "正式版模型、协议、实现与评测，重点 §2、§4–7、图 3/5/7/10、表 1；核查作者正式 PDF、会议程序和论文中的 artifact／证明链接；未运行、未观看报告。",
+      "summary": "客户端写入目的组的最近公共祖先；各组用单边 RDMA 日志写入推进组内共识，并沿树转发，降低多分片全互联协调。小消息获益，跨层延迟、负载偏斜与故障重连仍有代价。",
+      "license": "ACM 正式 PDF 首页 CC BY 4.0，图 5 未见第三方署名。原型仓库根许可证 GPLv3；源码如有随报归档，以资料索引的范围为准。扩展证明稿仅链接。",
+      "references": [
+        {
+          "title": "SoCC 官方程序",
+          "url": "https://acmsocc.org/2026/socc26-program-papers.html#paper-40"
+        },
+        {
+          "title": "作者原型仓库",
+          "url": "https://github.com/lmartignetti/tram"
+        },
+        {
+          "title": "作者的扩展证明稿（预印本）",
+          "url": "https://arxiv.org/abs/2509.07781"
+        },
+        {
+          "title": "CC BY 4.0",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        }
+      ],
+      "figures": [
+        {
+          "num": "5",
+          "page": 10,
+          "title": "跨分片扇出增大时，少协调更快，但压测和单客户端最优树型不同",
+          "analysis": "64 B、均匀随机目的组、8 组各 3 副本。八目的组时广树的单客户端延迟最低，深树与基础树的饱和吞吐优于广树；二目的组时 RamCast 的表现反而更好。不能把左图说成饱和下的 P99。",
+          "use_basis": "Lorenzo Martignetti 等，ACM SoCC 2026 正式版，CC BY 4.0；仅裁切图外正文，保留轴、图例、单位和题注。",
+          "url": "https://www.inf.usi.ch/faculty/pedone/Paper/2026/2026SoCCa.pdf#page=10",
+          "location": "index.html#tram-5"
+        }
+      ],
+      "sha256": "7e8ecb541270091e23d28d39853293e9cfe43dc9dfae3b45cc9c3a7c58bf7be5",
+      "archive_status": "全文许可已核实；本期页面发布时引用原文，PDF 归档以仓库实际文件为准。"
+    }
+  ]
+}

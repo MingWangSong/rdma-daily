@@ -1,0 +1,56 @@
+{
+  "upstream": "https://github.com/lmartignetti/tram",
+  "commit": "60f81dc1d45b60fe2cd9403d77584b03f448288c",
+  "commit_date": "2026-07-07T07:34:25Z",
+  "retrieved_on": "2026-11-22",
+  "license": "GNU GPL version 3; full upstream LICENSE preserved",
+  "license_evidence": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/LICENSE",
+  "scope": "Small verbatim source-reading subset, not a full or buildable checkout; no changes to upstream file bytes",
+  "verified_git_blob_hashes": true,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 606,
+      "git_blob_sha": "7fffbbd1d09b579e2907a48180c30bb36e862be0",
+      "sha256": "ee92f0d16271db7c843e80d57bf60a6a873e309ed42f8ee60bc8c5aa3d37067f",
+      "source_url": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/README.md"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "git_blob_sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "source_url": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/LICENSE"
+    },
+    {
+      "path": "src/tree/tree.cpp",
+      "bytes": 7782,
+      "git_blob_sha": "d04065f9ef7132f1c48af924bd70747e3201218b",
+      "sha256": "c13c6f8b68394592f1dea222669e1bd84699d736d2c0b70d58a772306d4a0b51",
+      "source_url": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/src/tree/tree.cpp"
+    },
+    {
+      "path": "src/tree/tree.hpp",
+      "bytes": 1122,
+      "git_blob_sha": "cfc59b37133d1e7233c33ad21d583b89774aa251",
+      "sha256": "e11709389c8b1187a0e209b3657ba7431d6e72a7bca033b3f5528a0da325ea72",
+      "source_url": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/src/tree/tree.hpp"
+    },
+    {
+      "path": "src/server/leader.cpp",
+      "bytes": 8174,
+      "git_blob_sha": "6e805e4dd5824069edf2bfe1d80226396708a76e",
+      "sha256": "15c38601de596f11afd98ede81ddc549f52e6db46a8ae17cd18a825a8d91eeed",
+      "source_url": "https://github.com/lmartignetti/tram/blob/60f81dc1d45b60fe2cd9403d77584b03f448288c/src/server/leader.cpp"
+    }
+  ],
+  "excluded_scope": [
+    "lib/ dependency code not audited for this snapshot",
+    "scripts, benchmarks and plotting not included",
+    "resources/configuration and any traces/data not included",
+    "other application sources and headers not included; retrieve from pinned upstream to build",
+    "No binaries, paper PDFs, third-party figures or execution outputs"
+  ],
+  "executed_or_compiled": false,
+  "published": false
+}
