@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 01 讲 · 读一个 4 KiB 缓存块，谁在搬数据？｜RDMA 经典论文导读</title>
+<style>
+:root{color-scheme:dark;--bg:#0b121b;--panel:#111c29;--ink:#e4edf7;--muted:#aebfd2;--line:#33465a;--accent:#73e4de;--warm:#ffc68b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,"Noto Sans CJK SC","PingFang SC",sans-serif}main{max-width:57rem;margin:auto;padding:25px clamp(15px,4vw,34px) 36px}header{padding-bottom:13px;border-bottom:1px solid var(--line)}.eyebrow,.meta,figcaption,footer{color:var(--muted);font-size:.91rem}.eyebrow{color:var(--accent);letter-spacing:.07em;font-weight:700}h1,h2,h3{line-height:1.3;margin:0}h1{font-size:clamp(1.55rem,5vw,2.3rem);margin:5px 0 6px}h2{font-size:1.2rem;margin:0 0 8px}h3{font-size:1rem;margin:0 0 3px}.lede{margin:.35rem 0}.meta{margin:3px 0}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible,summary:focus-visible{outline:2px solid var(--warm);outline-offset:3px}nav{display:flex;flex-wrap:wrap;gap:4px 16px;padding:10px 0 0;font-size:.9rem}section{padding:16px 0 12px;border-bottom:1px solid var(--line)}p{margin:6px 0 9px}ul,ol{margin:4px 0 8px;padding-inline-start:1.45em}li+li{margin-top:4px}.note{background:var(--panel);border-inline-start:3px solid var(--accent);padding:6px 10px;margin:8px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.split>div{min-width:0;background:var(--panel);padding:10px 12px}.split p:last-child{margin-bottom:0}figure{margin:8px 0}figure img{display:block;max-width:100%;height:auto;background:white;border-radius:3px}figcaption{margin-top:4px}.tag{color:var(--warm);font-weight:700}details{padding:6px 10px;background:var(--panel);margin:8px 0}summary{cursor:pointer;color:var(--accent);font-weight:700}.metrics{width:100%;border-collapse:collapse;margin:7px 0 9px;font-size:.91rem}.metrics th,.metrics td{border-bottom:1px solid var(--line);text-align:left;padding:5px 7px;vertical-align:top}.metrics th{color:var(--muted);font-weight:650}footer{padding:10px 0 0}code{font-size:.92em;overflow-wrap:anywhere}strong{font-weight:700} @media(max-width:570px){main{padding-top:15px}.split{grid-template-columns:1fr;gap:6px}.metrics th,.metrics td{padding:4px}.metrics{font-size:.85rem}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div class="eyebrow">RDMA 经典论文导读 · 第 01 讲 · 约 25 分钟</div>
+<h1>读一个 4 KiB 缓存块，谁在搬数据？</h1>
+<p class="lede"><strong>学完能做到：</strong>沿两台机器画出一次读的路线，解释单边 RDMA READ 省了谁的工作，又有哪些工作必须留在存储软件里。</p>
+<p class="meta"><strong>经典回顾，不是新论文。</strong> <cite>Design Guidelines for High Performance RDMA Systems</cite> · USENIX ATC，2016 年 6 月 22–24 日，正式论文集 pp. 437–450，最佳学生论文。</p>
+<p class="meta">作者与当时机构：Anuj Kalia、David G. Andersen（卡内基梅隆大学），Michael Kaminsky（Intel Labs）。导读日期：2026-11-23。</p>
+<nav aria-label="本课导航"><a href="#warmup">先备知识</a><a href="#route">原文路线</a><a href="#path">跟读数据路径</a><a href="#evidence">读实验图</a><a href="#practice">练习与答案</a><a href="#sources">资料</a></nav>
+</header>
+<section id="warmup">
+<h2>01 / 先把问题缩小（4 分钟）</h2>
+<p>计算节点 A 想读存储节点 B 上的一个 4 KiB 文件块。B 用主存做缓存：命中就取现有字节，未命中则由存储软件决定读本地 SSD、访问下层存储，还是返回未命中。今天不讨论副本协议，只比较<strong>同一个已命中缓存的块</strong>怎样抵达 A。</p>
+<ul><li><strong>主存（DRAM）</strong>是程序和设备工作时存放字节的地方，掉电通常不保留；不等于 SSD，也不等于图 1 的 CPU 三级缓存（L3）。后者是机器内部的硬件缓存，前者上的“文件缓存”是存储系统管理的内容。</li>
+<li><strong>RNIC</strong> 是支持 RDMA 的网卡；<strong>PCIe</strong> 是设备与主机之间的本地通路；<strong>DMA</strong> 是设备直接读写主机内存，不需 CPU 逐字节搬运。<strong>RDMA</strong> 把这种设备参与的数据搬运延伸到两台机器之间。</li>
+<li><strong>RPC（远程过程调用）</strong>是请远端应用做一件事，例如 <code>get(block_id)</code>。它描述的是请求语义，可以跑在 TCP 上，也可以用 RDMA 的操作实现。<strong>RDMA READ</strong> 描述的是网卡执行的具体搬运：从指定远端内存地址取字节。</li></ul>
+</section>
+<section id="route">
+<h2>02 / 原文路线：先找硬件，再找动词（5 分钟）</h2>
+<ol><li><a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=3">PDF 第 3 页：§2 开头、图 1</a>。从外侧两条 InfiniBand 链路向内找 Connect-IB 网卡、PCIe 3.0 ×16、PCIe 控制器、L3 和 DRAM。<strong>圈出网卡跨过的接口：</strong>左边是机器间网络，右边是机器内 PCIe。这是一台 2016 年实验机器的拓扑，不是每台服务器都相同的接线图，也不是一个请求的时序图。</li>
+<li><a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=4">PDF 第 3–4 页：§2.2.1 和表 1</a>。读到 memory verbs 与 messaging verbs 时暂停：<strong>SEND 的接收地址是谁指定的？READ 的远端地址是谁指定的？</strong> §2.2.2 只需知道工作队列条目是硬件可读的任务描述，头部字节和后续优化暂时跳过。</li></ol>
+<p class="note">读图时别把 CPU 封装和 CPU 核心当成一回事。经过图 1 中的 PCIe 控制器、L3 并不意味着远端应用线程执行了查找或复制。图中也没有 SSD，因此不能用它证明“网卡能独立查文件”。</p>
+</section>
+<section id="path">
+<h2>03 / 跟一遍 4 KiB 的数据路径（7 分钟）</h2>
+<div class="split">
+<div><h3>RPC：我知道块号，不知道地址</h3><ol><li>A 的应用发 <code>get(block_id)</code>。</li><li>B 的存储应用解读块号，从索引查到内存位置，检查访问权限与版本。若没命中，由同一层决定走慢路径。</li><li>B 的应用组织响应，网卡传输；A 收到应用响应后得到数据或明确错误。若底层用 RDMA SEND/RECV，接收方软件事先放好接收缓冲区，接收网卡按那个缓冲地址写入，再由接收方软件消费消息。</li></ol></div>
+<div><h3>单边 READ：我已拿到地址和许可</h3><ol><li>前提：B 的软件已注册允许访问的缓冲区，A 知道远端地址、授权访问的远端键（rkey）、长度，并准备好本地接收位置。地址如何从块号得到，是额外的设计问题。</li><li>A 的 CPU 提交 READ；A 的 RNIC 发请求。B 的 RNIC 验证权限，从注册的主存缓冲区经主机接口取字节，返回给 A，不必每次唤醒 B 的应用线程。</li><li>A 的 RNIC 把返回字节放到本地内存。对于请求了完成通知的 READ，A 的软件看到成功完成后才能按约定使用缓冲区；仍要按存储协议验证版本等业务条件。</li></ol></div>
+</div>
+<p>论文表 1 的三种传输中，<strong>只有 RC（Reliable Connected，可靠连接）支持 READ</strong>；RC、UC、UD 都支持 SEND/RECV，但 UC 可 WRITE 不可 READ，UD 不提供这两种内存操作。这是该表比较的范围，不是所有后来传输的总表。“单边”指远端无需提交与这条 READ 对应的接收工作；不是只有一台网卡工作，也不是全程没有 CPU。</p>
+<details><summary>可选：QP、WQE 和 CQE 分别是什么？</summary><p><strong>QP（Queue Pair）</strong>是一对发送与接收工作队列；<strong>WQE（Work Queue Element）</strong>是一条网卡要执行的工作描述；<strong>CQ（Completion Queue）</strong>是软件查看结果的完成队列，<strong>CQE</strong>是其中一条完成记录。提交只是排队，不代表已经执行。成功 READ 的完成表示此操作的数据已到本地，不表示数据是最新版本；成功 WRITE 的完成也不能替代存储系统对副本或 SSD 落盘的确认。</p></details>
+</section>
+<section id="evidence">
+<h2>04 / 读一张实验图：为什么速度曲线会换瓶颈？（5 分钟）</h2>
+<p>打开 <a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=10">图 12(a)(b)，PDF 第 10 页</a>，再看 <a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=12">§5.3.1，PDF 第 12 页</a>。图 12 是远端网卡收到非批量操作的微基准。只跟踪 READ 的实测系列与 InfiniBand 理论上限；暂不看 UC WRITE。横轴是单次操作的数据量（字节），纵轴是每秒完成的操作数（Mops，百万操作/秒），注意子图纵轴刻度不同。</p>
+<table class="metrics"><thead><tr><th scope="col">论文平台（表 2）</th><th scope="col">READ 转折点（约）</th></tr></thead><tbody><tr><td>Connect-IB，2×56 Gb/s，PCIe 3.0 ×16</td><td>64 B 后主要受带宽约束</td></tr><tr><td>ConnectX-3，1×56 Gb/s，PCIe 3.0 ×8</td><td>256 B 后主要受带宽约束</td></tr></tbody></table>
+<p><span class="tag">怎么解释：</span> 小请求时，即使链路还有空余容量，网卡每秒能处理的请求数也有限；数据变大后，每个完成的请求带走更多字节，链路逐渐成为限制，操作数/秒下降不等于搬运字节/秒下降。作者给出的这些转折点来自各自平台，不能只归因于网卡型号，因为带宽与其他配置也不同。</p>
+<p><span class="tag">不证明什么：</span> 图中没有对照 TCP 或完整存储 RPC，也没测本课 4 KiB 读延迟、尾延迟、SSD 缺页路径或生产收益。它支持的是“瓶颈会随单次字节数与硬件改变”，而不是“READ 必然比 RPC 快”。</p>
+</section>
+<section id="practice">
+<h2>05 / 不需要网卡的课后题（4 分钟）</h2>
+<p>同一个 <code>block_id</code>：① B 上缓存命中，A 只有块号；② A 已得到有效地址和 rkey，数据还在注册缓冲区；③ B 在完成读取前淘汰缓存，并可能重新使用这段地址。分别写下：谁决定数据在哪？谁搬数据？A 看见成功完成后，能否交付给应用？</p>
+<details><summary>展开参考答案</summary><ol><li>只有块号，需先查元数据。可让 B 应用处理 RPC，或先查询元数据再决定怎样搬；网卡不会解释块号。</li><li>此前已决策并授权，RNIC 负责跨网搬运；成功完成说明 READ 完成。在一致性和生命周期条件都满足时才交付，而不是单凭 CQE 判断新鲜度。</li><li>地址存在且 READ 成功也可能读到被复用的内容。安全做法要保护缓冲区的有效期，例如钉住直到在途读取结束，或配合版本/有效期检查与回退。如发现过期，重新查询或走 RPC，不要静默返回。这里是工程设计提示，不是论文实验结论。</li></ol></details>
+<p><strong>工程取舍：</strong>先从只读、已定位的热数据考虑单边搬运；若每次都要额外查询、校验或频繁回收，远端少执行一次处理的收益可能被新路径吞掉。验证时把缓存命中/未命中拆开，把查询和搬运都计入端到端延迟，并检查失效场景的正确性，再对比服务端 CPU 和 p99（99% 请求都不超过的延迟）。</p>
+<p><strong>下一讲：</strong>回到 §2.2.2、§3.1 和图 5，顺着工作队列、一次“门铃”通知及完成通知，看看批量提交为什么可能提高吞吐，然后进入 Pilaf 的 GET/PUT。</p>
+</section>
+<footer id="sources">
+<p><strong>资料：</strong><a href="https://www.usenix.org/conference/atc16/technical-sessions/presentation/kalia">USENIX 论文与报告页面</a> · <a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf">CMU 论文集版 PDF</a> · <a href="https://github.com/efficient/rdma_bench">论文列出的测量代码</a>。课前核对：§2、表 1、表 2、图 12、§5.3.1；4 KiB 场景为教学例子。原图可在以上页码查看；未镜像完整 PDF 或报告。<a href="https://github.com/MingWangSong/rdma-daily/blob/main/2026-11-23/papers/kalia/source/ARCHIVE-NOTES.md">测量代码备份说明</a>（Apache-2.0，2019 年固定版本的子集，不是论文当年的精确代码）。</p>
+</footer>
+</main>
+</body>
+</html>

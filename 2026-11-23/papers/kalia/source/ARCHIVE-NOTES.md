@@ -1,0 +1,7 @@
+# RDMA-bench: inbound throughput source excerpt
+
+Copyright 2016, Carnegie Mellon University. Source from [efficient/rdma_bench](https://github.com/efficient/rdma_bench/tree/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575), pinned to commit `a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575` (2019-12-28). The [upstream license notice](https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/README.md#license) identifies Apache License 2.0; see the full LICENSE included here. Upstream README files and benchmark main.cc are unchanged. No upstream NOTICE file was present at the repository root or in the selected directory.
+
+The selected benchmark measures inbound RDMA READ or WRITE throughput. It is relevant to Figure 12 and section 5.3.1 of [Design Guidelines for High Performance RDMA Systems](https://www.usenix.org/system/files/conference/atc16/atc16_paper-kalia.pdf) by Anuj Kalia, Michael Kaminsky, and David G. Andersen (USENIX ATC 2016). Figure 12 compares inbound READ with UC WRITE. The archived code revision is from 2019; it is not asserted to be the exact revision that generated the published measurements.
+
+The archive contains just the two upstream READMEs and rw-tput-receiver/main.cc and preserves their bytes and attribution. It excludes bundled drivers, libhrd_cpp and other dependencies, launch scripts, other benchmarks, paper, figures and datasets. It is not independently buildable and was not executed or reproduced. See provenance.json for exact hashes.

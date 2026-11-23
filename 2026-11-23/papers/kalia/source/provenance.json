@@ -1,0 +1,55 @@
+{
+  "upstream": "https://github.com/efficient/rdma_bench",
+  "commit": "a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575",
+  "commit_date": "2019-12-28T01:33:22Z",
+  "published": false,
+  "retrieved_on": "2026-11-23",
+  "license": "Apache-2.0",
+  "license_notice": "Copyright 2016, Carnegie Mellon University",
+  "license_evidence": "https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/README.md#license",
+  "license_text_source": "https://www.apache.org/licenses/LICENSE-2.0.txt",
+  "license_text_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "upstream_notice_file": "No root or rw-tput-receiver NOTICE file in pinned tree; notice reproduced from upstream README.md",
+  "paper": {
+    "title": "Design Guidelines for High Performance RDMA Systems",
+    "authors": [
+      "Anuj Kalia",
+      "Michael Kaminsky",
+      "David G. Andersen"
+    ],
+    "venue": "USENIX ATC 2016",
+    "figure": "Figure 12, section 5.3.1",
+    "url": "https://www.usenix.org/system/files/conference/atc16/atc16_paper-kalia.pdf"
+  },
+  "scope": "Selected verbatim source-reading files relevant to an inbound read/write microbenchmark. 2019 snapshot, not the original 2016 experiment revision, complete runnable checkout, or reproduction.",
+  "omissions": [
+    "All drivers/ and third-party source",
+    "libhrd_cpp, libhrd and other libraries",
+    "Benchmark runner scripts and other experiments",
+    "Binaries, datasets, paper and figure copies"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6918,
+      "git_blob_sha": "8075906e7bf55a35418cf03a621b28b635ac110e",
+      "sha256": "59494358aa74293fffa21fc700c4060dc7f16e31981a2f41b3a83e0dc89190f3",
+      "url": "https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/README.md"
+    },
+    {
+      "path": "rw-tput-receiver/README.md",
+      "bytes": 1048,
+      "git_blob_sha": "09f206eef8fc2ede3cbbd886347cb9ec52ff21eb",
+      "sha256": "0646b52fada0fa936df6220ac902311483ff7ecccbcd76c67635561be287be48",
+      "url": "https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/rw-tput-receiver/README.md"
+    },
+    {
+      "path": "rw-tput-receiver/main.cc",
+      "bytes": 6985,
+      "git_blob_sha": "f4400291e34717fa24e0f2d74c56b30ed8447746",
+      "sha256": "b1e94dd4cbf520b4d136add4d04485fa5833dc8f94c9c6f2a603f41506971572",
+      "url": "https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/rw-tput-receiver/main.cc"
+    }
+  ],
+  "validation": "Verified Git blob hashes for three upstream files. No compilation, execution or benchmark reproduction."
+}
