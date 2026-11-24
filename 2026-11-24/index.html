@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 02 讲 · 敲一次门铃，发两个响应｜RDMA 经典论文导读</title>
+<style>
+:root{color-scheme:dark;--bg:#0b121b;--panel:#111c29;--ink:#e4edf7;--muted:#aebfd2;--line:#33465a;--accent:#73e4de;--warm:#ffc68b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,"Noto Sans CJK SC","PingFang SC",sans-serif}main{max-width:57rem;margin:auto;padding:25px clamp(15px,4vw,34px) 36px}header{padding-bottom:13px;border-bottom:1px solid var(--line)}.eyebrow,.meta,figcaption,footer{color:var(--muted);font-size:.91rem}.eyebrow{color:var(--accent);letter-spacing:.07em;font-weight:700}h1,h2,h3{line-height:1.3;margin:0}h1{font-size:clamp(1.55rem,5vw,2.3rem);margin:5px 0 6px}h2{font-size:1.2rem;margin:0 0 8px}h3{font-size:1rem;margin:0 0 3px}.lede{margin:.35rem 0}.meta{margin:3px 0}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible,summary:focus-visible{outline:2px solid var(--warm);outline-offset:3px}nav{display:flex;flex-wrap:wrap;gap:4px 16px;padding:10px 0 0;font-size:.9rem}section{padding:16px 0 12px;border-bottom:1px solid var(--line)}p{margin:6px 0 9px}ul,ol{margin:4px 0 8px;padding-inline-start:1.45em}li+li{margin-top:4px}.note{background:var(--panel);border-inline-start:3px solid var(--accent);padding:6px 10px;margin:8px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.split>div{min-width:0;background:var(--panel);padding:10px 12px}.split p:last-child{margin-bottom:0}figure{margin:8px 0}figure img{display:block;max-width:100%;height:auto;background:white;border-radius:3px}figcaption{margin-top:4px}.tag{color:var(--warm);font-weight:700}details{padding:6px 10px;background:var(--panel);margin:8px 0}summary{cursor:pointer;color:var(--accent);font-weight:700}.metrics{width:100%;border-collapse:collapse;margin:7px 0 9px;font-size:.91rem}.metrics th,.metrics td{border-bottom:1px solid var(--line);text-align:left;padding:5px 7px;vertical-align:top}.metrics th{color:var(--muted);font-weight:650}footer{padding:10px 0 0}code{font-size:.92em;overflow-wrap:anywhere}strong{font-weight:700} @media(max-width:570px){main{padding-top:15px}.split{grid-template-columns:1fr;gap:6px}.metrics th,.metrics td{padding:4px}.metrics{font-size:.85rem}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">RDMA 经典论文导读 · 第 02 讲 · 约 24 分钟</div>
+<h1>敲一次门铃，发两个响应</h1>
+<p class="lede"><strong>学完能做到：</strong>区分提交作业、网卡真正发送、软件收到完成记录；从图 4 数出批量提交省在哪里，再用图 9 判断为什么缓存服务的单核和整机收益不同。</p>
+<p class="meta">经典回顾 · <cite>Design Guidelines for High Performance RDMA Systems</cite> · USENIX ATC 正式论文集（2016 年 6 月 22–24 日，pp. 437–450），最佳学生论文。</p>
+<p class="meta">Anuj Kalia、David G. Andersen（卡内基梅隆大学）；Michael Kaminsky（Intel Labs）。导读日期：2026-11-24。</p>
+<nav aria-label="本课导航"><a href="../2026-11-23/">← 第 01 讲</a><a href="#setup">队列与完成</a><a href="#figure4">读图 4：门铃</a><a href="#figure9">读图 9：吞吐</a><a href="#practice">练习</a><a href="#sources">资料</a></nav>
+</header>
+
+<section id="setup">
+<h2>01 / 把一个存储响应变成网卡作业（5 分钟）</h2>
+<p>上一讲读的是一个 4 KiB 文件缓存块。今天把视角缩小到<strong>存储节点返回多个小响应</strong>，例如从内存缓存读出两条 32 字节的对象元数据。设客户端已准备接收缓冲区，服务端 CPU 已经查到两条结果。</p>
+<ol>
+<li><strong>准备作业：</strong>服务端软件提交发送请求，用户态驱动构造 <strong>WQE（Work Queue Element，工作队列条目）</strong>。它像给设备的作业单，写着操作和数据位置；小数据在硬件支持时也可直接附在单里（inline，内联）。<strong>QP（Queue Pair，队列对）</strong>含发送与接收工作队列；这两条 SEND 都进入同一个 QP 的发送队列。</li>
+<li><strong>通知并执行：</strong>服务端软件通过 <strong>MMIO（Memory-Mapped I/O，内存映射 I/O）</strong>写网卡暴露的设备地址。写入的可以是作业单内容，也可以是一条“有新作业”的通知。后者让网卡用 <strong>DMA（Direct Memory Access，直接内存访问）</strong>从主机内存取作业单，再执行各自的 SEND。PCIe 是这里的机器内通路；实际响应还要走机器间网络。</li>
+<li><strong>看完成：</strong>对要求完成通知的发送，网卡可在 <strong>CQ（Completion Queue，完成队列）</strong>写入 <strong>CQE（Completion Queue Entry，完成条目）</strong>，应用查询并检查状态。CQ 不是 QP 里的第三条队列。尤其是本文用的 UD（Unreliable Datagram，不可靠数据报）发送，<strong>本地 SEND 成功不证明对端收到</strong>，更不是副本确认或持久化确认。</li>
+</ol>
+<p class="note"><strong>带着这个问题读下去：</strong>如果早已备好两条响应，能不能减少 CPU 到网卡的“敲门”次数，而不改变客户端收到的消息边界？</p>
+</section>
+
+<section id="figure4">
+<h2>02 / 图 4：数的是本机 PCIe 箭头，不是网络包（7 分钟）</h2>
+<p><a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=4">打开 §2.2.2 和图 4（PDF 第 4 页）</a>，再读<a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=5"> §3.1（第 4–5 页）</a>。看图 4 里标着 0、64、128、192、256 的字节刻度：两条作业单各占两个 64 B 缓存行（这里指硬件按块搬运和缓存数据的粒度）。先顺着细红箭头数 CPU 写，再看右侧粗蓝箭头取回哪些作业。</p>
+<table class="metrics"><thead><tr><th scope="col">图 4 的做法</th><th scope="col">CPU 写设备</th><th scope="col">网卡取作业单</th></tr></thead><tbody>
+<tr><td>(a) WQE-by-MMIO：CPU 推送作业单</td><td>4 次 64 B 写</td><td>不需要再 DMA 读取这两条 WQE</td></tr>
+<tr><td>(b) Doorbell：CPU 只写一次门铃</td><td>1 次通知</td><td>网卡 DMA 读取两条 WQE；图中示为同一次读取</td></tr>
+</tbody></table>
+<p><strong>暂停想一想：</strong>图 4(b) 是不是意味着两个客户端只收到一个响应？不是。门铃合并的是<strong>同一个 QP 上的本机提交通知</strong>；网卡依然有两项 SEND 工作。也不要把“4 次 CPU 写变 1 次”读成全部 PCIe 事务变成 1 次：右图新增了网卡取 WQE 的 DMA，图中没有把各 SEND 的数据搬运及完成通知全部算进去。</p>
+<p>只有一条小响应时，直接推送作业单通常更省事，因为不用等网卡回读。论文的实现如果这一轮只有一条，就用 WQE-by-MMIO；有现成的一批才走门铃，不等待凑满。图中一次 DMA 取齐的前提来自论文所用 Connect-IB 等网卡的取队列方式，不是所有硬件的承诺。</p>
+<details><summary>选读图 5：为何“少敲门铃”和“少写完成记录”是两件事？</summary><p><a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=5">图 5（PDF 第 5 页）</a>中间面板同时使用了非逐条通知（unsignaled）与门铃批量：前者改变常规成功完成记录的写回方式，后者改变提交方式。两者不能互相替代。不开逐条通知不等于缓冲区可以无限复用，仍需要按发送完成规则回收和处理错误。最右面板还改了协议用法以缩小 WQE；今天可跳过。</p></details>
+</section>
+
+<section id="figure9">
+<h2>03 / 图 9：单核快 83%，为什么整机只快 35%？（7 分钟）</h2>
+<p><strong>先看实际路径。</strong>HERD 是内存键值缓存。客户端先准备接收，再用 UC WRITE（不可靠连接上的远端写）把请求写到服务端的请求区。服务端线程轮询这个区域，从每个客户端至多取一条已到达的请求，自己查表完成 GET（取值）或 PUT（更新值）。然后把回复逐条发，或用门铃批量提交 UD SEND。<strong>请求写入远端内存，不等于服务器已经执行 GET/PUT。</strong></p>
+<p><a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=8">打开图 9（PDF 第 8 页）</a>，对照<a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf#page=9"> §4.3.1（第 9 页）</a>。横轴是服务端 CPU 核数，纵轴是每秒完成的请求（Mrps，百万请求/秒）。先比两条 HERD 线最左端，再沿曲线找各自峰值。实验：1 台 Connect-IB 服务器（双 56 Gb/s InfiniBand 端口、PCIe 3.0 ×16、14 核 Xeon E5-2683 v3）；8 台客户端、128 个客户端线程。每个工作线程持有 800 万组 16 B 键与 32 B 值；均匀随机访问，95% GET、5% PUT。</p>
+<table class="metrics"><thead><tr><th scope="col">对照</th><th scope="col">逐条</th><th scope="col">批量</th><th scope="col">提升</th></tr></thead><tbody>
+<tr><td>单核（Mrps）</td><td>6.7</td><td>12.3</td><td>83%</td></tr><tr><td>整机峰值（Mrps）</td><td>72.8</td><td>98.3</td><td>35%</td></tr>
+</tbody></table>
+<p><span class="tag">作者的解释：</span> 少做 MMIO，单核每秒能处理更多响应；加核后，批量路径的峰值受 PCIe DMA 带宽限制。你可以理解为减少了每张作业单的提交成本，但卡与主机之间每秒能搬的字节仍有限。</p>
+<p><span class="tag">容易读错：</span> 图中的 READ-based 水平线是模型上限：假设至少两次小 READ 才完成一个 GET，用该平台入站小 READ 的峰值操作数除二。<strong>这不是部署 Pilaf 或 FaRM 的实测对比。</strong>图 9 只给吞吐，没有测这组 HERD 的尾延迟，也不能把 32 B 响应结果直接套到上一讲的 4 KiB 文件块。</p>
+</section>
+
+<section id="practice">
+<h2>04 / 带回存储研发：先批哪条路径？（5 分钟）</h2>
+<p><strong>工程推断：</strong>优先尝试给一个服务线程的<strong>小型元数据命中回复</strong>做机会式批量，不要一开始就在 4 KiB 数据或写入确认路径强制等批。验证时固定连接、工作线程和返回内容，只改提交策略；比较逐条、机会式批量上限 4 / 8，测低负载与高并发下的服务端 CPU 每请求开销、吞吐及 p99（99% 请求都不超过的延迟）。同时记实际批大小分布；如果多半是单条，或者吞吐没升而 p99 变差，就不要默认开启。批量只改变发送安排，不改变请求 ID、错误处理和确认条件。</p>
+<p><strong>纸上练习：</strong>同一 QP 已有两条待发响应，每条 WQE 占两个 64 B 缓存行。请写出图 4 两种方式的 CPU 写次数、SEND 数；再判断如果这两条来自不同 QP，或本轮只剩一条，该怎么做。最后：一次 UD SEND 有本地 CQE，能宣布远端副本已经落盘吗？</p>
+<details><summary>展开参考答案</summary><p>同 QP 时分别为 4 次 MMIO 和 1 次门铃 MMIO，都是 2 次 SEND；门铃方案还需要网卡取 WQE。不同 QP 不共用图中的这一次门铃，要按各自队列提交。本轮只有一条小响应时，论文实现走直接推送，不等待下一条。UD 的本地发送完成不证明接收，更不证明副本落盘；需要存储协议对该请求给出独立的持久化确认。</p></details>
+<p><strong>下一讲：Pilaf 的 GET/PUT。</strong>当客户端绕过服务器线程直接读，恰好遇到服务端更新键值，客户端怎样判断读到的数据有没有冲突？</p>
+</section>
+
+<footer id="sources">
+<p><strong>阅读范围与资料：</strong>复读论文 §2.2.1–2.2.2、§3.1–3.2、§4.1、§4.3.1，核对图 4、5、9 与表 2。<a href="https://www.usenix.org/conference/atc16/technical-sessions/presentation/kalia">USENIX 正式会议页（含报告、音频）</a> · <a href="https://www.cs.cmu.edu/~xia/resources/Documents/kalia-usenix2016.pdf">论文 PDF</a> · <a href="https://www.usenix.org/sites/default/files/conference/protected-files/atc16_slides_kalia.pdf">作者报告</a> · <a href="https://github.com/efficient/rdma_bench/blob/a038ec5e2b9f1ac9d4da2fc0044786c82c9ee575/herd/worker.c#L145-L237">HERD 响应代码</a>。</p>
+<p>报告对照第 12–13 页与第 21 页；代码查看了 <code>worker.c</code> 对已到请求的轮询、构造链表和提交，未运行。<a href="https://github.com/MingWangSong/rdma-daily/blob/main/2026-11-24/papers/kalia/source/ARCHIVE-NOTES.md">源码摘档（Apache-2.0）</a>为后续快照。图表和 PDF、报告使用原文定位链接。</p>
+</footer>
+</main></body></html>
