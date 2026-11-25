@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第 03 讲 · Pilaf：两次 READ 都成功，为什么还要重读？｜RDMA 经典论文导读</title>
+<style>
+:root{color-scheme:dark;--bg:#0b121b;--panel:#111c29;--ink:#e4edf7;--muted:#aebfd2;--line:#33465a;--accent:#73e4de;--warm:#ffc68b}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,"Noto Sans CJK SC","PingFang SC",sans-serif}main{max-width:57rem;margin:auto;padding:25px clamp(15px,4vw,34px) 36px}header{padding-bottom:13px;border-bottom:1px solid var(--line)}.eyebrow,.meta,figcaption,footer{color:var(--muted);font-size:.91rem}.eyebrow{color:var(--accent);letter-spacing:.07em;font-weight:700}h1,h2,h3{line-height:1.3;margin:0}h1{font-size:clamp(1.55rem,5vw,2.3rem);margin:5px 0 6px}h2{font-size:1.2rem;margin:0 0 8px}h3{font-size:1rem;margin:0 0 3px}.lede{margin:.35rem 0}.meta{margin:3px 0}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}a:focus-visible,summary:focus-visible{outline:2px solid var(--warm);outline-offset:3px}nav{display:flex;flex-wrap:wrap;gap:4px 16px;padding:10px 0 0;font-size:.9rem}section{padding:16px 0 12px;border-bottom:1px solid var(--line)}p{margin:6px 0 9px}ul,ol{margin:4px 0 8px;padding-inline-start:1.45em}li+li{margin-top:4px}.note{background:var(--panel);border-inline-start:3px solid var(--accent);padding:6px 10px;margin:8px 0}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.split>div{min-width:0;background:var(--panel);padding:10px 12px}.split p:last-child{margin-bottom:0}figure{margin:8px 0}figure img{display:block;max-width:100%;height:auto;background:white;border-radius:3px}figcaption{margin-top:4px}.tag{color:var(--warm);font-weight:700}details{padding:6px 10px;background:var(--panel);margin:8px 0}summary{cursor:pointer;color:var(--accent);font-weight:700}.metrics{width:100%;border-collapse:collapse;margin:7px 0 9px;font-size:.91rem}.metrics th,.metrics td{border-bottom:1px solid var(--line);text-align:left;padding:5px 7px;vertical-align:top}.metrics th{color:var(--muted);font-weight:650}footer{padding:10px 0 0}code{font-size:.92em;overflow-wrap:anywhere}strong{font-weight:700} @media(max-width:570px){main{padding-top:15px}.split{grid-template-columns:1fr;gap:6px}.metrics th,.metrics td{padding:4px}.metrics{font-size:.85rem}}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">RDMA 经典论文导读 · 第 03 讲 · 约 25 分钟</div>
+<h1>Pilaf：两次 READ 都成功，为什么还要重读？</h1>
+<p class="lede"><strong>学完能做到：</strong>沿着一次 GET 找到键和值，用两道校验定位一次并发更新造成的误读，并解释为什么 Pilaf 把 PUT 留给服务端 CPU。</p>
+<p class="meta">经典回顾 · <cite>Using One-Sided RDMA Reads to Build a Fast, CPU-Efficient Key-Value Store</cite> · USENIX ATC ’13 正式论文集，2013 年 6 月 26–28 日，pp. 103–114。</p>
+<p class="meta">作者与发表时机构：Christopher Mitchell、Jinyang Li（纽约大学）；Yifeng Geng（清华大学）。导读日期：2026-11-25。</p>
+<nav aria-label="本课导航"><a href="../2026-11-24/">← 第 02 讲</a><a href="#path">跟一遍 GET</a><a href="#race">拆解两道校验</a><a href="#evidence">读图 9</a><a href="#practice">练习</a><a href="#sources">资料</a></nav>
+</header>
+<section id="path">
+<h2>01 / 从“我知道块号”到“我知道地址”（6 分钟）</h2>
+<p>第 01 讲有个前提：单边 READ 前，客户端已经知道远端地址。现在客户端只有键 <code>K</code>（例如缓存块编号），要拿到值。Pilaf 把服务端内存拆成两片：<strong>哈希表（hash table）</strong>保存等长索引条目，像一排编号书签；<strong>数据区（extent）</strong>放长短不一的完整键和值。连接建立时，服务端注册两片内存，让网卡允许访问，并告诉客户端如何访问以及表的大小。</p>
+<p><a href="https://files.usenix.org/s3fs-public/cdn/atc13-mitchell.pdf#page=5">打开原文 §3.1–3.2、图 3–4（PDF 第 5 页，印刷 p.107）</a>。先只跟图 4 的两根箭头：</p>
+<ol>
+<li>客户端根据 <code>K</code> 的哈希值算候选槽位，用<strong>第一次 RDMA READ</strong>取回那条索引。索引装的是地址等元数据，不是完整值。</li>
+<li>候选槽位非空，客户端拿到地址和长度后，才用<strong>第二次 RDMA READ</strong>取回数据区的键和值。核对完整键才返回值，不匹配则查其他候选。两次 READ 有先后依赖；“两次”是这个单候选命中例子，不是每次 GET 的固定上限。</li>
+</ol>
+<p>两次跨网搬运都由网卡执行，普通 GET 不需要服务端应用线程来查表。反过来，<strong>PUT 是客户端发消息、服务端线程分配或更新内存并修改索引</strong>。服务端掌控写写冲突，不用让多个客户端远程争锁或操作内存分配器；但 GET 仍可能撞上服务端的 PUT。本文后面换用三路布谷鸟哈希减少候选探测，今天可以跳过 §3.4 的算法细节。</p>
+</section>
+
+<section id="race">
+<h2>02 / 图 5：两道校验分别防什么？（8 分钟）</h2>
+<p><a href="https://files.usenix.org/s3fs-public/cdn/atc13-mitchell.pdf#page=6">打开 §3.3 和图 5（PDF 第 6 页，印刷 p.108）</a>。先看上方索引条目，再跟蓝色箭头到下方键值区。上方出现两个 <code>checksum</code>，不要把它们当成同一份数据的重复校验。<strong>校验和（checksum）</strong>是从字节算出的一段摘要，收到字节后重算，看是否与存下的值一致；论文实现用 CRC64，针对意外混读，不是抗篡改机制。</p>
+<table class="metrics"><thead><tr><th scope="col">检查哪里</th><th scope="col">发现的竞态</th><th scope="col">客户端怎么做</th></tr></thead><tbody>
+<tr><td>图 5 最右：索引条目整体的校验</td><td>服务端正在改索引，第一次 READ 可能拿到旧字段和新字段的组合。</td><td>条目校验失败就不跟随其中的地址；重试。</td></tr>
+<tr><td>图 5 灰色字段里的校验：指向的整段键和值</td><td>索引当时读得完整，但第二次 READ 前，旧地址可能已回收并复用。</td><td>用第一次读得的预期校验去检查第二次返回的字节；不一致就重新查表，而不是沿旧地址反复读。</td></tr>
+</tbody></table>
+<p class="note"><strong>暂停想一想：</strong>第一次读出的索引指向地址 A、校验值 C1。随后 PUT 完成，A 被用来存另一个键。第二次 READ 依然可能成功：地址合法，搬运也完成了。但收到的数据与 C1 不匹配，所以这个 GET 不能交付。校验失败不应当作键不存在。</p>
+<p><strong>校验正确也不等于“必然读到最新版”。</strong>若 GET 与 PUT 重叠，读到完整旧值有时是合法的，等价于 GET 排在 PUT 前。作者把<strong>线性一致性（linearizability）</strong>归于整套设计：例如 PUT 回应前要用内存屏障建立更新的可见性，使其后才开始的 GET 不再读到这次已完成的更新之前的旧值（没有另一写覆盖时）。CRC 本身不负责这条顺序，也不做持久化保证。哈希表或数据区整体扩容会让旧定位信息失效；论文用断开并重连更新元数据，不把它当成普通校验重试。</p>
+</section>
+
+<section id="evidence">
+<h2>03 / 图 9：量到的是重试，不是坏数据率（6 分钟）</h2>
+<p><a href="https://files.usenix.org/s3fs-public/cdn/atc13-mitchell.pdf#page=9">打开图 9（PDF 第 9 页，印刷 p.111）</a>，先读 §5.3 的实验变量，再看两条线。横轴是在读写中使用的不同键数量，纵轴是因检测到竞态而需要重读的 GET 比例，单位<strong>百分比</strong>；两轴都是对数刻度。两条线区分在<strong>索引条目</strong>和<strong>数据区</strong>发现的冲突，不是两个系统或两种网络。</p>
+<p><strong>条件：</strong>§5.1 的平台是 10 节点、每台 32 GB，使用 Mellanox ConnectX-2 20 Gb/s InfiniBand；默认一个服务器进程限制在一核，实验关闭异步日志。图 9 同时施加峰值 GET 和 PUT 负载，改变两者争用的键范围。这里的对照是同一个 Pilaf 在不同访问集合下的两类重试；§5.4 的 Redis/Memcached 对照不是这张图，也不能把它的客户端数或 90/10 比例当成图 9 的配置。</p>
+<p><strong>结果：</strong>读写集中在少数键时，两类重试更明显；访问集合扩大后，两条线总体下降。§5.3 报告键数大于 20,000 时，这个负载下的检测冲突率低于 <strong>0.01%</strong>（低于每 10,000 次 GET 一次的量级）。这不是 P99 延迟、吞吐上限或漏检率。生产上即使键很多，一个热点键被反复改写也可能高重试；图 9 不能替这种情况背书。</p>
+</section>
+
+<section id="practice">
+<h2>04 / 用一张纸演练：看见旧值，能不能返回？（5 分钟）</h2>
+<p>先写下同一个键 <code>K</code> 的旧值 <code>v1</code> 与新值 <code>v2</code>。三种时间顺序：① GET 先拿到完整索引，PUT 运行期间它仍拿到完整 <code>v1</code>；② 第一次 READ 混到旧地址与新长度；③ 第一次 READ 完整，但第二次前旧地址被复用。分别判断第一道校验、第二道校验和是否可交付。</p>
+<details><summary>展开参考答案</summary><ol><li>两道都有可能通过。两次操作重叠时，可以把 GET 排在 PUT 之前；如果 GET 是在 PUT 已回应后才开始，语义不同。</li><li>索引整体校验应失败（除非碰撞），不能用这个索引发第二次读。</li><li>第一次校验通过；不同字节通常过不了第二道校验。丢弃旧索引，重新查找；不是返回未命中。网卡成功完成并不能代替任何一道校验。</li></ol></details>
+<p><strong>工程取舍：</strong>可先在可信客户端之间试用单边读热缓存索引，写仍走服务端。对照同一实现的服务端 GET RPC，固定值大小和并发，分别压“均匀读、少量写”和“热点读写集中”，记录服务端 CPU、每次 GET 的 READ 次数、两类重试和端到端 p99；注入“第一读后回收地址”的可控竞态，验证绝不交付错键。原型可加有限重试和 RPC 回退，测清触发时的成本；这两项是工程建议，不是论文实测结论。跨租户权限与内存生命周期必须另做设计，不能靠 CRC。</p>
+<p><strong>下一讲：FaRM。</strong>继续追同一个问题：如果要验证更大的远端对象，除了 CRC，还能不能用版本来识别并发写入？</p>
+</section>
+
+<footer id="sources">
+<p><strong>阅读范围：</strong>正式论文 §3.1–3.4、§4 的数据区与 CRC、§5.1 和 §5.3；核对图 3–5、9。另读第一作者的项目介绍。<a href="https://www.usenix.org/conference/atc13/technical-sessions/presentation/mitchell">USENIX 会议页（含报告视频、音频）</a> · <a href="https://files.usenix.org/s3fs-public/cdn/atc13-mitchell.pdf">正式 PDF</a> · <a href="https://z80.me/projects/pilaf/">作者项目页</a>。</p>
+<p>会议页可定位报告，未观看；未找到作者确认的公开 Pilaf 源码。<a href="https://www.usenix.org/system/files/consentform_atc13_author.pdf">当年会务授权</a>不等于第三方全文转载许可。图表用精确的原文页链接；未重发整份论文或报告。</p>
+</footer>
+</main></body></html>
